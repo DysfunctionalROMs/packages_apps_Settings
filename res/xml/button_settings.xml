@@ -18,11 +18,11 @@ limitations under the License.
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
         android:title="@string/button_settings_title">
 
-    <!-- <CheckBoxPreference
+    <SwitchPreference
         android:key="disable_nav_keys"
         android:title="@string/disable_navkeys_title"
         android:summary="@string/disable_navkeys_summary"
-        android:defaultValue="false" /> -->
+        android:defaultValue="true" />
         
     <com.android.settings.broken.ButtonBacklightBrightness
             android:key="button_backlight"
@@ -73,5 +73,5 @@ limitations under the License.
             android:persistent="false" />
 
     </PreferenceCategory>
-        
+    
 </PreferenceScreen>

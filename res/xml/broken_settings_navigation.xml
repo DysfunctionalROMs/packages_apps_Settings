@@ -10,6 +10,7 @@
     <com.android.settings.broken.SystemSettingSwitchPreference
         android:key="navigation_bar_show"
         android:title="@string/navbar_enable_bar"
+        android:summary="@string/enable_nav_bar_buttons_summary"
         android:defaultValue="true" />
 
     <PreferenceScreen

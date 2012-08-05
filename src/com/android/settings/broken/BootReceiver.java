@@ -41,6 +41,6 @@ public class BootReceiver extends BroadcastReceiver {
     public void onReceive(Context ctx, Intent intent) {
         /* Restore the hardware tunable values */
         /* DisplaySettings.restore(ctx); */
-        /* ButtonSettings.restoreKeyDisabler(ctx); */
+        ButtonSettings.restoreKeyDisabler(ctx);
     }
 }
