@@ -41,6 +41,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
+import com.android.internal.logging.MetricsLogger;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.broken.PackageListAdapter;
@@ -403,6 +404,11 @@ public class NotificationLightSettings extends SettingsPreferenceFragment implem
         builder.show();
         return true;
     }
+    
+    @Override
+    protected int getMetricsCategory() {
+        return MetricsLogger.DONT_TRACK_ME_BRO;
+    }
 
     public boolean onPreferenceChange(Preference preference, Object objValue) {
         if (preference == mEnabledPref || preference == mCustomEnabledPref) {
@@ -419,7 +425,7 @@ public class NotificationLightSettings extends SettingsPreferenceFragment implem
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         mMenu = menu;
-        mMenu.add(0, MENU_ADD, 0, R.string.profiles_add)
+        mMenu.add(0, MENU_ADD, 0, R.string.string_add)
                 .setIcon(R.drawable.ic_menu_add_white)
                 .setShowAsActionFlags(MenuItem.SHOW_AS_ACTION_ALWAYS | MenuItem.SHOW_AS_ACTION_WITH_TEXT);
     }
@@ -452,7 +458,7 @@ public class NotificationLightSettings extends SettingsPreferenceFragment implem
                 final ListView list = new ListView(getActivity());
                 list.setAdapter(mPackageAdapter);
 
-                builder.setTitle(R.string.profile_choose_app);
+                builder.setTitle(R.string.choose_app);
                 builder.setView(list);
                 dialog = builder.create();
 
@@ -527,6 +533,5 @@ public class NotificationLightSettings extends SettingsPreferenceFragment implem
                 return null;
             }
         }
-
     }
 }

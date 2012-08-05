@@ -92,6 +92,12 @@
             android:supportsRtl="true"
             android:allowBackup="false"
             android:usesCleartextTraffic="false">
+            
+        <uses-library android:name="org.cyanogenmod.hardware" required="false" />
+
+        <!-- Settings -->
+        <uses-library android:name="org.cyanogenmod.hardware"
+                android:required="false" />
 
         <!-- Settings -->
 
@@ -2597,6 +2603,12 @@
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
                 android:value="com.android.settings.applications.WriteSettingsDetails" />
         </activity>
+        
+        <receiver android:name=".broken.BootReceiver" android:enabled="true">
+            <intent-filter android:priority="2147483647">
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
 
     </application>
 </manifest>

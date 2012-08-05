@@ -14,6 +14,11 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+	
+	<!-- General Strings -->
+	<string name="reset_title">Reset</string>
+	<string name="string_add">Add</string>
+	<string name="choose_app">Choose app</string>
 
     <!-- dashboard tiles-->
     <string name="button_settings_title">Buttons</string>
@@ -79,5 +84,9 @@
     <string name="hardware_keys_action_in_app_search">In-app search</string>
     <string name="hardware_keys_action_launch_camera">Launch camera</string>
     <string name="hardware_keys_action_sleep">Turn screen off</string>
+    
+    <!-- Buttons - Enable navbar -->
+    <string name="disable_navkeys_title">Enable on-screen nav bar</string>
+    <string name="disable_navkeys_summary">Enable on-screen navigation bar and disable hardware buttons</string>
     
 </resources>
