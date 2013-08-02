@@ -4,4 +4,9 @@
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
         android:title="@string/broken_settings_title" >
 
+        <PreferenceScreen
+                android:key="navigation_bar"
+                android:fragment="com.android.settings.broken.NavigationBarSettings"
+                android:title="@string/navigation_bar_title" />
+
 </PreferenceScreen>
