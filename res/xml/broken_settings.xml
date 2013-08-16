@@ -29,6 +29,11 @@
         android:key="gestures_general_category"
         android:fragment="com.android.settings.broken.GestureSettings"
         android:title="@string/gestures_title" />
+        
+    <PreferenceScreen
+        android:id="@+id/initD"
+		android:fragment="com.android.settings.broken.InitD"
+		android:title="@string/init_d_title" />
 
     <PreferenceScreen
         android:key="lock_screen_general_category"
