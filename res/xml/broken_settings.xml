@@ -26,4 +26,10 @@
                 android:summary="@string/app_circle_sidebar_summary_real"
                 android:fragment="com.android.settings.broken.AppCircleSidebar" />
 
+        <PreferenceScreen
+				android:id="@+id/initD"
+				android:fragment="com.android.settings.broken.InitD"
+				android:title="@string/init_d_title"
+				android:summary="@string/header_summary_init_d" />
+
 </PreferenceScreen>
