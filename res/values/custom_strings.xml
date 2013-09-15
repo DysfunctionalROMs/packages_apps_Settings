@@ -407,4 +407,7 @@
     <string name="power_menu_silent_title">Sound mode</string>
     <string name="power_menu_silent_summary">Enable to show the sound mode toggle</string>
     
+    <!-- Restart SystemUI -->
+    <string name="restart_systemui">Restart SystemUI</string>
+
 </resources>
