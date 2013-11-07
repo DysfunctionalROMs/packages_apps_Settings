@@ -53,6 +53,9 @@ import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.Log;
 
+import com.android.settings.hardware.DisplayColor;
+import com.android.settings.hardware.DisplayGamma;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -70,6 +73,9 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_DOZE = "doze";
     private static final String KEY_AUTO_BRIGHTNESS = "auto_brightness";
     private static final String KEY_AUTO_ROTATE = "auto_rotate";
+
+    private static final String KEY_DISPLAY_COLOR = "color_calibration";
+    private static final String KEY_DISPLAY_GAMMA = "gamma_tuning";
 
     private static final int DLG_GLOBAL_CHANGE_WARNING = 1;
 
@@ -162,8 +168,15 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                     return true;
                 }
             });
-        } else {
-            removePreference(KEY_AUTO_ROTATE);
+        }
+
+        mScreenColorSettings = (PreferenceScreen) findPreference(KEY_SCREEN_COLOR_SETTINGS);
+
+        if (!DisplayColor.isSupported()) {
+            getPreferenceScreen().removePreference(findPreference(KEY_DISPLAY_COLOR));
+        }
+        if (!DisplayGamma.isSupported()) {
+            getPreferenceScreen().removePreference(findPreference(KEY_DISPLAY_GAMMA));
         }
     }
 

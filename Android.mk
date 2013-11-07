@@ -25,6 +25,9 @@ LOCAL_PROGUARD_FLAG_FILES := proguard.flags
 LOCAL_AAPT_INCLUDE_ALL_RESOURCES := true
 
 include frameworks/opt/setupwizard/navigationbar/common.mk
+
+LOCAL_JAVA_LIBRARIES += org.cyanogenmod.hardware
+
 include $(BUILD_PACKAGE)
 
 # Use the following include to make our test apk.

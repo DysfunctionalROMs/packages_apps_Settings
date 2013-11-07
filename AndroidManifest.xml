@@ -80,6 +80,8 @@
             android:supportsRtl="true"
             android:allowBackup="false">
 
+        <uses-library android:name="org.cyanogenmod.hardware" required="false" />
+
         <!-- Settings -->
 
         <activity android:name="Settings"
