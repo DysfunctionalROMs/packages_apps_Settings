@@ -40,7 +40,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.android.settings.R;
-import com.android.settings.broken.R;
 import com.android.settings.broken.Utils;
 
 import com.android.internal.util.cm.QSUtils;
@@ -72,9 +71,9 @@ public class QSTiles extends Fragment implements
     @Override
     public void onPrepareOptionsMenu(Menu menu) {
         super.onPrepareOptionsMenu(menu);
-        final MenuItem launchhide = menu.findItem(R.id.action_launchhide);
-        if (launchhide != null) {
-            launchhide.setVisible(false);
+        final MenuItem search = menu.findItem(R.id.search);
+        if (search != null) {
+            search.setVisible(false);
         }
     }
 

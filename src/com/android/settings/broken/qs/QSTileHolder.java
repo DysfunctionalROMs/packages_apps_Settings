@@ -20,7 +20,6 @@ import android.content.Context;
 import com.android.internal.util.cm.QSConstants;
 import com.android.internal.util.cm.QSUtils;
 import com.android.settings.R;
-import com.android.settings.broken.R;
 
 /**
  * This class holds the icon, the name - or the string the user sees,
