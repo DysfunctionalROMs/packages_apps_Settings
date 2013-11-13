@@ -26,7 +26,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.android.settings.R;
-import com.android.settings.broken.R;
 import com.android.settings.broken.Utils;
 
 import java.util.List;

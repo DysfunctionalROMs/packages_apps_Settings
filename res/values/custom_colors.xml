@@ -30,4 +30,5 @@
     <!-- QS -->
     <color name="col_accnt">#ff0288d1</color>
     <color name="list_item_title">#ffeeeeee</color>
+    <color name="cardlayout_bg">#ff424242</color>
 </resources>
