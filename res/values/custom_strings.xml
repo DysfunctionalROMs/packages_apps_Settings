@@ -1630,4 +1630,8 @@
     <string name="keyguard_logo_custom_title">Custom Logo</string>
     <string name="keyguard_logo_custom_summary">Select a custom image for the logo view</string>
     
+    <!-- Font size sample text. This needs to be a very short string, as it is shown in
+    multiple font sizes in a limited amount of space. -->
+    <string name="font_size_sample">Dysfunctional</string>
+    
 </resources>
