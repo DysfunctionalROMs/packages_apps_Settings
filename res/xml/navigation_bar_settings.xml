@@ -4,6 +4,11 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:title="@string/navigation_bar_title">
 
+        <PreferenceScreen
+                android:key="navigation_bar"
+                android:fragment="com.android.settings.terminus.NavBar"
+                android:title="@string/navbar_customization_title" />
+
         <ListPreference
                 android:key="navigation_bar_height"
                 android:dialogTitle="@string/navigation_bar_height"
