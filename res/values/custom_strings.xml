@@ -209,4 +209,7 @@
     <string name="navigation_bar_height_20">20dp</string>
     <string name="navigation_bar_height_0">0dp (hide)</string>
 
+    <!-- SuperSU header name - the app hides itself from launcher based on this resource name being present in com.android.settings -->
+    <string name="supersu_title">SuperSU</string>
+
 </resources>
