@@ -1412,4 +1412,7 @@
     <string name="header_category_broken">Customizations</string>
     <string name="broken_settings_title">Broken Pieces</string>
 
+    <!-- SuperSU header name - the app hides itself from launcher based on this resource name being present in com.android.settings -->
+    <string name="supersu_title">SuperSU</string>
+
 </resources>
