@@ -80,6 +80,7 @@ public class ChooseLockGeneric extends SettingsActivity {
         private static final String KEY_UNLOCK_SET_PIN = "unlock_set_pin";
         private static final String KEY_UNLOCK_SET_PASSWORD = "unlock_set_password";
         private static final String KEY_UNLOCK_SET_PATTERN = "unlock_set_pattern";
+        private static final String KEY_UNLOCK_SET_GESTURE = "unlock_set_gesture";
         private static final int CONFIRM_EXISTING_REQUEST = 100;
         private static final int FALLBACK_REQUEST = 101;
         private static final int ENABLE_ENCRYPTION_REQUEST = 102;
@@ -162,11 +163,15 @@ public class ChooseLockGeneric extends SettingsActivity {
             if (!isUnlockMethodSecure(key) && mLockPatternUtils.isSecure()) {
                 // Show the disabling FRP warning only when the user is switching from a secure
                 // unlock method to an insecure one
-                showFactoryResetProtectionWarningDialog(key);
-                return true;
+                showFactoryResetProtectionWarningDialog(key);               
+			}
+            if (KEY_UNLOCK_SET_GESTURE.equals(key)) {
+                updateUnlockMethodAndFinish(
+                        DevicePolicyManager.PASSWORD_QUALITY_GESTURE_WEAK, false);
             } else {
-                return setUnlockMethod(key);
+            return true;
             }
+            return setUnlockMethod(key);
         }
 
         /**
@@ -450,7 +455,20 @@ public class ChooseLockGeneric extends SettingsActivity {
             quality = upgradeQuality(quality, null);
 
             final Context context = getActivity();
-            if (quality >= DevicePolicyManager.PASSWORD_QUALITY_NUMERIC) {
+            if (quality == DevicePolicyManager.PASSWORD_QUALITY_GESTURE_WEAK) {
+                Intent intent = new Intent().setClass(getActivity(), ChooseLockGesture.class);
+                intent.putExtra(CONFIRM_CREDENTIALS, false);
+                intent.putExtra(LockPatternUtils.LOCKSCREEN_BIOMETRIC_WEAK_FALLBACK,
+                        isFallback);
+                if (isFallback) {
+                    startActivityForResult(intent, FALLBACK_REQUEST);
+                    return;
+                } else {
+                    mFinishPending = true;
+                    intent.addFlags(Intent.FLAG_ACTIVITY_FORWARD_RESULT);
+                    startActivity(intent);
+                }
+            } else if (quality >= DevicePolicyManager.PASSWORD_QUALITY_NUMERIC) {
                 int minLength = mDPM.getPasswordMinimumLength(null);
                 if (minLength < MIN_PASSWORD_LENGTH) {
                     minLength = MIN_PASSWORD_LENGTH;
