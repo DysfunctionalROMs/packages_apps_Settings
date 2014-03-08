@@ -823,7 +823,7 @@
     </string-array>
 
     <!-- Names of categories of app ops tabs - extension of AOSP -->
-    <string-array name="app_ops_categories" translatable="false">
+    <string-array name="app_ops_categories_cm" translatable="false">
         <item>@string/app_ops_categories_location</item>
         <item>@string/app_ops_categories_personal</item>
         <item>@string/app_ops_categories_messaging</item>

@@ -132,7 +132,7 @@ public class AppOpsSummary extends InstrumentedFragment {
         mContentContainer = container;
         mRootView = rootView;
 
-        mPageNames = getResources().getTextArray(R.array.app_ops_categories);
+        mPageNames = getResources().getTextArray(R.array.app_ops_categories_cm);
 
         int defaultTab = -1;
         Bundle bundle = getArguments();
