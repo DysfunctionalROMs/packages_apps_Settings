@@ -31,6 +31,14 @@
     </PreferenceCategory>
     
         <PreferenceScreen
+            android:title="@string/lockscreen_targets_message"
+            android:summary="@string/lockscreen_targets_summary" >
+            <intent
+                android:targetPackage="com.android.systemui"
+                android:targetClass="com.android.systemui.cm.LockscreenShortcutsActivity" />
+        </PreferenceScreen>
+    
+        <PreferenceScreen
                  android:key="lockscreen_shortcuts"
                  android:fragment="com.android.settings.broken.dslv.ActionListViewSettings"
                  android:summary="@string/lockscreen_shortcuts_summary"
