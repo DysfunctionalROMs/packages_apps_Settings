@@ -34,6 +34,12 @@
         android:fragment="com.android.settings.slim.PieControl"
         android:title="@string/pie_control_title" />
 
+    <PreferenceScreen
+                android:id="@+id/app_circle_sidebar"
+                android:title="@string/app_circle_bar_title"
+                android:summary="@string/app_circle_sidebar_summary_real"
+                android:fragment="com.android.settings.broken.AppCircleSidebar" />
+
     <!-- DeviceHandler device specific screen off gesture settings -->
     <Preference
         android:key="screen_off_gesture_settings"
