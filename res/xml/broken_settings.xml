@@ -5,6 +5,12 @@
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings" >
         <PreferenceScreen android:layout="@layout/brokenpieces" android:key="od_brokenpieces" />
         
+    <PreferenceScreen
+                android:id="@+id/app_circle_sidebar"
+                android:title="@string/app_circle_bar_title"
+                android:summary="@string/app_circle_sidebar_summary_real"
+                android:fragment="com.android.settings.broken.AppCircleSidebar" />
+        
     <!-- Broken Walls -->
     <PreferenceScreen
            android:id="@+id/brokenwalls"
