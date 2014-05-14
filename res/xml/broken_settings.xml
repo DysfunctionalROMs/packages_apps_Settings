@@ -20,4 +20,10 @@
                 android:persistent="false"
                 android:fragment="com.android.settings.terminus.VolumeKeys" />
 
+        <PreferenceScreen
+                android:id="@+id/app_circle_sidebar"
+                android:title="@string/app_circle_bar_title"
+                android:summary="@string/app_circle_sidebar_summary_real"
+                android:fragment="com.android.settings.terminus.AppCircleSidebar" />
+
 </PreferenceScreen>
