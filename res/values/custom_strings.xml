@@ -402,4 +402,8 @@
     <!-- QS section -->
     <string name="display_category_qs">Quick Settings</string>
 
+    <!-- Broken Extra Info -->
+    <string name="brokenextrainfo">Extra information</string>
+    <string name="brokenextrainfo_summary">Display extra info for cpu, display, etc</string>
+
 </resources>
