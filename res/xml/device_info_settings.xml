@@ -34,6 +34,7 @@
                     android:targetClass="@string/additional_system_update_menu" />
         </PreferenceScreen>
         
+        <!-- About Broken -->
         <PreferenceScreen
                android:key="about_broken"
                android:fragment="com.android.settings.broken.BrokenAbout"
@@ -46,19 +47,16 @@
                 android:fragment="com.android.settings.deviceinfo.Status">
         </PreferenceScreen>
 
-        <!-- Manual -->
-        <PreferenceScreen
-                android:key="manual"
-                android:title="@string/manual">
-            <intent android:action="android.settings.SHOW_MANUAL" />
+        <!-- Broken Extra Info -->
+        <PreferenceScreen android:key="extrainfo"
+                android:title="@string/brokenextrainfo"
+                android:summary="@string/brokenextrainfo_summary">
+            <intent android:action="android.intent.action.MAIN"
+                    android:targetPackage="com.android.settings"
+                    android:targetClass="com.android.settings.broken.extrainfo.MainActivity" />
         </PreferenceScreen>
 
-        <!-- Legal Information -->
-        <PreferenceScreen
-                android:key="container"
-                android:title="@string/legal_information"
-                android:fragment="com.android.settings.LegalSettings" />
-
+        <!-- Regulatory garbage -->
         <PreferenceScreen
                 android:key="regulatory_info"
                 android:title="@string/regulatory_labels">

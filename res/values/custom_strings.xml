@@ -24,5 +24,9 @@
     <!-- About phone screen, Broken version -->
     <string name="broken_version_title">Broken Version</string>
     <string name="broken_version_default">Unknown</string>
-    
+
+    <!-- Broken Extra Info -->
+    <string name="brokenextrainfo">Extra information</string>
+    <string name="brokenextrainfo_summary">Display extra info for cpu, display, etc</string>
+
 </resources>
