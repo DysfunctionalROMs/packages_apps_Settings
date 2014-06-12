@@ -1429,4 +1429,8 @@
     <string name="trigger_bottom_title">Trigger height</string>
     <string name="trigger_bottom_summary">Adjust the height of trigger area</string>
 
+    <!-- Broken Extra Info -->
+    <string name="brokenextrainfo">Extra information</string>
+    <string name="brokenextrainfo_summary">Display extra info for cpu, display, etc</string>
+
 </resources>
