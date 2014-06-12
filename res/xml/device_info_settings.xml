@@ -27,6 +27,15 @@
                     android:targetClass="com.android.settings.deviceinfo.Status" />
         </PreferenceScreen>
 
+        <!-- Broken Extra Info -->
+        <PreferenceScreen android:key="extrainfo"
+                android:title="@string/brokenextrainfo"
+                android:summary="@string/brokenextrainfo_summary">
+            <intent android:action="android.intent.action.MAIN"
+                    android:targetPackage="com.android.settings"
+                    android:targetClass="com.android.settings.broken.extrainfo.MainActivity" />
+        </PreferenceScreen>
+
         <!-- Legal Information -->
         <PreferenceScreen
                 android:key="container"

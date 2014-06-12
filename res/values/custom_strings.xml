@@ -301,4 +301,8 @@
     <string name="advanced_reboot_hide_on_keyguard">Hide on lock screen</string>
     <string name="advanced_reboot_show_always">Show always</string>
 
+    <!-- Broken Extra Info -->
+    <string name="brokenextrainfo">Extra information</string>
+    <string name="brokenextrainfo_summary">Display extra info for cpu, display, etc</string>
+
 </resources>
