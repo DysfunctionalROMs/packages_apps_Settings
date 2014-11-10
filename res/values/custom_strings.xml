@@ -445,4 +445,10 @@
     <string name="hfm_dialog_success">/4 hosts sources successfully applied!</string>
     <string name="hfm_dialog_conn_error">Error: No network connectivity</string>
 
+    <!-- Statusbar native battery percent -->
+    <string name="general_string">General</string>
+    <string name="status_bar_title">Status bar</string>
+    <string name="status_bar_native_battery_percentage_title">Battery percentage</string>
+    <string name="status_bar_native_battery_percentage_summary">Show hidden percentage</string>
+
 </resources>
