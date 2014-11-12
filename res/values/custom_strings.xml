@@ -158,7 +158,7 @@
     <string name="app_ops_labels_delete_call_log">Delete call log</string>
     <string name="app_ops_labels_data_change">Data change</string>
     <string name="app_ops_labels_wake_up">Wake up</string>
-   <string name="app_ops_labels_su">Root access</string>
+    <string name="app_ops_labels_su">Root access</string>
 
     <!-- App ops categories -->
     <string name="app_ops_categories_location">Location</string>
@@ -186,4 +186,7 @@
     <string name="build_date">Broken Build Date</string>
     <string name="build_date_default">unknown</string>
 
+    <!-- Developer options - kill app long press back -->
+    <string name="kill_app_longpress_back">Kill app back button</string>
+    <string name="kill_app_longpress_back_summary">Kill the foreground app by long-pressing the back key</string>
 </resources>
