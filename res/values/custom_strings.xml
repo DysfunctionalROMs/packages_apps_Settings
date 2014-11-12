@@ -182,4 +182,8 @@
     <string name="app_ops_reset_confirm_title">Confirm counters reset</string>
     <string name="app_ops_reset_confirm_mesg">Are you sure you wish to reset counters?</string>
 
+    <!-- About phone screen, build date of ROM -->
+    <string name="build_date">Broken Build Date</string>
+    <string name="build_date_default">unknown</string>
+
 </resources>
