@@ -16,6 +16,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <color name="setting_separator">#ff484848</color>
     <color name="extension_list_item_color">#ff999999</color>
+    <color name="floating_action_button_touch_tint">#80ffffff</color>
 
     <!-- DSLV colors -->
     <color name="dslv_icon_dark">#ff009688</color>
