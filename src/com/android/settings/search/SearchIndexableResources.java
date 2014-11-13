@@ -18,6 +18,7 @@ package com.android.settings.search;
 
 import android.provider.SearchIndexableResource;
 
+import com.android.settings.broken.MainSettings;
 import com.android.settings.DataUsageSummary;
 import com.android.settings.DateTimeSettings;
 import com.android.settings.DevelopmentSettings;
@@ -116,6 +117,13 @@ public final class SearchIndexableResources {
                         NO_DATA_RES_ID,
                         WirelessSettings.class.getName(),
                         R.drawable.ic_settings_more));
+                        
+        sResMap.put(MainSettings.class.getName(),
+                new SearchIndexableResource(
+                        Ranking.getRankForClassName(MainSettings.class.getName()),
+                        NO_DATA_RES_ID,
+                        MainSettings.class.getName(),
+                        R.drawable.ic_broken_theme_settings));
 
         sResMap.put(HomeSettings.class.getName(),
                 new SearchIndexableResource(

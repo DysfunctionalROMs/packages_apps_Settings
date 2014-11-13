@@ -1497,4 +1497,7 @@
     <string name="dm_init_d_error">It looks like init.d isn\'t setup properly. Please contact your ROM developer.</string>
     <string name="db_exit">Exit</string>
 
+    <string name="category_general_title">Tweaks</string>
+    <string name="broken_settings_title">BrokenOs</string>
+
 </resources>
