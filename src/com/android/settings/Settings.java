@@ -18,6 +18,7 @@ package com.android.settings;
 
 import com.android.settings.applications.AppOpsSummary;
 import com.android.settings.broken.qs.QSTiles;
+import com.android.settings.blacklist.BlacklistSettings;
 
 /**
  * Top-level Settings activity
@@ -99,12 +100,11 @@ public class Settings extends SettingsActivity {
     public static class AppNotificationSettingsActivity extends SettingsActivity { /* empty */ }
     public static class OtherSoundSettingsActivity extends SettingsActivity { /* empty */ }
     public static class QuickLaunchSettingsActivity extends SettingsActivity { /* empty */ }
-
-    public static class MainSettingsActivity extends SettingsActivity { /* empty */ }
-    
+    public static class MainSettingsActivity extends SettingsActivity { /* empty */ }    
     public static class TopLevelSettings extends SettingsActivity { /* empty */ }
     public static class ApnSettingsActivity extends SettingsActivity { /* empty */ }
     public static class QSTilesSettingsActivity extends SettingsActivity { /* empty */ }
     public static class ExpandedDesktopSettingsActivity extends SettingsActivity { /* empty */ }
     public static class LiveDisplayActivity extends SettingsActivity { /* empty */ }
+    public static class BlacklistSettingsActivity extends SettingsActivity { /* empty */ }
 }

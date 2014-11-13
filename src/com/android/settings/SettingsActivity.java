@@ -72,6 +72,7 @@ import com.android.settings.applications.ExpandedDesktopPreferenceFragment;
 import com.android.settings.applications.InstalledAppDetails;
 import com.android.settings.applications.ManageApplications;
 import com.android.settings.applications.ProcessStatsUi;
+import com.android.settings.blacklist.BlacklistSettings;
 import com.android.settings.bluetooth.BluetoothSettings;
 import com.android.settings.broken.MainSettings;
 import com.android.settings.dashboard.DashboardCategory;
@@ -312,7 +313,8 @@ public class SettingsActivity extends Activity
             MainSettings.class.getName(),
 	        QSTiles.class.getName(),
             ExpandedDesktopPreferenceFragment.class.getName(),
-            LiveDisplay.class.getName()
+            LiveDisplay.class.getName(),
+            BlacklistSettings.class.getName()
     };
 
     private static final String[] LIKE_SHORTCUT_INTENT_ACTION_ARRAY = {
