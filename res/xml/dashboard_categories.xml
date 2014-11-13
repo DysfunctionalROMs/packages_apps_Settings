@@ -80,7 +80,16 @@
         <dashboard-tile
                 android:id="@+id/broken_settings"
                 android:title="@string/broken_settings_title"
-                android:fragment="com.android.settings.broken.BrokenSettings" 
+                android:fragment="com.android.settings.broken.BrokenSettings"
+                android:icon="@drawable/ic_broken_theme_settings"
+                />
+
+        <!-- Broken Main -->
+        <dashboard-tile
+                android:id="@+id/main_settings"
+                android:title="@string/broken_settings_title"
+                android:fragment="com.android.settings.broken.MainSettings"
+                android:icon="@drawable/ic_broken_theme_settings"
                 />
 
     </dashboard-category>
