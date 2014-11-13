@@ -93,6 +93,20 @@
 
     </dashboard-category>
 
+    <!-- CUSTOMIZATIONS -->
+    <dashboard-category
+            android:id="@+id/broken_section"
+            android:title="@string/header_category_broken" >
+
+        <!-- Broken TWEAKS -->
+        <dashboard-tile
+                android:id="@+id/broken_settings"
+                android:title="@string/broken_settings_title"
+                android:fragment="com.android.settings.broken.BrokenSettings" 
+                />
+
+    </dashboard-category>
+
     <!-- DEVICE -->
     <dashboard-category
             android:id="@+id/device_section"

@@ -1408,4 +1408,8 @@
     <string name="build_date">Broken Build Date</string>
     <string name="build_date_default">unknown</string>
 
+    <!-- Broken TWEAKS -->
+    <string name="header_category_broken">Customizations</string>
+    <string name="broken_settings_title">Broken Pieces</string>
+
 </resources>
