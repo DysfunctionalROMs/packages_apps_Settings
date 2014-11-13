@@ -2019,6 +2019,10 @@
 
         <activity android:name=".cyanogenmod.PrivacySettings" />
 
+        <!-- BROKEN TWEAKS START -->
+        <activity android:name=".broken.BrokenSettings" />
+        <!-- BROKEN TWEAKS END -->
+
         <receiver android:name=".widget.SettingsAppWidgetProvider"
                 android:label="@string/gadget_title"
                 android:exported="false"
