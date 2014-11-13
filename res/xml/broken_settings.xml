@@ -35,6 +35,13 @@
                 android:summary="@string/appops_summary"
                 android:fragment="com.android.settings.applications.AppOpsCategory" />
 
+        <!-- Button Settings -->
+        <PreferenceScreen
+                android:id="@+id/button_settings"
+                android:title="@string/button_pref_title"
+                android:summary="@string/buttons_summary"
+                android:fragment="com.android.settings.ButtonSettings" />
+
         <!-- InitD -->
         <PreferenceScreen
                 android:id="@+id/initD"
