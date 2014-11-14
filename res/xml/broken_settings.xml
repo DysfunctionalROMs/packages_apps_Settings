@@ -37,5 +37,12 @@
 				android:fragment="com.android.settings.broken.InitD"
 				android:title="@string/init_d_title"
 				android:summary="@string/header_summary_init_d" />
+				
+		<PreferenceScreen
+				android:id="hfm_settings"
+				android:fragment="com.android.settings.broken.hfm.HfmSettings"
+				android:title="@string/hfm_pref_screen_title"
+				android:summary="@string/header_summary_hfm_settings" />
+
 
 </PreferenceScreen>
