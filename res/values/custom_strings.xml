@@ -425,6 +425,14 @@
     <string name="gamma_tuning_contrast">Contrast</string>
     <string name="gamma_tuning_brightness">Brightness</string>
     <string name="gamma_tuning_saturation">Saturation</string>
+    <string name="auto_brightness_reset_button">Reset</string>
+
+    <!--- Advanced Settings -->
+    <string name="advanced_settings">Advanced settings</string>
+    <string name="advanced_settings_summary">Enable more settings options</string>
+
+    <!--- Tap To Wake -->
+    <string name="double_tap_to_wake_title">Double-tap to wake</string>
     
    <!-- Host File Manager -->
     <string name="hfm_disable_ads_title">Disable Ads</string>
