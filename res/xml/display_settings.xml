@@ -82,6 +82,16 @@
                 android:title="@string/lcd_density"
                 android:persistent="false" />
 
+        <PreferenceScreen
+                android:key="advanced_display_prefs"
+                android:title="@string/advanced_settings">
+
+                <SwitchPreference
+                    android:key="double_tap_wake_gesture"
+                    android:title="@string/double_tap_to_wake_title" />
+                    
+        </PreferenceScreen>
+
         <!-- DeviceHandler device specific screen off gesture settings -->
         <Preference
                 android:key="screen_off_gesture_settings"

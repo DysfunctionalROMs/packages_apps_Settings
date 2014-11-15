@@ -1545,4 +1545,11 @@
     <string name="broken_type">Broken Build Type</string>
     <string name="broken_type_default">Unknown</string>
     
+    <!--- Advanced Settings -->
+    <string name="advanced_settings">Advanced settings</string>
+    <string name="advanced_settings_summary">Enable more settings options</string>
+
+    <!--- Tap To Wake -->
+    <string name="double_tap_to_wake_title">Double-tap to wake</string>
+
 </resources>
