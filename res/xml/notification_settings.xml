@@ -130,6 +130,13 @@
                     android:name="classname"
                     android:value="com.android.settings.Settings$NotificationAppListActivity" />
         </PreferenceScreen>
+        
+        <!-- Advanced options -->
+        <PreferenceScreen
+                android:key="advanced_sound_settings"
+                android:title="@string/advanced_sound_title"
+                android:persistent="false"
+                android:fragment="com.android.settings.broken.SoundSettings" />
 
     </PreferenceCategory>
 
