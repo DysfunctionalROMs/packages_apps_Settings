@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.cyanogenmod;
+package com.android.settings.broken;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -26,6 +26,9 @@ import android.util.Log;
 
 import com.android.settings.ButtonSettings;
 import com.android.settings.DisplaySettings;
+import com.android.settings.hardware.VibratorIntensity;
+import com.android.settings.inputmethod.InputMethodAndLanguageSettings;
+import com.android.settings.livedisplay.DisplayGamma;
 import com.android.settings.R;
 import com.android.settings.Utils;
 import com.android.settings.location.LocationSettings;
@@ -41,6 +44,9 @@ public class BootReceiver extends BroadcastReceiver {
     public void onReceive(Context ctx, Intent intent) {
         /* Restore the hardware tunable values */
         DisplaySettings.restore(ctx);
+        DisplayGamma.restore(ctx);
         ButtonSettings.restoreKeyDisabler(ctx);
+        VibratorIntensity.restore(ctx);
+        InputMethodAndLanguageSettings.restore(ctx);
     }
 }

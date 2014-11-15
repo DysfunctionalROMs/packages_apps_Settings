@@ -23,11 +23,13 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.content.res.Resources;
 import android.database.ContentObserver;
+import android.hardware.CmHardwareManager;
 import android.media.AudioManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Vibrator;
+import android.preference.Preference;
 import android.provider.SearchIndexableResource;
 import android.provider.Settings.Global;
 import android.provider.Settings.System;
@@ -37,6 +39,7 @@ import android.util.Log;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
+import com.android.settings.hardware.VibratorIntensity;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.search.Indexable;
 
@@ -72,6 +75,7 @@ public class OtherSoundSettings extends SettingsPreferenceFragment implements In
     private static final String KEY_VIBRATE_ON_TOUCH = "vibrate_on_touch";
     private static final String KEY_DOCK_AUDIO_MEDIA = "dock_audio_media";
     private static final String KEY_EMERGENCY_TONE = "emergency_tone";
+    private static final String KEY_VIBRATION_INTENSITY = "vibration_intensity";
 
     private static final String KEY_VOLUME_STEPS_ALARM = "volume_steps_alarm";
     private static final String KEY_VOLUME_STEPS_DTMF = "volume_steps_dtmf";
@@ -352,6 +356,14 @@ public class OtherSoundSettings extends SettingsPreferenceFragment implements In
 
         for (SettingPref pref : PREFS) {
             pref.init(this);
+        }
+        CmHardwareManager cmHardwareManager =
+                (CmHardwareManager) getSystemService(Context.CMHW_SERVICE);
+            if (!cmHardwareManager.isSupported(CmHardwareManager.FEATURE_VIBRATOR)) {
+                Preference preference = findPreference(KEY_VIBRATION_INTENSITY);
+            if (preference != null) {
+                getPreferenceScreen().removePreference(preference);
+            }
         }
     }
 

@@ -43,10 +43,6 @@
     <color name="dslv_icon_dark">#ff009688</color>
     <color name="dslv_float_cackground_color">#ffe1e1e0</color>
 
-    <!-- Screen color settings 
-    <color name="screencolor_background">#50000000</color>
-    <drawable name="transparent_background">#00000000</drawable> -->
-
     <!-- Gesture Anywhere 
     <color name="ga_gesture_color">#66CD00</color> -->
 
@@ -59,5 +55,10 @@
     <!-- QS tiles -->
     <color name="qs_tile_tint_color">#FF009587</color>
     <color name="exposed_qs_tile_text">#0d0d0d</color>
+
+    <color name="floating_action_button_touch_tint">#80ffffff</color>
+
+    <color name="screencolor_background">#50000000</color>
+    <drawable name="transparent_background">#00000000</drawable>
 
 </resources>
