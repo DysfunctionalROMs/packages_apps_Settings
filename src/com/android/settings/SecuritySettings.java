@@ -212,6 +212,14 @@ public class SecuritySettings extends SettingsPreferenceFragment
         // Add package manager to check if features are available
         PackageManager pm = getActivity().getPackageManager();
 
+        // Add options for device encryption
+        mIsPrimary = UserHandle.myUserId() == UserHandle.USER_OWNER;
+
+        if (mIsPrimary) {
+            // App security settings
+            addPreferencesFromResource(R.xml.security_settings_app_broken);
+        }
+
         // Add options for lock/unlock screen
         final int resid = getResIdForLockUnlockScreen(getActivity(), mLockPatternUtils);
         addPreferencesFromResource(resid);
