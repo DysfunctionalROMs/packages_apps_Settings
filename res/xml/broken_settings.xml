@@ -15,9 +15,9 @@
                 android:title="@string/navigation_bar_title" />
 
         <PreferenceScreen
-                android:key="advanced_sound_settings"
-                android:title="@string/advanced_sound_title"
+                android:key="volume_keys_settings"
+                android:title="@string/volume_keys_title"
                 android:persistent="false"
-                android:fragment="com.android.settings.terminus.SoundSettings" />
+                android:fragment="com.android.settings.terminus.VolumeKeys" />
 
 </PreferenceScreen>

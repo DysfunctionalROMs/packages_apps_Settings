@@ -35,7 +35,7 @@ import com.android.settings.SettingsPreferenceFragment;
 
 public class SoundSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
-    private static final String TAG = "SoundSettings";
+    private static final String TAG = "VolumeKeys";
 
     private static final String KEY_VOL_MEDIA = "volume_keys_control_media_stream";
 
@@ -45,7 +45,7 @@ public class SoundSettings extends SettingsPreferenceFragment implements
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addPreferencesFromResource(R.xml.sound_settings);	
+        addPreferencesFromResource(R.xml.volume_keys);
 
         mVolumeKeysControlMedia = (SwitchPreference) findPreference(KEY_VOL_MEDIA);
         mVolumeKeysControlMedia.setChecked(Settings.System.getInt(getContentResolver(),
