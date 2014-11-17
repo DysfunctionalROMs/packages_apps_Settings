@@ -270,6 +270,8 @@
 
     <!-- Volume Keys settings -->
     <string name="volume_keys_title">Volume keys</string>
+    <!-- Wakeup category -->
+    <string name="display_category_wakeup_options_title">Wakeup options</string>
     <!-- Volume Keys Media Control -->
     <string name="volume_keys_control_media_stream">Media control</string>
     <string name="volume_keys_control_media_stream_summary">Volume keys control media volume rather than notifications</string>
