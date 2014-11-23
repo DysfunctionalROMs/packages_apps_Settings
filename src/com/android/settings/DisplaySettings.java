@@ -199,7 +199,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             removePreference(KEY_CAMERA_DOUBLE_TAP_POWER_GESTURE);
         }
 
-        if (RotationPolicy.isRotationLockToggleVisible(activity)) {
+        if (RotationPolicy.isRotationSupported(activity)) {
             mDisplayRotationPreference = (PreferenceScreen) findPreference(KEY_DISPLAY_ROTATION);
         } else {
             removePreference(KEY_DISPLAY_ROTATION);
