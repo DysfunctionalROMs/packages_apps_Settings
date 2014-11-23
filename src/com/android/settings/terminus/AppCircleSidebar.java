@@ -40,6 +40,7 @@ import android.text.TextUtils;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
+import com.android.settings.terminus.SeekBarPreference;
 import com.android.settings.terminus.lsn.AppMultiSelectListPreference;
 import com.android.internal.util.terminus.DeviceUtils;
 
@@ -55,8 +56,16 @@ public class AppCircleSidebar extends SettingsPreferenceFragment implements
 
     private static final String KEY_ENABLE_APPCIRCLE = "enable_app_circle_bar";
 
+    private static final String KEY_TRIGGER_WIDTH = "trigger_width";
+    private static final String KEY_TRIGGER_TOP = "trigger_top";
+    private static final String KEY_TRIGGER_BOTTOM = "trigger_bottom";
+
     private AppMultiSelectListPreference mIncludedAppCircleBar;
     private SwitchPreference mEnableAppCircleBar;
+
+    private SeekBarPreference mTriggerWidthPref;
+    private SeekBarPreference mTriggerTopPref;
+    private SeekBarPreference mTriggerBottomPref;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -76,12 +85,42 @@ public class AppCircleSidebar extends SettingsPreferenceFragment implements
         mEnableAppCircleBar.setChecked((Settings.System.getInt(getActivity()
                 .getApplicationContext().getContentResolver(),
                 Settings.System.ENABLE_APP_CIRCLE_BAR, 0) == 1));
+
+        mTriggerWidthPref = (SeekBarPreference) findPreference(KEY_TRIGGER_WIDTH);
+        mTriggerWidthPref.setValue(Settings.System.getInt(getContentResolver(),
+                Settings.System.APP_CIRCLE_BAR_TRIGGER_WIDTH, 10));
+        mTriggerWidthPref.setOnPreferenceChangeListener(this);
+
+        mTriggerTopPref = (SeekBarPreference) findPreference(KEY_TRIGGER_TOP);
+        mTriggerTopPref.setValue(Settings.System.getInt(getContentResolver(),
+                Settings.System.APP_CIRCLE_BAR_TRIGGER_TOP, 0));
+        mTriggerTopPref.setOnPreferenceChangeListener(this);
+
+        mTriggerBottomPref = (SeekBarPreference) findPreference(KEY_TRIGGER_BOTTOM);
+        mTriggerBottomPref.setValue(Settings.System.getInt(getContentResolver(),
+                Settings.System.APP_CIRCLE_BAR_TRIGGER_HEIGHT, 100));
+        mTriggerBottomPref.setOnPreferenceChangeListener(this);
     }
 
     public boolean onPreferenceChange(Preference preference, Object objValue) {
         ContentResolver resolver = getActivity().getContentResolver();
         if (preference == mIncludedAppCircleBar) {
             storeIncludedApps((Set<String>) objValue);
+        } else if (preference == mTriggerWidthPref) {
+            int width = ((Integer)objValue).intValue();
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.APP_CIRCLE_BAR_TRIGGER_WIDTH, width);
+            return true;
+        } else if (preference == mTriggerTopPref) {
+            int top = ((Integer)objValue).intValue();
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.APP_CIRCLE_BAR_TRIGGER_TOP, top);
+            return true;
+        } else if (preference == mTriggerBottomPref) {
+            int bottom = ((Integer)objValue).intValue();
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.APP_CIRCLE_BAR_TRIGGER_HEIGHT, bottom);
+            return true;
         } else {
             return false;
         }
@@ -99,16 +138,6 @@ public class AppCircleSidebar extends SettingsPreferenceFragment implements
             return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
     }
 
     private Set<String> getIncludedApps() {
@@ -130,5 +159,19 @@ public class AppCircleSidebar extends SettingsPreferenceFragment implements
         }
         Settings.System.putString(getActivity().getContentResolver(),
                 Settings.System.WHITELIST_APP_CIRCLE_BAR, builder.toString());
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        Settings.System.putInt(getContentResolver(),
+                Settings.System.APP_CIRCLE_BAR_SHOW_TRIGGER, 0);
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        Settings.System.putInt(getContentResolver(),
+                Settings.System.APP_CIRCLE_BAR_SHOW_TRIGGER, 1);
     }
 }
