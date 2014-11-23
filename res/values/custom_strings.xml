@@ -1406,10 +1406,17 @@
     <string name="nfc_title_category">NFC</string>
 
     <!-- App Circle Sidebar -->
-    <string name="app_circle_bar_title">App sidebar</string>
+    <string name="app_circle_bar_title">App Circle Sidebar</string>
     <string name="app_circle_sidebar_summary_real">Launch apps faster from a sidebar and open multiple apps on one screen to multitask</string>
     <string name="app_circle_bar_summary">Show app launcher after touching right side of screen</string>
     <string name="app_circle_bar_included_apps_title">Included apps</string>
     <string name="app_circle_bar_included_apps_summary">Apps will show in app sidebar</string>
+    <!-- App Circle trigger -->
+    <string name="trigger_width_title">Trigger width</string>
+    <string name="trigger_width_summary">Adjust the width of trigger area</string>
+    <string name="trigger_top_title">Trigger position</string>
+    <string name="trigger_top_summary">Adjust the position of trigger area</string>
+    <string name="trigger_bottom_title">Trigger height</string>
+    <string name="trigger_bottom_summary">Adjust the height of trigger area</string>
 
 </resources>
