@@ -25,5 +25,10 @@
         <item quantity="one">1 tile configured</item>
         <item quantity="other">%d tiles configured</item>
     </plurals>
+    
+    <plurals name="app_ops_count">
+        <item quantity="one">once</item>
+        <item quantity="other">%d times</item>
+    </plurals>
 
 </resources>
