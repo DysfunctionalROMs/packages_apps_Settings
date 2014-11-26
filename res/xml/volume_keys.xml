@@ -31,6 +31,10 @@
 
         </PreferenceCategory>
 
+        <PreferenceCategory
+                android:key="category_media_options"
+                android:title="@string/media_options_title" >
+
                 <SwitchPreference
                         android:key="volume_keys_control_media_stream"
                         android:title="@string/volume_keys_control_media_stream"
@@ -43,5 +47,12 @@
                         android:title="@string/button_swap_volume_buttons_title"
                         android:summary="@string/button_swap_volume_buttons_summary" 
                         android:defaultValue="false" />                
+
+                <SwitchPreference
+                        android:key="volume_key_adjust_sound"
+                        android:title="@string/volume_key_adjust_sound_title"
+                        android:summary="@string/volume_key_adjust_sound_summary" />
+
+        </PreferenceCategory>
 
 </PreferenceScreen>

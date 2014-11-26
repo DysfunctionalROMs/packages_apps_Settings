@@ -43,10 +43,15 @@ public class VolumeKeys extends SettingsPreferenceFragment implements
     private static final String KEY_VOLUME_WAKE = "pref_volume_wake";
     private static final String PREF_VOLBTN_SWAP = "button_swap_volume_buttons";
 
+    // volume adjust sound
+    private static final String KEY_MEDIA_CATEGORY = "category_wakeup_options";
+    private static final String VOLUME_KEY_ADJUST_SOUND = "volume_key_adjust_sound";
+
     private PreferenceCategory mWakeUpOptions;
     private SwitchPreference mVolumeKeysControlMedia;
     private SwitchPreference mVolumeWake;
     private SwitchPreference mVolBtnSwap;
+    private SwitchPreference mVolumeKeyAdjustSound;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -54,11 +59,13 @@ public class VolumeKeys extends SettingsPreferenceFragment implements
 
         addPreferencesFromResource(R.xml.volume_keys);
 
+        // volume control media
         mVolumeKeysControlMedia = (SwitchPreference) findPreference(KEY_VOL_MEDIA);
         mVolumeKeysControlMedia.setChecked(Settings.System.getInt(getContentResolver(),
                 Settings.System.VOLUME_KEYS_CONTROL_MEDIA_STREAM, 0) != 0);
         mVolumeKeysControlMedia.setOnPreferenceChangeListener(this);
 
+        // volume wake options
         mWakeUpOptions = (PreferenceCategory) getPreferenceScreen().findPreference(KEY_WAKEUP_CATEGORY);
         mVolumeWake = (SwitchPreference) findPreference(KEY_VOLUME_WAKE);
         mVolumeWake.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
@@ -70,6 +77,12 @@ public class VolumeKeys extends SettingsPreferenceFragment implements
         mVolBtnSwap.setChecked(Settings.System.getInt(getContentResolver(),
                 Settings.System.SWAP_VOLUME_BUTTONS_ON_ROTATION, 0) == 1);
         mVolBtnSwap.setOnPreferenceChangeListener(this);
+
+        // volume adjust sound
+        mVolumeKeyAdjustSound = (SwitchPreference) findPreference(VOLUME_KEY_ADJUST_SOUND);
+        mVolumeKeyAdjustSound.setOnPreferenceChangeListener(this);
+        mVolumeKeyAdjustSound.setChecked(Settings.System.getInt(getContentResolver(),
+                VOLUME_KEY_ADJUST_SOUND, 1) != 0);
     }
 
     @Override
@@ -89,8 +102,9 @@ public class VolumeKeys extends SettingsPreferenceFragment implements
             Settings.System.putInt(getContentResolver(),
                     Settings.System.VOLUME_KEYS_CONTROL_MEDIA_STREAM,
                     (Boolean) objValue ? 1 : 0);
+            return true;
         }
-        if (KEY_VOLUME_WAKE.equals(key)) {
+        else if (KEY_VOLUME_WAKE.equals(key)) {
             Settings.System.putInt(getContentResolver(),
                     Settings.System.VOLUME_WAKE_SCREEN,
                     (Boolean) objValue ? 1 : 0);
@@ -100,6 +114,11 @@ public class VolumeKeys extends SettingsPreferenceFragment implements
             Settings.System.putInt(getContentResolver(),
                     Settings.System.SWAP_VOLUME_BUTTONS_ON_ROTATION,
                     value ? 1 : 0);
+        }
+        else if (preference == mVolumeKeyAdjustSound) {
+            boolean value = (Boolean) objValue;
+            Settings.System.putInt(getContentResolver(), VOLUME_KEY_ADJUST_SOUND,
+                    value ? 1: 0);
             return true;
         }
         return true;
