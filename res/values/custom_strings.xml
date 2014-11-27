@@ -384,6 +384,20 @@
     <!-- BitSyko Layers  -->
     <string name="bitsyko_layers">Layers</string>
 
-    
+    <!-- Power menu settings -->
+    <string name="button_power_menu_settings_title">Power menu</string>
+    <string name="button_power_menu_settings_summary">Customize power menu</string>
+    <string name="power_menu_reboot_title">Reboot</string>
+    <string name="power_menu_reboot_summary">Enable to show the reboot button</string>
+    <string name="power_menu_airplane_title">Airplane mode</string>
+    <string name="power_menu_airplane_summary">Enable to show the airplane mode toggle</string>
+    <string name="power_menu_users_title">Users</string>
+    <string name="power_menu_users_summary">Enable to show user buttons</string>
+    <string name="power_menu_settings_title">Settings</string>
+    <string name="power_menu_settings_summary">Enable to show the system settings button</string>
+    <string name="power_menu_lockdown_title">Lock now</string>
+    <string name="power_menu_lockdown_summary">Enable to show the lock now button</string>
+    <string name="power_menu_silent_title">Sound mode</string>
+    <string name="power_menu_silent_summary">Enable to show the sound mode toggle</string>
     
 </resources>

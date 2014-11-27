@@ -79,34 +79,33 @@
         <!-- Broken TWEAKS -->
         <dashboard-tile
                 android:id="@+id/broken_settings"
+                android:icon="@drawable/ic_broken_theme_settings_teal"
                 android:title="@string/broken_brokensettings_title"
-                android:fragment="com.android.settings.broken.BrokenSettings"
-                android:icon="@drawable/ic_broken_theme_settings"
-                />
+                android:fragment="com.android.settings.broken.BrokenSettings" />
 
         <!-- Broken Main -->
         <dashboard-tile
                 android:id="@+id/main_settings"
+                android:icon="@drawable/ic_broken_theme_settings_teal"
                 android:title="@string/broken_othersettings_title"
-                android:fragment="com.android.settings.broken.MainSettings"
-                android:icon="@drawable/ic_broken_theme_settings"
-                />
+                android:fragment="com.android.settings.broken.MainSettings" />
 
         <!-- Kernel Auditor App -->
         <dashboard-tile
                 android:id="@+id/kernel_auditor"
-                android:icon="@drawable/ic_broken_theme_settings"
+                android:icon="@drawable/ic_broken_theme_settings_teal"
                 android:title="@string/performance_settings">
                 <intent
                     android:action="android.intent.action.MAIN"
                     android:targetPackage="com.grarak.kerneladiutor"
                     android:targetClass="com.grarak.kerneladiutor.MainActivity" />
         </dashboard-tile>
+        
 
         <!-- BitSyko Layers App -->
         <dashboard-tile
                 android:id="@+id/bitsyko_layers"
-                android:icon="@drawable/ic_broken_theme_settings"
+                android:icon="@drawable/ic_broken_theme_settings_teal"
                 android:title="@string/bitsyko_layers">     
                 <intent
                     android:action="android.intent.action.MAIN"
@@ -117,8 +116,8 @@
         <!-- BrokenCenter -->
         <dashboard-tile
                 android:id="@+id/broken_center"
-                android:title="@string/broken_center_title"
-                android:icon="@drawable/ic_broken_theme_settings">
+                android:icon="@drawable/ic_broken_theme_settings_teal"
+                android:title="@string/broken_center_title">
                 <intent
                     android:action="android.intent.action.MAIN"
                     android:targetPackage="com.broken.ota"

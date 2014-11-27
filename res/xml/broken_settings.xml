@@ -21,6 +21,12 @@
                 android:fragment="com.android.settings.broken.VolumeKeys" />
 
         <PreferenceScreen
+                android:key="button_power_menu_settings"
+                android:title="@string/button_power_menu_settings_title"
+                android:summary="@string/button_power_menu_settings_summary"
+                android:fragment="com.android.settings.broken.PowerMenuSettings" />
+
+        <PreferenceScreen
                 android:id="@+id/app_circle_sidebar"
                 android:title="@string/app_circle_bar_title"
                 android:summary="@string/app_circle_sidebar_summary_real"
