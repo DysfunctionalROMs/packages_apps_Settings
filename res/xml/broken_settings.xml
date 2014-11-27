@@ -5,6 +5,12 @@
         android:title="@string/broken_settings_title" >
 
         <PreferenceScreen
+                android:key="button_power_menu_settings"
+                android:title="@string/button_power_menu_settings_title"
+                android:summary="@string/button_power_menu_settings_summary"
+                android:fragment="com.android.settings.broken.PowerMenuSettings" />
+
+        <PreferenceScreen
 				android:id="@+id/initD"
 				android:fragment="com.android.settings.broken.InitD"
 				android:title="@string/init_d_title"

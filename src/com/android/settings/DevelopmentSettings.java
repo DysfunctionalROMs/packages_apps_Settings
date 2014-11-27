@@ -326,6 +326,7 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
         mKeepScreenOn = findAndInitSwitchPref(KEEP_SCREEN_ON);
         mBtHciSnoopLog = findAndInitSwitchPref(BT_HCI_SNOOP_LOG);
         mEnableOemUnlock = findAndInitSwitchPref(ENABLE_OEM_UNLOCK);
+
         if (!showEnableOemUnlockPreference()) {
             removePreference(mEnableOemUnlock);
             mEnableOemUnlock = null;
@@ -1759,6 +1760,9 @@ public class DevelopmentSettings extends SettingsPreferenceFragment
             if (which == DialogInterface.BUTTON_POSITIVE) {
                 Settings.Secure.putInt(getActivity().getContentResolver(),
                         Settings.Secure.ADB_PORT, 5555);
+            } else {
+                // Reset the toggle
+                mEnableAdb.setChecked(false);
             }
         } else if (dialog == mAdbKeysDialog) {
             if (which == DialogInterface.BUTTON_POSITIVE) {

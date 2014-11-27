@@ -101,18 +101,16 @@
         <!-- Broken TWEAKS -->
         <dashboard-tile
                 android:id="@+id/broken_settings"
-                android:icon="@drawable/ic_broken_settings_teal"
+                android:icon="@drawable/ic_broken_theme_settings_teal"
                 android:title="@string/broken_brokensettings_title"
-                android:fragment="com.android.settings.broken.BrokenSettings"
-                />
+                android:fragment="com.android.settings.broken.BrokenSettings" />
 
         <!-- Broken Main -->
         <dashboard-tile
                 android:id="@+id/main_settings"
-                android:icon="@drawable/ic_settings_buttons"
+                android:icon="@drawable/ic_broken_theme_settings_teal"
                 android:title="@string/broken_othersettings_title"
-                android:fragment="com.android.settings.broken.MainSettings"
-                />
+                android:fragment="com.android.settings.broken.MainSettings" />
 
         <!-- Kernel Auditor App -->
         <dashboard-tile
@@ -124,6 +122,7 @@
                     android:targetPackage="com.grarak.kerneladiutor"
                     android:targetClass="com.grarak.kerneladiutor.MainActivity" />
         </dashboard-tile>
+        
 
         <!-- BitSyko Layers App -->
         <dashboard-tile
@@ -139,7 +138,7 @@
         <!-- BrokenCenter -->
         <dashboard-tile
                 android:id="@+id/broken_center"
-                android:icon="@drawable/ic_settings_brokencenter"
+                android:icon="@drawable/ic_broken_theme_settings_teal"
                 android:title="@string/broken_center_title">
                 <intent
                     android:action="android.intent.action.MAIN"
