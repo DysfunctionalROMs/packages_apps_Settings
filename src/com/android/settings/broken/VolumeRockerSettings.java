@@ -17,9 +17,11 @@ public class VolumeRockerSettings extends SettingsPreferenceFragment implements
 
     private static final String VOLUME_ROCKER_WAKE = "volume_rocker_wake";
     private static final String PREF_VOLBTN_SWAP = "button_swap_volume_buttons";
+    private static final String KEY_VOLBTN_MUSIC_CTRL = "volbtn_music_controls";
 		
     private SwitchPreference mVolumeRockerWake;
     private SwitchPreference mVolBtnSwap;
+    private SwitchPreference mVolBtnMusicCtrl;
     
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -39,6 +41,12 @@ public class VolumeRockerSettings extends SettingsPreferenceFragment implements
         mVolBtnSwap.setChecked(Settings.System.getInt(getContentResolver(),
                 Settings.System.SWAP_VOLUME_BUTTONS, 0) == 1);
         mVolBtnSwap.setOnPreferenceChangeListener(this);
+
+        // volume music control
+        mVolBtnMusicCtrl = (SwitchPreference) findPreference(KEY_VOLBTN_MUSIC_CTRL);
+        mVolBtnMusicCtrl.setChecked(Settings.System.getInt(getContentResolver(),
+                Settings.System.VOLUME_MUSIC_CONTROLS, 1) != 0);
+        mVolBtnMusicCtrl.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -55,8 +63,13 @@ public class VolumeRockerSettings extends SettingsPreferenceFragment implements
                     Settings.System.SWAP_VOLUME_BUTTONS,
                     value ? 1 : 0);
             return true;
-         }
-         return false;
+        } else if (preference == mVolBtnMusicCtrl) {
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.VOLUME_MUSIC_CONTROLS,
+                    (Boolean) objValue ? 1 : 0);
+            return true;
+        }
+        return false;
     }
     
     @Override
