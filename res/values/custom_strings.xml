@@ -89,4 +89,8 @@
     <string name="disable_navkeys_title">Enable on-screen nav bar</string>
     <string name="disable_navkeys_summary">Enable on-screen navigation bar and disable hardware buttons</string>
     
+    <!-- About phone screen, Broken version -->
+    <string name="broken_version_title">Broken Version</string>
+    <string name="broken_version_default">Unknown</string>
+    
 </resources>
