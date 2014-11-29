@@ -44,6 +44,4 @@
                         android:summary="@string/button_swap_volume_buttons_summary" 
                         android:defaultValue="false" />                
 
-        </PreferenceCategory>
-
 </PreferenceScreen>

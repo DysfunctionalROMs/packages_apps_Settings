@@ -135,6 +135,12 @@
                 android:title="@string/build_number"
                 android:summary="@string/device_info_default"/>
 
+        <!-- BROKEN firmware version -->
+        <Preference android:key="broken_version"
+                style="?android:preferenceInformationStyle"
+                android:title="@string/broken_version_title"
+                android:summary="@string/broken_version_default"/>
+
         <!-- BROKEN build date -->
         <Preference android:key="build_date"
                 style="?android:preferenceInformationStyle"

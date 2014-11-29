@@ -12,6 +12,18 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
+	<!-- General strings -->
+    <string name="ok">OK</string>
+    <string name="reset">Reset</string>
+    <string name="attention">Attention</string>
+    <string name="enabled">Enabled</string>
+    <string name="disabled">Disabled</string>
+    <string name="default_string">Default</string>
+    <string name="additional_options_title">Additional options</string>
+    <string name="reset_message">Reset all entries to default?</string>
+    <string name="style_title">Style</string>
+    <string name="add">Add</string>
+
     <!-- Privacy Settings Header item -->
     <string name="privacy_settings_cyanogenmod_title">Privacy</string>
     <string name="privacy_settings_cyanogenmod_category" translatable="false">CyanogenMod</string>
@@ -186,17 +198,25 @@
     <string name="build_date">Broken Build Date</string>
     <string name="build_date_default">unknown</string>
 
-    <!-- General strings -->
-    <string name="ok">OK</string>
-    <string name="reset">Reset</string>
-    <string name="attention">Attention</string>
-    <string name="enabled">Enabled</string>
-    <string name="disabled">Disabled</string>
-    <string name="default_string">Default</string>
-    <string name="additional_options_title">Additional options</string>
-    <string name="reset_message">Reset all entries to default?</string>
-    <string name="style_title">Style</string>
-    <string name="add">Add</string>
+    <!-- About phone screen, Broken version -->
+    <string name="broken_version_title">Broken Version</string>
+    <string name="broken_version_default">Unknown</string>
+
+    <!-- Broken TWEAKS -->
+    <string name="header_category_broken">Customizations</string>
+    <string name="broken_settings_title">BrokenOS</string>
+    <string name="category_general_title">Tweaks</string>
+    <string name="broken_brokensettings_title">Broken Pieces</string>
+    <string name="broken_othersettings_title">Other Mods</string>
+
+    <!-- BROKENCENTER -->
+    <string name="broken_center_title">BrokenCenter</string>
+
+    <!-- Kernel Adiutor -->
+    <string name="performance_settings">Performance</string>
+
+    <!-- BitSyko Layers  -->
+    <string name="bitsyko_layers">Layers</string>
 
     <!-- Developer options - kill app long press back -->
     <string name="kill_app_longpress_back">Kill app back button</string>
@@ -267,7 +287,7 @@
     <!-- Volume Keys settings -->
     <string name="volume_keys_title">Volume keys</string>
     <!-- Wakeup category -->
-    <string name="display_category_wakeup_options_title">Wakeup options</string>
+    <string name="display_category_wakeup_options_title">Volume Rocker Options</string>
     <!-- Volume Keys Media Control -->
     <string name="volume_keys_control_media_stream">Media control</string>
     <string name="volume_keys_control_media_stream_summary">Volume keys control media volume rather than notifications</string>
@@ -370,22 +390,6 @@
     <string name="dt_init_d_error">Init.d error</string>
     <string name="dm_init_d_error">It looks like init.d isn\'t setup properly. Please contact your ROM developer.</string>
     <string name="db_exit">Exit</string>
-
-    <!-- Broken TWEAKS -->
-    <string name="header_category_broken">Customizations</string>
-    <string name="broken_settings_title">BrokenOS</string>
-    <string name="category_general_title">Tweaks</string>
-    <string name="broken_brokensettings_title">Broken Pieces</string>
-    <string name="broken_othersettings_title">Other Mods</string>
-
-    <!-- BROKENCENTER -->
-    <string name="broken_center_title">BrokenCenter</string>
-
-    <!-- Kernel Adiutor -->
-    <string name="performance_settings">Performance</string>
-
-    <!-- BitSyko Layers  -->
-    <string name="bitsyko_layers">Layers</string>
 
     <!-- Power menu settings -->
     <string name="button_power_menu_settings_title">Power menu</string>
