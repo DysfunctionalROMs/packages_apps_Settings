@@ -319,4 +319,8 @@
     <string name="proximity_wake_title">Prevent accidental wake-up</string>
     <string name="proximity_wake_summary">Check the proximity sensor prior to waking up screen</string>
 
+    <!-- About phone screen, Broken version -->
+    <string name="broken_version_title">Broken Version</string>
+    <string name="broken_version_default">Unknown</string>
+    
 </resources>
