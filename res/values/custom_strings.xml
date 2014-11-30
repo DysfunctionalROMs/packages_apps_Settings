@@ -14,7 +14,7 @@
      limitations under the License.
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-	
+
 	<!-- General strings -->
     <string name="ok">OK</string>
     <string name="ok_string">OK</string>
@@ -260,7 +260,7 @@
     <!-- Power menu settings -->
     <string name="power_menu_show_advanced_reboot_title">Advanced reboot menu</string>
     <string name="power_menu_show_advanced_reboot_summary">Enable to show advanced options in the reboot menu</string>
-    
+
     <!-- SuperSU -->
     <string name="supersu_title">SuperSU</string>
 
@@ -270,15 +270,15 @@
     <!-- Broken TWEAKS -->
     <string name="header_category_broken">Customizations</string>
     <string name="broken_settings_title">Broken Pieces</string>
-    
+
     <!-- About Broken -->
     <string name="broken_menu_about">About Broken</string>
-   
+
     <!-- About Broken screen, device maintainer name -->
     <string name="device_maintainer">Device maintainer</string>
     <string name="device_maintainers">Device maintainers</string>
     <string name="broken_device_maintainer">Device maintainer</string>
- 
+
     <!-- Broken Pieces -->
     <string name="status_bar_screen_title">Status bar</string>
     <string name="navigation_bar_screen_title">Navigation</string>
@@ -286,10 +286,10 @@
     <string name="lockscreen_title">Lock screen</string>
     <string name="power_menu_title">Power menu</string>
     <string name="volume_rocker_screen_title">Volume rocker</string>
-    
+
     <!-- BitSyko Layers -->
     <string name="bitsyko_layers">Layers</string>
-    
+
     <!-- Dev Options Enabled by Default -->
     <string name="show_dev_already_enabled">No need, development settings are enabled by default.</string>
 
@@ -311,23 +311,23 @@
     <string name="picker_activities">Activities</string>
     <string name="select_custom_app_title">Select custom app</string>
     <string name="select_custom_activity_title">Select custom activity</string>
-    
+
     <!-- Broken Walls -->
     <string name="brokenwalls_title">BrokenWalls</string>
-    
+
     <!-- Kernel Adiutor -->
     <string name="performance_settings">Performance</string>
-    
+
     <!-- Display : Rotation -->
     <string name="display_rotation_title">Rotation</string>
-    
+
     <!-- EdgeGesture service -->
     <string name="edge_gesture_service_title">Block gesture touch events</string>
     <string name="edge_gesture_service_summary">Don\'t send touch events for navigation and status bar gestures to apps</string>
 
     <!-- Gestures -->
     <string name="gesture_settings_title">S-O-G</string>
-    
+
     <!-- Wakeup options -->
     <string name="display_category_wakeup_options_title">Display wake options</string>
     <string name="wakeup_when_plugged_unplugged_title">Wake up on charge</string>
@@ -337,7 +337,7 @@
     <string name="volume_rocker_wake_summary">Pressing the volume keys will wake your device</string>
     <!-- Volume rocker swap -->
     <string name="button_swap_volume_buttons_title">Reorient</string>
-    <string name="button_swap_volume_buttons_summary">Swap volume buttons when the screen is rotated</string>   
+    <string name="button_swap_volume_buttons_summary">Swap volume buttons when the screen is rotated</string>
     <!-- Proximity wake -->
     <string name="proximity_wake_title">Prevent accidental wake-up</string>
     <string name="proximity_wake_summary">Check the proximity sensor prior to waking up screen</string>
@@ -346,7 +346,7 @@
     <string name="broken_firmware_title">Broken Build Type</string>
     <string name="broken_version_title">Broken Version</string>
     <string name="broken_version_default">Unknown</string>
-    
+
     <!-- Hardware keys -->
     <string name="button_keys_title">Hardware Buttons</string>
     <string name="keys_bindings_title">Key actions</string>
@@ -402,7 +402,7 @@
     <string name="shortcut_action_torch">Torch</string>
     <string name="shortcut_action_voice_search">Voice search</string>
     <string name="shortcut_action_none">None</string>
-    
+
     <!-- Key backlight -->
     <string name="button_backlight_title">Backlight</string>
     <string name="button_backlight_enabled">Illuminate buttons</string>
@@ -443,7 +443,7 @@
     <string name="battery_light_low_color_title">Battery low</string>
     <string name="battery_light_medium_color_title">Charging</string>
     <string name="battery_light_full_color_title">Fully charged</string>
-    
+
     <!-- PA Pie control -->
     <string name="pa_piecontrol_settings_summary">Customize Broken Pie 3.0 targets, sytle, size and color</string>
     <string name="pa_pie_title">Pie</string>
@@ -522,24 +522,24 @@
     <string name="allow_lights_title">Lights in do not disturb mode</string>
     <string name="notification_light_brightness" translatable="false">@string/brightness</string>
     <string name="keywords_lights_brightness_level">dim leds brightness</string>
-    
+
     <!-- About phone screen -->
     <string name="cpu_info">CPU</string>
     <string name="mem_info">Memory</string>
     <string name="build_id">Android-Build-ID</string>
     <string name="build_date">Build Date</string>
-    
+
     <!-- DTTS -->
     <string name="display_category_dtts_title">Double tap to sleep</string>
     <!-- Double Tap Navbar to Sleep -->
     <string name="double_tap_sleep_nav_bar_title">Navigation bar</string>
     <string name="double_tap_sleep_nav_bar_summary">Double tap navigation bar to put the device to sleep</string>
-    
+
     <!-- Battery Options -->
     <string name="battery_title">Battery</string>
     <string name="battery2_summary">Customize battery icons and percentage</string>
     <string name="display_category_batteryclock_options_title">Battery and clock options</string>
-    
+
     <!-- Status bar - Battery -->
     <string name="status_bar_battery_style_title">Battery status style</string>
     <string name="status_bar_battery_style_icon_portrait">Icon portrait</string>
@@ -555,11 +555,11 @@
     <string name="status_bar_battery_percentage_default">Hidden (default)</string>
     <string name="status_bar_battery_percentage_text_inside">Inside the icon</string>
     <string name="status_bar_battery_percentage_text_next">Next to the icon</string>
-    
+
     <!-- Three finger screenshot gesture -->
     <string name="three_finger_gesture">Three finger gesture</string>
     <string name="three_finger_gesture_summary">Swipe three finger to screenshot</string>
-    
+
     <!-- Display : Rotation -->
     <string name="display_rotation_title">Rotation</string>
     <string name="display_rotation_disabled">Disabled</string>
@@ -573,10 +573,10 @@
     <!-- Clock and date for statusbar and keyguard statusbar -->
     <string name="status_bar_clock">Clock &amp; date</string>
     <string name="status_bar_clock_title">Clock &amp; date style</string>
-    <string name="status_bar_clock_summary">Change various clock &amp; date options</string> 
+    <string name="status_bar_clock_summary">Change various clock &amp; date options</string>
     <string name="keyguard_status_bar_clock">Keyguard statusbar clock &amp; date</string>
     <string name="keyguard_status_bar_clock_title">Keyguard clock &amp; date style</string>
-    <string name="keyguard_status_bar_clock_summary">Change various keyguard statusbar clock &amp; date options</string> 
+    <string name="keyguard_status_bar_clock_summary">Change various keyguard statusbar clock &amp; date options</string>
     <string name="clock_styles_summary">Customize clock styles and date format</string>
     <string name="clock_title_enable">Alignment</string>
     <string name="clock_enabled">Enabled</string>
@@ -701,7 +701,7 @@
     <string name="power_menu_bug_report_title">Bug report</string>
     <string name="power_menu_sound_title">Sound panel</string>
     <string name="power_menu_bug_report_disabled">Bug reporting is disabled in development settings</string>
-    
+
     <!-- Seconds clock -->
     <string name="status_bar_show_clock_second_title">Clock seconds</string>
 
@@ -719,12 +719,12 @@
     <string name="lock_clock_title">Clock widget</string>
     <string name="lock_clock_summary">View or change how the \'cLock\' widget will display</string>
     <string name="weather_clock_title">Status bar weather</string>
-    
+
     <!-- Show/Hide Search Bar -->
     <string name="recents_panel_settings">Recent apps settings</string>
     <string name="recents_show_searchbar">Enable search bar in recents menu</string>
     <string name="recents_show_searchbar_summary">Enable/disable the search bar in the recents menu</string>
-    
+
     <!-- Lockscreen Torch -->
     <string name="keyguard_torch_title">Lockscreen torch</string>
     <string name="keyguard_torch_summary">Longpress power button with screen off turns on torch</string>
@@ -732,21 +732,21 @@
     <!-- Custom Header Image -->
     <string name="status_bar_custom_header_title">Contextual header image</string>
     <string name="status_bar_custom_header_summary">Enable notification panel header image</string>
-    
+
     <!-- Quick Unlock -->
     <string name="unlock_quick_unlock_control_title">Quick unlock</string>
     <string name="unlock_quick_unlock_control_summary">Unlock automatically when the correct PIN/password is entered</string>
-    
+
     <!-- Full screen recents -->
     <string name="recents_show_fullscreen">Fullscreen Recents</string>
     <string name="recents_fullscreen_summary">Enable immersive mode for recents screen</string>
-    
+
     <!-- Rocker out of dnd -->
     <string name="volbtn_down_zen_title">Volume down in silent</string>
     <string name="volbtn_down_zen_summary">allow volume down to enter do not disturb mode</string>
     <string name="volbtn_up_zen_title">Volume up in do not disturb</string>
     <string name="volbtn_up_zen_summary">allow volume up to exit do not disturb mode</string>
-     
+
     <!-- Broken tuner -->
     <string name="status_bar_icon_blacklist_title">Status bar icons</string>
     <string name="status_bar_icon_blacklist_summary">Configure what icons are shown on status bar</string>
@@ -754,7 +754,7 @@
     <!-- Statusbar Broken logo -->
     <string name="status_bar_broken_logo_title">Broken logo</string>
     <string name="status_bar_broken_logo_summary">Enable to show Broken logo on the left side of statusbar</string>
-    
+
     <!-- Sound & Notification Settings -->
     <!-- Linked / unlinked notification volume -->
     <string name="link_volume_option_title">Link ring and notification volume</string>
@@ -772,7 +772,7 @@
 
     <string name="unlock_scramble_pin_layout_title">Scramble layout</string>
     <string name="unlock_scramble_pin_layout_summary">Scramble PIN layout when unlocking device</string>
-    
+
     <!-- Quick Settings brightness slider -->
     <string name="qs_brightness_slider_title">Brightness slider</string>
     <string name="qs_brightness_slider_summary">Show a brightness slider in the quick settings panel</string>
@@ -785,10 +785,10 @@
     <string name="power_category">Power menu</string>
     <string name="lockscreen_enable_power_menu_title">Show power menu lock screen</string>
     <string name="lockscreen_enable_power_menu_summary">This option will only disable the power menu on secure lock screens</string>
-    
+
     <!-- LTE tile -->
     <string name="qs_tile_lte">LTE</string>
-    
+
     <!-- Sound settings -->
     <string name="advanced_sound_title">Advanced options</string>
     <string name="sound_title">Sound</string>
@@ -851,9 +851,13 @@
     <string name="qs_advanced_location_summary">Enable advanced settings for location in quick settings</string>
     <string name="quick_settings_reset_message">Reset quick settings tiles?</string>
     <string name="qs_tile_screenrecord">Screenrecord</string>
+<<<<<<< HEAD
     <string name="qs_wifi_detail_title">Advanced wifi details</string>
     <string name="qs_wifi_detail_summary">Enable detailed view for wifi in quick settings</string>
-    
+
+=======
+
+>>>>>>> 61cdecf... Settings: Media Scanner on boot behaviour (2/3)
     <!-- ADB debugging notifications -->
     <string name="enable_adb_custom">Android debugging</string>
     <string name="enable_adb_summary_custom">Enable the Android Debug Bridge (adb) interface</string>
@@ -861,7 +865,7 @@
     <string name="adb_notify_summary">Display a notification when USB or network debugging is enabled</string>
     <string name="adb_over_network">ADB over network</string>
     <string name="adb_over_network_summary">Enable TCP/IP debugging over network interfaces (Wi\u2011Fi, USB networks). This setting is reset on reboot</string>
-    <string name="adb_over_network_warning">WARNING: When ADB over network is enabled, your phone is open for intrusions on all connected networks!\n\nOnly use this feature when you are connected on trusted networks.\n\nDo you really want to enable this function?</string> 
+    <string name="adb_over_network_warning">WARNING: When ADB over network is enabled, your phone is open for intrusions on all connected networks!\n\nOnly use this feature when you are connected on trusted networks.\n\nDo you really want to enable this function?</string>
 
     <!-- Doze options -->
     <string name="display_category_doze_options_title">Ambient display (doze) options</string>
@@ -882,22 +886,22 @@
     <string name="doze_schedule_summary_off">Doze will only pulse once per notification</string>
     <string name="doze_brightness_title">Doze brightness level</string>
     <string name="doze_brightness_summary">Brightness level of doze pulse screen (% of max allowed brightness)</string>
-    
+
     <!-- On-The-Go -->
     <string name="power_menu_onthego_title">On-The-Go Mode</string>
     <string name="onthego_alpha_title">On-The-Go Alpha</string>
     <string name="onthego_alpha_summary">Alpha value of the On-The-Go overlay.</string>
-    
+
     <!-- Restart SystemUI -->
     <string name="restart_systemui">Restart SystemUI</string>
-    
+
     <!-- Display & Lights screen, setting options for LCD density -->
     <string name="lcd_density">LCD density</string>
     <string name="dialog_title_lcd_density">LCD density</string>
     <string name="lcd_density_value_format">%d DPI</string>
     <string name="lcd_density_default_value_format">%d DPI (default)</string>
     <string name="restarting_ui">Restarting UI\u2026</string>
-    
+
     <!-- Dashboard columns -->
     <string name="dashboard_columns_title">Dashboard Columns</string>
     <string name="dashboard_columns_summary">Change the number of columns displayed in the dashboard</string>
@@ -905,7 +909,7 @@
     <string name="dashboard_columns_default">One (default)</string>
     <string name="dashboard_columns_two">Two</string>
     <string name="dashboard_columns_three">Three</string>
-    
+
     <!-- Dashboard tileview double lines -->
     <string name="dashboard_category">Dashboard settings</string>
     <string name="dashboard_tileview_double_lines_title">Dashboard tile view title</string>
@@ -934,12 +938,12 @@
     <string name="weather_condition_icon_monochrome_title">Monochrome</string>
     <string name="weather_condition_icon_colored_title">Colored</string>
     <string name="weather_condition_icon_vclouds_title">VClouds</string>
-    
+
     <!-- Heads up -->
     <string name="heads_up_notifications">Heads up</string>
     <string name="summary_heads_up_enabled">Pop-up notifications are enabled</string>
     <string name="summary_heads_up_disabled">Pop-up notifications are disabled</string>
- 
+
     <!-- Volume rocker music seek options -->
     <string name="volbtn_music_controls_title">Volume rocker music controls</string>
     <string name="volbtn_music_controls_summary">When screen off, long-pressing the volume rockers will seek music tracks</string>
@@ -971,7 +975,7 @@
     <string name="quick_pulldown_off">Off</string>
     <string name="quick_pulldown_left">Left</string>
     <string name="quick_pulldown_right">Right</string>
-    
+
     <!-- Recent panel -->
     <string name="recent_panel_category">Custom Recents Options</string>
     <string name="stock_recents_panel_settings">Stock Recents Options</string>
@@ -994,7 +998,7 @@
     <!-- ATTENTION: RTL languages need to replace left with right -->
     <string name="recent_panel_lefty_mode_title">Show on the left edge</string>
     <string name="recent_panel_lefty_mode_summary">Show recent apps panel on the left edge</string>
-    
+
     <!-- Broken Settings Summaries -->
     <string name="brokenwalls_summary">Sift through a few custom BrokenOs wallpapers</string>
     <string name="status_bar_screen_summary">Customize your status bar</string>
@@ -1004,14 +1008,14 @@
     <string name="lockscreen_screen_summary">Change your lockscreen appearance</string>
     <string name="power_menu_screen_summary">Add or remove items in your power menu</string>
     <string name="volume_rocker_screen_summary">Options for your volume buttons</string>
-       
+
     <!--Missing summaries for subsections -->
     <string name="quick_settings_tiles_summary">Customize your quick settings tiles</string>
     <string name="hwkeys_settings_screen">Enable/disable and set functions for hardware keys </string>
     <string name="navbar_settings_screen_summary">Enable/disable and set functions for navigation bar</string>
     <string name="pie_settings_screen_summary">Enable/disable and set functions for off-screen PIE controls</string>
     <string name="custom_recents_settings_screen_summary">Engage BrokenRecents and set options when using it</string>
-    
+
     <!-- Network traffic -->
     <string name="traffic_category">Traffic Indicators</string>
     <string name="network_traffic_title">Traffic</string>
@@ -1036,20 +1040,20 @@
     <string name="network_traffic_color_reset">Reset color</string>
     <string name="network_traffic_color_reset_message">Reset network traffic color to default?</string>
     <string name="ok">OK</string>
-    
+
     <!-- Quick settings disable on lockscreen -->
     <string name="block_on_secure_keyguard_title">Disable quick settings</string>
     <string name="block_on_secure_keyguard_summary">Disables quick settings in the keyguard for a secure lock only</string>
-    
+
     <!-- BROKENCENTER -->
     <string name="broken_center_title">Broken Center</string>
-    
+
     <!-- Lockscreen Shortcuts -->
     <string name="lockscreen_shortcuts_title">Middle Lockscreen Shortcuts</string>
     <string name="lockscreen_shortcuts_summary">View or change custom lock screen shortcuts for the middle of the screen</string>
     <string name="lockscreen_shorcuts_longpress_title">Shortcuts longpress</string>
     <string name="lockscreen_shorcuts_longpress_summary">Open custom lock screen shortcuts on longpress</string>
-    
+
     <!-- Hide Lockscreen clock, date & alarm -->
     <string name="hide_lockscreen_items_title">Lockscreen items</string>
     <string name="hide_lockscreen_clock_title">Show lockscreen clock</string>
@@ -1058,7 +1062,7 @@
     <string name="hide_lockscreen_date_summary">Enable/Disable date on lockscreen</string>
     <string name="hide_lockscreen_alarm_title">Show lockscreen alarm</string>
     <string name="hide_lockscreen_alarm_summary">Enable/Disable alarm text on lockscreen</string>
-    
+
     <!-- Media art -->
     <string name="media_art_title">Show media cover art</string>
     <string name="media_art_summary">Enable media cover art on the lockscreen</string>
@@ -1072,10 +1076,10 @@
     <string name="recent_app_sidebar_label_color_title">Label color</string>
     <string name="recent_app_sidebar_bg_color_title">Background color</string>
     <string name="recent_app_sidebar_scale_title">Size</string>
-    
+
     <!--Embedded Viper4Android-->
     <string name="viper_settings_title">Equalizer</string>
-    
+
     <!-- Change Log -->
     <string name="changelog_title">Changelog</string>
     <string name="changelog_title_summary">View recent changes in ROM</string>
@@ -1086,7 +1090,7 @@
     <string name="app_notification_show_on_keyguard_summary">Show notifications from this app on the lockscreen</string>
     <string name="app_notification_no_ongoing_on_keyguard_title">Disable ongoing on lockscreen</string>
     <string name="app_notification_no_ongoing_on_keyguard_summary">Never show ongoing notifications from this app on the lockscreen</string>
-    
+
     <!-- Status bar temperature -->
     <string name="status_bar_temperature_title">Status Bar Weather</string>
     <string name="status_bar_temperature_hidden">Hidden</string>
@@ -1096,7 +1100,7 @@
     <string name="status_bar_temperature_location_summary">Select where the weather temperature is shown on the statusbar</string>
     <string name="status_bar_temperature_location_right">Show on right</string>
     <string name="status_bar_temperature_location_left">Show on left</string>
-    
+
     <!-- SlimDim -->
     <string name="dim_nav_buttons_category">NavDim</string>
     <string name="dim_nav_buttons_title">Dim buttons after inactivity</string>
@@ -1109,7 +1113,7 @@
     <string name="dim_nav_buttons_animate_summary">Animate the alpha fade</string>
     <string name="dim_nav_buttons_animate_duration_title">Animation duration</string>
     <string name="dim_nav_buttons_animate_duration_summary">Duration (in milliseconds) of the alpha animation</string>
- 
+
     <!-- Lockscreen see through -->
     <string name="lockscreen_blur_title">Blur</string>
     <string name="lockscreen_see_through_title">Lockscreen blur</string>
@@ -1146,14 +1150,14 @@
     <string name="remove_blacklist_number_title">Remove number</string>
     <string name="remove_blacklist_entry">Do you want to remove this blocked phone number?</string>
     <string name="select_contact">Select contact</string>
-    
+
     <!-- Lockscreen Alpha -->
     <string name="lockscreen_alpha">Lockscreen alpha</string>
     <string name="lockscreen_security_alpha">Lockscreen bouncer alpha</string>
-   
-    <!-- Another lockscreen section --> 
+
+    <!-- Another lockscreen section -->
     <string name="lockscreen_shortcuts_options_title">Shortcuts and other options</string>
-    
+
     <!-- Volume Steps -->
     <string name="volume_steps_title">Volume steps</string>
     <string name="volume_steps_alarm_title">Volume steps: Alarm</string>
@@ -1181,7 +1185,7 @@
     <string name="recents_clear_all_location_bottom_right">Bottom right</string>
     <string name="recents_clear_all_location_bottom_left">Bottom left</string>
     <string name="recents_clear_all_location_bottom_center">Bottom center</string>
-    
+
     <!-- Text for forcing expanded notifications -->
     <string name="disable_fc_notifications_title">Disable FC notifications</string>
     <string name="disable_fc_notifications_summary">This will hide all force close notifications</string>
@@ -1190,14 +1194,14 @@
     <string name="ime_switcher_notify">Selector notification</string>
     <string name="ime_switcher_notify_summary_on">Enabled input method selector notification</string>
     <string name="ime_switcher_notify_summary_off">Disabled input method selector notification</string>
-    
+
     <!-- Header image shadow -->
     <string name="status_bar_custom_header_shadow_title">Contextual header shadow</string>
     <string name="status_bar_custom_header_shadow_summary">For better text/icon visibility on bright images</string>
-    
+
     <!-- Memory -->
     <string name="memory_startup_apps_title">Apps started on boot</string>
-    
+
     <!-- Names of categories of app ops tabs - extension of AOSP -->
     <string name="app_ops_categories_location">Location</string>
     <string name="app_ops_categories_personal">Personal</string>
@@ -1206,7 +1210,7 @@
     <string name="app_ops_categories_device">Device</string>
     <string name="app_ops_categories_bootup">Bootup</string>
     <string name="app_ops_categories_su">Superuser</string>
-    
+
     <!-- User display names for app ops codes - extension of AOSP -->
     <string name="app_ops_summaries_coarse_location">coarse location</string>
     <string name="app_ops_summaries_fine_location">fine location</string>
@@ -1348,26 +1352,26 @@
     <string name="app_ops_labels_toggle_nfc">Toggle NFC</string>
     <string name="app_ops_labels_toggle_mobile_data">Toggle mobile data</string>
     <string name="app_ops_labels_superuser">Root access</string>
- 
+
     <!-- App ops permissions -->
     <string name="app_ops_permissions_allowed">Allowed</string>
     <string name="app_ops_permissions_ignored">Ignored</string>
     <string name="app_ops_permissions_always_ask">Always ask</string>
-    
+
     <!-- App ops detail -->
     <string name="app_ops_entry_summary"><xliff:g id="op">%1$s</xliff:g> (used <xliff:g id="count">%2$s</xliff:g>)</string>
     <string name="app_ops_allowed_count">Allowed <xliff:g id="count" example="2 times">%s</xliff:g></string>
     <string name="app_ops_ignored_count">Denied <xliff:g id="count" example="2 times">%s</xliff:g></string>
     <string name="app_ops_both_count">Allowed <xliff:g id="count">%1$s</xliff:g>, denied <xliff:g id="count">%2$s</xliff:g></string>
 	<string name="app_ops_disabled_by_optimization">Disabled by battery optimization</string>
-	
+
     <!-- App ops menu options -->
     <string name="app_ops_show_user_apps">Show user apps</string>
     <string name="app_ops_show_system_apps">Show built-in apps</string>
     <string name="app_ops_reset_counters">Reset allow/deny counters</string>
     <string name="app_ops_reset_confirm_title">Confirm counters reset</string>
     <string name="app_ops_reset_confirm_mesg">Are you sure you wish to reset counters?</string>
-    
+
     <!-- Privacy Settings Header item -->
     <string name="privacy_settings_title">Privacy</string>
     <!-- Privacy Guard -->
@@ -1386,7 +1390,7 @@
     <string name="privacy_guard_help_text">In this screen you can choose which apps Privacy Guard should be active for by simply tapping on them. Selected apps will not be able to access your personal data such as contacts, messages or call logs. Long pressing an app\'s entry opens its app details screen.\n\nBuilt-in apps are not shown by default but can be revealed by selecting the respective menu option.</string>
     <string name="privacy_guard_manager_show_system_apps">Show built-in apps</string>
     <string name="privacy_guard_advanced_settings_title">Advanced</string>
-    
+
     <!-- Expanded desktop -->
     <string name="expanded_desktop_title">Expanded Desktop</string>
     <string name="expanded_desktop_summary">Control expanded desktop options on a per app basis</string>
@@ -1402,12 +1406,12 @@
     <string name="expanded_desktop_style">Expanded desktop style</string>
     <string name="expanded_desktop_style_description">Choose a default expanded desktop style</string>
     <string name="expanded_desktop_title">Expanded desktop options</string>
-    
+
     <!-- Increasing ring tone volume -->
     <string name="increasing_ring_volume_option_title">Increasing ring volume</string>
     <string name="increasing_ring_min_volume_title">Start volume</string>
     <string name="increasing_ring_ramp_up_time_title">Ramp-up time</string>
-    
+
     <!-- Homeless -->
     <string name="homeless_title">Homeless and Lost</string>
     <string name="selinux_switch_title">Selinux Switch Options</string>
@@ -1416,7 +1420,7 @@
     <string name="selinux_permissive_title">Permissive</string>
     <string name="selinux_enforcing_title">Enforcing</string>
     <string name="selinux_permissive_toast_title">Selinux set to permissive</string>
-    
+
     <!-- NFC PreferenceCategory title -->
     <string name="nfc_title_category">NFC</string>
 
@@ -1433,7 +1437,7 @@
     <string name="trigger_top_summary">Adjust the position of trigger area</string>
     <string name="trigger_bottom_title">Trigger height</string>
     <string name="trigger_bottom_summary">Adjust the height of trigger area</string>
-    
+
     <!-- Wi-Fi settings screen, advanced, title for setting the wifi region code. -->
     <string name="wifi_setting_countrycode_title">Wi-Fi region code</string>
     <!-- Wi-Fi settings screen, setting summary for setting the wifi region code [CHAR LIMIT=50]-->
@@ -1441,7 +1445,7 @@
     <!-- Wi-Fi settings screen, error message when the region code could not be set [CHAR LIMIT=50]. -->
     <string name="wifi_setting_countrycode_error">There was a problem setting the region code.</string>
     <string name="wifi_setting_countrycode_default">Default</string>
-    
+
     <!-- Volume Cursor -->
     <string name="volbtn_cursor_control_title">Volume rocker cursor control</string>
     <string name="volbtn_cursor_control_summary">Enable rocker controls of the cursor while typing</string>
@@ -1469,7 +1473,7 @@
     <!-- Animation Control -->
     <string name="animation_settings_category">Animations</string>
     <string name="animation_settings_title">Animations</string>
-    <string name="animation_settings_summary">Tweak your animations throughout the ROM</string> 
+    <string name="animation_settings_summary">Tweak your animations throughout the ROM</string>
     <string name="title_animation_controls">AOKP Animations</string>
     <string name="aokp_animation_summary">View or change system animations</string>
     <string name="activity_open_title">Activity Open Animation</string>
@@ -1582,7 +1586,7 @@
     <string name="toast_Translucent_animation">Translucent animation</string>
     <string name="toast_SlideLeftRight_animation">Slide left to right</string>
     <string name="toast_SlideRightLeft_animation">Slide right to left</string>
-    
+
     <!-- Advanced storage settings -->
     <string name="storage_advanced_titlebar">Advanced Storage</string>
     <string name="storage_menu_advanced">Advanced</string>
@@ -1591,7 +1595,7 @@
     <string name="usb_data_auto_unlock_title">Unlock USB data</string>
     <string name="usb_data_auto_unlock_summary">Allow unlocked data access to your phone\'s storage through USB (MTP, PTP)</string>
     <string name="usb_data_auto_unlock_warning_summary">Your device will establish unprotected connections, everytime you connect it to a PC. Secured lockscreens disable this option automatically.\n\nThis is still an experimental feature, use with caution.</string>
-    
+
     <!--Embedded BrokenSwitcher-->
     <string name="switcher_settings_title">Broken Switcher</string>
 
@@ -1599,11 +1603,11 @@
     <string name="show_cpu_info">Show CPU info</string>
     <!-- UI debug setting: show cpu usage summary [CHAR LIMIT=50] -->
     <string name="show_cpu_info_summary">Screen overlay showing current CPU info</string>
-    
+
     <!-- Audio Ducking -->
     <string name="interruptions_ignore_while_media_title">Prevent audio ducking</string>
     <string name="interruptions_ignore_while_media_summary">Do not reduce media playback volume when a notification arrives</string>
-    
+
     <!-- Tiles animation style  -->
     <string name="qs_tile_animation_style_title">Tiles animation style</string>
     <string name="qs_tile_animation_duration_title">Tiles animation duration</string>
@@ -1619,7 +1623,7 @@
 	<!-- Battery fully charged notification -->
     <string name="battery_fully_charged_notif_title">Battery fully charged notification</string>
     <string name="battery_fully_charged_notif_summary">Show a notification when the battery is fully charged</string>
-    
+
     <!-- Keyguard Logo -->
     <string name="keyguard_logo_title">Logo</string>
     <string name="keyguard_logo_summary">Customize showing, color &amp; custom image for the ROM logo</string>
@@ -1629,9 +1633,16 @@
     <string name="keyguard_logo_custom_reset_summary">Reset the logo to the default image</string>
     <string name="keyguard_logo_custom_title">Custom Logo</string>
     <string name="keyguard_logo_custom_summary">Select a custom image for the logo view</string>
-    
+
     <!-- Font size sample text. This needs to be a very short string, as it is shown in
     multiple font sizes in a limited amount of space. -->
     <string name="font_size_sample">Dysfunctional</string>
-    
+
+    <!-- MediaScanner behavior on boot -->
+    <string name="options_settings_title">Options</string>
+    <string name="media_scanner_on_boot_title">MediaScanner behavior on boot</string>
+    <string name="media_scanner_on_boot_enabled">Scan media</string>
+    <string name="media_scanner_on_boot_ask">Ask to scan (notification)</string>
+    <string name="media_scanner_on_boot_disabled">Do not scan media</string>
+
 </resources>
