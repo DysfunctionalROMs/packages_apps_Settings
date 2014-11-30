@@ -13,12 +13,15 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
-    <SwitchPreference
-        android:key="lockscreen_shortcuts_longpress"
-        android:title="@string/lockscreen_shorcuts_longpress_title"
-        android:summary="@string/lockscreen_shorcuts_longpress_summary" />
+        <ListPreference
+            android:key="quick_pulldown"
+            android:title="@string/title_quick_pulldown_options"
+            android:entries="@array/quick_pulldown_entries"
+            android:entryValues="@array/quick_pulldown_values"
+            android:persistent="false" />
 
 </PreferenceScreen>
