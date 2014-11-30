@@ -99,13 +99,6 @@
                 android:title="@string/broken_brokensettings_title"
                 android:fragment="com.android.settings.broken.BrokenSettings" />
 
-        <!-- Broken Main -->
-        <dashboard-tile
-                android:id="@+id/main_settings"
-                android:icon="@drawable/ic_settings_buttons"
-                android:title="@string/broken_othersettings_title"
-                android:fragment="com.android.settings.broken.MainSettings" />
-
         <!-- Gestures -->
         <dashboard-tile
                 android:id="@+id/device_specific_gesture_settings"
@@ -126,25 +119,6 @@
                     android:targetPackage="com.cyanogenmod.settings.device"
                     android:targetClass="com.cyanogenmod.settings.device.BluetoothInputSettings" />
         </dashboard-tile>
-
-        <!-- Kernel Auditor App -->
-        <dashboard-tile
-                android:id="@+id/kernel_auditor"
-                android:icon="@drawable/ic_settings_tweaks"
-                android:title="@string/performance_settings">
-                <intent
-                    android:action="android.intent.action.MAIN"
-                    android:targetPackage="com.grarak.kerneladiutor"
-                    android:targetClass="com.grarak.kerneladiutor.MainActivity" />
-        </dashboard-tile>
-
-        <!-- Performance -->
-        <dashboard-tile
-                android:id="@+id/performance_settings"
-                android:title="@string/performance_settings_title"
-                android:fragment="com.android.settings.broken.PerformanceSettings"
-                android:icon="@drawable/ic_settings_performance"
-                />
         
         <!-- BitSyko Layers App -->
         <dashboard-tile
@@ -319,6 +293,25 @@
                 android:title="@string/development_settings_title"
                 android:fragment="com.android.settings.DevelopmentSettings"
                 android:icon="@drawable/ic_settings_development"
+                />
+
+        <!-- Kernel Auditor App -->
+        <dashboard-tile
+                android:id="@+id/kernel_auditor"
+                android:icon="@drawable/ic_settings_tweaks"
+                android:title="@string/performance_settings">
+                <intent
+                    android:action="android.intent.action.MAIN"
+                    android:targetPackage="com.grarak.kerneladiutor"
+                    android:targetClass="com.grarak.kerneladiutor.MainActivity" />
+        </dashboard-tile>
+
+        <!-- Performance -->
+        <dashboard-tile
+                android:id="@+id/performance_settings"
+                android:title="@string/performance_settings_title"
+                android:fragment="com.android.settings.broken.PerformanceSettings"
+                android:icon="@drawable/ic_settings_performance"
                 />
 
         <!-- SuperSU -->

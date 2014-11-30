@@ -16,19 +16,7 @@
 
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
-    android:title="@string/broken_settings_title" >
-
-        <!-- Broken Walls -->
-        <PreferenceScreen
-                android:id="@+id/brokenwalls"
-                android:title="@string/brokenwalls_title"
-                android:summary="@string/brokenwalls_summary" >
-                <intent
-                    android:action="android.intent.action.SET_WALLPAPER"
-                    android:targetPackage="com.brokenos.wallpapers"
-                    android:targetClass="com.brokenos.wallpapers.WallpaperChooser" />
-        </PreferenceScreen>
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings" >
 
         <Preference
             android:key="selinux_switch"
@@ -40,11 +28,5 @@
             android:key="selinux"
             android:title="@string/selinux_title"
             android:defaultValue="false" />
-
-        <PreferenceScreen
-            android:id="@+id/system_app_remover"
-            android:title="@string/system_app_remover"
-            android:summary="@string/systemappremover_summary"
-            android:fragment="com.android.settings.broken.fragments.SystemappRemover" />
 
 </PreferenceScreen>

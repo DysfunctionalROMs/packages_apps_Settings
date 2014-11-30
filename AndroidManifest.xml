@@ -2243,8 +2243,8 @@
                 android:resource="@id/sim_settings" />
         </activity>
         
-        <!-- BrokenOs Main Settings -->
-        <activity android:name="Settings$MainSettingsActivity"
+        <!-- BrokenOs Selinux Settings -->
+        <activity android:name="Settings$SelinuxSettingsActivity"
             android:label="@string/broken_settings_title"
             android:taskAffinity="">
             <intent-filter>
@@ -2252,10 +2252,10 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="com.android.settings.broken.MainSettings" />
+                android:value="com.android.settings.broken.SelinuxSettings" />
         </activity>
 
-        <activity android:name=".broken.MainSettings" />
+        <activity android:name=".broken.SelinuxSettings" />
 
         <activity android:name="com.android.settings.broken.fragments.SystemappRemover" />
 

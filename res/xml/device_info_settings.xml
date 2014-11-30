@@ -164,9 +164,10 @@
                 android:summary="@string/build_date_default" />
 
         <!-- SELinux status information -->
-        <Preference android:key="selinux_status"
-                style="?android:preferenceInformationStyle"
-                android:title="@string/selinux_status"
-                android:summary="@string/selinux_status_enforcing"/>
+        <PreferenceScreen
+                android:key="selinux"
+                android:title="@string/selinux_title"
+                android:summary="@string/selinux_settings_summary"
+                android:fragment="com.android.settings.broken.SelinuxSettings" />
 
 </PreferenceScreen>

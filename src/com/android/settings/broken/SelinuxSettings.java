@@ -41,7 +41,7 @@ import com.android.settings.util.CMDProcessor;
 
 import java.util.List;
 
-public class MainSettings extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
+public class SelinuxSettings extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
 
 	private static final String SELINUX = "selinux";
 
@@ -51,7 +51,7 @@ public class MainSettings extends SettingsPreferenceFragment implements OnPrefer
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addPreferencesFromResource(R.xml.broken_main_settings);
+        addPreferencesFromResource(R.xml.broken_selinux_settings);
 
         final ContentResolver resolver = getActivity().getContentResolver();
         PackageManager pm = getPackageManager();

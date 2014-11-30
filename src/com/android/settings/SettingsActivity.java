@@ -76,7 +76,7 @@ import com.android.settings.applications.ManageApplications;
 import com.android.settings.applications.ProcessStatsUi;
 import com.android.settings.blacklist.BlacklistSettings;
 import com.android.settings.bluetooth.BluetoothSettings;
-import com.android.settings.broken.MainSettings;
+import com.android.settings.broken.SelinuxSettings;
 import com.android.settings.dashboard.DashboardCategory;
 import com.android.settings.dashboard.DashboardSummary;
 import com.android.settings.dashboard.DashboardTile;
@@ -246,8 +246,7 @@ public class SettingsActivity extends Activity
             R.id.print_settings,
             R.id.nfc_payment_settings,
             R.id.home_settings,
-            R.id.dashboard,
-            R.id.main_settings
+            R.id.dashboard
     };
 
     private static final String[] ENTRY_FRAGMENTS = {
@@ -312,7 +311,7 @@ public class SettingsActivity extends Activity
             OtherSoundSettings.class.getName(),
             QuickLaunchSettings.class.getName(),
             ApnSettings.class.getName(),
-            MainSettings.class.getName(),
+            SelinuxSettings.class.getName(),
 	        QSTiles.class.getName(),
             ExpandedDesktopPreferenceFragment.class.getName(),
             LiveDisplay.class.getName(),

@@ -228,8 +228,6 @@
     <string name="broken_version_default">Unknown</string>
 
     <!-- Broken TWEAKS -->
-    <string name="header_category_broken">Customizations</string>
-    <string name="broken_settings_title">BrokenOS</string>
     <string name="category_general_title">Tweaks</string>
     <string name="broken_brokensettings_title">Broken Pieces</string>
     <string name="broken_othersettings_title">Other Mods</string>
@@ -1720,11 +1718,13 @@
     <string name="power_notifications_ringtone_silent">Silent</string>
 
     <!-- Selinux Switch -->
+    <string name="broken_selinux_title">Broken SELinux Switch</string>
     <string name="selinux_switch_title">Selinux Switch options</string>
     <string name="selinux_switch_summary">SELinux is a set of kernel modifications and user-space tools. Changing modes can cause unwanted effects. Use at your own risk</string>
     <string name="selinux_title">Selinux Mode</string>
     <string name="selinux_permissive_title">Permissive</string>
     <string name="selinux_enforcing_title">Enforcing</string>
+    <string name="selinux_settings_summary">Tap to choose between enforcing or permissive</string>
 
     <!-- Wakeup options -->
     <string name="display_category_wakeup_options_title">Wakeup options</string>

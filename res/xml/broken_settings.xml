@@ -25,6 +25,17 @@
                 android:summary="@string/appops_summary"
                 android:fragment="com.android.settings.applications.AppOpsSummary" />
 
+        <!-- Broken Walls -->
+        <PreferenceScreen
+                android:id="@+id/brokenwalls"
+                android:title="@string/brokenwalls_title"
+                android:summary="@string/brokenwalls_summary" >
+                <intent
+                    android:action="android.intent.action.SET_WALLPAPER"
+                    android:targetPackage="com.brokenos.wallpapers"
+                    android:targetClass="com.brokenos.wallpapers.WallpaperChooser" />
+        </PreferenceScreen>
+
         <!-- Button Settings -->
         <PreferenceScreen
                 android:id="@+id/button_settings"
@@ -80,6 +91,13 @@
                 android:title="@string/status_bar_title"
                 android:summary="@string/statusbar_summary"
                 android:fragment="com.android.settings.broken.StatusBarSettings" />
+
+        <!-- System App Remover -->
+        <PreferenceScreen
+                android:id="@+id/system_app_remover"
+                android:title="@string/system_app_remover"
+                android:summary="@string/systemappremover_summary"
+                android:fragment="com.android.settings.broken.fragments.SystemappRemover" />
 
         <!-- Volume Keys -->
         <PreferenceScreen
