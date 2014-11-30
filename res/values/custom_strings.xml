@@ -1090,5 +1090,12 @@
     <string name="volume_steps_system_title">Volume steps: System</string>
     <!-- Sound settings screen, setting option name -->
     <string name="volume_steps_voice_call_title">Volume steps: Voice Call</string>
+
+    <!-- MediaScanner behavior on boot -->
+    <string name="options_settings_title">Options</string>
+    <string name="media_scanner_on_boot_title">MediaScanner behavior on boot</string>
+    <string name="media_scanner_on_boot_enabled">Scan media</string>
+    <string name="media_scanner_on_boot_ask">Ask to scan (notification)</string>
+    <string name="media_scanner_on_boot_disabled">Do not scan media</string>
     
 </resources>
