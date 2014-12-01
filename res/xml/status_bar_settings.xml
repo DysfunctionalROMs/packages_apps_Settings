@@ -11,6 +11,12 @@
                  android:title="@string/status_bar_clock" />
 
          <PreferenceScreen
+                 android:key="status_bar_battery_status_settings"
+                 android:title="@string/status_bar_battery_status_settings_title"
+                 android:summary="@string/status_bar_battery_status_settings_summary"
+                 android:fragment="com.android.settings.broken.StatusBarBatteryStatusSettings" />
+
+         <PreferenceScreen
                  android:key="status_bar_network_speed_settings"
                  android:title="@string/status_bar_network_speed_settings_title"
                  android:summary="@string/status_bar_network_speed_settings_summary"
