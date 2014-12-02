@@ -707,4 +707,9 @@
     <string name="lock_clock_summary">View or change how the \'cLock\' widget will display</string>
     <string name="weather_clock_title">Status bar weather</string>
     
+    <!-- Show/Hide Search Bar -->
+    <string name="recents_panel_settings">Recent apps settings</string>
+    <string name="recents_show_searchbar">Enable search bar in recents menu</string>
+    <string name="recents_show_searchbar_summary">Enable/disable the search bar in the recents menu</string>
+
 </resources>
