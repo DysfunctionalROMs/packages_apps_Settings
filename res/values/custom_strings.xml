@@ -808,4 +808,8 @@
     <string name="screen_recorder_record_audio_summary">Record audio from the microphone</string>
     <string name="screen_recorder_power_menu_summary">Add a Screen Record entry in the power menu</string>
 
+    <!-- Quicksettings block on secure lockscreen -->
+    <string name="block_on_secure_keyguard_title">Disable on lockscreen</string>
+    <string name="block_on_secure_keyguard_summary">Disable quick settings on secure lockscreen.</string>
+
 </resources>
