@@ -300,4 +300,9 @@
     <string name="power_menu_sound_title">Sound panel</string>
     <string name="power_menu_bug_report_disabled">Bug reporting is disabled in development settings</string>
 
+    <!-- Show/Hide Search Bar -->
+    <string name="recents_panel_settings">Recent apps settings</string>
+    <string name="recents_show_searchbar">Enable search bar in recents menu</string>
+    <string name="recents_show_searchbar_summary">Enable/disable the search bar in the recents menu</string>
+
 </resources>
