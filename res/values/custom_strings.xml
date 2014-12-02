@@ -375,5 +375,16 @@
     <string name="category_general_title">Tweaks</string>
     <string name="broken_brokensettings_title">Broken Pieces</string>
     <string name="broken_othersettings_title">Other Mods</string>
+
+    <!-- BROKENCENTER -->
+    <string name="broken_center_title">BrokenCenter</string>
+
+    <!-- Kernel Adiutor -->
+    <string name="performance_settings">Performance</string>
+
+    <!-- BitSyko Layers  -->
+    <string name="bitsyko_layers">Layers</string>
+
+    
     
 </resources>

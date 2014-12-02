@@ -92,6 +92,39 @@
                 android:icon="@drawable/ic_broken_theme_settings"
                 />
 
+        <!-- Kernel Auditor App -->
+        <dashboard-tile
+                android:id="@+id/kernel_auditor"
+                android:icon="@drawable/ic_broken_theme_settings"
+                android:title="@string/performance_settings">
+                <intent
+                    android:action="android.intent.action.MAIN"
+                    android:targetPackage="com.grarak.kerneladiutor"
+                    android:targetClass="com.grarak.kerneladiutor.MainActivity" />
+        </dashboard-tile>
+
+        <!-- BitSyko Layers App -->
+        <dashboard-tile
+                android:id="@+id/bitsyko_layers"
+                android:icon="@drawable/ic_broken_theme_settings"
+                android:title="@string/bitsyko_layers">     
+                <intent
+                    android:action="android.intent.action.MAIN"
+                    android:targetPackage="com.lovejoy777.rroandlayersmanager"
+                    android:targetClass="com.lovejoy777.rroandlayersmanager.menu" />
+        </dashboard-tile>
+
+        <!-- BrokenCenter -->
+        <dashboard-tile
+                android:id="@+id/broken_center"
+                android:title="@string/broken_center_title"
+                android:icon="@drawable/ic_broken_theme_settings">
+                <intent
+                    android:action="android.intent.action.MAIN"
+                    android:targetPackage="com.broken.ota"
+                    android:targetClass="com.broken.center.BrokenCenter" />
+	    </dashboard-tile>       
+
     </dashboard-category>
 
     <!-- DEVICE -->
