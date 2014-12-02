@@ -1249,4 +1249,8 @@
     <string name="lock_numpad_random_always">Always</string>
     <string name="lock_numpad_random_on_request">On request</string>
 
+    <!-- Deny QS on secure lockscreen -->
+    <string name="block_on_secure_keyguard_title">Disable on lockscreen</string>
+    <string name="block_on_secure_keyguard_summary">Disable quick settings on secure lockscreen.</string>
+
 </resources>
