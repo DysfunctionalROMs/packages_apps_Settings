@@ -474,4 +474,8 @@
     <string name="status_bar_show_weather_title">Show weather</string>
     <string name="status_bar_show_weather_summary">Show the weather in the status bar header</string>
 
+    <!-- Battery text setting -->
+    <string name="status_bar_toggle_battery_text">Display battery level</string>
+    <string name="status_bar_toggle_battery_summary">Show battery level next to battery icon</string>
+
 </resources>
