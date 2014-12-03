@@ -18,6 +18,18 @@
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
         android:title="@string/recent_panel_category">
 
+        <PreferenceCategory
+            android:title="@string/stock_recents_title" />
+
+        <com.android.settings.broken.SystemSettingSwitchPreference
+            android:key="recents_show_hide_search_bar"
+            android:title="@string/recents_show_searchbar"
+            android:summary="@string/recents_show_searchbar_summary"
+            android:defaultValue="false" />
+
+        <PreferenceCategory
+            android:title="@string/slim_recents_title" />
+
         <SwitchPreference
             android:key="use_slim_recents"
             android:title="@string/use_slim_recents_title"
