@@ -470,4 +470,8 @@
     <string name="recents_show_searchbar_summary">Disable or enable the Google search bar in the recents menu</string>
     <string name="keywords_recents_show_searchbar">recent recents disable search bar searchbar hide</string>
 
+    <!-- Show/Hide Weather in expanded statusbar -->
+    <string name="status_bar_show_weather_title">Show weather</string>
+    <string name="status_bar_show_weather_summary">Show the weather in the status bar header</string>
+
 </resources>
