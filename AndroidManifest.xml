@@ -2077,14 +2077,6 @@
             </intent-filter>
         </receiver>
 
-       <receiver android:name="com.android.settings.broken.hfm.IntentReceiver" >
-            <intent-filter>
-                 <action android:name="android.intent.action.BOOT_COMPLETED" />
-            </intent-filter>
-        </receiver>
-
-        <service android:name="com.android.settings.broken.hfm.CheckHosts" />
-
         <provider
             android:name="android.support.v4.content.FileProvider"
             android:authorities="com.android.settings.files"
@@ -2144,6 +2136,14 @@
                 <action android:name="android.content.action.SEARCH_INDEXABLES_PROVIDER" />
             </intent-filter>
         </provider>
+
+        <receiver android:name="com.android.settings.broken.hfm.IntentReceiver" >
+            <intent-filter>
+                 <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name="com.android.settings.broken.hfm.CheckHosts" />
 
     </application>
 </manifest>

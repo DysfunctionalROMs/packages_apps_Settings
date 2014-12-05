@@ -37,7 +37,7 @@
             android:key="qs_key"
             android:title="@string/qs_category" >
 
-            <com.android.settings.terminus.SecureSettingSwitchPreference
+            <com.android.settings.broken.SecureSettingSwitchPreference
                     android:key="block_on_secure_keyguard"
                     android:title="@string/block_on_secure_keyguard_title"
                     android:summary="@string/block_on_secure_keyguard_summary"

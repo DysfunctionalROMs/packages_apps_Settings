@@ -23,10 +23,11 @@ import android.content.Context;
 import android.content.res.Resources;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
-import android.preference.CheckBoxPreference;
 import android.preference.Preference;
+import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceScreen;
+import android.preference.SwitchPreference;
 import android.provider.Settings;
 import android.provider.Settings.SettingNotFoundException;
 import android.view.View;
@@ -36,7 +37,8 @@ import com.android.settings.broken.hfm.HfmHelpers;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
-public class HfmSettings extends SettingsPreferenceFragment {
+public class HfmSettings extends SettingsPreferenceFragment implements
+        OnPreferenceChangeListener {
 
     private static final String TAG = "HfmSettings";
     private static final String HFM_DISABLE_ADS = "hfm_disable_ads";
@@ -45,7 +47,7 @@ public class HfmSettings extends SettingsPreferenceFragment {
 
     ConnectivityManager connMgr;
 
-    public static CheckBoxPreference mHfmDisableAds;
+    public static SwitchPreference mHfmDisableAds;
     Preference mHfmUpdateHosts;
 
     Context context;
@@ -63,13 +65,14 @@ public class HfmSettings extends SettingsPreferenceFragment {
         pd.setMessage(res.getString(R.string.hfm_dialog_wait));
         connMgr = (ConnectivityManager) getSystemService(context.CONNECTIVITY_SERVICE);
 
-        addPreferencesFromResource(R.xml.hfm_settings);
+        addPreferencesFromResource(R.xml.broken_hfm_settings);
         ContentResolver resolver = context.getContentResolver();
         PreferenceScreen prefScreen = getPreferenceScreen();
 
-        mHfmDisableAds = (CheckBoxPreference) findPreference(HFM_DISABLE_ADS);
+        mHfmDisableAds = (SwitchPreference) findPreference(HFM_DISABLE_ADS);
         mHfmDisableAds.setChecked((Settings.System.getInt(resolver,
             Settings.System.HFM_DISABLE_ADS, 0) == 1));
+        mHfmDisableAds.setOnPreferenceChangeListener(this);
         mHfmUpdateHosts = prefScreen.findPreference("hfm_update_hosts");
     }
 
@@ -83,15 +86,20 @@ public class HfmSettings extends SettingsPreferenceFragment {
         super.onDestroy();
     }
 
+    public boolean onPreferenceChange(Preference preference, Object objValue) {
+        ContentResolver resolver = getActivity().getContentResolver();
+        boolean value = (Boolean) objValue;
+        if (preference == mHfmDisableAds) {
+            Settings.System.putInt(resolver,
+                    Settings.System.HFM_DISABLE_ADS, value ? 1 : 0);
+            HfmHelpers.checkStatus(getActivity());
+        }
+        return true;
+    }
+
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-
-        if  (preference == mHfmDisableAds) {
-            boolean checked = ((CheckBoxPreference)preference).isChecked();
-            Settings.System.putInt(getActivity().getContentResolver(),
-                Settings.System.HFM_DISABLE_ADS, checked ? 1:0);
-            HfmHelpers.checkStatus(getActivity());
-        } else if (preference == mHfmUpdateHosts) {
+        if (preference == mHfmUpdateHosts) {
             try {
                 HfmHelpers.checkConnectivity(context, connMgr);
             } catch (IOException e) {
