@@ -1,6 +1,7 @@
 
 package com.android.settings.broken;
 
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.preference.ListPreference;
 import android.preference.Preference;
@@ -14,6 +15,7 @@ import android.provider.Settings.SettingNotFoundException;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
+import com.android.settings.util.Helpers;
 
 public class StatusBarSettings extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener {
@@ -27,6 +29,11 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
     // Clock summary
     private static final String KEY_STATUS_BAR_CLOCK = "clock_style_pref";
 
+    // LockClock
+    private static final String KEY_LOCKCLOCK = "lock_clock";
+    // Package name of the cLock app
+    public static final String LOCKCLOCK_PACKAGE_NAME = "com.cyanogenmod.lockclock";
+
     // General
     private PreferenceCategory mStatusBarGeneralCategory;
     // Native battery percentage
@@ -35,12 +42,16 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
     private SwitchPreference mStatusBarQuickQsPulldown;
     // Clock summary
     private PreferenceScreen mClockStyle;
+    // LockClock
+    private Preference mLockClock;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.status_bar_settings);
+
+        PackageManager pm = getPackageManager();
 
         // General category
         mStatusBarGeneralCategory = (PreferenceCategory) findPreference(STATUS_BAR_GENERAL_CATEGORY);
@@ -65,6 +76,13 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
         mClockStyle = (PreferenceScreen) getPreferenceScreen()
                 .findPreference(KEY_STATUS_BAR_CLOCK);
         updateClockStyleDescription();
+
+        // cLock app check
+        mLockClock = (Preference) getPreferenceScreen()
+                .findPreference(KEY_LOCKCLOCK);
+        if (!Helpers.isPackageInstalled(LOCKCLOCK_PACKAGE_NAME, pm)) {
+            getPreferenceScreen().removePreference(mLockClock);
+        }
     }
 
     public boolean onPreferenceChange(Preference preference, Object objValue) {
