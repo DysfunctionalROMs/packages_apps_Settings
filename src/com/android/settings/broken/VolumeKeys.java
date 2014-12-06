@@ -47,11 +47,15 @@ public class VolumeKeys extends SettingsPreferenceFragment implements
     private static final String KEY_MEDIA_CATEGORY = "category_wakeup_options";
     private static final String VOLUME_KEY_ADJUST_SOUND = "volume_key_adjust_sound";
 
+    // seek music
+    private static final String KEY_VOLBTN_MUSIC_CTRL = "volbtn_music_controls";
+
     private PreferenceCategory mWakeUpOptions;
     private SwitchPreference mVolumeKeysControlMedia;
     private SwitchPreference mVolumeWake;
     private SwitchPreference mVolBtnSwap;
     private SwitchPreference mVolumeKeyAdjustSound;
+    private SwitchPreference mVolBtnMusicCtrl;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -83,6 +87,12 @@ public class VolumeKeys extends SettingsPreferenceFragment implements
         mVolumeKeyAdjustSound.setOnPreferenceChangeListener(this);
         mVolumeKeyAdjustSound.setChecked(Settings.System.getInt(getContentResolver(),
                 VOLUME_KEY_ADJUST_SOUND, 1) != 0);
+
+        // seek music
+        mVolBtnMusicCtrl = (SwitchPreference) findPreference(KEY_VOLBTN_MUSIC_CTRL);
+        mVolBtnMusicCtrl.setChecked(Settings.System.getInt(getContentResolver(),
+                Settings.System.VOLUME_MUSIC_CONTROLS, 1) != 0);
+        mVolBtnMusicCtrl.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -119,6 +129,12 @@ public class VolumeKeys extends SettingsPreferenceFragment implements
             boolean value = (Boolean) objValue;
             Settings.System.putInt(getContentResolver(), VOLUME_KEY_ADJUST_SOUND,
                     value ? 1: 0);
+            return true;
+        }
+        else if (KEY_VOLBTN_MUSIC_CTRL.equals(key)) {
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.VOLUME_MUSIC_CONTROLS,
+                    (Boolean) objValue ? 1 : 0);
             return true;
         }
         return true;

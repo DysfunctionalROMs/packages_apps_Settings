@@ -303,6 +303,9 @@
     <!-- Volume adjust sound -->
     <string name="volume_key_adjust_sound_title">Volume key adjustment sound</string>
     <string name="volume_key_adjust_sound_summary">Play sound when adjusting volume with volume keys</string>
+    <!-- Volume rocker music seek options -->
+    <string name="volbtn_music_controls_title">Volume rocker music controls</string>
+    <string name="volbtn_music_controls_summary">When screen off, long-pressing the volume rockers will seek music tracks</string>
 
 
     <!-- App Circle Sidebar -->
