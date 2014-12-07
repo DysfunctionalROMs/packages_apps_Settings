@@ -487,4 +487,9 @@
     <string name="lock_clock_title">cLock settings</string>
     <string name="lock_clock_summary">View or change how the \'cLock\' widget will be displayed.</string>
 
+    <!-- Quicksettings block on secure lockscreen -->
+    <string name="qs_category">Quicksettings</string>
+    <string name="block_on_secure_keyguard_title">Disable on lockscreen</string>
+    <string name="block_on_secure_keyguard_summary">Disable quick settings on secure lockscreen.</string>
+
 </resources>
