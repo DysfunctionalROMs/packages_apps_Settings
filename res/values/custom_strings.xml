@@ -491,4 +491,9 @@
     <!-- Kernel Adiutor -->
     <string name="performance_settings">Performance</string>
 
+    <!-- Quicksettings block on secure lockscreen -->
+    <string name="qs_category">Quick Settings</string>
+    <string name="block_on_secure_keyguard_title">Disable on lockscreen</string>
+    <string name="block_on_secure_keyguard_summary">Disable quick settings on secure lockscreen.</string>
+
 </resources>
