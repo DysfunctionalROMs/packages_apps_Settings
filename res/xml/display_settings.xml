@@ -102,6 +102,16 @@
                 android:title="@string/lcd_density"
                 android:persistent="false" />
 
+        <!-- DeviceHandler device specific screen off gesture settings -->
+        <Preference
+                android:key="screen_off_gesture_settings"
+                android:title="@string/screen_off_gesture_settings_title">
+                <intent
+                    android:action="com.slim.action.LAUNCH_SCREEN_OFF_GESTURE_SETTINGS"
+                    android:targetPackage="com.slim.device"
+                    android:targetClass="com.slim.device.settings.ScreenOffGestureSettings" />
+        </Preference>
+
         <PreferenceScreen
                 android:key="advanced_display_prefs"
                 android:title="@string/advanced_settings">
