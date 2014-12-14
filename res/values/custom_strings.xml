@@ -454,11 +454,8 @@
     <string name="hfm_dialog_success">/4 hosts sources successfully applied!</string>
     <string name="hfm_dialog_conn_error">Error: No network connectivity</string>
 
-    <!-- Statusbar native battery percent -->
-    <string name="general_string">General</string>
+    <!-- Statusbar-->
     <string name="status_bar_title">Status bar</string>
-    <string name="status_bar_native_battery_percentage_title">Battery percentage</string>
-    <string name="status_bar_native_battery_percentage_summary">Show hidden percentage</string>
 
     <!-- Quick Pulldown -->
     <string name="status_bar_quick_qs_pulldown_title">One finger QS pull down</string>
@@ -477,9 +474,8 @@
     <string name="status_bar_show_weather_title">Show weather</string>
     <string name="status_bar_show_weather_summary">Show the weather in the status bar header</string>
 
-    <!-- Battery text setting -->
-    <string name="status_bar_toggle_battery_text">Display battery level</string>
-    <string name="status_bar_toggle_battery_summary">Show battery level next to battery icon</string>
+    <!-- Restart SystemUI -->
+    <string name="restart_systemui">Restart SystemUI</string>
 
     <!-- LockClock and Weather -->
     <string name="clock_weather_title">LockClock and weather settings</string>
@@ -495,5 +491,12 @@
     <!--Quick unlock -->
     <string name="unlock_quick_unlock_control_title">Quick unlock</string>
     <string name="unlock_quick_unlock_control_summary">Unlock automatically when the correct PIN/password is entered</string>
+
+    <!-- Battery percentage -->
+    <string name="status_bar_battery_percentage_title">Show battery percentage</string>
+    <string name="status_bar_battery_percentage_dialog_title">Battery percentage</string>
+    <string name="status_bar_battery_percentage_default">Hidden (default)</string>
+    <string name="status_bar_battery_percentage_text_inside">Inside the icon</string>
+    <string name="status_bar_battery_percentage_text_next">Next to the icon</string>
 
 </resources>
