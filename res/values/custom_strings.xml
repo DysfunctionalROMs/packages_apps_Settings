@@ -1797,6 +1797,10 @@
     <string name="increasing_ring_ramp_up_time_title">Ramp-up time</string>
 
     <!-- WiFi auto-configure priorities -->
-    <string name="wifi_auto_config_priorities">Automatic priority</string>  
+    <string name="wifi_auto_config_priorities">Automatic priority</string>
+
+    <!-- Battery saver -->
+    <string name="battery_saver_title">Warning color</string>
+    <string name="battery_saver_style_reset_message">Reset battery saver warning color?</string>  
     
 </resources>
