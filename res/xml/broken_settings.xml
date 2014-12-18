@@ -44,4 +44,9 @@
                 android:fragment="com.android.settings.broken.hfm.HfmSettings" />
 
 
+        <PreferenceScreen
+                android:key="wakelock_blocker"
+                android:fragment="com.android.settings.terminus.WakeLockBlocker"
+                android:title="@string/wakelock_blocker_title" />
+
 </PreferenceScreen>
