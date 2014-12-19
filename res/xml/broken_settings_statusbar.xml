@@ -82,6 +82,12 @@
         android:title="@string/qs_settings_title"
         android:summary="@string/quick_settings_tiles_summary"
         android:fragment="com.android.settings.broken.QsSettings" />
+        
+    <Preference
+        android:key="traffic"
+        android:fragment="com.android.settings.broken.Traffic"
+        android:title="@string/traffic_category" 
+        android:summary="@string/traffic_settings_summary" />
 
     <PreferenceCategory
         android:key="weather_clock_category"
