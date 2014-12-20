@@ -23,6 +23,12 @@ limitations under the License.
         android:title="@string/disable_navkeys_title"
         android:summary="@string/disable_navkeys_summary"
         android:defaultValue="false" /> -->
+        
+    <com.android.settings.broken.ButtonBacklightBrightness
+            android:key="button_backlight"
+            android:title="@string/button_backlight_title"
+            android:dialogTitle="@string/button_backlight_title"
+            android:persistent="false" />
 
     <PreferenceCategory
         android:key="home_key"

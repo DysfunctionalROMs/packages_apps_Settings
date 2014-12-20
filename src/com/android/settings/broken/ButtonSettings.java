@@ -46,6 +46,8 @@ import com.android.settings.Utils;
 
 import org.cyanogenmod.hardware.KeyDisabler;
 
+import com.android.settings.broken.ButtonBacklightBrightness;
+
 public class ButtonSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
     private static final String TAG = "SystemSettings";
@@ -55,6 +57,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
     private static final String KEY_MENU_PRESS = "hardware_keys_menu_press";
     private static final String KEY_MENU_LONG_PRESS = "hardware_keys_menu_long_press";
 
+    private static final String KEY_BUTTON_BACKLIGHT = "button_backlight";
     private static final String CATEGORY_POWER = "power_key";
     private static final String CATEGORY_HOME = "home_key";
     private static final String CATEGORY_MENU = "menu_key";
@@ -116,6 +119,12 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
                 (PreferenceCategory) prefScreen.findPreference(CATEGORY_HOME);
         final PreferenceCategory menuCategory =
                 (PreferenceCategory) prefScreen.findPreference(CATEGORY_MENU);
+                
+        final ButtonBacklightBrightness backlight = (ButtonBacklightBrightness)
+                findPreference(KEY_BUTTON_BACKLIGHT);
+        if (!backlight.isButtonSupported()) {
+            getPreferenceScreen().removePreference(backlight);
+        }
 
         mHandler = new Handler();
 
