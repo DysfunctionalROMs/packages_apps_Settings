@@ -49,6 +49,8 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.R;
 import com.android.settings.broken.util.ShortcutPickerHelper;
 
+import com.android.settings.broken.ButtonBacklightBrightness;
+
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -67,6 +69,7 @@ public class HardwareKeysSettings extends SettingsPreferenceFragment implements
     private static final String CATEGORY_ASSIST = "button_keys_assist";
     private static final String CATEGORY_APPSWITCH = "button_keys_appSwitch";
 
+    private static final String KEY_BUTTON_BACKLIGHT = "button_backlight";
     private static final String KEYS_CATEGORY_BINDINGS = "keys_bindings";
     private static final String KEYS_ENABLE_CUSTOM = "enable_hardware_rebind";
     private static final String KEYS_BACK_PRESS = "keys_back_press";
@@ -226,6 +229,12 @@ public class HardwareKeysSettings extends SettingsPreferenceFragment implements
                 KEYS_APP_SWITCH_LONG_PRESS);
         mAppSwitchDoubleTapAction = (Preference) prefs.findPreference(
                 KEYS_APP_SWITCH_DOUBLE_TAP);
+                
+        final ButtonBacklightBrightness backlight = (ButtonBacklightBrightness)
+                findPreference(KEY_BUTTON_BACKLIGHT);
+        if (!backlight.isButtonSupported()) {
+            getPreferenceScreen().removePreference(backlight);
+        }
 
         if (hasBackKey) {
             // Back key
