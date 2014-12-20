@@ -39,6 +39,7 @@ import android.view.KeyEvent;
 import android.view.IWindowManager;
 import android.view.WindowManagerGlobal;
 
+import com.android.settings.broken.ButtonBacklightBrightness;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
@@ -54,6 +55,7 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
     private static final String KEY_MENU_PRESS = "hardware_keys_menu_press";
     private static final String KEY_MENU_LONG_PRESS = "hardware_keys_menu_long_press";
     private static final String DISABLE_NAV_KEYS = "disable_nav_keys";
+    private static final String KEY_BUTTON_BACKLIGHT = "button_backlight";
 
     private static final String CATEGORY_POWER = "power_key";
     private static final String CATEGORY_HOME = "home_key";
@@ -255,6 +257,12 @@ public class ButtonSettings extends SettingsPreferenceFragment implements
                 (PreferenceCategory) prefScreen.findPreference(CATEGORY_ASSIST);
         final PreferenceCategory appSwitchCategory =
                 (PreferenceCategory) prefScreen.findPreference(CATEGORY_APPSWITCH);
+        
+        final ButtonBacklightBrightness backlight = (ButtonBacklightBrightness)
+                findPreference(KEY_BUTTON_BACKLIGHT);
+        if (!backlight.isButtonSupported()) {
+            prefScreen.removePreference(backlight);
+        }
 
         /* Toggle hardkey control availability depending on navbar state */
         if (homeCategory != null) {
