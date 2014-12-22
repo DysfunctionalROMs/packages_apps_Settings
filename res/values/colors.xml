@@ -82,4 +82,6 @@
 
     <color name="wifi_assistant_color_accent">#ff009587</color>
 
+    <!-- Gesture Anywhere -->
+    <color name="ga_gesture_color">@*android:color/material_blue_grey_900</color>	
 </resources>

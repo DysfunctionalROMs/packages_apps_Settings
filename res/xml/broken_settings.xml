@@ -39,6 +39,13 @@
                 android:summary="@string/buttons_summary"
                 android:fragment="com.android.settings.ButtonSettings" />
 
+        <!-- Gesture anywhere -->
+        <PreferenceScreen
+                android:key="gesture_anywhere"
+                android:fragment="com.android.settings.broken.gestureanywhere.GestureAnywhereSettings"
+                android:title="@string/gesture_anywhere_title"
+                android:summary="@string/ga_summary" />
+
         <!-- InitD -->
         <PreferenceScreen
                 android:id="@+id/initD"

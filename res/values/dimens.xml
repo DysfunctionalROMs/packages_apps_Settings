@@ -231,4 +231,9 @@
     <dimen name="color_swatch_size">16dp</dimen>
     <dimen name="color_swatch_stroke_width">4dp</dimen>
 
+    <!-- Gesture Anywhere -->
+    <dimen name="ga_gesture_thumbnail_inset">8dip</dimen>
+    <dimen name="ga_gesture_thumbnail_size">64dip</dimen>
+    <dimen name="shortcut_picker_left_padding">70dip</dimen>
+
 </resources>
