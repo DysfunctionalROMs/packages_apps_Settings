@@ -1301,5 +1301,16 @@
     <!-- Lock clock -->
     <string name="lock_clock_title">Clock widget</string>
     <string name="lock_clock_summary">View or change how the \'cLock\' Home  widget will display</string>
-    
+
+    <string name="status_bar_expanded_title">Status bar expanded</string>
+    <string name="status_bar_expanded_summary">Customize status bar expanded</string>
+    <!-- Statusbar expanded -->
+    <string name="status_bar_expanded_header_title">Header</string>
+
+    <!-- Weather -->
+    <string name="status_bar_expanded_header_show_weather_title">Show weather</string>
+    <string name="status_bar_expanded_header_show_weather_summary">Enable to show the weather</string>
+    <string name="status_bar_expanded_header_show_weather_location_title">Show location</string>
+    <string name="status_bar_expanded_header_show_weather_location_summary">Enable to show the location</string>
+
 </resources>
