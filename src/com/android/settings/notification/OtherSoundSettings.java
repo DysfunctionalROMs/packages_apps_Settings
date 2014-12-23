@@ -32,6 +32,7 @@ import android.provider.SearchIndexableResource;
 import android.provider.Settings.Global;
 import android.provider.Settings.System;
 import android.telephony.TelephonyManager;
+import android.util.Log;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
@@ -57,6 +58,13 @@ public class OtherSoundSettings extends SettingsPreferenceFragment implements In
     private static final int DOCK_AUDIO_MEDIA_ENABLED = 1;
     private static final int DEFAULT_DOCK_AUDIO_MEDIA = DOCK_AUDIO_MEDIA_DISABLED;
 
+    private static final int VOLUME_STEPS_5 = 0;
+    private static final int VOLUME_STEPS_7 = 1;
+    private static final int VOLUME_STEPS_15 = 2;
+    private static final int VOLUME_STEPS_30 = 3;
+    private static final int VOLUME_STEPS_45 = 4;
+    private static final int VOLUME_STEPS_60 = 5;
+
     private static final String KEY_DIAL_PAD_TONES = "dial_pad_tones";
     private static final String KEY_SCREEN_LOCKING_SOUNDS = "screen_locking_sounds";
     private static final String KEY_DOCKING_SOUNDS = "docking_sounds";
@@ -64,6 +72,14 @@ public class OtherSoundSettings extends SettingsPreferenceFragment implements In
     private static final String KEY_VIBRATE_ON_TOUCH = "vibrate_on_touch";
     private static final String KEY_DOCK_AUDIO_MEDIA = "dock_audio_media";
     private static final String KEY_EMERGENCY_TONE = "emergency_tone";
+
+    private static final String KEY_VOLUME_STEPS_ALARM = "volume_steps_alarm";
+    private static final String KEY_VOLUME_STEPS_DTMF = "volume_steps_dtmf";
+    private static final String KEY_VOLUME_STEPS_MUSIC = "volume_steps_music";
+    private static final String KEY_VOLUME_STEPS_NOTIFICATION = "volume_steps_notification";
+    private static final String KEY_VOLUME_STEPS_RING = "volume_steps_ring";
+    private static final String KEY_VOLUME_STEPS_SYSTEM = "volume_steps_system";
+    private static final String KEY_VOLUME_STEPS_VOICE_CALL = "volume_steps_voice_call";
 
     private static final SettingPref PREF_DIAL_PAD_TONES = new SettingPref(
             TYPE_SYSTEM, KEY_DIAL_PAD_TONES, System.DTMF_TONE_WHEN_DIALING, DEFAULT_ON) {
@@ -151,6 +167,160 @@ public class OtherSoundSettings extends SettingsPreferenceFragment implements In
         }
     };
 
+    private static final SettingPref PREF_VOLUME_STEPS_ALARM = new SettingPref(
+            TYPE_SYSTEM, KEY_VOLUME_STEPS_ALARM, System.VOLUME_STEPS_ALARM,
+            VOLUME_STEPS_7,
+            VOLUME_STEPS_5, VOLUME_STEPS_7, VOLUME_STEPS_15,
+            VOLUME_STEPS_30, VOLUME_STEPS_45, VOLUME_STEPS_60) {
+        @Override
+        protected String getCaption(Resources res, int value) {
+            return volStepsCaption(res, value);
+        }
+
+        @Override
+        public void update(Context context) {
+            super.update(context);
+            final int steps = getInt(mType,
+                    context.getContentResolver(), mSetting, mDefault);
+            AudioManager audioManager = (AudioManager)
+                    context.getSystemService(Context.AUDIO_SERVICE);
+            updateVolumeSteps(audioManager, KEY_VOLUME_STEPS_ALARM,
+                    audioManager.STREAM_ALARM, volSteps(steps));
+         }
+    };
+
+    private static final SettingPref PREF_VOLUME_STEPS_DTMF = new SettingPref(
+            TYPE_SYSTEM, KEY_VOLUME_STEPS_DTMF, System.VOLUME_STEPS_DTMF,
+            VOLUME_STEPS_15,
+            VOLUME_STEPS_5, VOLUME_STEPS_7, VOLUME_STEPS_15,
+            VOLUME_STEPS_30, VOLUME_STEPS_45, VOLUME_STEPS_60) {
+        @Override
+        protected String getCaption(Resources res, int value) {
+            return volStepsCaption(res, value);
+        }
+
+        @Override
+        public void update(Context context) {
+            super.update(context);
+            final int steps = getInt(mType,
+                    context.getContentResolver(), mSetting, mDefault);
+            AudioManager audioManager = (AudioManager)
+                    context.getSystemService(Context.AUDIO_SERVICE);
+            updateVolumeSteps(audioManager, KEY_VOLUME_STEPS_DTMF,
+                    audioManager.STREAM_DTMF, volSteps(steps));
+        }
+    };
+
+    private static final SettingPref PREF_VOLUME_STEPS_MUSIC = new SettingPref(
+            TYPE_SYSTEM, KEY_VOLUME_STEPS_MUSIC, System.VOLUME_STEPS_MUSIC,
+            VOLUME_STEPS_15,
+            VOLUME_STEPS_5, VOLUME_STEPS_7, VOLUME_STEPS_15,
+            VOLUME_STEPS_30, VOLUME_STEPS_45, VOLUME_STEPS_60) {
+        @Override
+        protected String getCaption(Resources res, int value) {
+            return volStepsCaption(res, value);
+        }
+
+        @Override
+        public void update(Context context) {
+            super.update(context);
+            final int steps = getInt(mType,
+                    context.getContentResolver(), mSetting, mDefault);
+            AudioManager audioManager = (AudioManager)
+                    context.getSystemService(Context.AUDIO_SERVICE);
+            updateVolumeSteps(audioManager, KEY_VOLUME_STEPS_MUSIC,
+                    audioManager.STREAM_MUSIC, volSteps(steps));
+        }
+    };
+
+    private static final SettingPref PREF_VOLUME_STEPS_NOTIFICATION = new SettingPref(
+            TYPE_SYSTEM, KEY_VOLUME_STEPS_NOTIFICATION, System.VOLUME_STEPS_NOTIFICATION,
+            VOLUME_STEPS_7,
+            VOLUME_STEPS_5, VOLUME_STEPS_7, VOLUME_STEPS_15,
+            VOLUME_STEPS_30, VOLUME_STEPS_45, VOLUME_STEPS_60) {
+        @Override
+        protected String getCaption(Resources res, int value) {
+            return volStepsCaption(res, value);
+        }
+
+        @Override
+        public void update(Context context) {
+            super.update(context);
+            final int steps = getInt(mType,
+                    context.getContentResolver(), mSetting, mDefault);
+            AudioManager audioManager = (AudioManager)
+                    context.getSystemService(Context.AUDIO_SERVICE);
+            updateVolumeSteps(audioManager, KEY_VOLUME_STEPS_NOTIFICATION,
+                    audioManager.STREAM_NOTIFICATION, volSteps(steps));
+        }
+    };
+
+    private static final SettingPref PREF_VOLUME_STEPS_RING = new SettingPref(
+            TYPE_SYSTEM, KEY_VOLUME_STEPS_RING, System.VOLUME_STEPS_RING,
+            VOLUME_STEPS_7,
+            VOLUME_STEPS_5, VOLUME_STEPS_7, VOLUME_STEPS_15,
+            VOLUME_STEPS_30, VOLUME_STEPS_45, VOLUME_STEPS_60) {
+        @Override
+        protected String getCaption(Resources res, int value) {
+            return volStepsCaption(res, value);
+        }
+
+        @Override
+        public void update(Context context) {
+            super.update(context);
+            final int steps = getInt(mType,
+                    context.getContentResolver(), mSetting, mDefault);
+            AudioManager audioManager = (AudioManager)
+                    context.getSystemService(Context.AUDIO_SERVICE);
+            updateVolumeSteps(audioManager, KEY_VOLUME_STEPS_MUSIC,
+                    audioManager.STREAM_RING, volSteps(steps));
+        }
+    };
+
+    private static final SettingPref PREF_VOLUME_STEPS_SYSTEM = new SettingPref(
+            TYPE_SYSTEM, KEY_VOLUME_STEPS_SYSTEM, System.VOLUME_STEPS_SYSTEM,
+            VOLUME_STEPS_7,
+            VOLUME_STEPS_5, VOLUME_STEPS_7, VOLUME_STEPS_15,
+            VOLUME_STEPS_30, VOLUME_STEPS_45, VOLUME_STEPS_60) {
+        @Override
+        protected String getCaption(Resources res, int value) {
+            return volStepsCaption(res, value);
+        }
+
+        @Override
+        public void update(Context context) {
+            super.update(context);
+            final int steps = getInt(mType,
+                    context.getContentResolver(), mSetting, mDefault);
+            AudioManager audioManager = (AudioManager)
+                    context.getSystemService(Context.AUDIO_SERVICE);
+            updateVolumeSteps(audioManager, KEY_VOLUME_STEPS_SYSTEM,
+                    audioManager.STREAM_SYSTEM, volSteps(steps));
+        }
+    };
+
+    private static final SettingPref PREF_VOLUME_STEPS_VOICE_CALL = new SettingPref(
+            TYPE_SYSTEM, KEY_VOLUME_STEPS_VOICE_CALL, System.VOLUME_STEPS_VOICE_CALL,
+            VOLUME_STEPS_5,
+            VOLUME_STEPS_5, VOLUME_STEPS_7, VOLUME_STEPS_15,
+            VOLUME_STEPS_30, VOLUME_STEPS_45, VOLUME_STEPS_60) {
+        @Override
+        protected String getCaption(Resources res, int value) {
+            return volStepsCaption(res, value);
+        }
+
+        @Override
+        public void update(Context context) {
+            super.update(context);
+            final int steps = getInt(mType,
+                    context.getContentResolver(), mSetting, mDefault);
+            AudioManager audioManager = (AudioManager)
+                    context.getSystemService(Context.AUDIO_SERVICE);
+            updateVolumeSteps(audioManager, KEY_VOLUME_STEPS_VOICE_CALL,
+                    audioManager.STREAM_VOICE_CALL, volSteps(steps));
+        }
+    };
+
     private static final SettingPref[] PREFS = {
         PREF_DIAL_PAD_TONES,
         PREF_SCREEN_LOCKING_SOUNDS,
@@ -159,6 +329,13 @@ public class OtherSoundSettings extends SettingsPreferenceFragment implements In
         PREF_VIBRATE_ON_TOUCH,
         PREF_DOCK_AUDIO_MEDIA,
         PREF_EMERGENCY_TONE,
+        PREF_VOLUME_STEPS_ALARM,
+        PREF_VOLUME_STEPS_DTMF,
+        PREF_VOLUME_STEPS_MUSIC,
+        PREF_VOLUME_STEPS_NOTIFICATION,
+        PREF_VOLUME_STEPS_RING,
+        PREF_VOLUME_STEPS_SYSTEM,
+        PREF_VOLUME_STEPS_VOICE_CALL,
     };
 
     private final SettingsObserver mSettingsObserver = new SettingsObserver();
@@ -251,4 +428,51 @@ public class OtherSoundSettings extends SettingsPreferenceFragment implements In
             return rt;
         }
     };
+
+    // === Volume Steps ===
+
+    private static String volStepsCaption(Resources res, int value) {
+        switch(value) {
+            case VOLUME_STEPS_5:
+                return res.getString(R.string.volume_steps_5);
+            case VOLUME_STEPS_7:
+                return res.getString(R.string.volume_steps_7);
+            case VOLUME_STEPS_15:
+                return res.getString(R.string.volume_steps_15);
+            case VOLUME_STEPS_30:
+                return res.getString(R.string.volume_steps_30);
+            case VOLUME_STEPS_45:
+                return res.getString(R.string.volume_steps_45);
+            case VOLUME_STEPS_60:
+                return res.getString(R.string.volume_steps_60);
+            default:
+                throw new IllegalArgumentException();
+        }
+    }
+
+    private static int volSteps(int value) {
+        switch(value) {
+            case VOLUME_STEPS_5:
+                return 5;
+            case VOLUME_STEPS_7:
+                return 7;
+            case VOLUME_STEPS_15:
+                return 15;
+            case VOLUME_STEPS_30:
+                return 30;
+            case VOLUME_STEPS_45:
+                return 45;
+            case VOLUME_STEPS_60:
+                return 60;
+            default:
+                throw new IllegalArgumentException();
+        }
+    }
+
+    private static void updateVolumeSteps(AudioManager audioManager,
+            String settingsKey, int streamType, int steps){
+        //Change the setting live
+        audioManager.setStreamMaxVolume(streamType, steps);
+        Log.i(TAG, "Volume steps:" + settingsKey + "" + String.valueOf(steps));
+    }
 }
