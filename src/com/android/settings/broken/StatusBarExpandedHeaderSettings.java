@@ -35,24 +35,30 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
-public class StatusBarExpandedHeader extends SettingsPreferenceFragment implements
+public class StatusBarExpandedHeaderSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
+    private static final String PREF_SHOW_BATTERY =
+            "expanded_header_show_battery_status_text";
     private static final String PREF_SHOW_WEATHER =
-            "status_bar_expanded_header_show_weather";
+            "expanded_header_show_weather";
     private static final String PREF_SHOW_LOCATION =
-            "status_bar_expanded_header_show_weather_location";
-    private static final String PREF_WEATHER_COLOR =
-            "status_bar_expanded_header_weather_color";
+            "expanded_header_show_weather_location";
+    private static final String PREF_TEXT_COLOR =
+            "expanded_header_text_color";
+    private static final String PREF_ICON_COLOR =
+            "expanded_header_icon_color";
 
-    private static final int DEFAULT_TEXT_COLOR = 0xffffffff;
+    private static final int DEFAULT_COLOR = 0xffffffff;
 
     private static final int MENU_RESET = Menu.FIRST;
     private static final int DLG_RESET = 0;
 
+    private CheckBoxPreference mShowBattery;
     private CheckBoxPreference mShowWeather;
     private CheckBoxPreference mShowLocation;
-    private ColorPickerPreference mWeatherColor;
+    private ColorPickerPreference mTextColor;
+    private ColorPickerPreference mIconColor;
 
     private ContentResolver mResolver;
 
@@ -68,36 +74,56 @@ public class StatusBarExpandedHeader extends SettingsPreferenceFragment implemen
             prefs.removeAll();
         }
 
-        addPreferencesFromResource(R.xml.status_bar_expanded_header);
+        addPreferencesFromResource(R.xml.status_bar_expanded_header_settings);
         mResolver = getActivity().getContentResolver();
 
         boolean showWeather = Settings.System.getInt(mResolver,
                 Settings.System.STATUS_BAR_EXPANDED_HEADER_SHOW_WEATHER, 0) == 1;
 
+        int intColor;
+        String hexColor;
+
+        mShowBattery =
+                (CheckBoxPreference) findPreference(PREF_SHOW_BATTERY);
+        mShowBattery.setChecked(Settings.System.getInt(mResolver,
+                Settings.System.STATUS_BAR_EXPANDED_HEADER_SHOW_BATTERY_STATUS_TEXT, 1) == 1);
+        mShowBattery.setOnPreferenceChangeListener(this);
+
         mShowWeather =
                 (CheckBoxPreference) findPreference(PREF_SHOW_WEATHER);
         mShowWeather.setChecked(showWeather);
         mShowWeather.setOnPreferenceChangeListener(this);
+
         if (showWeather) {
             mShowLocation =
                     (CheckBoxPreference) findPreference(PREF_SHOW_LOCATION);
             mShowLocation.setChecked(Settings.System.getInt(mResolver,
                     Settings.System.STATUS_BAR_EXPANDED_HEADER_SHOW_WEATHER_LOCATION, 1) == 1);
             mShowLocation.setOnPreferenceChangeListener(this);
-
-            mWeatherColor =
-                    (ColorPickerPreference) findPreference(PREF_WEATHER_COLOR);
-            int intColor = Settings.System.getInt(mResolver,
-                    Settings.System.STATUS_BAR_EXPANDED_HEADER_WEATHER_COLOR,
-                    DEFAULT_TEXT_COLOR); 
-            mWeatherColor.setNewPreviewColor(intColor);
-            String hexColor = String.format("#%08x", (0xffffffff & intColor));
-            mWeatherColor.setSummary(hexColor);
-            mWeatherColor.setOnPreferenceChangeListener(this);
         } else {
             removePreference(PREF_SHOW_LOCATION);
-            removePreference(PREF_WEATHER_COLOR);
         }
+
+        mTextColor =
+                (ColorPickerPreference) findPreference(PREF_TEXT_COLOR);
+        intColor = Settings.System.getInt(mResolver,
+                Settings.System.STATUS_BAR_EXPANDED_HEADER_TEXT_COLOR,
+                DEFAULT_COLOR); 
+        mTextColor.setNewPreviewColor(intColor);
+        hexColor = String.format("#%08x", (0xffffffff & intColor));
+        mTextColor.setSummary(hexColor);
+        mTextColor.setOnPreferenceChangeListener(this);
+
+        mIconColor =
+                (ColorPickerPreference) findPreference(PREF_ICON_COLOR);
+        intColor = Settings.System.getInt(mResolver,
+                Settings.System.STATUS_BAR_EXPANDED_HEADER_ICON_COLOR,
+                DEFAULT_COLOR); 
+        mIconColor.setNewPreviewColor(intColor);
+        hexColor = String.format("#%08x", (0xffffffff & intColor));
+        mIconColor.setSummary(hexColor);
+        mIconColor.setOnPreferenceChangeListener(this);
+
         setHasOptionsMenu(true);
     }
 
@@ -121,8 +147,17 @@ public class StatusBarExpandedHeader extends SettingsPreferenceFragment implemen
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         boolean value;
+        String hex;
+        int intHex;
 
-        if (preference == mShowWeather) {
+        if (preference == mShowBattery) {
+            value = (Boolean) newValue;
+            Settings.System.putInt(mResolver,
+                Settings.System.STATUS_BAR_EXPANDED_HEADER_SHOW_BATTERY_STATUS_TEXT,
+                value ? 1 : 0);
+            refreshSettings();
+            return true;
+        } else if (preference == mShowWeather) {
             value = (Boolean) newValue;
             Settings.System.putInt(mResolver,
                 Settings.System.STATUS_BAR_EXPANDED_HEADER_SHOW_WEATHER,
@@ -135,12 +170,20 @@ public class StatusBarExpandedHeader extends SettingsPreferenceFragment implemen
                 Settings.System.STATUS_BAR_EXPANDED_HEADER_SHOW_WEATHER_LOCATION,
                 value ? 1 : 0);
             return true;
-        } else if (preference == mWeatherColor) {
-            String hex = ColorPickerPreference.convertToARGB(
+        } else if (preference == mTextColor) {
+            hex = ColorPickerPreference.convertToARGB(
                 Integer.valueOf(String.valueOf(newValue)));
-            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            intHex = ColorPickerPreference.convertToColorInt(hex);
             Settings.System.putInt(mResolver,
-                Settings.System.STATUS_BAR_EXPANDED_HEADER_WEATHER_COLOR, intHex);
+                Settings.System.STATUS_BAR_EXPANDED_HEADER_TEXT_COLOR, intHex);
+            preference.setSummary(hex);
+            return true;
+        } else if (preference == mIconColor) {
+            hex = ColorPickerPreference.convertToARGB(
+                Integer.valueOf(String.valueOf(newValue)));
+            intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(mResolver,
+                Settings.System.STATUS_BAR_EXPANDED_HEADER_ICON_COLOR, intHex);
             preference.setSummary(hex);
             return true;
         }
@@ -163,8 +206,8 @@ public class StatusBarExpandedHeader extends SettingsPreferenceFragment implemen
             return frag;
         }
 
-        StatusBarExpandedHeader getOwner() {
-            return (StatusBarExpandedHeader) getTargetFragment();
+        StatusBarExpandedHeaderSettings getOwner() {
+            return (StatusBarExpandedHeaderSettings) getTargetFragment();
         }
 
         @Override
@@ -180,12 +223,17 @@ public class StatusBarExpandedHeader extends SettingsPreferenceFragment implemen
                         new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
                             Settings.System.putInt(getOwner().mResolver,
+                                    Settings.System.STATUS_BAR_EXPANDED_HEADER_SHOW_BATTERY_STATUS_TEXT, 1);
+                            Settings.System.putInt(getOwner().mResolver,
                                     Settings.System.STATUS_BAR_EXPANDED_HEADER_SHOW_WEATHER, 0);
                             Settings.System.putInt(getOwner().mResolver,
                                     Settings.System.STATUS_BAR_EXPANDED_HEADER_SHOW_WEATHER_LOCATION, 1);
                             Settings.System.putInt(getOwner().mResolver,
-                                    Settings.System.STATUS_BAR_EXPANDED_HEADER_WEATHER_COLOR,
-                                    DEFAULT_TEXT_COLOR);
+                                    Settings.System.STATUS_BAR_EXPANDED_HEADER_TEXT_COLOR,
+                                    DEFAULT_COLOR);
+                            Settings.System.putInt(getOwner().mResolver,
+                                    Settings.System.STATUS_BAR_EXPANDED_HEADER_ICON_COLOR,
+                                    DEFAULT_COLOR);
                             getOwner().refreshSettings();
                         }
                     })
@@ -193,12 +241,17 @@ public class StatusBarExpandedHeader extends SettingsPreferenceFragment implemen
                         new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
                             Settings.System.putInt(getOwner().mResolver,
+                                    Settings.System.STATUS_BAR_EXPANDED_HEADER_SHOW_BATTERY_STATUS_TEXT, 0);
+                            Settings.System.putInt(getOwner().mResolver,
                                     Settings.System.STATUS_BAR_EXPANDED_HEADER_SHOW_WEATHER, 1);
                             Settings.System.putInt(getOwner().mResolver,
                                     Settings.System.STATUS_BAR_EXPANDED_HEADER_SHOW_WEATHER_LOCATION, 1);
                             Settings.System.putInt(getOwner().mResolver,
-                                    Settings.System.STATUS_BAR_EXPANDED_HEADER_WEATHER_COLOR,
+                                    Settings.System.STATUS_BAR_EXPANDED_HEADER_TEXT_COLOR,
                                     0xffff0000);
+                            Settings.System.putInt(getOwner().mResolver,
+                                    Settings.System.STATUS_BAR_EXPANDED_HEADER_ICON_COLOR,
+                                    0xff33b5e5);
                             getOwner().refreshSettings();
                         }
                     })

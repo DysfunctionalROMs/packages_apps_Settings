@@ -31,6 +31,7 @@
     <string name="additional_options_title">Additional options</string>
     <string name="options_title">Options</string>
     <string name="icon_title">Icon</string>
+    <string name="icons_title">Icon</string>
     <string name="text_title">Text</string>
     <string name="colors_title">Colors</string>
     <string name="cat_colors_title">Customize colors</string>
@@ -1305,12 +1306,14 @@
     <string name="status_bar_expanded_title">Status bar expanded</string>
     <string name="status_bar_expanded_summary">Customize status bar expanded</string>
     <!-- Statusbar expanded -->
-    <string name="status_bar_expanded_header_title">Header</string>
+    <string name="status_bar_expanded_header_settings_title">Header</string>
 
-    <!-- Weather -->
-    <string name="status_bar_expanded_header_show_weather_title">Show weather</string>
-    <string name="status_bar_expanded_header_show_weather_summary">Enable to show the weather</string>
-    <string name="status_bar_expanded_header_show_weather_location_title">Show location</string>
-    <string name="status_bar_expanded_header_show_weather_location_summary">Enable to show the location</string>
+    <!-- Header -->
+    <string name="expanded_header_show_battery_status_text_title">Show battery status text</string>
+    <string name="expanded_header_show_battery_status_text_summary">Enable to show the (default) battery status text next to the battery icon</string>
+    <string name="expanded_header_show_weather_title">Show weather</string>
+    <string name="expanded_header_show_weather_summary">Enable to show the weather</string>
+    <string name="expanded_header_show_weather_location_title">Show location</string>
+    <string name="expanded_header_show_weather_location_summary">Enable to show the location</string>
 
 </resources>
