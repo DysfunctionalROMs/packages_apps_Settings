@@ -30,6 +30,7 @@ import com.android.settings.widgets.AnimBarPreference;
 import com.android.settings.R;
 
 import com.android.internal.util.broken.AwesomeAnimationHelper;
+import com.android.internal.logging.MetricsLogger;
 
 import java.util.Arrays;
 
@@ -257,5 +258,10 @@ public class AnimationControls extends SettingsPreferenceFragment implements OnP
 
         int mNum = Settings.System.getInt(mContentRes, mString, 0);
         return mAnimationsStrings[mNum];
+    }
+    
+    @Override
+    protected int getMetricsCategory() {
+        return MetricsLogger.BROKEN_SETTINGS;
     }
 }

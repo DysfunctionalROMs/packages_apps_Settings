@@ -32,6 +32,8 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 
+import com.android.internal.logging.MetricsLogger;
+
 public class Listview extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
 
@@ -82,5 +84,10 @@ public class Listview extends SettingsPreferenceFragment
             return true;
         }
         return false;
+    }
+    
+    @Override
+    protected int getMetricsCategory() {
+        return MetricsLogger.BROKEN_SETTINGS;
     }
 }

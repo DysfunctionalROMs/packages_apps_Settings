@@ -43,6 +43,8 @@ import android.widget.Toast;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.R;
 
+import com.android.internal.logging.MetricsLogger;
+
 import java.io.File;
 import java.io.IOException;
 
@@ -111,5 +113,9 @@ public class AnimationSettings extends SettingsPreferenceFragment implements
     }
         return false;
     }
-
+    
+    @Override
+    protected int getMetricsCategory() {
+        return MetricsLogger.BROKEN_SETTINGS;
+    }
 }

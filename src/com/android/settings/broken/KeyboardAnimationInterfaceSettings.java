@@ -41,6 +41,7 @@ import android.text.TextUtils;
 
 import com.android.settings.widget.SeekBarPreferenceCham;
 import com.android.internal.util.broken.AwesomeAnimationHelper;
+import com.android.internal.logging.MetricsLogger;
 
 public class KeyboardAnimationInterfaceSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
@@ -245,5 +246,9 @@ public class KeyboardAnimationInterfaceSettings extends SettingsPreferenceFragme
     	String[] str = getActivity().getResources().getStringArray(R.array.listview_interpolator_entries);
     	return str[index];
     }
-
+    
+    @Override
+    protected int getMetricsCategory() {
+        return MetricsLogger.BROKEN_SETTINGS;
+    }
 }

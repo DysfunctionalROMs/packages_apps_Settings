@@ -33,7 +33,7 @@
         
     <PreferenceScreen
         android:key="gesture_anywhere"
-        android:fragment="com.android.settings.broken.GestureAnywhereSettings"
+        android:fragment="com.android.settings.broken.fragments.GestureAnywhereSettings"
         android:title="@string/gesture_anywhere_title" />
         
     <PreferenceScreen

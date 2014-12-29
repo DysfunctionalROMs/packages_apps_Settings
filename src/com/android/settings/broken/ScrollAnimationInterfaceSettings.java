@@ -41,6 +41,7 @@ import android.util.Log;
 import android.text.TextUtils;
 
 import com.android.settings.broken.SeekBarPreference;
+import com.android.internal.logging.MetricsLogger;
 
 public class ScrollAnimationInterfaceSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
@@ -202,5 +203,9 @@ public class ScrollAnimationInterfaceSettings extends SettingsPreferenceFragment
 
         Settings.System.putInt(getActivity().getContentResolver(), mString, val);
     }
-
+    
+    @Override
+    protected int getMetricsCategory() {
+        return MetricsLogger.BROKEN_SETTINGS;
+    }
 }
