@@ -23,6 +23,12 @@
     <string name="reset_message">Reset all entries to default?</string>
     <string name="style_title">Style</string>
     <string name="add">Add</string>
+    <string name="options_title">Options</string>
+    <string name="icon_title">Icon</string>
+    <string name="text_title">Text</string>
+    <string name="colors_title">Colors</string>
+    <string name="reset_values_message">Reset values to\nAndroid- or Broken default?</string>
+    <string name="reset_android">Android</string>
 
     <!-- Privacy Settings Header item -->
     <string name="privacy_settings_cyanogenmod_title">Privacy</string>
@@ -819,5 +825,31 @@
     <string name="smart_pulldown_dismissable">No dismissable</string>
     <string name="smart_pulldown_persistent">No persistent</string>
     <string name="smart_pulldown_all">No dismissable or persistent</string>
+
+    <!-- Status bar Network speed -->
+    <string name="status_bar_network_speed_settings_title">Network speed indicator</string>
+    <string name="status_bar_network_speed_settings_summary">Customize the network speed indicator</string>
+    <string name="network_speed_indicator_title">Indicator</string>
+    <string name="network_speed_indicator_down_up">Download &amp; Upload</string>
+    <string name="network_speed_indicator_down">Download</string>
+    <string name="network_speed_indicator_up">Upload</string>
+    <string name="network_speed_indicator_disabled">Disabled</string>
+    <string name="network_speed_show_icon_title">Icon</string>
+    <string name="network_speed_show_icon_summary">Enable, to show an indicator icon</string>
+    <string name="network_speed_summary_title">Show summary of traffic</string>
+    <string name="network_speed_traffic_timeout_dlg_title">Timeout</string>
+    <string name="network_speed_traffic_timeout_0s">Don\'t show</string>
+    <string name="network_speed_traffic_timeout_1s">1 second</string>
+    <string name="network_speed_traffic_timeout_2s">2 seconds</string>
+    <string name="network_speed_traffic_timeout_3s">3 seconds</string>
+    <string name="network_speed_traffic_timeout_5s">5 seconds</string>
+    <string name="network_speed_traffic_timeout_8s">8 seconds</string>
+    <string name="network_speed_traffic_timeout_10s">10 seconds</string>
+    <string name="network_speed_traffic_timeout_15s">15 seconds</string>
+    <string name="network_speed_traffic_timeout_25s">25 seconds</string>
+    <string name="network_speed_bit_byte_title">Show bit values</string>
+    <string name="network_speed_bit_byte_summary">Enable to show the values in bit instead of byte</string>
+    <string name="network_speed_hide_indicator_title">Hide the indicator</string>
+    <string name="network_speed_hide_indicator_summary">Enable to hide the indicator if there is no traffic</string>
     
 </resources>

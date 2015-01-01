@@ -420,4 +420,43 @@
         <item>3</item>
     </string-array>
 
+    <!-- Network Speed -->
+    <string-array name="network_speed_indicator_entries" >
+        <item>@string/network_speed_indicator_down_up</item>
+        <item>@string/network_speed_indicator_down</item>
+        <item>@string/network_speed_indicator_up</item>
+        <item>@string/network_speed_indicator_disabled</item>
+    </string-array>
+
+    <string-array name="network_speed_indicator_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="network_speed_traffic_timeout_entries" >
+        <item>@string/network_speed_traffic_timeout_0s</item>
+        <item>@string/network_speed_traffic_timeout_1s</item>
+        <item>@string/network_speed_traffic_timeout_2s</item> 
+        <item>@string/network_speed_traffic_timeout_3s</item>
+        <item>@string/network_speed_traffic_timeout_5s</item>
+        <item>@string/network_speed_traffic_timeout_8s</item>
+        <item>@string/network_speed_traffic_timeout_10s</item>
+        <item>@string/network_speed_traffic_timeout_15s</item>
+        <item>@string/network_speed_traffic_timeout_25s</item>
+    </string-array>
+
+    <string-array name="network_speed_traffic_timeout_values" translatable="false">
+        <item>0</item>
+        <item>1000</item>
+        <item>2000</item>
+        <item>3000</item>
+        <item>5000</item>
+        <item>8000</item>
+        <item>10000</item>
+        <item>15000</item>
+        <item>25000</item>
+    </string-array>
+
 </resources>
