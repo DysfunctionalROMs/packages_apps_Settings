@@ -14,16 +14,16 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-	
-    <plurals name="backlight_timeout_time">
-        <item quantity="one"><xliff:g id="seconds">%d</xliff:g> second</item>
-        <item quantity="other"><xliff:g id="seconds">%d</xliff:g> seconds</item>
-    </plurals>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="64dp"
+    android:height="64dp"
+    android:viewportWidth="48.0"
+    android:viewportHeight="48.0">
 
-    <plurals name="qs_tiles_summary">
-        <item quantity="one">1 tile configured</item>
-        <item quantity="other">%d tiles configured</item>
-    </plurals>
-
-</resources>
+    <path
+        android:fillColor="#FF009587"
+        android:pathData="M20.4,18.0"/>
+    <path
+        android:fillColor="#FF009587"
+        android:pathData="M42.0,32.0l0.0,-4.0L26.0,18.0L26.0,7.0c0.0,-1.7 -1.3,-3.0 -3.0,-3.0c-1.7,0.0 -3.0,1.3 -3.0,3.0l0.0,11.0L4.0,28.0l0.0,4.0l16.0,-5.0l0.0,11.0l-4.0,3.0l0.0,3.0l7.0,-2.0l7.0,2.0l0.0,-3.0l-4.0,-3.0L26.0,27.0L42.0,32.0z"/>
+</vector>

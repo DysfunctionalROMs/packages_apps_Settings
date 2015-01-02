@@ -23,7 +23,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.android.settings.broken.R;
+import com.android.settings.R;
 
 import java.util.List;
 

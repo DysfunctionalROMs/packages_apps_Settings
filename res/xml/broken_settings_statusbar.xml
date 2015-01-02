@@ -110,6 +110,11 @@
         android:summary="@string/status_bar_custom_header_summary"
         android:defaultValue="false"/>
 
+    <PreferenceScreen
+        android:id="@+id/qs_settings"
+        android:title="@string/qs_settings_title"
+        android:fragment="com.android.settings.broken.QsSettings" />
+        
     </PreferenceCategory>
 
 </PreferenceScreen>

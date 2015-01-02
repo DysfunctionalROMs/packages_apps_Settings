@@ -31,7 +31,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.settings.broken.R;
+import com.android.settings.R;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -63,10 +63,10 @@ public class QSTiles extends Fragment implements
         super.onActivityCreated(savedInstanceState);
 
         ContentResolver resolver = getActivity().getContentResolver();
-        String order = Settings.Secure.getString(resolver, Settings.System.QS_TILES);
+        String order = Settings.Secure.getString(resolver, Settings.Secure.QS_TILES);
         if (TextUtils.isEmpty(order)) {
             order = QS_DEFAULT_ORDER;
-            Settings.Secure.putString(resolver, Settings.System.QS_TILES, order);
+            Settings.Secure.putString(resolver, Settings.Secure.QS_TILES, order);
         }
 
         for (String tileType: order.split(",")) {
@@ -98,7 +98,7 @@ public class QSTiles extends Fragment implements
 
         // We load the added tiles and compare it to the list of available tiles.
         // We only show the tiles that aren't already on the grid.
-        String order = Settings.System.getString(resolver, Settings.System.QS_TILES);
+        String order = Settings.Secure.getString(resolver, Settings.Secure.QS_TILES);
 
         List<String> savedTiles = Arrays.asList(order.split(","));
 
@@ -152,7 +152,7 @@ public class QSTiles extends Fragment implements
             order += mDraggableGridView.getChildAt(i).getTag();
         }
 
-        Settings.System.putString(resolver, Settings.System.QS_TILES, order);
+        Settings.Secure.putString(resolver, Settings.Secure.QS_TILES, order);
     }
 
     private View buildQSTile(String tileType) {
