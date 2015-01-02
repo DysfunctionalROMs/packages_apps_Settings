@@ -17,7 +17,7 @@ package com.android.settings.broken.qs;
 
 import android.content.Context;
 
-import com.android.settings.broken.R;
+import com.android.settings.R;
 
 /**
  * This class holds the icon, the name - or the string the user sees,
@@ -42,7 +42,7 @@ public class QSTileHolder {
             resId = R.drawable.ic_settings_wireless;
             stringId = R.string.wifi_quick_toggle_title;
         } else if (tileType.equals("bt")) {
-            resId = R.drawable.ic_settings_bluetooth2;
+            resId = R.drawable.ic_settings_bluetooth;
             stringId = R.string.bluetooth_settings_title;
         } else if (tileType.equals("inversion")) {
             resId = R.drawable.ic_settings_accessibility;
