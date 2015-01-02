@@ -68,6 +68,7 @@ import com.android.settings.accessibility.AccessibilitySettings;
 import com.android.settings.accessibility.CaptionPropertiesFragment;
 import com.android.settings.accounts.AccountSettings;
 import com.android.settings.accounts.AccountSyncSettings;
+import com.android.settings.applications.ExpandedDesktopPreferenceFragment;
 import com.android.settings.applications.InstalledAppDetails;
 import com.android.settings.applications.ManageApplications;
 import com.android.settings.applications.ProcessStatsUi;
@@ -113,6 +114,7 @@ import com.android.settings.wifi.AdvancedWifiSettings;
 import com.android.settings.wifi.SavedAccessPointsWifiSettings;
 import com.android.settings.wifi.WifiSettings;
 import com.android.settings.wifi.p2p.WifiP2pSettings;
+import com.android.settings.broken.qs.QSTiles;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -306,6 +308,8 @@ public class SettingsActivity extends Activity
             QuickLaunchSettings.class.getName(),
             ApnSettings.class.getName(),
             MainSettings.class.getName()
+	        QSTiles.class.getName(),
+            ExpandedDesktopPreferenceFragment.class.getName()
     };
 
 

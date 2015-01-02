@@ -44,6 +44,7 @@ import android.content.res.Resources.NotFoundException;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.net.ConnectivityManager;
 import android.net.LinkProperties;
@@ -1152,5 +1153,23 @@ public final class Utils {
                 break;
         }
         activity.setRequestedOrientation(frozenRotation);
+    }
+
+    public static Context createPackageContext(Context context, String packageName) {
+        try {
+            return context.createPackageContext(packageName, 0);
+        } catch (PackageManager.NameNotFoundException e) {
+            // fall through
+        }
+        return null;
+    }
+
+    public static Drawable getNamedDrawable(Context context, String name) {
+        if (context == null) {
+            return null;
+        }
+        final Resources res = context.getResources();
+        final int resId = res.getIdentifier(name, "drawable", context.getPackageName());
+        return resId > 0 ? res.getDrawable(resId) : null;
     }
 }

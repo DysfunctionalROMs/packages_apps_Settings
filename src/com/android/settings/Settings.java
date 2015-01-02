@@ -17,6 +17,7 @@
 package com.android.settings;
 
 import com.android.settings.applications.AppOpsSummary;
+import com.android.settings.broken.qs.QSTiles;
 
 /**
  * Top-level Settings activity
@@ -103,5 +104,7 @@ public class Settings extends SettingsActivity {
     
     public static class TopLevelSettings extends SettingsActivity { /* empty */ }
     public static class ApnSettingsActivity extends SettingsActivity { /* empty */ }
+    public static class QSTilesSettingsActivity extends SettingsActivity { /* empty */ }
+    public static class ExpandedDesktopSettingsActivity extends SettingsActivity { /* empty */ }
 }
 
