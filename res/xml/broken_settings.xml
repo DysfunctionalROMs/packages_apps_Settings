@@ -26,6 +26,11 @@
         android:fragment="com.android.settings.broken.ButtonSettings" />
         
     <PreferenceScreen
+        android:key="gesture_anywhere"
+        android:fragment="com.android.settings.broken.GestureAnywhereSettings"
+        android:title="@string/gesture_anywhere_title" />
+        
+    <PreferenceScreen
         android:id="@+id/initD"
 		android:fragment="com.android.settings.broken.InitD"
 		android:title="@string/init_d_title" />

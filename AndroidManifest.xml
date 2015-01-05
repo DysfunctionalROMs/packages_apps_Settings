@@ -2173,6 +2173,8 @@
         <!-- Broken activities Start -->
         <activity android:name=".broken.ButtonSettings" />
         <activity android:name=".broken.BrokenSettings" />
+        <activity android:name="com.android.settings.broken.fragments.GestureAnywhereBuilderActivity" />
+        <activity android:name="com.android.settings.broken.fragments.GestureAnywhereCreateGestureActivity" />
         <!-- Broken activities end -->
 
         <!-- Pseudo-activity used to provide an intent-filter entry point to encryption settings -->

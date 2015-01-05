@@ -264,4 +264,5 @@
 
     <dimen name="shortcut_size">40dp</dimen>
     <dimen name="badge_size">10dp</dimen>
+
 </resources>
