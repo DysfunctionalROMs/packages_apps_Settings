@@ -30,7 +30,7 @@
                         android:title="@string/app_circle_bar_title"
                         android:summary="@string/app_circle_bar_summary" />
 
-                <com.android.settings.broken.lsn.AppMultiSelectListPreference
+                <com.android.settings.util.AppMultiSelectListPreference
                         android:key="app_circle_bar_included_apps"
                         android:persistent="false"
                         android:title="@string/app_circle_bar_included_apps_title"
