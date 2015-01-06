@@ -28,7 +28,6 @@ import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Bundle;
-import android.preference.CheckBoxPreference;
 import android.preference.SwitchPreference;
 import android.preference.Preference;
 import android.preference.PreferenceGroup;
@@ -41,7 +40,7 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
 import com.android.settings.broken.SeekBarPreference;
-import com.android.settings.broken.lsn.AppMultiSelectListPreference;
+import com.android.settings.util.AppMultiSelectListPreference;
 import com.android.internal.util.broken.DeviceUtils;
 
 import java.util.Arrays;
@@ -104,6 +103,7 @@ public class AppCircleSidebar extends SettingsPreferenceFragment implements
 
     public boolean onPreferenceChange(Preference preference, Object objValue) {
         ContentResolver resolver = getActivity().getContentResolver();
+        final String key = preference.getKey();
         if (preference == mIncludedAppCircleBar) {
             storeIncludedApps((Set<String>) objValue);
         } else if (preference == mTriggerWidthPref) {
@@ -121,8 +121,6 @@ public class AppCircleSidebar extends SettingsPreferenceFragment implements
             Settings.System.putInt(getContentResolver(),
                     Settings.System.APP_CIRCLE_BAR_TRIGGER_HEIGHT, bottom);
             return true;
-        } else {
-            return false;
         }
 
         return true;
