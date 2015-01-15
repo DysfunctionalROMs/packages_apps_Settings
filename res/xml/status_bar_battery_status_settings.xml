@@ -18,24 +18,64 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:title="@string/status_bar_battery_status_settings_title">
 
-    <CheckBoxPreference
-	    android:key="battery_status_show_text"
-	    android:title="@string/battery_status_show_text_title"
-	    android:summary="@string/battery_status_show_text_summary" />
+    <ListPreference
+        android:key="battery_status_style"
+        android:title="@string/battery_status_style_title"
+        android:dialogTitle="@string/battery_status_style_title"
+        android:entries="@array/battery_status_style_entries"
+        android:entryValues="@array/battery_status_style_values" />
 
-    <CheckBoxPreference
-	    android:key="battery_status_show_charging_animation"
-	    android:title="@string/battery_status_show_charging_animation_title"
-	    android:summary="@string/battery_status_show_charging_animation_summary" />
+    <ListPreference
+        android:key="battery_status_percent_style"
+        android:title="@string/battery_status_percent_style_title"
+        android:dialogTitle="@string/battery_status_percent_style_dialog_title"
+        android:entries="@array/battery_status_percent_style_entries"
+        android:entryValues="@array/battery_status_percent_style_values" />
 
-    <net.margaritov.preference.colorpicker.ColorPickerPreference
-        android:key="battery_status_battery_color"
-        android:title="@string/battery_status_battery_color_title"
-        android:defaultValue="0xffffffff" />
+    <ListPreference
+        android:key="battery_status_charge_animation_speed"
+        android:title="@string/battery_status_charge_animation_speed_title"
+        android:entries="@array/battery_status_charge_animation_speed_entries"
+        android:entryValues="@array/battery_status_charge_animation_speed_values"
+        android:defaultValue="3" />
 
-    <net.margaritov.preference.colorpicker.ColorPickerPreference
-        android:key="battery_status_text_color"
-        android:title="@string/battery_status_text_color_title"
-        android:defaultValue="0xff000000" />
+    <PreferenceCategory
+        android:key="battery_status_cat_circle_options"
+        android:title="@string/battery_status_cat_circle_options_title">
 
+         <CheckBoxPreference
+	        android:key="battery_status_show_circle_dotted"
+	        android:title="@string/battery_status_show_circle_dotted_title"
+	        android:summary="@string/battery_status_show_circle_dotted_summary" />
+
+        <ListPreference
+            android:key="battery_status_circle_dot_length"
+            android:title="@string/battery_status_circle_dot_length_title"
+            android:entries="@array/battery_status_circle_dot_entries"
+            android:entryValues="@array/battery_status_circle_dot_values"
+            android:defaultValue="3" />
+
+        <ListPreference
+            android:key="battery_status_circle_dot_interval"
+            android:title="@string/battery_status_circle_dot_interval_title"
+            android:entries="@array/battery_status_circle_dot_entries"
+            android:entryValues="@array/battery_status_circle_dot_values"
+            android:defaultValue="2" />
+    </PreferenceCategory>
+
+
+    <PreferenceCategory
+        android:key="battery_status_cat_colors"
+        android:title="@string/colors_title">
+
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="battery_status_battery_color"
+            android:title="@string/battery_status_battery_color_title"
+            android:defaultValue="0xffffffff" />
+
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="battery_status_text_color"
+            android:title="@string/battery_status_text_color_title"
+            android:defaultValue="0xff000000" />
+    </PreferenceCategory>
 </PreferenceScreen>
