@@ -749,4 +749,5 @@
     <string name="qs_main_tiles_summary_on">Two main tiles on the first row</string>
     <string name="qs_main_tiles_summary_off">Three tiles on each row</string>
     <string name="qs_tile_adb_over_network">ADB over network</string>
+    <string name="qs_tile_nfc">NFC</string>
 </resources>
