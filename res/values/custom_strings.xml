@@ -752,6 +752,7 @@
     <string name="qs_tile_nfc">NFC</string>
     <string name="qs_tile_wifi">Wi\u2011Fi</string>
     <string name="qs_tile_bluetooth">Bluetooth</string>
+    <string name="qs_tile_compass">Compass</string>
     <string name="qs_tile_display_inversion">Color inversion</string>
     <string name="qs_tile_dnd">Do not disturb</string>
     <string name="qs_tile_cellular_data">Data connection</string>
