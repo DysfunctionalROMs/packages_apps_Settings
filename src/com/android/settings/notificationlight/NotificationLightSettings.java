@@ -43,9 +43,9 @@ import android.widget.ListView;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
-import com.android.settings.terminus.PackageListAdapter;
-import com.android.settings.terminus.PackageListAdapter.PackageItem;
-import com.android.settings.terminus.SystemSettingSwitchPreference;
+import com.android.settings.broken.PackageListAdapter;
+import com.android.settings.broken.PackageListAdapter.PackageItem;
+import com.android.settings.broken.SystemSettingSwitchPreference;
 
 import java.util.ArrayList;
 import java.util.HashMap;
