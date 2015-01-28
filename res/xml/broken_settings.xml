@@ -53,6 +53,13 @@
                 android:summary="@string/initd_summary"
                 android:fragment="com.android.settings.broken.InitD" />
 
+        <!-- Lock screen -->
+        <PreferenceScreen
+                android:id="@+id/lock_screen"
+                android:title="@string/lock_screen_title"
+                android:summary="@string/lock_screen_summary"
+                android:fragment="com.android.settings.broken.LockScreen" />
+        
         <!-- Nav bar -->
         <PreferenceScreen
                 android:key="navigation_bar"
