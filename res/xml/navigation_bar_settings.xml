@@ -9,6 +9,12 @@
                 android:fragment="com.android.settings.terminus.NavBar"
                 android:title="@string/navbar_customization_title" />
 
+        <com.android.settings.terminus.SystemSettingSwitchPreference
+                android:key="navigation_bar_menu_arrow_keys"
+                android:title="@string/navigation_bar_arrow_keys_title"
+                android:summary="@string/navigation_bar_arrow_keys_summary"
+                android:defaultValue="false" />
+
         <ListPreference
                 android:key="navigation_bar_height"
                 android:dialogTitle="@string/navigation_bar_height"
