@@ -7,7 +7,8 @@
         <PreferenceScreen
                 android:key="navigation_bar"
                 android:fragment="com.android.settings.terminus.NavBar"
-                android:title="@string/navbar_customization_title" />
+                android:title="@string/navbar_customization_title"
+                android:summary="@string/navbar_customization_summary" />
 
         <com.android.settings.terminus.SystemSettingSwitchPreference
                 android:key="navigation_bar_menu_arrow_keys"
