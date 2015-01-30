@@ -25,9 +25,9 @@
                 <SwitchPreference
                         android:key="pref_volume_wake"
                         android:title="@string/pref_volume_wake_title"
-                        android:summary="@string/pref_volume_wake_summary"
+                        android:summary="@string/button_wake_summary"
                         android:defaultValue="false"
-                        android:persistent="false" />
+                        android:disableDependentsState="true" />
 
         </PreferenceCategory>
 
@@ -58,7 +58,8 @@
                         android:title="@string/volbtn_music_controls_title"
                         android:summary="@string/volbtn_music_controls_summary"
                         android:persistent="false"
-                        android:defaultValue="true" />
+                        android:defaultValue="true"
+                        android:dependency="pref_volume_wake" />
 
         </PreferenceCategory>
 
