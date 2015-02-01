@@ -174,6 +174,10 @@ public class QSTileHolder {
                 resourceName = "ic_qs_lte_on";
                 stringId = R.string.qs_tile_lte;
                 break;
+            case QSConstants.TILE_SCREENSHOT:
+                resourceName = "ic_qs_screenshot";
+                stringId = R.string.qs_tile_screenshot;
+                break;
             default:
                 return null;
         }

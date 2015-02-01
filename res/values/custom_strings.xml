@@ -1338,6 +1338,8 @@
     <string name="lockscreen_visualizer_title">Display music visualizer</string>
     <!-- Screen timeout tile -->
     <string name="qs_tile_screen_timeout">Screen timeout</string>
+    <!-- Screenshot Tile -->
+    <string name="qs_tile_screenshot">Screenshot</string>
 
     <!-- Status bar greeting -->
     <string name="status_bar_greeting_title">Greeting</string>
