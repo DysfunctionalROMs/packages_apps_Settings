@@ -676,6 +676,7 @@
     <string name="qs_appcirclebar_tile">App Circle Bar</string>
     <string name="qs_tile_reboot">Reboot</string>
     <string name="qs_music_play_tile">Play</string>
+    <string name="qs_sync_tile">Sync</string>
 
     <!-- Wifi detail view -->
     <string name="qs_wifi_detail_title">Detailed Wi\u2011Fi view</string>

@@ -118,6 +118,10 @@ public class QSTileHolder {
                 resourceName = "ic_qs_brightness_auto_off_alpha";
                 stringId = R.string.qs_brightness_tile;
                 break;
+            case QSConstants.TILE_SYNC:
+                resourceName = "ic_qs_sync_on";
+                stringId = R.string.qs_sync_tile;
+                break;
             case QSConstants.TILE_EXPANDED_DESKTOP:
                 resourceName = "ic_qs_expanded_desktop";
                 stringId = R.string.qs_expanded_desktop_tile;
