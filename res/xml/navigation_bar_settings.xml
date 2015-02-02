@@ -10,6 +10,11 @@
                 android:title="@string/navbar_customization_title"
                 android:summary="@string/navbar_customization_summary" />
 
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+                android:key="navigation_bar_tint"
+                android:title="@string/navbar_button_tint_title"
+                android:defaultValue="#ffffff" />
+
         <com.android.settings.terminus.SystemSettingSwitchPreference
                 android:key="navigation_bar_menu_arrow_keys"
                 android:title="@string/navigation_bar_arrow_keys_title"
