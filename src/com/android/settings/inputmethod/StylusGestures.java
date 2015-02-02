@@ -29,6 +29,7 @@ import android.preference.Preference;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
 
+import com.android.internal.logging.MetricsLogger;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
@@ -197,5 +198,11 @@ public class StylusGestures extends SettingsPreferenceFragment implements
             return pm.getApplicationLabel(ai);
         }
         return null;
+    }
+
+    @Override
+    protected int getMetricsCategory() {
+        // todo add a constant in MetricsLogger.java
+        return MetricsLogger.INPUTMETHOD_LANGUAGE;
     }
 }
