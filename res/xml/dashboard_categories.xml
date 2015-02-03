@@ -121,8 +121,15 @@
                     android:targetPackage="com.grarak.kerneladiutor"
                     android:targetClass="com.grarak.kerneladiutor.MainActivity" />
         </dashboard-tile>
-        
 
+        <!-- Performance -->
+        <dashboard-tile
+                android:id="@+id/performance_settings"
+                android:title="@string/performance_settings_title"
+                android:fragment="com.android.settings.broken.PerformanceSettings"
+                android:icon="@drawable/ic_settings_performance"
+                />
+        
         <!-- BitSyko Layers App -->
         <dashboard-tile
                 android:id="@+id/bitsyko_layers"
