@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2014 DarkKat
+<!-- Copyright (C) 2015 DarkKat
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -21,6 +21,13 @@
         android:title="@string/lock_screen_weather_settings_title"
 		android:summary="@string/lock_screen_weather_settings_summary"
         android:fragment="com.android.settings.broken.LockScreenWeatherSettings" />
+
+    <PreferenceScreen
+        android:key="lock_screen_color_settings"
+        android:title="@string/colors_title"
+		android:summary="@string/lock_screen_color_settings_summary"
+        android:fragment="com.android.settings.broken.LockScreenColorSettings" />
+
 
     <PreferenceScreen
                  android:key="lockscreen_shortcuts"
