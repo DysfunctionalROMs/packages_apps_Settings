@@ -528,4 +528,13 @@
     <string name="hfm_dialog_success">/4 hosts sources successfully applied!</string>
     <string name="hfm_dialog_conn_error">Error: No network connectivity</string>
 
+    <!-- Navigation bar button color -->
+    <string name="navbar_button_tint_title">Navigation button tint</string>
+
+    <!-- Display settings screen, setting options for LCD density -->
+    <string name="lcd_density">LCD density</string>
+    <string name="lcd_density_summary">%d DPI</string>
+    <string name="lcd_density_default">Device default</string>
+    <string name="lcd_density_unsupported">Unsupported</string>
+    <string name="restarting_ui">Restarting</string>
 </resources>
