@@ -49,6 +49,9 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 
 import java.util.Collection;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class AdvancedWifiSettings extends SettingsPreferenceFragment
         implements Preference.OnPreferenceChangeListener {
@@ -223,6 +226,20 @@ public class AdvancedWifiSettings extends SettingsPreferenceFragment
                 int index = mCountryOverridePref.findIndexOfValue(value);
                 updateCountryOverrideSummary(index);
                 mCountryOverridePref.setValue(value);
+			}
+		}
+
+        ListPreference ccodePref = (ListPreference) findPreference(KEY_COUNTRY_CODE);
+        if (ccodePref != null) {
+            ccodePref.setEntries(getCountryCodeEntries());
+            ccodePref.setEntryValues(getCountryCodeValues());
+            ccodePref.setOnPreferenceChangeListener(this);
+            String valueString = mWifiManager.getCountryCode();
+            if (valueString != null) {
+                ccodePref.setValue(valueString);
+                updateChannelSummary(ccodePref, valueString);
+            } else {
+                Log.e(TAG, "Failed to fetch country code");
             }
         }
 
@@ -296,6 +313,11 @@ public class AdvancedWifiSettings extends SettingsPreferenceFragment
                 + getResources().getString(R.string.wifi_country_summary_suffix));
         // Disable country code preference if it is being overridden
         mCountryCodePref.setEnabled((index == 0));
+	}
+
+    private void updateChannelSummary(Preference channelPref, String value) {
+        String channel = getResources().getString(R.string.wifi_setting_countrycode_summary);
+        channelPref.setSummary(channel + " (" + value + ")");
     }
 
     @Override
@@ -393,6 +415,18 @@ public class AdvancedWifiSettings extends SettingsPreferenceFragment
             return false;
         }
 
+        if (KEY_COUNTRY_CODE.equals(key)) {
+            try {
+                String valueString = (String) newValue;
+                mWifiManager.setCountryCode(valueString, true);
+                updateChannelSummary(preference, valueString);
+            } catch (IllegalArgumentException e) {
+                Toast.makeText(context, R.string.wifi_setting_countrycode_error,
+                        Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        }
+
         if (KEY_SLEEP_POLICY.equals(key)) {
             try {
                 String stringValue = (String) newValue;
@@ -446,4 +480,41 @@ public class AdvancedWifiSettings extends SettingsPreferenceFragment
         }
     }
 
+    private List<String> getAlKnownCountryCodes() {
+        final String simCountryCode = Settings.Global.getString(getContentResolver(),
+                Settings.Global.WIFI_COUNTRY_CODE_SIM0);
+        String[] values = getResources().getStringArray(R.array.wifi_countrycode_values);
+        List<String> valuesList = new ArrayList<String>();
+        if (simCountryCode != null && !TextUtils.isEmpty(simCountryCode)) {
+            valuesList.add(simCountryCode);
+        }
+        valuesList.addAll(Arrays.asList(values));
+        return valuesList;
+    }
+
+    private String[] getCountryCodeEntries() {
+        final String savedCountryCode = mWifiManager.getCountryCode();
+        final String simCountryCode = Settings.Global.getString(getContentResolver(),
+                Settings.Global.WIFI_COUNTRY_CODE_SIM0);
+        String[] entries = getResources().getStringArray(R.array.wifi_countrycode_entries);
+        List<String> entriesList = new ArrayList<String>();
+        if (simCountryCode != null && !TextUtils.isEmpty(simCountryCode)) {
+            entriesList.add(getResources().getString(R.string.wifi_setting_countrycode_default) + " (" + simCountryCode + ")");
+        }
+        entriesList.addAll(Arrays.asList(entries));
+        if (!getAlKnownCountryCodes().contains(savedCountryCode)) {
+            entriesList.add(savedCountryCode);
+        }
+        return entriesList.toArray(new String[entriesList.size()]);
+    }
+
+    private String[] getCountryCodeValues() {
+        final String savedCountryCode = mWifiManager.getCountryCode();
+        List<String> valuesList = new ArrayList<String>();
+        valuesList.addAll(getAlKnownCountryCodes());
+        if (!valuesList.contains(savedCountryCode)) {
+            valuesList.add(savedCountryCode);
+        }
+        return valuesList.toArray(new String[valuesList.size()]);
+    }
 }
