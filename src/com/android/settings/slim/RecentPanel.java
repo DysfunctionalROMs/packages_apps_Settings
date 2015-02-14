@@ -100,8 +100,8 @@ public class RecentPanel extends SettingsPreferenceFragment implements DialogCre
         int location = Settings.System.getIntForUser(getActivity().getContentResolver(),
                 Settings.System.RECENTS_CLEAR_ALL_LOCATION, 0, UserHandle.USER_CURRENT);
         mRecentsClearAllLocation.setValue(String.valueOf(location));
+        mRecentsClearAllLocation.setSummary(mRecentsClearAllLocation.getEntry());
         mRecentsClearAllLocation.setOnPreferenceChangeListener(this);
-        updateRecentsLocation(location);
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -178,10 +178,11 @@ public class RecentPanel extends SettingsPreferenceFragment implements DialogCre
                 Settings.System.RECENTS_MAX_APPS, value);
             return true;
         } else if (preference == mRecentsClearAllLocation) {
-            int location = Integer.valueOf((String) newValue);
+            int location = Integer.valueOf((String) objValue);
+            int index = mRecentsClearAllLocation.findIndexOfValue((String) objValue);
             Settings.System.putIntForUser(getActivity().getContentResolver(),
                     Settings.System.RECENTS_CLEAR_ALL_LOCATION, location, UserHandle.USER_CURRENT);
-            updateRecentsLocation(location);
+            mRecentsClearAllLocation.setSummary(mRecentsClearAllLocation.getEntries()[index]);
             return true;
         }
         return false;
@@ -251,25 +252,6 @@ public class RecentPanel extends SettingsPreferenceFragment implements DialogCre
         final int recentExpandedMode = Settings.System.getInt(getContentResolver(),
                 Settings.System.RECENT_PANEL_EXPANDED_MODE, 0);
         mRecentPanelExpandedMode.setValue(recentExpandedMode + "");
-    }
-
-    private void updateRecentsLocation(int value) {
-        ContentResolver resolver = getContentResolver();
-        Resources res = getResources();
-        int summary = -1;
-
-        Settings.System.putInt(resolver, Settings.System.RECENTS_CLEAR_ALL_LOCATION, value);
-
-        if (value == 0) {
-            Settings.System.putInt(resolver, Settings.System.RECENTS_CLEAR_ALL_LOCATION, 0);
-            summary = R.string.recents_clear_all_location_right;
-        } else if (value == 1) {
-            Settings.System.putInt(resolver, Settings.System.RECENTS_CLEAR_ALL_LOCATION, 1);
-            summary = R.string.recents_clear_all_location_left;
-        }
-        if (mRecentsClearAllLocation != null && summary != -1) {
-            mRecentsClearAllLocation.setSummary(res.getString(summary));
-        }
     }
 
     private void initializeAllPreferences() {
