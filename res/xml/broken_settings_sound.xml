@@ -29,5 +29,11 @@
         android:entries="@array/less_notification_sounds_entries"
         android:entryValues="@array/less_notification_sounds_values"
         android:persistent="false" />
-
+    
+    <!-- Prevent audio ducking -->
+    <com.android.settings.broken.GlobalSettingSwitchPreference
+            android:key="zen_disable_ducking_during_media_playback"
+            android:title="@string/interruptions_ignore_while_media_title"
+            android:summary="@string/interruptions_ignore_while_media_summary" />
+            
 </PreferenceScreen>

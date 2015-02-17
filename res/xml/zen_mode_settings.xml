@@ -30,4 +30,5 @@
             android:key="automation_settings"
             android:title="@string/zen_mode_automation_settings_title"
             android:fragment="com.android.settings.notification.ZenModeAutomationSettings" />
+
 </PreferenceScreen>
