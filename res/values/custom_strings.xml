@@ -1826,4 +1826,26 @@
     <string name="double_tap_sleep_anywhere_title">DT2S on Lockscreen</string>
     <string name="double_tap_sleep_anywhere_summary">Double tap lockscreen to put the device to sleep</string>
 
+    <!-- Custom lockscreen shortcuts -->
+    <string name="lock_screen_shortcuts_settings_title">Lower Shortcuts</string>
+    <string name="lock_screen_shortcuts_settings_summary">Customize bottom shortcuts</string>
+
+    <!-- Shortcuts settings -->
+    <string name="shortcuts_target_settings_title">Targets</string>
+    <string name="shortcuts_target_settings_summary">Customize targets</string>
+    <string name="shortcuts_colorize_custom_icons_title">Colorize all icons</string>
+    <string name="shortcuts_colorize_custom_icons_summary">Enable to colorize all icons, disable to colorize only default icons</string>
+
+   <!-- Targets settings -->
+    <string name="shortcuts_hint_message">Tap an icon on the left or right to reassign a target.</string>
+    <string name="shortcuts_reassign_shortcut_title">Reassign target</string>
+    <string name="shortcuts_default_target">Default</string>
+    <string name="shortcuts_none_target">None</string>
+    <string name="shortcuts_custom_target">Choose custom target</string>
+
+    <string name="picker_apps_title">Apps</string>
+    <string name="picker_activities_title">Activities</string>
+    <string name="picker_select_custom_app_title">Select custom app</string>
+    <string name="picker_select_custom_activity_title">Select custom activity</string>
+
 </resources>
