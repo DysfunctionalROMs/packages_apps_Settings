@@ -26,6 +26,13 @@
                 android:summary="@string/button_power_menu_settings_summary"
                 android:fragment="com.android.settings.broken.PowerMenuSettings" />
 
+        <!-- Animations -->
+        <PreferenceScreen
+                android:id="@+id/animation_settings"
+                android:title="@string/animation_settings_title"
+                android:fragment="com.android.settings.broken.AnimationSettings" />
+
+        <!-- App Circle -->
         <PreferenceScreen
                 android:id="@+id/app_circle_sidebar"
                 android:title="@string/app_circle_bar_title"
