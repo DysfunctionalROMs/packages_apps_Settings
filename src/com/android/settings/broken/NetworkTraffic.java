@@ -27,7 +27,7 @@ import com.android.internal.logging.MetricsLogger;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
-import com.android.settings.chameleonos.SeekBarPreference;
+import com.android.settings.broken.SeekBarPreference;
 
 public class NetworkTraffic extends SettingsPreferenceFragment
     implements OnPreferenceChangeListener {
