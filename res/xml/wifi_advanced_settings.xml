@@ -31,6 +31,12 @@
             android:entries="@array/wifi_sleep_policy_entries"
             android:entryValues="@array/wifi_sleep_policy_values" />
 
+    <SwitchPreference
+            android:key="wifi_scan_always_available"
+            android:title="@string/wifi_scan_always_available"
+            android:summary="@string/wifi_scan_always_available_summary"
+            android:persistent="false" />
+
     <com.android.settings.AppListSwitchPreference
             android:key="wifi_assistant"
             android:title="@string/wifi_automatically_connect_title"
