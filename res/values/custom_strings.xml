@@ -35,6 +35,8 @@
 
     <!-- BROKENCENTER -->
     <string name="broken_center_title">BrokenCenter</string>
+    <string name="advanced_options_title">Advanced options</string>
+    <string name="advanced_category_title">Advanced</string>
 
     <string name="broken_settings_title">Broken Pieces</string>
     <string name="advanced_options_title">Advanced options</string>
