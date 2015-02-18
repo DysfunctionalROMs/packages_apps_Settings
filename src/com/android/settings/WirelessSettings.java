@@ -234,12 +234,13 @@ public class WirelessSettings extends SettingsPreferenceFragment implements Inde
         mAirplaneModePreference = (SwitchPreference) findPreference(KEY_TOGGLE_AIRPLANE);
         SwitchPreference nfc = (SwitchPreference) findPreference(KEY_TOGGLE_NFC);
         PreferenceScreen androidBeam = (PreferenceScreen) findPreference(KEY_ANDROID_BEAM_SETTINGS);
+        PreferenceScreen nfcPayment = (PreferenceScreen) findPreference(KEY_NFC_PAYMENT_SETTINGS);
         SwitchPreference nsd = (SwitchPreference) findPreference(KEY_TOGGLE_NSD);
         PreferenceCategory nfcCategory = (PreferenceCategory)
                 findPreference(KEY_NFC_CATEGORY_SETTINGS);
 
         mAirplaneModeEnabler = new AirplaneModeEnabler(activity, mAirplaneModePreference);
-        mNfcEnabler = new NfcEnabler(activity, nfc, androidBeam);
+        mNfcEnabler = new NfcEnabler(activity, nfc, androidBeam, nfcPayment);
 
         mButtonWfc = (PreferenceScreen) findPreference(KEY_WFC_SETTINGS);
 
@@ -284,6 +285,7 @@ public class WirelessSettings extends SettingsPreferenceFragment implements Inde
         if (toggleable == null || !toggleable.contains(Settings.Global.RADIO_NFC)) {
             findPreference(KEY_TOGGLE_NFC).setDependency(KEY_TOGGLE_AIRPLANE);
             findPreference(KEY_ANDROID_BEAM_SETTINGS).setDependency(KEY_TOGGLE_AIRPLANE);
+            findPreference(KEY_NFC_PAYMENT_SETTINGS).setDependency(KEY_TOGGLE_AIRPLANE);
         }
 
         // Remove NFC if not available
@@ -291,6 +293,9 @@ public class WirelessSettings extends SettingsPreferenceFragment implements Inde
         if (mNfcAdapter == null) {
             getPreferenceScreen().removePreference(nfcCategory);
             mNfcEnabler = null;
+        } else if (!mPm.hasSystemFeature(PackageManager.FEATURE_NFC_HOST_CARD_EMULATION)) {
+            // Only show if we have the HCE feature
+            getPreferenceScreen().removePreference(nfcPayment);
         }
 
         // Remove Mobile Network Settings and Manage Mobile Plan for secondary users,
@@ -441,6 +446,7 @@ public class WirelessSettings extends SettingsPreferenceFragment implements Inde
 
                 result.add(KEY_TOGGLE_NSD);
 
+                final PackageManager pm = context.getPackageManager();
                 final UserManager um = (UserManager) context.getSystemService(Context.USER_SERVICE);
                 final int myUserId = UserHandle.myUserId();
                 final boolean isSecondaryUser = myUserId != UserHandle.USER_OWNER;
@@ -464,6 +470,11 @@ public class WirelessSettings extends SettingsPreferenceFragment implements Inde
                     if (adapter == null) {
                         result.add(KEY_TOGGLE_NFC);
                         result.add(KEY_ANDROID_BEAM_SETTINGS);
+                        result.add(KEY_NFC_PAYMENT_SETTINGS);
+                    } else if (!pm.hasSystemFeature(
+                            PackageManager.FEATURE_NFC_HOST_CARD_EMULATION)) {
+                        // Only show if we have the HCE feature
+                        result.add(KEY_NFC_PAYMENT_SETTINGS);
                     }
                 }
 
@@ -480,8 +491,6 @@ public class WirelessSettings extends SettingsPreferenceFragment implements Inde
                 if (!isMobilePlanEnabled) {
                     result.add(KEY_MANAGE_MOBILE_PLAN);
                 }
-
-                final PackageManager pm = context.getPackageManager();
 
                 // Remove Airplane Mode settings if it's a stationary device such as a TV.
                 if (pm.hasSystemFeature(PackageManager.FEATURE_TELEVISION)) {
