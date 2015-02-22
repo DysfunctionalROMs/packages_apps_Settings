@@ -54,4 +54,10 @@
                 android:entryValues="@array/recents_clear_all_location_values"
                 android:defaultValue="0"
                 android:dependency="show_clear_all_recents" />
+
+        <com.android.settings.terminus.SystemSettingSwitchPreference
+                android:key="double_tap_sleep_navbar"
+                android:title="@string/double_tap_sleep_nav_bar_title"
+                android:summary="@string/double_tap_sleep_nav_bar_summary"
+                android:defaultValue="false" />
 </PreferenceScreen>
