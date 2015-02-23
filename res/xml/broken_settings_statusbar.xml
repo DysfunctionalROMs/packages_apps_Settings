@@ -12,6 +12,12 @@
         android:key="battery_style_pref"
         android:title="@string/battery_title"
     	android:summary="@string/battery2_summary" />
+    	
+    <PreferenceScreen
+        android:key="battery_bar"
+        android:fragment="com.android.settings.broken.BatteryBar"
+        android:summary="@string/battery_bar_summary"
+        android:title="@string/battery_bar" />
 
     <PreferenceScreen
         android:fragment="com.android.settings.broken.StatusBarClockStyle"
@@ -39,6 +45,12 @@
         android:key="carrierlabel"
         android:fragment="com.android.settings.broken.CarrierLabel"
         android:title="@string/carrier_options" />
+        
+    <PreferenceScreen
+	    android:key="network_traffic_state"
+    	android:fragment="com.android.settings.broken.NetworkTraffic"
+	    android:summary="@string/network_traffic_summary"
+    	android:title="@string/network_traffic_title" />
 
     <ListPreference
         android:key="quick_pulldown"
@@ -61,11 +73,6 @@
                 android:targetClass="com.android.systemui.tuner.TunerActivity" />
     </PreferenceScreen>
 
-    <PreferenceScreen
-	    android:key="network_traffic_state"
-    	android:fragment="com.android.settings.broken.NetworkTraffic"
-	    android:summary="@string/network_traffic_summary"
-    	android:title="@string/network_traffic_title" />
     </PreferenceCategory>
 
     <PreferenceCategory
