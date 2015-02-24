@@ -38,4 +38,7 @@
     <string name="build_id">Android-Build-ID</string>
     <string name="build_date">Build Date</string>
 
+    <!-- BrokenOTA -->
+    <string name="slimota_title">Broken Updates</string>
+
 </resources>
