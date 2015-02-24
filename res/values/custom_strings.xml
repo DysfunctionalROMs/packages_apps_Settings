@@ -28,5 +28,8 @@
     
     <!-- SuperSU -->
     <string name="supersu_title">SuperSU</string>
-    
+
+    <!-- BrokenOTA -->
+    <string name="slimota_title">Broken Updates</string>
+
 </resources>
