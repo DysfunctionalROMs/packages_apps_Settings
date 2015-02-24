@@ -1802,5 +1802,7 @@
     <!-- Battery saver -->
     <string name="battery_saver_title">Warning color</string>
     <string name="battery_saver_style_reset_message">Reset battery saver warning color?</string>  
-    
+
+    <!-- BrokenOTA -->
+    <string name="slimota_title">Broken Updates</string>
 </resources>
