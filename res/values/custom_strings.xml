@@ -41,4 +41,7 @@
     <!-- Dev Options Enabled by Default -->
     <string name="show_dev_already_enabled">No need, development settings are enabled by default.</string>
 
+    <!-- BrokenOTA -->
+    <string name="slimota_title">Broken Updates</string>
+
 </resources>
