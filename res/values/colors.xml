@@ -81,4 +81,5 @@
     <color name="sim_noitification">@*android:color/material_deep_teal_500</color>
 
     <color name="wifi_assistant_color_accent">#ff009587</color>
+
 </resources>
