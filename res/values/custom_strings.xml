@@ -688,6 +688,7 @@
     <string name="qs_ambient_display">Ambient Display</string>
     <string name="qs_tile_visualizer" translatable="false">AudioFX</string>
     <string name="qs_tile_led">LED</string>
+    <string name="qs_tile_lte">LTE</string>
 
 
     <!-- Wifi detail view -->
