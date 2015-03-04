@@ -102,6 +102,10 @@ public class QSTileHolder {
                 resourceName = "ic_qs_nfc_on";
                 stringId = R.string.qs_tile_nfc;
                 break;
+            case QSConstants.TILE_REBOOT:
+                resourceName = "ic_qs_reboot";
+                stringId = R.string.qs_tile_reboot;
+                break;
             case QSConstants.TILE_COMPASS:
                 resourceName = "ic_qs_compass_on";
                 stringId = R.string.qs_tile_compass;
