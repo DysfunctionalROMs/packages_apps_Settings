@@ -41,10 +41,12 @@ public class VolumeKeys extends SettingsPreferenceFragment implements
     private static final String KEY_WAKEUP_CATEGORY = "category_wakeup_options";
     private static final String KEY_VOL_MEDIA = "volume_keys_control_media_stream";
     private static final String KEY_VOLUME_WAKE = "pref_volume_wake";
+    private static final String PREF_VOLBTN_SWAP = "button_swap_volume_buttons";
 
     private PreferenceCategory mWakeUpOptions;
     private SwitchPreference mVolumeKeysControlMedia;
     private SwitchPreference mVolumeWake;
+    private SwitchPreference mVolBtnSwap;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -62,6 +64,12 @@ public class VolumeKeys extends SettingsPreferenceFragment implements
         mVolumeWake.setChecked(Settings.System.getInt(getActivity().getContentResolver(),
                 Settings.System.VOLUME_WAKE_SCREEN, 0) == 1);
         mVolumeWake.setOnPreferenceChangeListener(this);
+
+        // volume swap
+        mVolBtnSwap = (SwitchPreference) findPreference(PREF_VOLBTN_SWAP);
+        mVolBtnSwap.setChecked(Settings.System.getInt(getContentResolver(),
+                Settings.System.SWAP_VOLUME_BUTTONS_ON_ROTATION, 0) == 1);
+        mVolBtnSwap.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -86,6 +94,13 @@ public class VolumeKeys extends SettingsPreferenceFragment implements
             Settings.System.putInt(getContentResolver(),
                     Settings.System.VOLUME_WAKE_SCREEN,
                     (Boolean) objValue ? 1 : 0);
+            return true;
+        } else if (preference == mVolBtnSwap) {
+            boolean value = (Boolean) objValue;
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.SWAP_VOLUME_BUTTONS_ON_ROTATION,
+                    value ? 1 : 0);
+            return true;
         }
         return true;
     }

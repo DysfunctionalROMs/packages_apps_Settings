@@ -31,11 +31,19 @@
 
         </PreferenceCategory>
 
-        <SwitchPreference
-                android:key="volume_keys_control_media_stream"
-                android:title="@string/volume_keys_control_media_stream"
-                android:summary="@string/volume_keys_control_media_stream_summary"
-                android:defaultValue="false"
-                android:persistent="false" />
+                <SwitchPreference
+                        android:key="volume_keys_control_media_stream"
+                        android:title="@string/volume_keys_control_media_stream"
+                        android:summary="@string/volume_keys_control_media_stream_summary"
+                        android:defaultValue="false"
+                        android:persistent="false" />
+
+                <SwitchPreference
+                        android:key="button_swap_volume_buttons"
+                        android:title="@string/button_swap_volume_buttons_title"
+                        android:summary="@string/button_swap_volume_buttons_summary" 
+                        android:defaultValue="false" />                
+
+        </PreferenceCategory>
 
 </PreferenceScreen>

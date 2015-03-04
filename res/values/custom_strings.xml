@@ -274,6 +274,9 @@
     <!-- Volume Rocker wake -->
     <string name="pref_volume_wake_title">Volume rocker wake</string>
     <string name="pref_volume_wake_summary">Pressing the volume rocker up/down will wake the device</string>
+    <!-- Volume rocker swap -->
+    <string name="button_swap_volume_buttons_title">Reorient</string>
+    <string name="button_swap_volume_buttons_summary">Swap volume buttons when the screen is rotated</string>
 
     <!-- App Circle Sidebar -->
     <string name="app_circle_bar_title">App sidebar</string>
