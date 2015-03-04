@@ -18,6 +18,12 @@
         android:summary="@string/volbtn_music_controls_summary"
         android:persistent="false"
         android:defaultValue="true" />
+        
+     <SwitchPreference
+        android:key="button_swap_volume_buttons"
+        android:title="@string/button_swap_volume_buttons_title"
+        android:summary="@string/button_swap_volume_buttons_summary" 
+        android:defaultValue="false" />     
 
     </PreferenceCategory>
 

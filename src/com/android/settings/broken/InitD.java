@@ -32,6 +32,8 @@ import com.android.settings.broken.util.Helpers;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
+import com.android.internal.logging.MetricsLogger;
+
 public class InitD extends SettingsPreferenceFragment {
 
     private static final String TAG = "InitD";
@@ -148,6 +150,11 @@ public class InitD extends SettingsPreferenceFragment {
         }
 
     };
+    
+    @Override
+    protected int getMetricsCategory() {
+        return MetricsLogger.INITD_SETTINGS;
+	}
 
     private boolean isInitdSetup() {
         if (!new File(INIT_D_CFG).exists()) {
@@ -257,5 +264,4 @@ public class InitD extends SettingsPreferenceFragment {
         }
         return variables;
     }
-
 }

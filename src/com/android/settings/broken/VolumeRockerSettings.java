@@ -18,9 +18,11 @@ public class VolumeRockerSettings extends SettingsPreferenceFragment implements
 
     private static final String VOLUME_ROCKER_WAKE = "volume_rocker_wake";
     private static final String KEY_VOLBTN_MUSIC_CTRL = "volbtn_music_controls";
+    private static final String PREF_VOLBTN_SWAP = "button_swap_volume_buttons";
 
     private SwitchPreference mVolumeRockerWake;
     private SwitchPreference mVolBtnMusicCtrl;
+    private SwitchPreference mVolBtnSwap;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,13 +35,19 @@ public class VolumeRockerSettings extends SettingsPreferenceFragment implements
         int volumeRockerWake = Settings.System.getInt(getContentResolver(),
                 VOLUME_ROCKER_WAKE, 0);
         mVolumeRockerWake.setChecked(volumeRockerWake != 0);
+        
+        // volume swap
+        mVolBtnSwap = (SwitchPreference) findPreference(PREF_VOLBTN_SWAP);
+        mVolBtnSwap.setChecked(Settings.System.getInt(getContentResolver(),
+                Settings.System.SWAP_VOLUME_BUTTONS, 0) == 1);
+        mVolBtnSwap.setOnPreferenceChangeListener(this);
 
         // volume music control
         mVolBtnMusicCtrl = (SwitchPreference) findPreference(KEY_VOLBTN_MUSIC_CTRL);
         mVolBtnMusicCtrl.setChecked(Settings.System.getInt(getContentResolver(),
                 Settings.System.VOLUME_MUSIC_CONTROLS, 1) != 0);
         mVolBtnMusicCtrl.setOnPreferenceChangeListener(this);
- 	try {
+ 	    try {
             if (Settings.System.getInt(getActivity().getApplicationContext().getContentResolver(),
                     Settings.System.VOLUME_ROCKER_WAKE) == 1) {
                 mVolBtnMusicCtrl.setEnabled(false);
@@ -61,6 +69,12 @@ public class VolumeRockerSettings extends SettingsPreferenceFragment implements
             Settings.System.putInt(getContentResolver(),
                     Settings.System.VOLUME_MUSIC_CONTROLS,
                     (Boolean) objValue ? 1 : 0);
+            return true;
+        } else if (preference == mVolBtnSwap) {
+            boolean value = (Boolean) objValue;
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.SWAP_VOLUME_BUTTONS,
+                    value ? 1 : 0);
             return true;
         }
         return false;

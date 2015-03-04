@@ -147,8 +147,6 @@
     <string name="kill_app_longpress_back">Kill app back button</string>
     <string name="kill_app_longpress_back_summary">Kill the foreground app by long-pressing the back key</string>
     
-    <!--Wakeup Options -->
-    <string name="display_category_wakeup_options_title">Wakeup options</string>
     <!-- Volume rocker wake -->
     <string name="volume_rocker_wake_title">Volume rocker wake</string>
     <string name="volume_rocker_wake_summary">Pressing the volume keys will wake your device</string>
@@ -184,7 +182,7 @@
     <string name="three_finger_gesture_summary">Swipe three fingers downwards to take a screenshot</string>
 
     <!-- Wakeup options -->
-    <string name="display_category_wakeup_options_title">Wakeup options</string>
+    <string name="display_category_wakeup_options_title">Volume Rocker options</string>
     <string name="wakeup_when_plugged_unplugged_title">Wake up on charge</string>
     <string name="wakeup_when_plugged_unplugged_summary">Wake up device if charger is plugged/unplugged.</string>
     
@@ -469,5 +467,9 @@
     <string name="dt_init_d_error">Init.d error</string>
     <string name="dm_init_d_error">It looks like init.d isn\'t setup properly. Please contact your ROM developer.</string>
     <string name="db_exit">Exit</string>
+    
+    <!-- Volume rocker swap -->
+    <string name="button_swap_volume_buttons_title">Reorient</string>
+    <string name="button_swap_volume_buttons_summary">Swap volume buttons when the screen is rotated</string>
 
 </resources>
