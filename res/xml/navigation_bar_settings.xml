@@ -15,12 +15,6 @@
                 android:title="@string/navbar_button_tint_title"
                 android:defaultValue="#ffffff" />
 
-        <com.android.settings.terminus.SystemSettingSwitchPreference
-                android:key="navigation_bar_menu_arrow_keys"
-                android:title="@string/navigation_bar_arrow_keys_title"
-                android:summary="@string/navigation_bar_arrow_keys_summary"
-                android:defaultValue="false" />
-
         <ListPreference
                 android:key="navigation_bar_height"
                 android:dialogTitle="@string/navigation_bar_height"
@@ -31,17 +25,24 @@
                 android:persistent="false" />
 
         <com.android.settings.broken.SystemSettingSwitchPreference
+                android:key="navigation_bar_menu_arrow_keys"
+                android:title="@string/navigation_bar_arrow_keys_title"
+                android:summary="@string/navigation_bar_arrow_keys_summary"
+                android:defaultValue="false" />
+
+        <com.android.settings.broken.SystemSettingSwitchPreference
+                android:key="double_tap_sleep_navbar"
+                android:title="@string/double_tap_sleep_nav_bar_title"
+                android:summary="@string/double_tap_sleep_nav_bar_summary"
+                android:defaultValue="false" />
+
+        <com.android.settings.broken.SystemSettingSwitchPreference
                 android:key="recents_show_hide_search_bar"
                 android:title="@string/recents_show_searchbar"
                 android:summary="@string/recents_show_searchbar_summary"
                 android:defaultValue="false" />
 
-        <SwitchPreference
-                android:key="kill_app_longpress_back"
-                android:title="@string/kill_app_longpress_back"
-                android:summary="@string/kill_app_longpress_back_summary"/>
-
-        <com.android.settings.terminus.SystemSettingSwitchPreference
+        <com.android.settings.broken.SystemSettingSwitchPreference
                 android:key="show_clear_all_recents"
                 android:title="@string/show_clear_all_recents_button_title"
                 android:summary="@string/show_clear_all_recents_button_summary"
@@ -55,9 +56,8 @@
                 android:defaultValue="0"
                 android:dependency="show_clear_all_recents" />
 
-        <com.android.settings.terminus.SystemSettingSwitchPreference
-                android:key="double_tap_sleep_navbar"
-                android:title="@string/double_tap_sleep_nav_bar_title"
-                android:summary="@string/double_tap_sleep_nav_bar_summary"
-                android:defaultValue="false" />
+        <SwitchPreference
+                android:key="kill_app_longpress_back"
+                android:title="@string/kill_app_longpress_back"
+                android:summary="@string/kill_app_longpress_back_summary"/>
 </PreferenceScreen>
