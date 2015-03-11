@@ -1407,4 +1407,7 @@
     <string name="screen_recorder_record_audio_summary">Record audio from the microphone</string>
     <string name="recorder_summary">Record what you\'re doing when you do it</string>
 
+    <!-- Lockscreen Visualizer -->
+    <string name="lockscreen_visualizer_title">Display music visualizer</string>
+
 </resources>
