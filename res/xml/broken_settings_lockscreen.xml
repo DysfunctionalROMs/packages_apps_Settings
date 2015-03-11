@@ -46,6 +46,11 @@
             android:title="@string/lockscreen_enable_power_menu_title"
             android:summary="@string/lockscreen_enable_power_menu_summary"
             android:defaultValue="true" />
+            
+        <Preference
+            android:key="ls_weather"
+            android:title="@string/lockscreen_weather_fragment_title"
+            android:summary="@string/lockscreen_weather_summary" />
 
     </PreferenceCategory>
 
