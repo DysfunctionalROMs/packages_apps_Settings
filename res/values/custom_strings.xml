@@ -1331,4 +1331,7 @@
     <string name="backlight_summary_enabled_with_timeout">Enabled for <xliff:g id="timeout">%s</xliff:g></string>
     <string name="backlight_summary_enabled">Enabled</string>
 
+    <!-- Lockscreen Visualizer -->
+    <string name="lockscreen_visualizer_title">Display music visualizer</string>
+
 </resources>

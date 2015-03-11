@@ -84,7 +84,7 @@
                 android:persistent="false"
                 android:ringtoneType="notification" />
         
-        <!-- Viper4Android -->        
+        <!-- Viper4Android        
         <PreferenceScreen
             android:id="@+id/viper_audio"
             android:title="@string/viper_settings_title">
@@ -92,7 +92,7 @@
                 android:action="android.intent.action.MAIN"
                 android:targetClass="com.vipercn.viper4android_v2.activity.ViPER4Android"
                 android:targetPackage="com.vipercn.viper4android_v2" />
-        </PreferenceScreen>
+        </PreferenceScreen> --> 
 
         <!-- Other sounds -->
         <Preference
