@@ -14,6 +14,7 @@
 
     <PreferenceScreen
         android:key="gestures_general_category"
+        android:fragment="com.android.settings.broken.GestureSettings"
         android:title="@string/gestures_title" />
 
     <PreferenceScreen
