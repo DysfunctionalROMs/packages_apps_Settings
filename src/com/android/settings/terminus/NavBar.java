@@ -82,7 +82,7 @@ public class NavBar extends Fragment implements View.OnClickListener {
             toggleEditMode(mEditMode, true);
         } else if (v == mRestore) {
             new AlertDialog.Builder(mActivity)
-                    .setTitle(R.string.profile_reset_title)
+                    .setTitle(R.string.reset)
                     .setIcon(R.drawable.ic_navbar_restore)
                     .setMessage(R.string.navigation_bar_reset_message)
                     .setPositiveButton(R.string.ok, new DialogInterface.OnClickListener() {
