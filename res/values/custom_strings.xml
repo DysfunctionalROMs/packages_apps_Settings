@@ -223,7 +223,8 @@
     <string name="kill_app_longpress_back_summary">Kill the foreground app by long-pressing the back key</string>
 
     <!-- Navigation Bar -->
-    <string name="navigation_bar_title">Navigation bar</string>
+    <string name="navigation_bar_title">Navigation</string>
+    <string name="navigation_bar_style_title">Navigation bar</string>
     <!-- Navigation Bar Height -->
     <string name="navigation_bar_height">Navigation bar height</string>
     <string name="navigation_bar_height_48">48dp (default)</string>
@@ -543,6 +544,7 @@
     <string name="restarting_ui">Restarting</string>
 
     <!-- Recents panel -->
+    <string name="recents_options_title">Recents Mods</string>
     <string name="recents_panel_category">Recents panel</string>
     <string name="show_clear_all_recents_button_title">Clear all button</string>
     <string name="show_clear_all_recents_button_summary">Show clear all button</string>

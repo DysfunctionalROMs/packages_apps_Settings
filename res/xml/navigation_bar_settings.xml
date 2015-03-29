@@ -4,6 +4,9 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:title="@string/navigation_bar_title">
 
+        <PreferenceCategory
+                android:title="@string/navigation_bar_style_title">
+
         <PreferenceScreen
                 android:key="navigation_bar"
                 android:fragment="com.android.settings.broken.NavBar"
@@ -41,6 +44,11 @@
                 android:title="@string/double_tap_sleep_nav_bar_title"
                 android:summary="@string/double_tap_sleep_nav_bar_summary"
                 android:defaultValue="false" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+            android:title="@string/recents_options_title" />
 
         <com.android.settings.broken.SystemSettingSwitchPreference
                 android:key="recents_show_hide_search_bar"
