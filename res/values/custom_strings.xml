@@ -224,7 +224,7 @@
 
     <!-- Navigation Bar -->
     <string name="navigation_bar_title">Navigation</string>
-    <string name="navigation_bar_style_title">Navigation bar</string>
+    <string name="navigation_bar_style_title">Navigation Bar Mods</string>
     <!-- Navigation Bar Height -->
     <string name="navigation_bar_height">Navigation bar height</string>
     <string name="navigation_bar_height_48">48dp (default)</string>
@@ -321,7 +321,6 @@
     <string name="volbtn_music_controls_title">Volume rocker music controls</string>
     <string name="volbtn_music_controls_summary">When screen off, long-pressing the volume rockers will seek music tracks</string>
     <string name="volume_button_toggle_info">Volume rocker wake must be disabled</string>
-
 
     <!-- App Circle Sidebar -->
     <string name="app_circle_bar_title">App circle sidebar</string>
@@ -469,8 +468,10 @@
     <string name="hfm_dialog_success">/4 hosts sources successfully applied!</string>
     <string name="hfm_dialog_conn_error">Error: No network connectivity</string>
 
-    <!-- Statusbar-->
-    <string name="status_bar_title">Status bar</string>
+    <!-- Statusbar & Notifs-->
+    <string name="status_bar_title">Status Bar and Notifs</string>
+    <string name="statusbar_title">Status Bar Mods</string>
+    <string name="notifs_title">Notification and QS Mods</string>
 
     <!-- Quick Pulldown -->
     <string name="status_bar_quick_qs_pulldown_title">One finger QS pull down</string>
@@ -670,8 +671,9 @@
     <string name="double_tap_to_wake_title">Double-tap to wake</string>
 
     <!-- QS Tiles -->
-    <string name="notification_drawer_title">Notification drawer</string>
-    <string name="qs_category_title">Quick Settings</string>
+    <string name="notification_drawer_title">Notification and QS</string>
+    <string name="notification_title">Notification Mods</string>
+    <string name="qs_category_title">Quick Settings Mods</string>
     <string name="qs_order_title">Select and order tiles</string>
     <string name="qs_brightness_slider_title">Show brightness slider</string>
     <string name="add_qs">Add new tile</string>
