@@ -1700,5 +1700,8 @@
     <string name="remove_blacklist_number_title">Remove number</string>
     <string name="remove_blacklist_entry">Do you want to remove this blacklist entry?</string>
     <string name="select_contact">Select contact</string>
+
+    <!-- Wifi Calling -->
+    <string name="wifi_calling_settings_title">Wifi Calling Settings</string>
     
 </resources>
