@@ -76,6 +76,7 @@ public class WirelessSettings extends SettingsPreferenceFragment
     private static final String KEY_SMS_APPLICATION = "sms_application";
     private static final String KEY_TOGGLE_NSD = "toggle_nsd"; //network service discovery
     private static final String KEY_CELL_BROADCAST_SETTINGS = "cell_broadcast_settings";
+    private static final String KEY_WIFI_CALLING_SETTINGS = "wifi_calling_settings";
 
     public static final String EXIT_ECM_RESULT = "exit_ecm_result";
     public static final int REQUEST_CODE_EXIT_ECM = 1;
@@ -420,6 +421,10 @@ public class WirelessSettings extends SettingsPreferenceFragment
             Preference ps = findPreference(KEY_CELL_BROADCAST_SETTINGS);
             if (ps != null) root.removePreference(ps);
         }
+
+        if (!isWifiCallingSettingsSupported()) {
+            removePreference(KEY_WIFI_CALLING_SETTINGS);
+        }
     }
 
     @Override
@@ -593,4 +598,9 @@ public class WirelessSettings extends SettingsPreferenceFragment
                 return result;
             }
         };
+
+    private boolean isWifiCallingSettingsSupported() {
+        return getActivity().getResources().getBoolean(
+                R.bool.config_wifi_calling_settings_supported);
+    }
 }
