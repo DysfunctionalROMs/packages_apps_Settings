@@ -1027,5 +1027,17 @@
     <string name="toast_Translucent_animation">Translucent animation</string>
     <string name="toast_SlideLeftRight_animation">Slide left to right</string>
     <string name="toast_SlideRightLeft_animation">Slide right to left</string>
+
+    <!-- Broken Pieces Summaries -->
+    <string name="adblocker_summary">Block incoming ads system wide</string>
+    <string name="animations_summary">Control system and IME animations</string>
+    <string name="appcircle_summary">A custom side launcher</string>
+    <string name="appops_summary">Kill them nasty permissions</string>
+    <string name="initd_summary">InitD script tweaks for your device</string>
+    <string name="navigation_summary">Navigation and Recents modifications</string>
+    <string name="recorder_summary">Record what you\'re doing when you do it</string>
+    <string name="statusbar_summary">Statusbar &amp; Notifications and QS customizations</string>
+    <string name="volume_summary">Swap orientation and many other options</string>
+    <string name="wakelock_summary">Find out whats killing your battery</string>
     
 </resources>
