@@ -186,10 +186,6 @@
     <string name="build_date">Broken Build Date</string>
     <string name="build_date_default">unknown</string>
 
-    <!-- Broken TWEAKS -->
-    <string name="header_category_broken">Customizations</string>
-    <string name="broken_settings_title">Broken Pieces</string>
-
     <!-- General strings -->
     <string name="ok">OK</string>
     <string name="reset">Reset</string>
@@ -306,7 +302,7 @@
     <string name="brokenextrainfo_summary">Display extra info for cpu, display, etc</string>
 
     <!-- Advanced titles -->
-    <string name="viper_settings_title">Audio engine</string>
+    <string name="viper_settings_title">Viper4Android Audio Engine</string>
 
     <!-- Init.d -->
     <string name="header_summary_init_d">@null</string>
@@ -372,6 +368,9 @@
     <string name="dm_init_d_error">It looks like init.d isn\'t setup properly. Please contact your ROM developer.</string>
     <string name="db_exit">Exit</string>
 
+    <!-- Broken TWEAKS -->
+    <string name="header_category_broken">Customizations</string>
+    <string name="broken_settings_title">BrokenOS</string>
     <string name="category_general_title">Tweaks</string>
     <string name="broken_brokensettings_title">Broken Pieces</string>
     <string name="broken_othersettings_title">Other Mods</string>
