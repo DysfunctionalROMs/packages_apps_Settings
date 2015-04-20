@@ -1,4 +1,4 @@
-package com.android.settings.terminus;
+package com.android.settings.broken;
 
 import android.content.Context;
 import android.content.res.TypedArray;

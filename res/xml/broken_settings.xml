@@ -18,12 +18,12 @@
                 android:key="volume_keys_settings"
                 android:title="@string/volume_keys_title"
                 android:persistent="false"
-                android:fragment="com.android.settings.terminus.VolumeKeys" />
+                android:fragment="com.android.settings.broken.VolumeKeys" />
 
         <PreferenceScreen
                 android:id="@+id/app_circle_sidebar"
                 android:title="@string/app_circle_bar_title"
                 android:summary="@string/app_circle_sidebar_summary_real"
-                android:fragment="com.android.settings.terminus.AppCircleSidebar" />
+                android:fragment="com.android.settings.broken.AppCircleSidebar" />
 
 </PreferenceScreen>

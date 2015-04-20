@@ -13,7 +13,7 @@
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
-package com.android.settings.terminus.lsn;
+package com.android.settings.broken.lsn;
 
 import android.app.AlertDialog;
 import android.content.Context;

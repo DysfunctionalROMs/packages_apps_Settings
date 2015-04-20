@@ -17,7 +17,7 @@
  *
  */
 
-package com.android.settings.terminus;
+package com.android.settings.broken;
 
 import android.app.ActivityManagerNative;
 import android.app.AlertDialog;
@@ -40,9 +40,9 @@ import android.text.TextUtils;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
-import com.android.settings.terminus.SeekBarPreference;
-import com.android.settings.terminus.lsn.AppMultiSelectListPreference;
-import com.android.internal.util.terminus.DeviceUtils;
+import com.android.settings.broken.SeekBarPreference;
+import com.android.settings.broken.lsn.AppMultiSelectListPreference;
+import com.android.internal.util.broken.DeviceUtils;
 
 import java.util.Arrays;
 import java.util.HashSet;

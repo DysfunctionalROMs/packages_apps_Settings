@@ -30,14 +30,14 @@
                         android:title="@string/app_circle_bar_title"
                         android:summary="@string/app_circle_bar_summary" />
 
-                <com.android.settings.terminus.lsn.AppMultiSelectListPreference
+                <com.android.settings.broken.lsn.AppMultiSelectListPreference
                         android:key="app_circle_bar_included_apps"
                         android:persistent="false"
                         android:title="@string/app_circle_bar_included_apps_title"
                         android:summary="@string/app_circle_bar_included_apps_summary"
                         android:dependency="enable_app_circle_bar" />
 
-                <com.android.settings.terminus.SeekBarPreference
+                <com.android.settings.broken.SeekBarPreference
                         android:key="trigger_width"
                         android:title="@string/trigger_width_title"
                         android:summary="@string/trigger_width_summary"
@@ -48,7 +48,7 @@
                         settings:unitsRight="px"
                         android:dependency="enable_app_circle_bar" />
 
-                <com.android.settings.terminus.SeekBarPreference
+                <com.android.settings.broken.SeekBarPreference
                         android:key="trigger_top"
                         android:title="@string/trigger_top_title"
                         android:summary="@string/trigger_top_summary"
@@ -59,7 +59,7 @@
                         settings:unitsRight="%"
                         android:dependency="enable_app_circle_bar" />
 
-                <com.android.settings.terminus.SeekBarPreference
+                <com.android.settings.broken.SeekBarPreference
                         android:key="trigger_bottom"
                         android:title="@string/trigger_bottom_title"
                         android:summary="@string/trigger_bottom_summary"
