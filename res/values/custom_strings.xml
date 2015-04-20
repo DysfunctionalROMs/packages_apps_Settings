@@ -373,6 +373,7 @@
     <string name="db_exit">Exit</string>
 
     <string name="category_general_title">Tweaks</string>
-    <string name="broken_settings_title">BrokenOs</string>
-
+    <string name="broken_brokensettings_title">Broken Pieces</string>
+    <string name="broken_othersettings_title">Other Mods</string>
+    
 </resources>
