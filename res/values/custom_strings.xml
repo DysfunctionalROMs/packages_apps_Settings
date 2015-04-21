@@ -907,5 +907,10 @@
     <string name="weather_condition_icon_monochrome_title">Monochrome</string>
     <string name="weather_condition_icon_colored_title">Colored</string>
     <string name="weather_condition_icon_vclouds_title">VClouds</string>
+    
+    <!-- Heads up -->
+    <string name="heads_up_notifications">Heads up</string>
+    <string name="summary_heads_up_enabled">Pop-up notifications are enabled</string>
+    <string name="summary_heads_up_disabled">Pop-up notifications are disabled</string>
  
 </resources>
