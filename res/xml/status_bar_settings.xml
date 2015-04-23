@@ -39,5 +39,4 @@
             android:title="@string/weather_clock_title" 
 	        android:summary="@string/weather_clock_summary" />
 
-    </PreferenceScreen>
 </PreferenceScreen>
