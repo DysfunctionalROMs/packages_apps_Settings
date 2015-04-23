@@ -6,7 +6,7 @@
 
         <PreferenceScreen
                 android:key="navigation_bar"
-                android:fragment="com.android.settings.terminus.NavBar"
+                android:fragment="com.android.settings.broken.NavBar"
                 android:title="@string/navbar_customization_title"
                 android:summary="@string/navbar_customization_summary" />
 

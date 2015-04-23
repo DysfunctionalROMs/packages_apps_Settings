@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.terminus;
+package com.android.settings.broken;
 
 import android.app.Activity;
 import android.app.AlertDialog;
