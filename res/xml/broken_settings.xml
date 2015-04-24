@@ -25,11 +25,12 @@
                 android:summary="@string/appcircle_summary"
                 android:fragment="com.android.settings.broken.AppCircleSidebar" />
 
+        <!-- AppOps -->
         <PreferenceScreen
                 android:id="@+id/app_ops_settings"
                 android:title="@string/app_ops_settings"
                 android:summary="@string/appops_summary"
-                android:fragment="com.android.settings.applications.AppOpsCategory" />
+                android:fragment="com.android.settings.applications.AppOpsSummary" />
 
         <!-- Button Settings -->
         <PreferenceScreen
@@ -45,11 +46,19 @@
                 android:summary="@string/initd_summary"
                 android:fragment="com.android.settings.broken.InitD" />
 
+        <!-- Nav bar -->
         <PreferenceScreen
                 android:key="navigation_bar"
                 android:title="@string/navigation_bar_title"
                 android:summary="@string/navigation_summary"
                 android:fragment="com.android.settings.broken.NavigationBarSettings" />
+
+        <!-- Power Menu -->
+        <PreferenceScreen
+                android:key="button_power_menu_settings"
+                android:title="@string/button_power_menu_settings_title"
+                android:summary="@string/button_power_menu_settings_summary"
+                android:fragment="com.android.settings.broken.PowerMenuSettings" />
 
         <!-- Screen Recorder -->
         <PreferenceScreen
