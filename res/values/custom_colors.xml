@@ -58,5 +58,6 @@
 
     <!-- QS tiles -->
     <color name="qs_tile_tint_color">#FF009587</color>
+    <color name="exposed_qs_tile_text">#0d0d0d</color>
 
 </resources>
