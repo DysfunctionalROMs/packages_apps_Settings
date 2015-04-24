@@ -60,12 +60,12 @@
                 android:summary="@string/button_power_menu_settings_summary"
                 android:fragment="com.android.settings.broken.PowerMenuSettings" />
 
-        <!-- Screen Recorder -->
+        <!-- Screen Recorder
         <PreferenceScreen
                 android:key="screen_recorder"
                 android:title="@string/screen_recorder_title"
                 android:summary="@string/recorder_summary"
-                android:fragment="com.android.settings.broken.ScreenRecorderSettings" />
+                android:fragment="com.android.settings.broken.ScreenRecorderSettings" /> -->
 
         <!-- Status Bar -->
         <PreferenceScreen
