@@ -88,7 +88,7 @@
 
         <PreferenceScreen
                 android:key="display_rotation"
-                android:fragment="com.android.settings.slim.DisplayRotation"
+                android:fragment="com.android.settings.broken.DisplayRotation"
                 android:title="@string/display_rotation_title" />
 
         <PreferenceScreen
