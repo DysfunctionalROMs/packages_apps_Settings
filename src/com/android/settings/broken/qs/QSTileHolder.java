@@ -135,6 +135,10 @@ public class QSTileHolder {
                 resourceName = "ic_qs_volume_panel";
                 stringId = R.string.qs_tile_volume_panel;
                 break;
+            case QSConstants.TILE_AMBIENT_DISPLAY:
+                resourceName = "ic_qs_ambientdisplay_on";
+                stringId = R.string.qs_tile_ambient_display;
+                break;
             default:
                 return null;
         }

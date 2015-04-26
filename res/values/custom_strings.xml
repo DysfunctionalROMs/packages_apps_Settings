@@ -806,6 +806,7 @@
     <string name="qs_main_tiles_summary_on">Two main tiles on the first row</string>
     <string name="qs_main_tiles_summary_off">Three tiles on each row</string>
     <string name="qs_tile_adb_over_network">ADB over network</string>
+    <string name="qs_tile_ambient_display">Ambient display</string>
     <string name="qs_tile_nfc">NFC</string>
     <string name="qs_tile_wifi">Wi\u2011Fi</string>
     <string name="qs_tile_bluetooth">Bluetooth</string>
