@@ -15,49 +15,22 @@
  */
 package com.android.settings.broken;
 
-import android.content.ContentResolver;
 import android.os.Bundle;
-import android.os.UserHandle;
-import android.preference.ListPreference;
 import android.preference.Preference;
-import android.preference.PreferenceScreen;
-import android.preference.Preference.OnPreferenceChangeListener;
-import android.provider.Settings;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.broken.qs.QSTiles;
 
-public class NotificationDrawerSettings extends SettingsPreferenceFragment implements
-        OnPreferenceChangeListener {
-
+public class NotificationDrawerSettings extends SettingsPreferenceFragment {
     private Preference mQSTiles;
 
-    private static final String SMART_PULLDOWN = "smart_pulldown";
-
-    private ListPreference mSmartPulldown;
-
     @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+    public void onCreate(Bundle icicle) {
+        super.onCreate(icicle);
         addPreferencesFromResource(R.xml.notification_drawer_settings);
 
         mQSTiles = findPreference("qs_order");
-    }
-
-    @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-
-        PreferenceScreen prefSet = getPreferenceScreen();
-        ContentResolver resolver = getActivity().getContentResolver();
-
-        mSmartPulldown = (ListPreference) prefSet.findPreference(SMART_PULLDOWN);
-        mSmartPulldown.setOnPreferenceChangeListener(this);
-        int smartPulldownValue = Settings.System.getIntForUser(resolver,
-                Settings.System.QS_SMART_PULLDOWN, 0, UserHandle.USER_CURRENT);
-        mSmartPulldown.setValue(String.valueOf(smartPulldownValue));
-        mSmartPulldown.setSummary(mSmartPulldown.getEntry());
     }
 
     @Override
@@ -67,20 +40,5 @@ public class NotificationDrawerSettings extends SettingsPreferenceFragment imple
         int qsTileCount = QSTiles.determineTileCount(getActivity());
         mQSTiles.setSummary(getResources().getQuantityString(R.plurals.qs_tiles_summary,
                     qsTileCount, qsTileCount));
-    }
-
-    @Override
-    public boolean onPreferenceChange(Preference preference, Object newValue) {
-        ContentResolver resolver = getContentResolver();
-
-        if (preference == mSmartPulldown) {
-            int smartPulldownValue = Integer.valueOf((String) newValue);
-            int index = mSmartPulldown.findIndexOfValue((String) newValue);
-            Settings.System.putIntForUser(resolver, Settings.System.QS_SMART_PULLDOWN,
-                    smartPulldownValue, UserHandle.USER_CURRENT);
-            mSmartPulldown.setSummary(mSmartPulldown.getEntries()[index]);
-            return true;
-        }
-        return false;
     }
 }
