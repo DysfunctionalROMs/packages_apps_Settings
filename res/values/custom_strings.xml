@@ -901,17 +901,6 @@
     <string name="notif_system_icons_count_icon_color_title">Notification count icon</string>
     <string name="notif_system_icons_count_text_color_title">Notification count Text</string>
 
-    <!-- Wifi & Mobile icons color -->
-    <string name="cat_network_icons_title">Network icons</string>
-    <string name="cat_network_activity_icons_title">Activity icons</string>
-    <string name="cat_airplane_mode_icon_title">Airplane mode icons</string>
-    <string name="color_normal_title">Normal</string>
-    <string name="color_fully_title">Fully connected</string>
-    <string name="status_bar_signal_wifi_settings_title">Network Symbols</string>
-    <string name="status_bar_signal_wifi_settings_summary">Change Network Symbol Appearance</string>
-    <string name="signal_wifi_show_activity_title">Show network activity</string>
-    <string name="signal_wifi_show_activity_summary">Enable to show the network activity</string>
-
     <!-- Animation Control -->
     <string name="animation_settings_category">Animations</string>
     <string name="animation_settings_title">Animations</string> 
