@@ -18,7 +18,7 @@ package com.android.settings;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.preference.CheckBoxPreference;
+import android.preference.SwitchPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
@@ -39,7 +39,7 @@ public class ApplicationSettings extends SettingsPreferenceFragment {
     private static final String APP_INSTALL_SDCARD_ID = "sdcard";
     private static final String APP_INSTALL_AUTO_ID = "auto";
     
-    private CheckBoxPreference mToggleAdvancedSettings;
+    private SwitchPreference mToggleAdvancedSettings;
     private ListPreference mInstallLocation;
 
     @Override
@@ -48,7 +48,7 @@ public class ApplicationSettings extends SettingsPreferenceFragment {
 
         addPreferencesFromResource(R.xml.application_settings);
 
-        mToggleAdvancedSettings = (CheckBoxPreference)findPreference(
+        mToggleAdvancedSettings = (SwitchPreference)findPreference(
                 KEY_TOGGLE_ADVANCED_SETTINGS);
         mToggleAdvancedSettings.setChecked(isAdvancedSettingsEnabled());
         getPreferenceScreen().removePreference(mToggleAdvancedSettings);

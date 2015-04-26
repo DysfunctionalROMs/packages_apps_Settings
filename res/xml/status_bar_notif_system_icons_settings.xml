@@ -22,19 +22,19 @@
         android:key="notif_system_icons_cat_options"
         android:title="@string/options_title">
 
-        <CheckBoxPreference
+        <SwitchPreference
             android:key="notif_system_icons_colorize_notif_icons"
             android:title="@string/notif_system_icons_colorize_notif_icons_title"
             android:summary="@string/notif_system_icons_colorize_notif_icons_summary"
             android:defaultValue="false" />
 
-        <CheckBoxPreference
+        <SwitchPreference
             android:key="notif_system_icons_show_ticker"
             android:title="@string/notif_system_icons_show_ticker_title"
             android:summary="@string/notif_system_icons_show_ticker_summary"
             android:defaultValue="false" />
 
-        <CheckBoxPreference
+        <SwitchPreference
             android:key="notif_system_icons_show_count"
             android:title="@string/notif_system_icons_show_count_title"
             android:summary="@string/notif_system_icons_show_count_summary"

@@ -22,7 +22,7 @@ import android.app.DialogFragment;
 import android.content.ContentResolver;
 import android.content.DialogInterface;
 import android.os.Bundle;
-import android.preference.CheckBoxPreference;
+import android.preference.SwitchPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.Preference.OnPreferenceChangeListener;
@@ -65,10 +65,10 @@ public class StatusBarNetworkSpeedSettings extends SettingsPreferenceFragment im
     private static final int DLG_RESET = 0;
 
     private ListPreference mIndicator;
-    private CheckBoxPreference mShowIcon;
+    private SwitchPreference mShowIcon;
     private ListPreference mTrafficSummary; 
-    private CheckBoxPreference mBitByte;
-    private CheckBoxPreference mHideIndicator;
+    private SwitchPreference mBitByte;
+    private SwitchPreference mHideIndicator;
     private ColorPickerPreference mTextColor;
     private ColorPickerPreference mIconColor;
 
@@ -111,13 +111,13 @@ public class StatusBarNetworkSpeedSettings extends SettingsPreferenceFragment im
         PreferenceCategory catColor =
                 (PreferenceCategory) findPreference(PREF_CAT_COLORS);
         mShowIcon =
-                (CheckBoxPreference) findPreference(PREF_SHOW_ICON);
+                (SwitchPreference) findPreference(PREF_SHOW_ICON);
         mTrafficSummary =
                 (ListPreference) findPreference(PREF_TRAFFIC_SUMMARY);
         mBitByte =
-                (CheckBoxPreference) findPreference(PREF_BIT_BYTE);
+                (SwitchPreference) findPreference(PREF_BIT_BYTE);
         mHideIndicator =
-                (CheckBoxPreference) findPreference(PREF_HIDE_INDICATOR);
+                (SwitchPreference) findPreference(PREF_HIDE_INDICATOR);
         mTextColor =
                 (ColorPickerPreference) findPreference(PREF_TEXT_COLOR);
         mIconColor =

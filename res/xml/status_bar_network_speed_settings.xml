@@ -28,7 +28,7 @@
         android:key="network_speed_cat_options"
         android:title="@string/options_title">
 
-        <CheckBoxPreference
+        <SwitchPreference
             android:key="network_speed_show_icon"
             android:title="@string/network_speed_show_icon_title"
             android:summary="@string/network_speed_show_icon_summary"
@@ -41,12 +41,12 @@
             android:entries="@array/network_speed_traffic_timeout_entries"
             android:entryValues="@array/network_speed_traffic_timeout_values" />
 
-        <CheckBoxPreference
+        <SwitchPreference
             android:key="network_speed_bit_byte"
             android:title="@string/network_speed_bit_byte_title"
             android:summary="@string/network_speed_bit_byte_summary" />
 
-        <CheckBoxPreference
+        <SwitchPreference
             android:key="network_speed_hide_indicator"
             android:title="@string/network_speed_hide_indicator_title"
             android:summary="@string/network_speed_hide_indicator_summary" />

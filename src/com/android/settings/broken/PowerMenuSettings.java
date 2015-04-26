@@ -17,7 +17,7 @@
 package com.android.settings.broken;
 
 import android.os.Bundle;
-import android.preference.CheckBoxPreference;
+import android.preference.SwitchPreference;
 import android.preference.Preference;
 import android.provider.Settings;
 
@@ -40,12 +40,12 @@ public class PowerMenuSettings extends SettingsPreferenceFragment implements
     private static final String PREF_SILENT =
             "power_menu_silent";
 
-    private CheckBoxPreference mReboot;
-    private CheckBoxPreference mAirplane;
-    private CheckBoxPreference mUsers;
-    private CheckBoxPreference mSettings;
-    private CheckBoxPreference mLockdown;
-    private CheckBoxPreference mSilent;
+    private SwitchPreference mReboot;
+    private SwitchPreference mAirplane;
+    private SwitchPreference mUsers;
+    private SwitchPreference mSettings;
+    private SwitchPreference mLockdown;
+    private SwitchPreference mSilent;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -53,32 +53,32 @@ public class PowerMenuSettings extends SettingsPreferenceFragment implements
 
         addPreferencesFromResource(R.xml.power_menu_settings);
 
-        mReboot = (CheckBoxPreference) findPreference(PREF_REBOOT);
+        mReboot = (SwitchPreference) findPreference(PREF_REBOOT);
         mReboot.setChecked(Settings.System.getInt(getContentResolver(),
                 Settings.System.POWER_MENU_REBOOT, 1) == 1);
         mReboot.setOnPreferenceChangeListener(this);
 
-        mAirplane = (CheckBoxPreference) findPreference(PREF_AIRPLANE);
+        mAirplane = (SwitchPreference) findPreference(PREF_AIRPLANE);
         mAirplane.setChecked(Settings.System.getInt(getContentResolver(),
                 Settings.System.POWER_MENU_AIRPLANE, 1) == 1);
         mAirplane.setOnPreferenceChangeListener(this);
 
-        mUsers = (CheckBoxPreference) findPreference(PREF_USERS);
+        mUsers = (SwitchPreference) findPreference(PREF_USERS);
         mUsers.setChecked(Settings.System.getInt(getContentResolver(),
                 Settings.System.POWER_MENU_USERS, 0) == 1);
         mUsers.setOnPreferenceChangeListener(this);
 
-        mSettings = (CheckBoxPreference) findPreference(PREF_SETTINGS);
+        mSettings = (SwitchPreference) findPreference(PREF_SETTINGS);
         mSettings.setChecked(Settings.System.getInt(getContentResolver(),
                 Settings.System.POWER_MENU_SETTINGS, 0) == 1);
         mSettings.setOnPreferenceChangeListener(this);
 
-        mLockdown = (CheckBoxPreference) findPreference(PREF_LOCKDOWN);
+        mLockdown = (SwitchPreference) findPreference(PREF_LOCKDOWN);
         mLockdown.setChecked(Settings.System.getInt(getContentResolver(),
                 Settings.System.POWER_MENU_LOCKDOWN, 0) == 1);
         mLockdown.setOnPreferenceChangeListener(this);
 
-        mSilent = (CheckBoxPreference) findPreference(PREF_SILENT);
+        mSilent = (SwitchPreference) findPreference(PREF_SILENT);
         mSilent.setChecked(Settings.System.getInt(getContentResolver(),
                 Settings.System.POWER_MENU_SILENT, 1) == 1);
         mSilent.setOnPreferenceChangeListener(this);
