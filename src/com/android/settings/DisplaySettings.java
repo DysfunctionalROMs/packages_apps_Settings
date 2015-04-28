@@ -60,8 +60,6 @@ import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.util.Log;
 
-import com.android.settings.hardware.DisplayColor;
-import com.android.settings.hardware.DisplayGamma;
 import com.android.settings.broken.DisplayRotation;
 
 import java.util.ArrayList;
@@ -84,8 +82,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_AUTO_BRIGHTNESS = "auto_brightness";
     private static final String KEY_AUTO_ROTATE = "auto_rotate";
 
-    private static final String KEY_DISPLAY_COLOR = "color_calibration";
-    private static final String KEY_DISPLAY_GAMMA = "gamma_tuning";
     private static final String KEY_SCREEN_OFF_GESTURE_SETTINGS = "screen_off_gesture_settings";
 
     private static final int DLG_GLOBAL_CHANGE_WARNING = 1;
@@ -196,7 +192,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
         Utils.updatePreferenceToSpecificActivityFromMetaDataOrRemove(getActivity(),
                 getPreferenceScreen(), KEY_SCREEN_OFF_GESTURE_SETTINGS);
-
+	}
 
     private static boolean allowAllRotations(Context context) {
         return Resources.getSystem().getBoolean(
@@ -437,6 +433,48 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         if (mScreenSaverPreference != null) {
             mScreenSaverPreference.setSummary(
                     DreamSettings.getSummaryTextWithDreamName(getActivity()));
+        }
+    }
+
+    public void writeLcdDensityPreference(final Context context, int value) {
+        try {
+            SystemProperties.set("persist.sys.lcd_density", Integer.toString(value));
+        }
+        catch (Exception e) {
+            Log.e(TAG, "Unable to save LCD density");
+            return;
+        }
+        final IActivityManager am = ActivityManagerNative.asInterface(ServiceManager.checkService("activity"));
+        if (am != null) {
+            AsyncTask<Void, Void, Void> task = new AsyncTask<Void, Void, Void>() {
+                @Override
+                protected void onPreExecute() {
+                    ProgressDialog dialog = new ProgressDialog(context);
+                    dialog.setMessage(getResources().getString(R.string.restarting_ui));
+                    dialog.setCancelable(false);
+                    dialog.setIndeterminate(true);
+                    dialog.show();
+                }
+                @Override
+                protected Void doInBackground(Void... arg0) {
+                    // Give the user a second to see the dialog
+                    try {
+                        Thread.sleep(1000);
+                    }
+                    catch (InterruptedException e) {
+                        // Ignore
+                    }
+                    // Restart the UI
+                    try {
+                        am.restart();
+                    }
+                    catch (RemoteException e) {
+                        Log.e(TAG, "Failed to restart");
+                    }
+                    return null;
+                }
+            };
+            task.execute((Void[])null);
         }
     }
 
