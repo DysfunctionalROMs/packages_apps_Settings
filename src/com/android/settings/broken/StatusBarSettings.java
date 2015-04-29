@@ -2,6 +2,7 @@
 package com.android.settings.broken;
 
 import android.content.ContentResolver;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.preference.ListPreference;
 import android.preference.Preference;
@@ -19,15 +20,23 @@ import com.android.settings.Utils;
 public class StatusBarSettings extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener {
 
-    // Statusbar battery percent
-    private static final String STATUS_BAR_SHOW_BATTERY_PERCENT = "status_bar_show_battery_percent";
+    // General
+    private static String STATUS_BAR_GENERAL_CATEGORY = "status_bar_general_category";
+    // Native battery percentage
+    private static final String STATUS_BAR_NATIVE_BATTERY_PERCENTAGE = "status_bar_native_battery_percentage";
     // Quick Pulldown
     public static final String STATUS_BAR_QUICK_QS_PULLDOWN = "status_bar_quick_qs_pulldown";
     // Clock summary
     private static final String KEY_STATUS_BAR_CLOCK = "clock_style_pref";
 
-    // Statusbar battery percent
-    private ListPreference mStatusBarBattery;
+    // LockClock
+    private static final String KEY_LOCKCLOCK = "lock_clock";
+    // Package name of the cLock app
+    public static final String LOCKCLOCK_PACKAGE_NAME = "com.cyanogenmod.lockclock";
+
+    // General
+    private PreferenceCategory mStatusBarGeneralCategory;
+
     // Quick Pulldown
     private SwitchPreference mStatusBarQuickQsPulldown;
     // Clock summary
@@ -40,14 +49,18 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.status_bar_settings);
 
         ContentResolver resolver = getActivity().getContentResolver();
+        PackageManager pm = getPackageManager();
 
-        //Statusbar battery percent
-        mStatusBarBattery = (ListPreference) findPreference(STATUS_BAR_SHOW_BATTERY_PERCENT);
+        // General category
+        mStatusBarGeneralCategory = (PreferenceCategory) findPreference(STATUS_BAR_GENERAL_CATEGORY);
 
-        int batteryStyle = Settings.System.getInt(resolver, Settings.System.STATUS_BAR_SHOW_BATTERY_PERCENT, 0);
-        mStatusBarBattery.setValue(String.valueOf(batteryStyle));
-        mStatusBarBattery.setSummary(mStatusBarBattery.getEntry());
-        mStatusBarBattery.setOnPreferenceChangeListener(this);
+        // Native battery percentage
+        mStatusBarNativeBatteryPercentage = (SwitchPreference) getPreferenceScreen()
+                .findPreference(STATUS_BAR_NATIVE_BATTERY_PERCENTAGE);
+        mStatusBarNativeBatteryPercentage.setChecked((Settings.System.getInt(getActivity()
+                .getApplicationContext().getContentResolver(),
+                Settings.System.STATUS_BAR_NATIVE_BATTERY_PERCENTAGE, 0) == 1));
+        mStatusBarNativeBatteryPercentage.setOnPreferenceChangeListener(this);
 
         // Quick Pulldown
         mStatusBarQuickQsPulldown = (SwitchPreference) getPreferenceScreen()
@@ -65,17 +78,13 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
     }
 
     public boolean onPreferenceChange(Preference preference, Object objValue) {
-        ContentResolver resolver = getActivity().getContentResolver();
-        if (preference == mStatusBarBattery) {
-            int batteryStyle = Integer.valueOf((String) objValue);
-            int index = mStatusBarBattery.findIndexOfValue((String) objValue);
-            Settings.System.putInt(resolver,
-                    Settings.System.STATUS_BAR_SHOW_BATTERY_PERCENT, batteryStyle);
-            mStatusBarBattery.setSummary(mStatusBarBattery.getEntries()[index]);
+        boolean value = (Boolean) objValue;
+        if (preference == mStatusBarNativeBatteryPercentage) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.STATUS_BAR_NATIVE_BATTERY_PERCENTAGE, value ? 1 : 0);
             return true;
         } else if (preference == mStatusBarQuickQsPulldown) {
-            boolean value = (Boolean) objValue;
-            Settings.System.putInt(resolver,
+            Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN, value ? 1 : 0);
             return true;
         }
