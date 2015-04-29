@@ -22,8 +22,6 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
 
     // General
     private static String STATUS_BAR_GENERAL_CATEGORY = "status_bar_general_category";
-    // Native battery percentage
-    private static final String STATUS_BAR_NATIVE_BATTERY_PERCENTAGE = "status_bar_native_battery_percentage";
     // Quick Pulldown
     public static final String STATUS_BAR_QUICK_QS_PULLDOWN = "status_bar_quick_qs_pulldown";
     // Clock summary
@@ -54,14 +52,6 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
         // General category
         mStatusBarGeneralCategory = (PreferenceCategory) findPreference(STATUS_BAR_GENERAL_CATEGORY);
 
-        // Native battery percentage
-        mStatusBarNativeBatteryPercentage = (SwitchPreference) getPreferenceScreen()
-                .findPreference(STATUS_BAR_NATIVE_BATTERY_PERCENTAGE);
-        mStatusBarNativeBatteryPercentage.setChecked((Settings.System.getInt(getActivity()
-                .getApplicationContext().getContentResolver(),
-                Settings.System.STATUS_BAR_NATIVE_BATTERY_PERCENTAGE, 0) == 1));
-        mStatusBarNativeBatteryPercentage.setOnPreferenceChangeListener(this);
-
         // Quick Pulldown
         mStatusBarQuickQsPulldown = (SwitchPreference) getPreferenceScreen()
                 .findPreference(STATUS_BAR_QUICK_QS_PULLDOWN);
@@ -79,17 +69,13 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
 
     public boolean onPreferenceChange(Preference preference, Object objValue) {
         boolean value = (Boolean) objValue;
-        if (preference == mStatusBarNativeBatteryPercentage) {
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.STATUS_BAR_NATIVE_BATTERY_PERCENTAGE, value ? 1 : 0);
-            return true;
-        } else if (preference == mStatusBarQuickQsPulldown) {
+        if (preference == mStatusBarQuickQsPulldown) {
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN, value ? 1 : 0);
             return true;
-        }
+		}
         return false;
-    }
+	}
 
     @Override
     public void onResume() {
@@ -113,4 +99,3 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
         }
     }
 }
-
