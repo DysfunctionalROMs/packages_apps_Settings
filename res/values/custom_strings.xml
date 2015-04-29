@@ -501,10 +501,6 @@
     <string name="status_bar_show_weather_title">Show weather</string>
     <string name="status_bar_show_weather_summary">Show the weather in the status bar header</string>
 
-    <!-- Battery text setting -->
-    <string name="status_bar_toggle_battery_text">Display battery level</string>
-    <string name="status_bar_toggle_battery_summary">Show battery level next to battery icon</string>
-
     <!-- LockClock and Weather -->
     <string name="lock_clock_title">cLock settings</string>
     <string name="lock_clock_summary">View or change how the \'cLock\' widget will be displayed.</string>
@@ -635,22 +631,6 @@
     <string name="dt_init_d_error">Init.d error</string>
     <string name="dm_init_d_error">It looks like init.d isn\'t setup properly. Please contact your ROM developer.</string>
     <string name="db_exit">Exit</string>
-
-    <!-- Hardware tunables - Color calibration -->
-    <string name="color_calibration_title">Color calibration</string>
-    <string name="color_calibration_summary">Calibrate on-screen colors</string>
-    <string name="color_red_title">Red</string>
-    <string name="color_green_title">Green</string>
-    <string name="color_blue_title">Blue</string>
-
-    <!-- Hardware tunables - Gamma calibration -->
-    <string name="gamma_tuning_title_head">Gamma calibration</string>
-    <string name="gamma_tuning_summary_head">Tweak gamma values</string>
-    <string name="gamma_tuning_control_set_header">Group <xliff:g id="index">%d</xliff:g></string> <!-- used if no name provided by overlay -->
-    <string name="gamma_tuning_contrast">Contrast</string>
-    <string name="gamma_tuning_brightness">Brightness</string>
-    <string name="gamma_tuning_saturation">Saturation</string>
-    <string name="auto_brightness_reset_button">Reset</string>
 
     <!-- Kernel Adiutor -->
     <string name="performance_settings">Performance</string>
