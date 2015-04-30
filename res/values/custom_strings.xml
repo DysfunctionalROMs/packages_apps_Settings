@@ -60,8 +60,6 @@
     <string name="cat_colors_title">Customize colors</string>
     <string name="reset_values_message">Reset values to\nAndroid- or Broken default?</string>
     <string name="reset_android">Android</string>
-    <string name="color_normal_title">Normal</string>
-    <string name="color_fully_title">Fully connected</string>
 
     <!-- Privacy Settings Header item -->
     <string name="privacy_settings_cyanogenmod_title">Privacy</string>
@@ -1117,6 +1115,8 @@
     <string name="status_bar_signal_wifi_settings_summary">Change the look and color of the network and wifi symbols</string>
     <string name="signal_wifi_show_activity_title">Show network activity</string>
     <string name="signal_wifi_show_activity_summary">Enable to show the network activity</string>
+    <string name="color_normal_title">Network Icon</string>
+    <string name="color_fully_title">Wifi Icon</string>
 
 
 </resources>
