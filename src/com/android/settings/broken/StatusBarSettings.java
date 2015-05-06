@@ -22,8 +22,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
 
     // General
     private static String STATUS_BAR_GENERAL_CATEGORY = "status_bar_general_category";
-    // Quick Pulldown
-    public static final String STATUS_BAR_QUICK_QS_PULLDOWN = "status_bar_quick_qs_pulldown";
+
     // Clock summary
     private static final String KEY_STATUS_BAR_CLOCK = "clock_style_pref";
 
@@ -52,28 +51,14 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
         // General category
         mStatusBarGeneralCategory = (PreferenceCategory) findPreference(STATUS_BAR_GENERAL_CATEGORY);
 
-        // Quick Pulldown
-        mStatusBarQuickQsPulldown = (SwitchPreference) getPreferenceScreen()
-                .findPreference(STATUS_BAR_QUICK_QS_PULLDOWN);
-        mStatusBarQuickQsPulldown.setChecked((Settings.System.getInt(getActivity()
-                .getApplicationContext().getContentResolver(),
-                Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN, 0) == 1));
-        mStatusBarQuickQsPulldown.setOnPreferenceChangeListener(this);
-
         // Clock summary
         mClockStyle = (PreferenceScreen) getPreferenceScreen()
                 .findPreference(KEY_STATUS_BAR_CLOCK);
         updateClockStyleDescription();
-
     }
 
     public boolean onPreferenceChange(Preference preference, Object objValue) {
         boolean value = (Boolean) objValue;
-        if (preference == mStatusBarQuickQsPulldown) {
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN, value ? 1 : 0);
-            return true;
-		}
         return false;
 	}
 

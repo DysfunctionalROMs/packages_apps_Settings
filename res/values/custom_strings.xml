@@ -484,10 +484,6 @@
     <string name="general_string">General</string>
     <string name="status_bar_title">Status bar</string>
 
-    <!-- Quick Pulldown -->
-    <string name="status_bar_quick_qs_pulldown_title">One finger QS pull down</string>
-    <string name="status_bar_quick_qs_pulldown_summary">Whether to allow one finger quick pulldown on the right side of the statusbar</string>
-
     <!-- Double tap-to-sleep -->
     <string name="double_tap_to_sleep_title">Double-tap to sleep</string>
     <string name="double_tap_to_sleep_summary">Double tap status bar to put the device to sleep</string>
