@@ -15,6 +15,9 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
+    <!-- Dev Options Enabled by Default -->
+    <string name="show_dev_already_enabled">No Need, Development settings are enabled by default.</string>
+
     <!-- Change Log -->
     <string name="changelog_title">Changelog</string>
     <string name="changelog_title_summary">View recent changes in the ROM</string>
