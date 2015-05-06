@@ -2169,5 +2169,8 @@
 
         <service android:name="com.android.settings.broken.hfm.CheckHosts" />
 
+        <activity android:name="com.android.settings.broken.hfm.HfmWhitelist"
+                  android:label="@string/hfm_whitelist_title" />
+
     </application>
 </manifest>

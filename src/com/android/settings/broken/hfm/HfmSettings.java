@@ -20,11 +20,11 @@ import java.io.IOException;
 import android.app.ProgressDialog;
 import android.content.ContentResolver;
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.preference.Preference;
-import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.Preference.OnPreferenceClickListener;
 import android.preference.PreferenceScreen;
 import android.preference.SwitchPreference;
@@ -34,20 +34,22 @@ import android.view.View;
 
 import com.android.settings.broken.hfm.FetchHosts;
 import com.android.settings.broken.hfm.HfmHelpers;
+import com.android.settings.broken.hfm.HfmWhitelist;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
-public class HfmSettings extends SettingsPreferenceFragment implements
-        OnPreferenceChangeListener {
+public class HfmSettings extends SettingsPreferenceFragment {
 
     private static final String TAG = "HfmSettings";
     private static final String HFM_DISABLE_ADS = "hfm_disable_ads";
+    private static final String KEY_HFM_WHITELIST = "hfm_whitelist";
 
     public static ProgressDialog pd;
 
     ConnectivityManager connMgr;
 
     public static SwitchPreference mHfmDisableAds;
+    private Preference mHfmWhitelist;
     Preference mHfmUpdateHosts;
 
     Context context;
@@ -72,8 +74,15 @@ public class HfmSettings extends SettingsPreferenceFragment implements
         mHfmDisableAds = (SwitchPreference) findPreference(HFM_DISABLE_ADS);
         mHfmDisableAds.setChecked((Settings.System.getInt(resolver,
             Settings.System.HFM_DISABLE_ADS, 0) == 1));
-        mHfmDisableAds.setOnPreferenceChangeListener(this);
         mHfmUpdateHosts = prefScreen.findPreference("hfm_update_hosts");
+
+        mHfmWhitelist = (Preference) findPreference(KEY_HFM_WHITELIST);
+
+        if (mHfmDisableAds.isChecked()) {
+            mHfmWhitelist.setEnabled(true);
+        } else {
+            mHfmWhitelist.setEnabled(false);
+        }
     }
 
     @Override
@@ -86,25 +95,27 @@ public class HfmSettings extends SettingsPreferenceFragment implements
         super.onDestroy();
     }
 
-    public boolean onPreferenceChange(Preference preference, Object objValue) {
-        ContentResolver resolver = getActivity().getContentResolver();
-        boolean value = (Boolean) objValue;
-        if (preference == mHfmDisableAds) {
-            Settings.System.putInt(resolver,
-                    Settings.System.HFM_DISABLE_ADS, value ? 1 : 0);
-            HfmHelpers.checkStatus(getActivity());
-        }
-        return true;
-    }
-
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-        if (preference == mHfmUpdateHosts) {
+        if  (preference == mHfmDisableAds) {
+            boolean checked = ((SwitchPreference)preference).isChecked();
+            Settings.System.putInt(getActivity().getContentResolver(),
+                Settings.System.HFM_DISABLE_ADS, checked ? 1:0);
+            if (checked) {
+                mHfmWhitelist.setEnabled(true);
+            } else {
+                mHfmWhitelist.setEnabled(false);
+            }
+            HfmHelpers.checkStatus(getActivity());
+
+        } else if (preference == mHfmUpdateHosts) {
             try {
                 HfmHelpers.checkConnectivity(context, connMgr);
             } catch (IOException e) {
                 e.printStackTrace();
             }
+        } else if  (preference == mHfmWhitelist) {
+             startActivity(new Intent(getActivity(), HfmWhitelist.class));
         } else {
             return super.onPreferenceTreeClick(preferenceScreen, preference);
         }
