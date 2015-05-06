@@ -19,8 +19,9 @@
 
          <PreferenceScreen
                  android:key="clock_style_pref"
-                 android:fragment="com.android.settings.broken.StatusBarClockStyle"
-                 android:title="@string/status_bar_clock" />
+                 android:title="@string/status_bar_clock"
+                 android:summary="@string/status_bar_clock_summary"
+                 android:fragment="com.android.settings.broken.StatusBarClockStyle" />
 
          <com.android.settings.broken.SystemSettingSwitchPreference
                  android:key="double_tap_sleep_gesture"
@@ -31,6 +32,7 @@
          <PreferenceScreen
                  android:key="expanded_desktop"
                  android:title="@string/power_menu_expanded_desktop"
+                 android:summary="@string/expanded_title_summary"
                  android:fragment="com.android.settings.applications.ExpandedDesktopPreferenceFragment" />
     
          <PreferenceScreen
@@ -71,6 +73,7 @@
          <PreferenceScreen
                  android:key="notification_drawer_settings"
                  android:title="@string/notification_drawer_title"
+                 android:summary="@string/notifs_summary"
                  android:fragment="com.android.settings.broken.NotificationDrawerSettings" />
 
     </PreferenceCategory>
