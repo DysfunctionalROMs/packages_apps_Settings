@@ -1120,6 +1120,7 @@ public class SettingsActivity extends SettingsDrawerActivity
         if (b.getBoolean(CarrierConfigManager.KEY_CI_ACTION_ON_SYS_UPDATE_BOOL)) {
             Utils.ciActionOnSysUpdate(getBaseContext(),b);
         }
+
         // internal build don't handle system update, use gms for reference design
         Intent newIntent = new Intent("android.settings.SYSTEM_UPDATE_SETTINGS");
         PackageManager pm = getBaseContext().getPackageManager();
@@ -1244,7 +1245,7 @@ public class SettingsActivity extends SettingsDrawerActivity
                 getResources().getBoolean(R.bool.config_profilemgrmain_enabled), isAdmin, pm);
 
         final boolean showDev = mDevelopmentPreferences.getBoolean(
-                    DevelopmentSettings.PREF_SHOW, android.os.Build.TYPE.equals("eng"))
+                    DevelopmentSettings.PREF_SHOW, android.os.Build.TYPE.equals("eng") || android.os.Build.TYPE.equals("userdebug") || android.os.Build.TYPE.equals("user"))
                 && !um.hasUserRestriction(UserManager.DISALLOW_DEBUGGING_FEATURES);
         setTileEnabled(new ComponentName(packageName,
                         Settings.DevelopmentSettingsActivity.class.getName()),
