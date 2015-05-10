@@ -770,4 +770,9 @@
     <string name="double_tap_to_sleep_lockscreen_title">Lock screen</string>
     <string name="double_tap_to_sleep_lockscreen_summary">Double-tap on the top third or bottom shortcut area of the lock screen to turn off the display</string>
 
+    <!--Power menu -->
+    <string name="power_category">Power menu</string>
+    <string name="lockscreen_enable_power_menu_title">Show power menu lock screen</string>
+    <string name="lockscreen_enable_power_menu_summary">This option will only disable the power menu on secure lock screens</string>
+
 </resources>
