@@ -84,6 +84,11 @@
                  android:title="@string/weather_clock_title" 
                  android:summary="@string/weather_clock_summary" />
 
+         <com.android.settings.broken.SystemSettingSwitchPreference
+                 android:key="enable_task_manager"
+                 android:title="@string/enable_task_manager_title"
+                 android:summary="@string/enable_task_manager_summary" />
+
     </PreferenceCategory>
 
     <PreferenceCategory

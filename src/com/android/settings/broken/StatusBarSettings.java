@@ -24,6 +24,7 @@ import android.text.Spannable;
 import android.text.SpannableStringBuilder;
 
 import com.android.settings.R;
+import com.android.settings.broken.util.Helpers;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 import com.android.internal.util.broken.DeviceUtils;
@@ -44,6 +45,8 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
     private static final String STATUS_BAR_BRIGHTNESS_CONTROL = "status_bar_brightness_control";
     // Status Bar Greeting
     private static final String KEY_STATUS_BAR_GREETING = "status_bar_greeting";
+    // Task Manager
+    private static final String ENABLE_TASK_MANAGER = "enable_task_manager";
 
     // General
     private PreferenceCategory mStatusBarGeneralCategory;
@@ -56,6 +59,8 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
     //Status Bar Greeting
     private SwitchPreference mStatusBarGreeting;
     private String mCustomGreetingText = "";
+    // Task Manager
+    private SwitchPreference mEnableTaskManager;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -91,6 +96,10 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
         mCustomGreetingText = Settings.System.getString(resolver, Settings.System.STATUS_BAR_GREETING);
         boolean greeting = mCustomGreetingText != null && !TextUtils.isEmpty(mCustomGreetingText);
         mStatusBarGreeting.setChecked(greeting);
+        
+        mEnableTaskManager = (SwitchPreference) findPreference(ENABLE_TASK_MANAGER);
+        mEnableTaskManager.setChecked((Settings.System.getInt(resolver,
+                Settings.System.ENABLE_TASK_MANAGER, 0) == 1));
     }
 
     public boolean onPreferenceChange(Preference preference, Object objValue) {
@@ -151,6 +160,13 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
             final Preference preference) {
         final ContentResolver resolver = getActivity().getContentResolver();
+        if  (preference == mEnableTaskManager) {
+            boolean checked = ((SwitchPreference)preference).isChecked();
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.ENABLE_TASK_MANAGER, checked ? 1:0);
+            Helpers.restartSystemUI();
+            return true;
+        }
         if (preference == mStatusBarGreeting) {
            boolean enabled = mStatusBarGreeting.isChecked();
            if (enabled) {
