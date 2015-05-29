@@ -105,6 +105,8 @@ public class NotificationSettings extends SettingsPreferenceFragment implements 
         @Override
         public void onStartingSample() {
             mVolumeCallback.stopSample();
+            mHandler.removeMessages(H.STOP_SAMPLE);
+            mHandler.sendEmptyMessageDelayed(H.STOP_SAMPLE, SAMPLE_CUTOFF);
         }
     };
 
@@ -214,6 +216,9 @@ public class NotificationSettings extends SettingsPreferenceFragment implements 
         for (VolumeSeekBarPreference volumePref : mVolumePrefs) {
             volumePref.onActivityResume();
         }
+        if (mIncreasingRingVolume != null) {
+            mIncreasingRingVolume.onActivityResume();
+        }
         boolean isRestricted = mUserManager.hasUserRestriction(UserManager.DISALLOW_ADJUST_VOLUME);
         for (String key : RESTRICTED_KEYS) {
             Preference pref = findPreference(key);
@@ -227,6 +232,9 @@ public class NotificationSettings extends SettingsPreferenceFragment implements 
     public void onPause() {
         super.onPause();
         mVolumeCallback.stopSample();
+        if (mIncreasingRingVolume != null) {
+            mIncreasingRingVolume.stopSample();
+        }
         mSettingsObserver.register(false);
         mReceiver.register(false);
     }
@@ -739,6 +747,9 @@ public class NotificationSettings extends SettingsPreferenceFragment implements 
                     break;
                 case STOP_SAMPLE:
                     mVolumeCallback.stopSample();
+                    if (mIncreasingRingVolume != null) {
+                        mIncreasingRingVolume.stopSample();
+                    }
                     break;
                 case UPDATE_EFFECTS_SUPPRESSOR:
                     updateEffectsSuppressor();
