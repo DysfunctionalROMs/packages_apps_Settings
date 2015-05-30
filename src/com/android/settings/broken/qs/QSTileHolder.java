@@ -150,6 +150,10 @@ public class QSTileHolder {
                 resourceName = "ic_qs_screen_timeout_vector";
                 stringId = R.string.qs_tile_screen_timeout;
                 break;
+            case QSConstants.TILE_LED:
+                resourceName = "ic_qs_led_on";
+                stringId = R.string.qs_tile_led;
+                break;
             default:
                 return null;
         }

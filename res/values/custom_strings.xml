@@ -687,6 +687,8 @@
     <string name="qs_sync_tile">Sync</string>
     <string name="qs_ambient_display">Ambient Display</string>
     <string name="qs_tile_visualizer" translatable="false">AudioFX</string>
+    <string name="qs_tile_led">LED</string>
+
 
     <!-- Wifi detail view -->
     <string name="qs_wifi_detail_title">Detailed Wi\u2011Fi view</string>
