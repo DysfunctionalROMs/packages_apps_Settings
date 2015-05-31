@@ -55,6 +55,12 @@
     <PreferenceCategory
             android:title="@string/recents_options_title" />
 
+        <PreferenceScreen
+                android:key="recent_panel"
+                android:fragment="com.android.settings.broken.RecentPanel"
+                android:summary="@string/recents_settings_summary"
+                android:title="@string/recent_panel_category" />
+
         <com.android.settings.broken.SystemSettingSwitchPreference
                 android:key="recents_show_hide_search_bar"
                 android:title="@string/recents_show_searchbar"
