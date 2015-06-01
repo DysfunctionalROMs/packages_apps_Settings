@@ -797,6 +797,9 @@
     <string name="navigation_edit_button_text">Edit</string>
     <string name="navigation_save_button_text">Save</string>
     <string name="navigation_bar_reset_message">Delete current settings and restore the default layout?</string>
+
+    <!-- Gestures -->
+    <string name="gesture_settings_title">Gestures</string>
     
     <!-- PA Pie control -->
     <string name="pa_piecontrol_settings_summary">Customize Broken Pie 3.0 targets, sytle, size and color</string>
