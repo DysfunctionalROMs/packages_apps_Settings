@@ -1382,5 +1382,8 @@
 
     <!-- Stylus gestures -->
     <string name="stylus_app_not_installed">%s is not installed</string>
+
+    <!-- Gestures -->
+    <string name="gesture_settings_title">Gestures</string>
     
 </resources>
