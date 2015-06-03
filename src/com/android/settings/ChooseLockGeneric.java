@@ -163,11 +163,15 @@ public class ChooseLockGeneric extends SettingsActivity {
             if (!isUnlockMethodSecure(key) && mLockPatternUtils.isSecure()) {
                 // Show the disabling FRP warning only when the user is switching from a secure
                 // unlock method to an insecure one
-                showFactoryResetProtectionWarningDialog(key);
-                return true;
+                showFactoryResetProtectionWarningDialog(key);               
+			}
+            if (KEY_UNLOCK_SET_GESTURE.equals(key)) {
+                updateUnlockMethodAndFinish(
+                        DevicePolicyManager.PASSWORD_QUALITY_GESTURE_WEAK, false);
             } else {
-                return setUnlockMethod(key);
+            return true;
             }
+            return setUnlockMethod(key);
         }
 
         /**
