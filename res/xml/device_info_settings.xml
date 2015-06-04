@@ -141,6 +141,12 @@
                 android:title="@string/broken_version_title"
                 android:summary="@string/broken_version_default"/>
 
+        <!-- Broken Build type version -->
+        <Preference android:key="broken_type"
+                style="?android:preferenceInformationStyle"
+                android:title="@string/broken_type"
+                android:summary="@string/broken_type_default"/>
+
         <!-- BROKEN build date -->
         <Preference android:key="build_date"
                 style="?android:preferenceInformationStyle"
