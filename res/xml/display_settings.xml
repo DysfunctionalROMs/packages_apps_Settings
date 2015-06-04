@@ -84,9 +84,10 @@
                 settings:keywords="@string/keywords_display_cast_screen"
                 android:fragment="com.android.settings.wfd.WifiDisplaySettings" />
 
-        <ListPreference
+        <EditTextPreference
                 android:key="lcd_density"
                 android:title="@string/lcd_density"
+                android:inputType="number"
                 android:persistent="false" />
 
         <PreferenceCategory
