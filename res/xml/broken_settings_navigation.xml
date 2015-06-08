@@ -29,9 +29,9 @@
         android:fragment="com.android.settings.broken.NavbarSettings"
         android:title="@string/navigation_bar" />
 
-    <!--<PreferenceScreen
-        android:key="pie_settings"
+    <PreferenceScreen
+        android:key="pa_pie_control"
         android:fragment="com.android.settings.broken.PieControl"
-        android:title="@string/pie_control_title" />-->
+        android:title="@string/pa_pie_control_title" />
 
 </PreferenceScreen>
