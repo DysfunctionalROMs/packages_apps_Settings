@@ -62,24 +62,6 @@
         android:summary="@string/kill_app_longpress_back_summary"/>
 
     </PreferenceCategory>
-
-	<PreferenceCategory
-	    android:key="recents_panel"
-	    android:title="@string/recents_panel_settings" >
-
-	<com.android.settings.broken.SystemSettingSwitchPreference
-        android:key="recents_show_search_bar"
-        android:title="@string/recents_show_searchbar"
-        android:summary="@string/recents_show_searchbar_summary"
-        android:defaultValue="false" />
-        
-    <com.android.settings.broken.SystemSettingSwitchPreference
-        android:key="recents_full_screen"
-        android:title="@string/recents_show_fullscreen"
-        android:summary="@string/recents_fullscreen_summary"
-        android:defaultValue="false" />
-
-    </PreferenceCategory>
     
     <PreferenceCategory
                 android:key="dim_nav_buttons_cat"
@@ -114,6 +96,35 @@
                     android:title="@string/dim_nav_buttons_animate_duration_title"
                     android:summary="@string/dim_nav_buttons_animate_duration_summary" />
                     
+    </PreferenceCategory>
+    
+    <PreferenceCategory
+                android:key="pa_pie"
+                android:title="@string/pa_pie_title">
+    
+        <PreferenceScreen
+     	     android:key="pa_pie_control"
+             android:title="@string/pa_pie_control_title"
+             android:fragment="com.android.settings.broken.PieControl" />
+             
+    </PreferenceCategory>
+    
+    <PreferenceCategory
+	    android:key="recents_panel"
+	    android:title="@string/recents_panel_settings" >
+
+	<com.android.settings.broken.SystemSettingSwitchPreference
+        android:key="recents_show_search_bar"
+        android:title="@string/recents_show_searchbar"
+        android:summary="@string/recents_show_searchbar_summary"
+        android:defaultValue="false" />
+        
+    <com.android.settings.broken.SystemSettingSwitchPreference
+        android:key="recents_full_screen"
+        android:title="@string/recents_show_fullscreen"
+        android:summary="@string/recents_fullscreen_summary"
+        android:defaultValue="false" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>
