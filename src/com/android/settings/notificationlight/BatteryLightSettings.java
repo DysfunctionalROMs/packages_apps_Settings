@@ -30,6 +30,7 @@ import android.view.MenuItem;
 import com.android.internal.logging.MetricsLogger;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.broken.SystemSettingSwitchPreference;
 
 public class BatteryLightSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
@@ -38,11 +39,16 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
     private static final String LOW_COLOR_PREF = "low_color";
     private static final String MEDIUM_COLOR_PREF = "medium_color";
     private static final String FULL_COLOR_PREF = "full_color";
+    private static final String LIGHT_ENABLED_PREF = "battery_light_enabled";
+    private static final String PULSE_ENABLED_PREF = "battery_light_pulse";
 
     private PreferenceGroup mColorPrefs;
     private ApplicationLightPreference mLowColorPref;
     private ApplicationLightPreference mMediumColorPref;
     private ApplicationLightPreference mFullColorPref;
+    private SystemSettingSwitchPreference mLightEnabledPref;
+    private SystemSettingSwitchPreference mPulseEnabledPref;
+
     private static final int MENU_RESET = Menu.FIRST;
 
     @Override
@@ -58,6 +64,9 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
         PreferenceScreen prefSet = getPreferenceScreen();
 
         PreferenceGroup mGeneralPrefs = (PreferenceGroup) prefSet.findPreference("general_section");
+
+        mLightEnabledPref = (SystemSettingSwitchPreference) prefSet.findPreference(LIGHT_ENABLED_PREF);
+        mPulseEnabledPref = (SystemSettingSwitchPreference) prefSet.findPreference(PULSE_ENABLED_PREF);
 
         if (!getResources().getBoolean(com.android.internal.R.bool.config_ledCanPulse)) {
             mGeneralPrefs.removePreference(mPulseEnabledPref);
@@ -141,7 +150,7 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case MENU_RESET:
-                resetColors();
+                resetToDefaults();
                 return true;
         }
         return false;
@@ -159,6 +168,17 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
         Settings.System.putInt(resolver, Settings.System.BATTERY_LIGHT_FULL_COLOR,
                 res.getInteger(com.android.internal.R.integer.config_notificationsBatteryFullARGB));
         refreshDefault();
+    }
+
+    protected void resetToDefaults() {
+        final Resources res = getResources();
+        final boolean batteryLightEnabled = res.getBoolean(R.bool.def_battery_light_enabled);
+        final boolean batteryLightPulseEnabled = res.getBoolean(R.bool.def_battery_light_pulse);
+
+        if (mLightEnabledPref != null) mLightEnabledPref.setChecked(batteryLightEnabled);
+        if (mPulseEnabledPref != null) mPulseEnabledPref.setChecked(batteryLightPulseEnabled);
+
+        resetColors();
     }
 
     @Override
