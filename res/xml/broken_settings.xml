@@ -44,5 +44,15 @@
         android:key="volume_rocker_general_category"
         android:fragment="com.android.settings.broken.VolumeRockerSettings"
         android:title="@string/volume_rocker_screen_title" />
+        
+    <!-- Broken Walls -->
+    <PreferenceScreen
+           android:id="@+id/brokenwalls"
+           android:title="@string/brokenwalls_title" >
+           <intent
+               android:action="android.intent.action.SET_WALLPAPER"
+               android:targetPackage="com.broken.BrokenWalls"
+               android:targetClass="com.broken.BrokenWalls.brokenwalls" />
+    </PreferenceScreen>
 
 </PreferenceScreen>
