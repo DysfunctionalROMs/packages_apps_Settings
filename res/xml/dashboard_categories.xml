@@ -83,12 +83,12 @@
                 android:title="@string/broken_brokensettings_title"
                 android:fragment="com.android.settings.broken.BrokenSettings" />
 
-        <!-- Broken Main -->
+        <!-- Broken Main 
         <dashboard-tile
                 android:id="@+id/main_settings"
                 android:icon="@drawable/ic_settings_buttons"
                 android:title="@string/broken_othersettings_title"
-                android:fragment="com.android.settings.broken.MainSettings" />
+                android:fragment="com.android.settings.broken.MainSettings" /> -->
 
         <!-- Gestures -->
         <dashboard-tile
