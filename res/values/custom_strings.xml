@@ -1703,5 +1703,9 @@
 
     <!-- Wifi Calling -->
     <string name="wifi_calling_settings_title">Wifi Calling Settings</string>
+
+    <!-- Broken Walls -->
+    <string name="brokenwalls_title">BrokenWalls</string>
+    <string name="brokenwalls_summary">Dig through the preinstalled BrokenOs Wallpapers</string>
     
 </resources>
