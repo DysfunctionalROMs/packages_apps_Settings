@@ -15,22 +15,39 @@
  */
 package com.android.settings.broken;
 
+import android.content.ContentResolver;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.preference.Preference;
+import android.preference.PreferenceScreen;
+import android.preference.SwitchPreference;
+import android.provider.Settings;
+import android.provider.Settings.SettingNotFoundException;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.broken.qs.QSTiles;
+import com.android.settings.Utils;
 
 public class NotificationDrawerSettings extends SettingsPreferenceFragment {
     private Preference mQSTiles;
+    private static final String FORCE_EXPANDED_NOTIFICATIONS = "force_expanded_notifications";
+
+	private SwitchPreference mForceExpanded;
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         addPreferencesFromResource(R.xml.notification_drawer_settings);
 
+        ContentResolver resolver = getActivity().getContentResolver();
+        PackageManager pm = getPackageManager();
+
         mQSTiles = findPreference("qs_order");
+
+        mForceExpanded = (SwitchPreference) findPreference(FORCE_EXPANDED_NOTIFICATIONS);
+        mForceExpanded.setChecked((Settings.System.getInt(resolver,
+                Settings.System.FORCE_EXPANDED_NOTIFICATIONS, 0) == 1));
     }
 
     @Override
@@ -41,4 +58,15 @@ public class NotificationDrawerSettings extends SettingsPreferenceFragment {
         mQSTiles.setSummary(getResources().getQuantityString(R.plurals.qs_tiles_summary,
                     qsTileCount, qsTileCount));
     }
+
+     @Override
+    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+		 if  (preference == mForceExpanded) {
+            boolean checked = ((SwitchPreference)preference).isChecked();
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.FORCE_EXPANDED_NOTIFICATIONS, checked ? 1:0);
+            return true;
+        }
+        return super.onPreferenceTreeClick(preferenceScreen, preference);
+	}
 }

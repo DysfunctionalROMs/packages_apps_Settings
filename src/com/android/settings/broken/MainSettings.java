@@ -35,10 +35,6 @@ import java.util.List;
 
 public class MainSettings extends SettingsPreferenceFragment {
 
-	private static final String FORCE_EXPANDED_NOTIFICATIONS = "force_expanded_notifications";
-
-	private SwitchPreference mForceExpanded;
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,10 +43,6 @@ public class MainSettings extends SettingsPreferenceFragment {
 
         ContentResolver resolver = getActivity().getContentResolver();
         PackageManager pm = getPackageManager();
-
-        mForceExpanded = (SwitchPreference) findPreference(FORCE_EXPANDED_NOTIFICATIONS);
-        mForceExpanded.setChecked((Settings.System.getInt(resolver,
-                Settings.System.FORCE_EXPANDED_NOTIFICATIONS, 0) == 1));
 	}
 
 	@Override
@@ -60,12 +52,6 @@ public class MainSettings extends SettingsPreferenceFragment {
 
      @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-		 if  (preference == mForceExpanded) {
-            boolean checked = ((SwitchPreference)preference).isChecked();
-            Settings.System.putInt(getActivity().getContentResolver(),
-                    Settings.System.FORCE_EXPANDED_NOTIFICATIONS, checked ? 1:0);
-            return true;
-        }
-        return super.onPreferenceTreeClick(preferenceScreen, preference);
+	return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 }
