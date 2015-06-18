@@ -30,7 +30,7 @@ import android.util.Log;
 
 import com.android.settings.R;
 
-import com.android.internal.util.slim.AppHelper;
+import com.android.internal.util.broken.AppHelper;
 
 import java.util.ArrayList;
 

@@ -18,8 +18,8 @@ package com.android.settings.broken.qs;
 import android.content.Context;
 import android.text.TextUtils;
 
-import com.android.internal.util.cm.QSConstants;
-import com.android.internal.util.cm.QSUtils;
+import com.android.internal.util.broken.QSConstants;
+import com.android.internal.util.broken.QSUtils;
 import com.android.settings.R;
 
 /**

@@ -367,9 +367,8 @@
     <string name="advanced_reboot_title">Advanced reboot</string>
     <string name="advanced_reboot_summary">Include options in the power menu for rebooting into recovery and bootloader</string>
     <string name="advanced_reboot_dialog_title">Advanced reboot menu</string>
-    <string name="advanced_reboot_disabled">Disable</string>
-    <string name="advanced_reboot_hide_on_keyguard">Enabled</string>
-    <string name="advanced_reboot_show_always">Disable</string>
+    <string name="advanced_reboot_disabled">Disabled</string>
+    <string name="advanced_reboot_enabled">Enabled</string>
 
     <!-- Broken Extra Info -->
     <string name="brokenextrainfo">Extra information</string>
