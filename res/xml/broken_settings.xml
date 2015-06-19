@@ -15,6 +15,13 @@
 				android:fragment="com.android.settings.broken.InitD"
 				android:title="@string/init_d_title"
 				android:summary="@string/header_summary_init_d" />
+				
+        <!-- Screen Recorder -->
+        <PreferenceScreen
+                android:key="screen_recorder"
+                android:title="@string/screen_recorder_title"
+                android:summary="@string/recorder_summary"
+                android:fragment="com.android.settings.broken.ScreenRecorderSettings" />
 
 	    <PreferenceScreen
                android:key="lock_clock"
@@ -30,11 +37,5 @@
                 android:key="wakelock_blocker"
                 android:fragment="com.android.settings.broken.WakeLockBlocker"
                 android:title="@string/wakelock_blocker_title" />
-
-        <!-- Screen Recorder -->
-        <PreferenceScreen
-                android:key="screen_recorder"
-                android:title="@string/screen_recorder_title"
-                android:fragment="com.android.settings.broken.ScreenRecorderSettings" />
 
 </PreferenceScreen>

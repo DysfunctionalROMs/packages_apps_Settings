@@ -16,13 +16,18 @@
 
 package com.android.settings.broken;
 
+import android.content.ContentResolver;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.preference.CheckBoxPreference;
 import android.preference.Preference;
+import android.preference.PreferenceGroup;
 import android.provider.Settings;
-
+import android.text.TextUtils;
 import com.android.settings.R;
+import android.provider.Settings.SettingNotFoundException;
 import com.android.settings.SettingsPreferenceFragment;
+import android.util.Log;
 
 public class PowerMenuSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
@@ -39,13 +44,16 @@ public class PowerMenuSettings extends SettingsPreferenceFragment implements
             "power_menu_lockdown";
     private static final String PREF_SILENT =
             "power_menu_silent";
+    private static final String KEY_SCREENRECORD =
+            "power_menu_screenrecord";
 
-    private CheckBoxPreference mReboot;
-    private CheckBoxPreference mAirplane;
-    private CheckBoxPreference mUsers;
-    private CheckBoxPreference mSettings;
-    private CheckBoxPreference mLockdown;
-    private CheckBoxPreference mSilent;
+    private SwitchPreference mReboot;
+    private SwitchPreference mAirplane;
+    private SwitchPreference mUsers;
+    private SwitchPreference mSettings;
+    private SwitchPreference mLockdown;
+    private SwitchPreference mSilent;
+    private SwitchPreference mScreenrecordPref;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -82,6 +90,11 @@ public class PowerMenuSettings extends SettingsPreferenceFragment implements
         mSilent.setChecked(Settings.System.getInt(getContentResolver(),
                 Settings.System.POWER_MENU_SILENT, 1) == 1);
         mSilent.setOnPreferenceChangeListener(this);
+
+        mScreenrecordPref = (SwitchPreference) findPreference(KEY_SCREENRECORD);
+        mScreenrecordPref.setChecked(Settings.System.getInt(getContentResolver(),
+                Settings.System.POWER_MENU_SCREENRECORD_ENABLED, 0) == 1);
+        mScreenrecordPref.setOnPreferenceChangeListener(this);
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
@@ -121,6 +134,12 @@ public class PowerMenuSettings extends SettingsPreferenceFragment implements
             value = (Boolean) newValue;
             Settings.System.putInt(getContentResolver(),
                     Settings.System.POWER_MENU_SILENT,
+                    value ? 1 : 0);
+            return true;
+        } else if (preference == mScreenrecordPref) {
+			value = (Boolean) newValue;
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.POWER_MENU_SCREENRECORD_ENABLED,
                     value ? 1 : 0);
             return true;
         }
