@@ -16,12 +16,18 @@
 
 package com.android.settings.broken;
 
+import java.io.InputStreamReader;
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.io.BufferedReader;
+
 import android.content.ContentResolver;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.os.Bundle;
 import android.preference.Preference;
+import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceScreen;
 import android.preference.SwitchPreference;
 import android.provider.Settings;
@@ -31,9 +37,15 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 
+import com.android.settings.util.CMDProcessor;
+
 import java.util.List;
 
-public class MainSettings extends SettingsPreferenceFragment {
+public class MainSettings extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
+
+	private static final String SELINUX = "selinux";
+
+	private SwitchPreference mSelinux;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -41,8 +53,20 @@ public class MainSettings extends SettingsPreferenceFragment {
 
         addPreferencesFromResource(R.xml.broken_main_settings);
 
-        ContentResolver resolver = getActivity().getContentResolver();
+        final ContentResolver resolver = getActivity().getContentResolver();
         PackageManager pm = getPackageManager();
+        PreferenceScreen prefSet = getPreferenceScreen();
+
+        mSelinux = (SwitchPreference) findPreference(SELINUX);
+        mSelinux.setOnPreferenceChangeListener(this);
+
+        if (CMDProcessor.runSuCommand("getenforce").getStdout().contains("Enforcing")) {
+            mSelinux.setChecked(true);
+            mSelinux.setSummary(R.string.selinux_enforcing_title);
+        } else {
+            mSelinux.setChecked(false);
+            mSelinux.setSummary(R.string.selinux_permissive_title);
+        }
 	}
 
 	@Override
@@ -53,5 +77,20 @@ public class MainSettings extends SettingsPreferenceFragment {
      @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
 	return super.onPreferenceTreeClick(preferenceScreen, preference);
+    }
+
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object objValue) {
+		if (preference == mSelinux) {
+            if (objValue.toString().equals("true")) {
+                CMDProcessor.runSuCommand("setenforce 1");
+                mSelinux.setSummary(R.string.selinux_enforcing_title);
+            } else if (objValue.toString().equals("false")) {
+                CMDProcessor.runSuCommand("setenforce 0");
+                mSelinux.setSummary(R.string.selinux_permissive_title);
+            }
+            return true;
+        }
+        return false;
     }
 }
