@@ -22,7 +22,6 @@
         <!-- Broken Walls -->
         <PreferenceScreen
                 android:id="@+id/brokenwalls"
-                android:icon="@drawable/ic_broken_settings_teal"
                 android:title="@string/brokenwalls_title"
                 android:summary="@string/brokenwalls_summary" >
                 <intent
