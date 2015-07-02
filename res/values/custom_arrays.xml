@@ -928,11 +928,23 @@
     </string-array>
 
     <!-- Smart pulldown -->
-        <string-array name="smart_pulldown_entries" translatable="false">
+    <string-array name="smart_pulldown_entries" translatable="false">
         <item>@string/smart_pulldown_off</item>
         <item>@string/smart_pulldown_dismissable</item>
         <item>@string/smart_pulldown_persistent</item>
         <item>@string/smart_pulldown_all</item>
+    </string-array>
+    
+    <string-array name="heads_up_global_switch_entries">
+        <item>@string/heads_up_global_switch_disabled</item>
+        <item>@string/heads_up_global_switch_perapp</item>
+        <item>@string/heads_up_global_switch_forced</item>
+    </string-array>
+
+    <string-array name="heads_up_global_switch_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
     </string-array>
 
     <string-array name="smart_pulldown_values" translatable="false">
