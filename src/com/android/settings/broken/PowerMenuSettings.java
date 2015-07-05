@@ -44,8 +44,12 @@ public class PowerMenuSettings extends SettingsPreferenceFragment implements
             "power_menu_lockdown";
     private static final String PREF_SILENT =
             "power_menu_silent";
-    private static final String KEY_SCREENRECORD =
+    private static final String PREF_SCREENRECORD =
             "power_menu_screenrecord";
+    private static final String PREF_SCREENSHOT =
+            "power_menu_screenshot";
+    private static final String PREF_SOFTREBOOT =
+            "power_menu_soft_reboot";
 
     private SwitchPreference mReboot;
     private SwitchPreference mAirplane;
@@ -54,6 +58,8 @@ public class PowerMenuSettings extends SettingsPreferenceFragment implements
     private SwitchPreference mLockdown;
     private SwitchPreference mSilent;
     private SwitchPreference mScreenrecordPref;
+    private SwitchPreference mScreenshot;
+    private SwitchPreference mSoftreboot;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -65,6 +71,16 @@ public class PowerMenuSettings extends SettingsPreferenceFragment implements
         mReboot.setChecked(Settings.System.getInt(getContentResolver(),
                 Settings.System.POWER_MENU_REBOOT, 1) == 1);
         mReboot.setOnPreferenceChangeListener(this);
+
+        mScreenshot = (SwitchPreference) findPreference(PREF_SCREENSHOT);
+        mScreenshot.setChecked(Settings.System.getInt(getContentResolver(),
+                Settings.System.POWER_MENU_SCREENSHOT, 1) == 1);
+        mScreenshot.setOnPreferenceChangeListener(this);
+
+        mSoftreboot = (SwitchPreference) findPreference(PREF_SOFTREBOOT);
+        mSoftreboot.setChecked(Settings.System.getInt(getContentResolver(),
+                Settings.System.POWER_MENU_SOFT_REBOOT, 1) == 1);
+        mSoftreboot.setOnPreferenceChangeListener(this);
 
         mAirplane = (SwitchPreference) findPreference(PREF_AIRPLANE);
         mAirplane.setChecked(Settings.System.getInt(getContentResolver(),
@@ -91,7 +107,7 @@ public class PowerMenuSettings extends SettingsPreferenceFragment implements
                 Settings.System.POWER_MENU_SILENT, 1) == 1);
         mSilent.setOnPreferenceChangeListener(this);
 
-        mScreenrecordPref = (SwitchPreference) findPreference(KEY_SCREENRECORD);
+        mScreenrecordPref = (SwitchPreference) findPreference(PREF_SCREENRECORD);
         mScreenrecordPref.setChecked(Settings.System.getInt(getContentResolver(),
                 Settings.System.POWER_MENU_SCREENRECORD_ENABLED, 0) == 1);
         mScreenrecordPref.setOnPreferenceChangeListener(this);
@@ -140,6 +156,18 @@ public class PowerMenuSettings extends SettingsPreferenceFragment implements
 			value = (Boolean) newValue;
             Settings.System.putInt(getContentResolver(),
                     Settings.System.POWER_MENU_SCREENRECORD_ENABLED,
+                    value ? 1 : 0);
+            return true;
+        } else if (preference == mScreenshot) {
+            value = (Boolean) newValue;
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.POWER_MENU_SCREENSHOT,
+                    value ? 1 : 0);
+            return true;
+        } else if (preference == mSoftreboot) {
+            value = (Boolean) newValue;
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.POWER_MENU_SOFT_REBOOT,
                     value ? 1 : 0);
             return true;
         }

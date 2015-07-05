@@ -39,7 +39,13 @@ limitations under the License.
     <SwitchPreference
         android:key="power_menu_screenrecord"
         android:title="@string/power_menu_screenrecord_title"
-        android:summary="@string/screen_recorder_power_menu_summary"
+        android:summary="@string/power_menu_screen_recorder_summary"
+        android:defaultValue="false" />
+
+    <SwitchPreference
+        android:key="power_menu_screenshot"
+        android:title="@string/power_menu_screenshot_title"
+        android:summary="@string/power_menu_screenshot_summary"
         android:defaultValue="false" />
 
     <SwitchPreference
@@ -47,7 +53,13 @@ limitations under the License.
         android:title="@string/power_menu_settings_title"
         android:summary="@string/power_menu_settings_summary" 
         android:defaultValue="false"/>
-        
+
+    <SwitchPreference
+        android:key="power_menu_soft_reboot"
+        android:title="@string/power_menu_soft_reboot_title"
+        android:summary="@string/power_menu_soft_reboot_summary" 
+        android:defaultValue="false"/>
+
     <SwitchPreference
         android:key="power_menu_silent"
         android:title="@string/power_menu_silent_title"
