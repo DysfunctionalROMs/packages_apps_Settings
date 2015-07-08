@@ -60,16 +60,16 @@
                 android:title="@string/quick_settings_collapse_title"
                 android:summary="@string/quick_settings_collapse_summary"
                 android:defaultValue="false"/>
-            
-    </PreferenceCategory>
-
-    <PreferenceCategory
-            android:title="@string/notification_title">
 
         <com.android.settings.broken.SystemSettingSwitchPreference
                 android:key="qs_show_brightness_slider"
                 android:title="@string/qs_brightness_slider_title"
                 android:defaultValue="true"/>
+            
+    </PreferenceCategory>
+
+    <PreferenceCategory
+            android:title="@string/notification_title">
 
         <com.android.settings.broken.SystemSettingSwitchPreference
                 android:key="force_expanded_notifications"
