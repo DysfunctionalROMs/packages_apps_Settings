@@ -69,22 +69,22 @@ public class PowerMenuSettings extends SettingsPreferenceFragment implements
 
         mReboot = (SwitchPreference) findPreference(PREF_REBOOT);
         mReboot.setChecked(Settings.System.getInt(getContentResolver(),
-                Settings.System.POWER_MENU_REBOOT, 1) == 1);
+                Settings.System.POWER_MENU_REBOOT, 0) == 1);
         mReboot.setOnPreferenceChangeListener(this);
 
         mScreenshot = (SwitchPreference) findPreference(PREF_SCREENSHOT);
         mScreenshot.setChecked(Settings.System.getInt(getContentResolver(),
-                Settings.System.POWER_MENU_SCREENSHOT, 1) == 1);
+                Settings.System.POWER_MENU_SCREENSHOT, 0) == 1);
         mScreenshot.setOnPreferenceChangeListener(this);
 
         mSoftreboot = (SwitchPreference) findPreference(PREF_SOFTREBOOT);
         mSoftreboot.setChecked(Settings.System.getInt(getContentResolver(),
-                Settings.System.POWER_MENU_SOFT_REBOOT, 1) == 1);
+                Settings.System.POWER_MENU_SOFT_REBOOT, 0) == 1);
         mSoftreboot.setOnPreferenceChangeListener(this);
 
         mAirplane = (SwitchPreference) findPreference(PREF_AIRPLANE);
         mAirplane.setChecked(Settings.System.getInt(getContentResolver(),
-                Settings.System.POWER_MENU_AIRPLANE, 1) == 1);
+                Settings.System.POWER_MENU_AIRPLANE, 0) == 1);
         mAirplane.setOnPreferenceChangeListener(this);
 
         mUsers = (SwitchPreference) findPreference(PREF_USERS);
@@ -104,7 +104,7 @@ public class PowerMenuSettings extends SettingsPreferenceFragment implements
 
         mSilent = (SwitchPreference) findPreference(PREF_SILENT);
         mSilent.setChecked(Settings.System.getInt(getContentResolver(),
-                Settings.System.POWER_MENU_SILENT, 1) == 1);
+                Settings.System.POWER_MENU_SILENT, 0) == 1);
         mSilent.setOnPreferenceChangeListener(this);
 
         mScreenrecordPref = (SwitchPreference) findPreference(PREF_SCREENRECORD);
