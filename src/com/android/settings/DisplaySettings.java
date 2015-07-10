@@ -172,6 +172,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         updateTimeoutPreferenceDescription(currentTimeout);
 
         mLcdDensityPreference = (ListPreference) findPreference(KEY_LCD_DENSITY);
+        mLcdDensityPreference = (ListPreference) findPreference(KEY_LCD_DENSITY);
         if (mLcdDensityPreference != null) {
             int defaultDensity = getDefaultDensity();
             int currentDensity = getCurrentDensity();
@@ -179,17 +180,32 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                 // Unsupported value, force default
                 currentDensity = defaultDensity;
             }
-            if (currentDensity == val) {
-                currentIndex = idx;
+
+            int factor = defaultDensity >= 480 ? 40 : 20;
+            int minimumDensity = defaultDensity - 4 * factor;
+            int currentIndex = -1;
+            String[] densityEntries = new String[7];
+            String[] densityValues = new String[7];
+            for (int idx = 0; idx < 7; ++idx) {
+                int val = minimumDensity + factor * idx;
+                int valueFormatResId = val == defaultDensity
+                        ? R.string.lcd_density_default_value_format
+                        : R.string.lcd_density_value_format;
+
+                densityEntries[idx] = getString(valueFormatResId, val);
+                densityValues[idx] = Integer.toString(val);
+                if (currentDensity == val) {
+                    currentIndex = idx;
+                }
             }
+            mLcdDensityPreference.setEntries(densityEntries);
+            mLcdDensityPreference.setEntryValues(densityValues);
+            if (currentIndex != -1) {
+                mLcdDensityPreference.setValueIndex(currentIndex);
+            }
+            mLcdDensityPreference.setOnPreferenceChangeListener(this);
+            updateLcdDensityPreferenceDescription(currentDensity);
         }
-        mLcdDensityPreference.setEntries(densityEntries);
-        mLcdDensityPreference.setEntryValues(densityEntries);
-        if (currentIndex != -1) {
-            mLcdDensityPreference.setValueIndex(currentIndex);
-        }
-        mLcdDensityPreference.setOnPreferenceChangeListener(this);
-        updateLcdDensityPreferenceDescription(currentDensity);
 
         mFontSizePref = (WarnedListPreference) findPreference(KEY_FONT_SIZE);
         mFontSizePref.setOnPreferenceChangeListener(this);
@@ -549,9 +565,10 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                 } catch (RemoteException e) {
                     Log.e(TAG, "Failed to restart");
                 }
-            };
-            task.execute((Void[])null);
-        }
+                return null;
+            }
+        };
+        task.execute((Void[])null);
     }
 
     private static boolean isTapToWakeSupported() {
