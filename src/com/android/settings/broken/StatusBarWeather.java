@@ -45,7 +45,7 @@ public class StatusBarWeather extends SettingsPreferenceFragment implements OnPr
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        addPreferencesFromResource(R.xml.status_bar_weather);
+    addPreferencesFromResource(R.xml.status_bar_weather);
 	PreferenceScreen prefSet = getPreferenceScreen();
 
 	mLockClock = (PreferenceScreen) findPreference(KEY_LOCK_CLOCK);
