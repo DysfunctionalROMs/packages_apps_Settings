@@ -1784,5 +1784,9 @@
     <string name="dim_nav_buttons_animate_summary">Animate the alpha fade</string>
     <string name="dim_nav_buttons_animate_duration_title">Animation duration</string>
     <string name="dim_nav_buttons_animate_duration_summary">Duration (in milliseconds) of the alpha animation</string>
+
+    <!-- Statusbar Broken logo -->
+    <string name="status_bar_broken_logo_title">Broken logo</string>
+    <string name="status_bar_broken_logo_summary">Enable to show Broken logo on the left side of statusbar</string>
     
 </resources>

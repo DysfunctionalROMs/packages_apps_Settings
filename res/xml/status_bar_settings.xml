@@ -24,6 +24,11 @@
                  android:persistent="false"
                  android:defaultValue="false" />
 
+         <com.android.settings.broken.SystemSettingSwitchPreference
+                 android:key="status_bar_broken_logo"
+                 android:title="@string/status_bar_broken_logo_title"
+                 android:summary="@string/status_bar_broken_logo_summary" />
+
          <PreferenceScreen
                  android:key="carrier_options"
                  android:title="@string/carrier_options"
