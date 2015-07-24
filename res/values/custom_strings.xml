@@ -1290,6 +1290,10 @@
     <string name="power_menu_soft_reboot_summary">Enable to show the soft reboot button</string>
     <string name="power_menu_screenrecord_title">Screen Record</string>
     <string name="power_menu_screen_recorder_summary">Add a Screen Record entry in the power menu</string>
+
+    <!--  Lockscreen wallpaper  -->
+    <string name="lockscreen_wallpaper_title">Wallpaper</string>
+    <string name="lockscreen_wallpaper_summary">Change that lockscreen imagery</string>   
     
     <!-- Restart SystemUI -->
     <string name="restart_systemui">Restart SystemUI</string>
