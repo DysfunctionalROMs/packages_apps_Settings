@@ -1865,5 +1865,6 @@
     <string name="status_bar_weather_font_style_title">Font</string>
     <string name="status_bar_weather_font_normal">Normal</string>
     <string name="status_bar_weather_font_bold">Bold</string>
+    <string name="status_bar_weather_color_title">Temperature color</string>
 
 </resources>

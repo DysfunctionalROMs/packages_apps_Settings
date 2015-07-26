@@ -34,14 +34,18 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
+
 public class StatusBarWeatherIcon extends SettingsPreferenceFragment
         implements OnPreferenceChangeListener {
 
     private static final String STATUS_BAR_TEMPERATURE_STYLE = "status_bar_temperature_style";
     private static final String PREF_STATUS_BAR_WEATHER_FONT_STYLE = "status_bar_weather_font_style";
+    private static final String PREF_STATUS_BAR_WEATHER_COLOR = "status_bar_weather_color";
 
     private ListPreference mStatusBarTemperature;
     private ListPreference mStatusBarTemperatureFontStyle;
+    private ColorPickerPreference mStatusBarTemperatureColor;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -62,6 +66,15 @@ public class StatusBarWeatherIcon extends SettingsPreferenceFragment
         mStatusBarTemperatureFontStyle.setValue(Integer.toString(Settings.System.getInt(getActivity()
                 .getContentResolver(), Settings.System.STATUS_BAR_WEATHER_FONT_STYLE, 0)));
         mStatusBarTemperatureFontStyle.setSummary(mStatusBarTemperatureFontStyle.getEntry());
+
+         mStatusBarTemperatureColor =
+            (ColorPickerPreference) findPreference(PREF_STATUS_BAR_WEATHER_COLOR);
+        mStatusBarTemperatureColor.setOnPreferenceChangeListener(this);
+        int intColor = Settings.System.getInt(resolver,
+                Settings.System.STATUS_BAR_WEATHER_COLOR, 0xffffffff);
+        String hexColor = String.format("#%08x", (0xffffffff & intColor));
+            mStatusBarTemperatureColor.setSummary(hexColor);
+            mStatusBarTemperatureColor.setNewPreviewColor(intColor);
     }
 
     @Override
@@ -81,6 +94,14 @@ public class StatusBarWeatherIcon extends SettingsPreferenceFragment
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.STATUS_BAR_WEATHER_FONT_STYLE, val);
             mStatusBarTemperatureFontStyle.setSummary(mStatusBarTemperatureFontStyle.getEntries()[index]);
+            return true;
+        } else if (preference == mStatusBarTemperatureColor) {
+            String hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(newValue)));
+            preference.setSummary(hex);
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.STATUS_BAR_WEATHER_COLOR, intHex);
             return true;
         }
         return false;
