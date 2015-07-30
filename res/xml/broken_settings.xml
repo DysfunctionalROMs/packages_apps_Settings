@@ -6,10 +6,10 @@
 
         <!-- Adblocker -->
         <PreferenceScreen
-                android:key="hfm_settings"
-                android:title="@string/hfm_pref_screen_title"
-                android:summary="@string/adblocker_summary"
-                android:fragment="com.android.settings.broken.hfm.HfmSettings" />
+                android:id="@+id/initD"
+				android:fragment="com.android.settings.broken.InitD"
+				android:title="@string/init_d_title"
+				android:summary="@string/header_summary_init_d" />
 
         <!-- Animations -->
         <PreferenceScreen
