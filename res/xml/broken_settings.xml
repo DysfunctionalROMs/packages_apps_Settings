@@ -4,13 +4,6 @@
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
         android:title="@string/broken_settings_title" >
 
-        <!-- Adblocker -->
-        <PreferenceScreen
-                android:id="@+id/initD"
-				android:fragment="com.android.settings.broken.InitD"
-				android:title="@string/init_d_title"
-				android:summary="@string/header_summary_init_d" />
-
         <!-- Animations -->
         <PreferenceScreen
                 android:id="@+id/animation_settings"

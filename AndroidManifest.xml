@@ -2282,17 +2282,6 @@
             </intent-filter>
         </provider>
 
-        <receiver android:name="com.android.settings.broken.hfm.IntentReceiver" >
-            <intent-filter>
-                 <action android:name="android.intent.action.BOOT_COMPLETED" />
-            </intent-filter>
-        </receiver>
-
-        <service android:name="com.android.settings.broken.hfm.CheckHosts" />
-
-        <activity android:name="com.android.settings.broken.hfm.HfmWhitelist"
-                  android:label="@string/hfm_whitelist_title" />
-
         <receiver android:name="com.android.settings.broken.OnBoot">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED"/>
