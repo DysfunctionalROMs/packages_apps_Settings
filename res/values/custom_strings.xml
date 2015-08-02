@@ -692,4 +692,10 @@
     <!-- Seconds clock -->
     <string name="status_bar_show_clock_second_title">Clock seconds</string>
 
+    <!-- Lock screen settings -->
+    <string name="lockscreen_settings_title">Lockscreen wallpaper</string>
+    <string name="lockscreen_wallpaper_title">Wallpaper</string>
+    <string name="lockscreen_wallpaper_set_title">Set lock screen wallpaper</string>
+    <string name="lockscreen_wallpaper_clear_title">Clear lock screen wallpaper</string>
+
 </resources>
