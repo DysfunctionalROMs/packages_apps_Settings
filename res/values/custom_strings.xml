@@ -1064,4 +1064,10 @@
     <string name="app_notification_no_ongoing_on_keyguard_title">Disable ongoing on lockscreen</string>
     <string name="app_notification_no_ongoing_on_keyguard_summary">Never show ongoing notifications from this app on the lockscreen</string>
     
+    <!-- Status bar temperature -->
+    <string name="status_bar_temperature_title">Temperature style</string>
+    <string name="status_bar_temperature_hidden">Hidden</string>
+    <string name="status_bar_temperature_show_scale">Scale showing</string>
+    <string name="status_bar_temperature_hide_scale">Scale hidden</string>
+ 
 </resources>
