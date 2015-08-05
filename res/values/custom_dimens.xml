@@ -29,4 +29,14 @@
     <dimen name="fab_icon_size">24dp</dimen>
     <dimen name="fab_elevation_normal">8dp</dimen>
     <dimen name="fab_elevation_pressed">6dp</dimen>
+
+    <!-- Category border width -->
+    <dimen name="dashboard_border_width">0dip</dimen>
+
+    <!-- Individual corner control -->
+    <dimen name="dashboard_radius_bottom_left">0dip</dimen>
+    <dimen name="dashboard_radius_bottom_right">0dip</dimen>
+    <dimen name="dashboard_radius_top_left">0dip</dimen>
+    <dimen name="dashboard_radius_top_right">0dip</dimen>
+
 </resources>
