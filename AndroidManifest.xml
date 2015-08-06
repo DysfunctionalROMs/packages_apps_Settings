@@ -2255,8 +2255,9 @@
                 android:value="com.android.settings.broken.MainSettings" />
         </activity>
 
-        <activity
-             android:name=".broken.MainSettings" />
+        <activity android:name=".broken.MainSettings" />
+
+        <activity android:name="com.android.settings.broken.fragments.SystemappRemover" />
 
         <activity
              android:name=".broken.LockScreen" />
