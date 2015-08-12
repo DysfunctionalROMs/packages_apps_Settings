@@ -23,12 +23,6 @@
         android:fragment="com.android.settings.broken.LockScreenColorSettings" />
 
     <PreferenceScreen
-        android:key="lockscreen_shortcuts_settings"
-        android:fragment="com.android.settings.broken.LockscreenShortcuts"
-        android:title="@string/lockscreen_targets_message"
-        android:summary="@string/lockscreen_targets_summary" />
-
-    <PreferenceScreen
                  android:key="lockscreen_shortcuts"
                  android:fragment="com.android.settings.broken.dslv.ActionListViewSettings"
                  android:summary="@string/lockscreen_shortcuts_summary"
