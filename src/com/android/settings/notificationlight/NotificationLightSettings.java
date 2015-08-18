@@ -74,12 +74,14 @@ public class NotificationLightSettings extends SettingsPreferenceFragment implem
     private static final int MENU_ADD = 0;
     private static final int DIALOG_APPS = 0;
 
+    private boolean mAdjustableNotificationLedBrightness;
     private boolean mMultiColorNotificationLed;
     private int mDefaultColor;
     private int mDefaultLedOn;
     private int mDefaultLedOff;
     private PackageManager mPackageManager;
     private PreferenceGroup mApplicationPrefList;
+    private PreferenceScreen mNotificationLedBrightnessPref;
     private SystemSettingSwitchPreference mEnabledPref;
     private SystemSettingSwitchPreference mCustomEnabledPref;
     private ApplicationLightPreference mDefaultPref;
@@ -106,6 +108,8 @@ public class NotificationLightSettings extends SettingsPreferenceFragment implem
         PreferenceGroup mGeneralPrefs = (PreferenceGroup) prefSet.findPreference("general_section");
         PreferenceGroup mPhonePrefs = (PreferenceGroup) prefSet.findPreference("phone_list");
 
+        mAdjustableNotificationLedBrightness = resources.getBoolean(
+                com.android.internal.R.bool.config_adjustableNotificationLedBrightness);
         mMultiColorNotificationLed = resources.getBoolean(
                 com.android.internal.R.bool.config_multiColorNotificationLed);
 
@@ -127,12 +131,19 @@ public class NotificationLightSettings extends SettingsPreferenceFragment implem
         mDefaultLedOff = resources.getInteger(
                 com.android.internal.R.integer.config_defaultNotificationLedOff);
 
+		mNotificationLedBrightnessPref = (PreferenceScreen)
+                findPreference(Settings.System.NOTIFICATION_LIGHT_BRIGHTNESS_LEVEL);
         mEnabledPref = (SystemSettingSwitchPreference)
                 findPreference(Settings.System.NOTIFICATION_LIGHT_PULSE);
         mEnabledPref.setOnPreferenceChangeListener(this);
         mCustomEnabledPref = (SystemSettingSwitchPreference)
                 findPreference(Settings.System.NOTIFICATION_LIGHT_PULSE_CUSTOM_ENABLE);
         mCustomEnabledPref.setOnPreferenceChangeListener(this);
+        if (!mAdjustableNotificationLedBrightness) {
+            prefSet.removePreference(mNotificationLedBrightnessPref);
+        } else {
+            mNotificationLedBrightnessPref.setOnPreferenceChangeListener(this);
+        }
 
         mDefaultPref = (ApplicationLightPreference) findPreference(DEFAULT_PREF);
         mDefaultPref.setOnPreferenceChangeListener(this);
@@ -418,7 +429,8 @@ public class NotificationLightSettings extends SettingsPreferenceFragment implem
     }
 
     public boolean onPreferenceChange(Preference preference, Object objValue) {
-        if (preference == mEnabledPref || preference == mCustomEnabledPref) {
+        if (preference == mEnabledPref || preference == mCustomEnabledPref ||
+                preference == mNotificationLedBrightnessPref) {
             getActivity().invalidateOptionsMenu();
         } else {
             ApplicationLightPreference lightPref = (ApplicationLightPreference) preference;
