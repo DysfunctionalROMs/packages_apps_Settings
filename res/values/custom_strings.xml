@@ -1910,5 +1910,9 @@
     <!-- Interruptions and alarms -->
     <string name="zen_mode_none_category">No interruptions</string>
     <string name="zen_mode_alarms">Allow alarms</string>
+
+    <!-- Media ducking -->
+    <string name="interruptions_ignore_while_media_title">Prevent audio ducking</string>
+    <string name="interruptions_ignore_while_media_summary">Do not reduce media playback volume when a notification arrives</string>
     
 </resources>
