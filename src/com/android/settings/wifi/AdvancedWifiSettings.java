@@ -60,8 +60,7 @@ public class AdvancedWifiSettings extends SettingsPreferenceFragment
     private static final String KEY_MAC_ADDRESS = "mac_address";
     private static final String KEY_CURRENT_IP_ADDRESS = "current_ip_address";
     private static final String KEY_FREQUENCY_BAND = "frequency_band";
-    private static final String KEY_COUNTRY_CODE = "country_code";
-    private static final String KEY_COUNTRY_OVERRIDE = "country_override";
+    private static final String KEY_COUNTRY_CODE = "wifi_countrycode";
     private static final String KEY_NOTIFY_OPEN_NETWORKS = "notify_open_networks";
     private static final String KEY_SLEEP_POLICY = "sleep_policy";
     private static final String KEY_SCAN_ALWAYS_AVAILABLE = "wifi_scan_always_available";
@@ -76,9 +75,6 @@ public class AdvancedWifiSettings extends SettingsPreferenceFragment
     private static final int WPS_PBC_DIALOG_ID = 1;
     private static final int WPS_PIN_DIALOG_ID = 2;
     private AppListSwitchPreference mWifiAssistantPreference;
-
-    private ListPreference mCountryCodePref;
-    private ListPreference mCountryOverridePref;
 
     private IntentFilter mFilter;
     private final BroadcastReceiver mReceiver = new BroadcastReceiver() {
@@ -205,44 +201,6 @@ public class AdvancedWifiSettings extends SettingsPreferenceFragment
             }
         }
 
-        mCountryCodePref = (ListPreference) findPreference(KEY_COUNTRY_CODE);
-        if (mCountryCodePref != null) {
-            mCountryCodePref.setOnPreferenceChangeListener(this);
-            String value = Settings.Global.getString(getContentResolver(),
-                                Settings.Global.WIFI_COUNTRY_CODE);
-            if (value != null && !value.isEmpty() && value != "") {
-                int index = mCountryCodePref.findIndexOfValue(value);
-                mCountryCodePref.setValue(value);
-                updateCountryCodeSummary(index);
-            }
-        }
-
-        mCountryOverridePref = (ListPreference) findPreference(KEY_COUNTRY_OVERRIDE);
-        if (mCountryOverridePref != null) {
-            mCountryOverridePref.setOnPreferenceChangeListener(this);
-            String value = Settings.Global.getString(getContentResolver(),
-                                Settings.Global.WIFI_COUNTRY_OVERRIDE);
-            if (value != null && !value.isEmpty() && value != "") {
-                int index = mCountryOverridePref.findIndexOfValue(value);
-                updateCountryOverrideSummary(index);
-                mCountryOverridePref.setValue(value);
-			}
-		}
-
-        ListPreference ccodePref = (ListPreference) findPreference(KEY_COUNTRY_CODE);
-        if (ccodePref != null) {
-            ccodePref.setEntries(getCountryCodeEntries());
-            ccodePref.setEntryValues(getCountryCodeValues());
-            ccodePref.setOnPreferenceChangeListener(this);
-            String valueString = mWifiManager.getCountryCode();
-            if (valueString != null) {
-                ccodePref.setValue(valueString);
-                updateChannelSummary(ccodePref, valueString);
-            } else {
-                Log.e(TAG, "Failed to fetch country code");
-            }
-        }
-
         ListPreference sleepPolicyPref = (ListPreference) findPreference(KEY_SLEEP_POLICY);
         if (sleepPolicyPref != null) {
             if (Utils.isWifiOnly(context)) {
@@ -295,26 +253,6 @@ public class AdvancedWifiSettings extends SettingsPreferenceFragment
         frequencyBandPref.setSummary(summaries[index]);
     }
 
-    private void updateCountryCodeSummary(int index) {
-        final String addSpace = " ";
-        String[] summaries = getResources().getStringArray(R.array.wifi_country_code_entries);
-        mCountryCodePref.setSummary(
-                getResources().getString(R.string.wifi_country_summary_prefix)
-                + addSpace + summaries[index]
-                + getResources().getString(R.string.wifi_country_summary_suffix));
-    }
-
-    private void updateCountryOverrideSummary(int index) {
-        final String addSpace = " ";
-        String[] summaries = getResources().getStringArray(R.array.wifi_country_override_entries);
-        mCountryOverridePref.setSummary(
-                getResources().getString(R.string.wifi_country_summary_prefix)
-                + addSpace + summaries[index]
-                + getResources().getString(R.string.wifi_country_summary_suffix));
-        // Disable country code preference if it is being overridden
-        mCountryCodePref.setEnabled((index == 0));
-	}
-
     private void updateChannelSummary(Preference channelPref, String value) {
         String channel = getResources().getString(R.string.wifi_setting_countrycode_summary);
         channelPref.setSummary(channel + " (" + value + ")");
@@ -350,40 +288,6 @@ public class AdvancedWifiSettings extends SettingsPreferenceFragment
                 updateFrequencyBandSummary(preference, value);
             } catch (NumberFormatException e) {
                 Toast.makeText(context, R.string.wifi_setting_frequency_band_error,
-                        Toast.LENGTH_SHORT).show();
-                return false;
-            }
-        } else if (KEY_COUNTRY_CODE.equals(key)) {
-            try {
-                String value = (String) newValue;
-                int index = mCountryCodePref.findIndexOfValue(value);
-                Settings.System.putString(getContentResolver(),
-                        Settings.Global.WIFI_COUNTRY_CODE, value);
-                mCountryCodePref.setValue(value);
-                updateCountryCodeSummary(index);
-                if(mWifiManager.isWifiEnabled()) {
-                    mWifiManager.setWifiEnabled(false);
-                    mWifiManager.setWifiEnabled(true);
-                }
-            } catch (NumberFormatException e) {
-                Toast.makeText(context, R.string.wifi_country_code_error,
-                        Toast.LENGTH_SHORT).show();
-                return false;
-            }
-        } else if (KEY_COUNTRY_OVERRIDE.equals(key)) {
-            try {
-                String value = (String) newValue;
-                int index = mCountryOverridePref.findIndexOfValue(value);
-                Settings.System.putString(getContentResolver(),
-                        Settings.Global.WIFI_COUNTRY_OVERRIDE, value);
-                mCountryOverridePref.setValue(value);
-                updateCountryOverrideSummary(index);
-                if(mWifiManager.isWifiEnabled()) {
-                    mWifiManager.setWifiEnabled(false);
-                    mWifiManager.setWifiEnabled(true);
-                }
-            } catch (NumberFormatException e) {
-                Toast.makeText(context, R.string.wifi_country_override_error,
                         Toast.LENGTH_SHORT).show();
                 return false;
             }
