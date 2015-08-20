@@ -771,4 +771,5 @@
     <string name="qs_four_columns_title">Show four tiles per row</string>
     <string name="qs_advanced_location_title">Advanced location settings</string>
     <string name="qs_advanced_location_summary">Enable advanced settings for location in quick settings</string>
+    <string name="quick_settings_reset_message">Reset quick settings tiles?</string>
 </resources>
