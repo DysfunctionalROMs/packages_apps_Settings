@@ -53,9 +53,9 @@
     <!-- Slim Shortcuts -->
     <string name="slim_shortcut_picker">Slim Actions</string>
 
-    <!-- About phone screen, Slim version -->
-    <string name="slim_version_title">Slim version</string>
-    <string name="slim_version_default">Unknown</string>
+    <!-- About phone screen, Broken version -->
+    <string name="broken_version_title">Broken Version</string>
+    <string name="broken_version_default">Unknown</string>
     <!-- About phone screen, build date of ROM -->
     <string name="build_date">Build date</string>
     <string name="build_date_default">Unknown</string>
