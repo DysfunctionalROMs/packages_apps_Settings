@@ -19,6 +19,11 @@ package com.android.settings;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
+import android.content.pm.ResolveInfo;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.SELinux;
@@ -83,6 +88,7 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
     private static final String KEY_DEVICE_MEMORY = "device_memory";
     private static final String KEY_BUILD_ID = "build_id";
     private static final String KEY_MOD_BUILD_DATE = "build_date";
+    private static final String KEY_SLIM_OTA = "slimota";
 
     static final int TAPS_TO_BE_A_DEVELOPER = 7;
 
@@ -163,6 +169,13 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
         // Remove selinux information if property is not present
         removePreferenceIfPropertyMissing(getPreferenceScreen(), KEY_SELINUX_STATUS,
                 PROPERTY_SELINUX_STATUS);
+
+        // Only the owner should see the Updater settings, if it exists
+        if (UserHandle.myUserId() == UserHandle.USER_OWNER) {
+            removePreferenceIfPackageNotInstalled(findPreference(KEY_SLIM_OTA));
+        } else {
+            getPreferenceScreen().removePreference(findPreference(KEY_SLIM_OTA));
+        }
 
         // Remove Equipment id preference if FCC ID is not set by RIL
         removePreferenceIfPropertyMissing(getPreferenceScreen(), KEY_EQUIPMENT_ID,
@@ -445,8 +458,8 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
 
             private boolean isPropertyMissing(String property) {
                 return SystemProperties.get(property).equals("");
-            }
-        };
+        }
+	};
 
         private String getMemInfo() {
         String result = null;
@@ -511,5 +524,29 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
         } catch (IOException e) {}
 
         return result;
+	}
+
+    private boolean removePreferenceIfPackageNotInstalled(Preference preference) {
+        String intentUri=((PreferenceScreen) preference).getIntent().toUri(1);
+        Pattern pattern = Pattern.compile("component=([^/]+)/");
+        Matcher matcher = pattern.matcher(intentUri);
+
+        String packageName=matcher.find()?matcher.group(1):null;
+        if(packageName != null) {
+            try {
+                PackageInfo pi = getPackageManager().getPackageInfo(packageName,
+                        PackageManager.GET_ACTIVITIES);
+                if (!pi.applicationInfo.enabled) {
+                    Log.e(LOG_TAG,"package "+packageName+" is disabled, hiding preference.");
+                    getPreferenceScreen().removePreference(preference);
+                    return true;
+                }
+            } catch (NameNotFoundException e) {
+                Log.e(LOG_TAG,"package "+packageName+" not installed, hiding preference.");
+                getPreferenceScreen().removePreference(preference);
+                return true;
+            }
+        }
+        return false;
     }
 }
