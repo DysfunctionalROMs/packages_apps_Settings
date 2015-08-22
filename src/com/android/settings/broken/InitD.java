@@ -60,7 +60,7 @@ public class InitD extends SettingsPreferenceFragment {
     private static final String KEY_SQLITE3 = "sqlite3";
     private static final String KEY_WIFISLEEP = "wifisleep";
     private static final String KEY_IOSTATS = "iostats";
-    private static final String KEY_SENTRENICE = "sentrenice";
+    private static final String KEY_SENTRENICE = "setrenice";
     private static final String KEY_TWEAKS = "tweaks";
     private static final String KEY_SPEEDY_MODIFIED = "speedy_modified";
     private static final String KEY_LOOPY_SMOOTHNESS_TWEAK = "loopy_smoothness_tweak";
