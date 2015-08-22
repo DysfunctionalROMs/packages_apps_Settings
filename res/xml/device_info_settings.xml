@@ -34,7 +34,7 @@
 
         <!-- Broken OTA -->
         <PreferenceScreen
-               android:id="@+id/slimota"
+               android:key="slimota"
                android:title="@string/slimota_title" >
                <intent
                        android:action="android.intent.action.MAIN"
