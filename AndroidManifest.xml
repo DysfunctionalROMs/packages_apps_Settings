@@ -2258,6 +2258,9 @@
         <activity
              android:name=".broken.MainSettings" />
 
+        <activity
+             android:name=".broken.LockScreen" />
+
         <activity android:name=".sim.SimDialogActivity"
                 android:theme="@android:style/Theme.Material.Light.Dialog.NoActionBar"
                 android:label="@string/sim_settings_title"
