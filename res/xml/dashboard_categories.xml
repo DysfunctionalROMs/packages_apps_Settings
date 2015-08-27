@@ -155,18 +155,7 @@
                     android:action="android.intent.action.MAIN"
                     android:targetPackage="com.lovejoy777.rroandlayersmanager"
                     android:targetClass="com.lovejoy777.rroandlayersmanager.menu" />
-        </dashboard-tile>
-
-        <!-- BrokenCenter -->
-        <dashboard-tile
-                android:id="@+id/broken_center"
-                android:icon="@drawable/ic_settings_brokencenter"
-                android:title="@string/broken_center_title">
-                <intent
-                    android:action="android.intent.action.MAIN"
-                    android:targetPackage="com.broken.ota"
-                    android:targetClass="com.broken.center.BrokenCenter" />
-	    </dashboard-tile>       
+        </dashboard-tile>      
 
     </dashboard-category>
 

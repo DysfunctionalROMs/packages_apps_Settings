@@ -33,8 +33,6 @@
     <string name="broken_settings_title">Broken Pieces</string>
     <string name="customizations_title">Customizations</string>
 
-    <!-- BROKENCENTER -->
-    <string name="broken_center_title">BrokenCenter</string>
     <string name="advanced_options_title">Advanced options</string>
     <string name="advanced_category_title">Advanced</string>
 
@@ -235,9 +233,6 @@
     <string name="category_general_title">Tweaks</string>
     <string name="broken_brokensettings_title">Broken Pieces</string>
     <string name="broken_othersettings_title">Other Mods</string>
-
-    <!-- BROKENCENTER -->
-    <string name="broken_center_title">BrokenCenter</string>
 
     <!-- Kernel Adiutor -->
     <string name="performance_settings">Performance</string>
