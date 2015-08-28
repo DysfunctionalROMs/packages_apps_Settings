@@ -56,6 +56,12 @@
         android:key="interface_animation_scroll"
         android:fragment="com.android.settings.broken.ScrollAnimationInterfaceSettings"
         android:title="@string/scrolling_title"
-        android:summary="@string/scrolling_summary" />                    
+        android:summary="@string/scrolling_summary" />
+
+    <com.android.settings.broken.SystemSettingSwitchPreference
+        android:key="toast_icon"
+        android:title="@string/toast_icon_title"
+        android:summary="@string/toast_icon_summary"
+        android:defaultValue="true" />                   
 	
 </PreferenceScreen>
