@@ -1848,4 +1848,8 @@
     <string name="picker_select_custom_app_title">Select custom app</string>
     <string name="picker_select_custom_activity_title">Select custom activity</string>
 
+    <!-- Custom Header Image -->
+    <string name="status_bar_custom_header_title">Custom header image</string>
+    <string name="status_bar_custom_header_summary">Enable notification panel header image</string>
+
 </resources>
