@@ -22,4 +22,10 @@
             android:entries="@array/status_bar_temperature_entries"
             android:entryValues="@array/status_bar_temperature_values" />
 
+        <ListPreference
+            android:key="status_bar_weather_font_style"
+            android:entries="@array/status_bar_weather_font_style_entries"
+            android:entryValues="@array/status_bar_weather_font_style_values"
+            android:title="@string/status_bar_weather_font_style_title" />
+
 </PreferenceScreen>

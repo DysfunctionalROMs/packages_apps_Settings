@@ -38,8 +38,10 @@ public class StatusBarWeatherIcon extends SettingsPreferenceFragment
         implements OnPreferenceChangeListener {
 
     private static final String STATUS_BAR_TEMPERATURE_STYLE = "status_bar_temperature_style";
+    private static final String PREF_STATUS_BAR_WEATHER_FONT_STYLE = "status_bar_weather_font_style";
 
     private ListPreference mStatusBarTemperature;
+    private ListPreference mStatusBarTemperatureFontStyle;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -54,6 +56,12 @@ public class StatusBarWeatherIcon extends SettingsPreferenceFragment
         mStatusBarTemperature.setValue(String.valueOf(temperatureStyle));
         mStatusBarTemperature.setSummary(mStatusBarTemperature.getEntry());
         mStatusBarTemperature.setOnPreferenceChangeListener(this);
+
+        mStatusBarTemperatureFontStyle = (ListPreference) findPreference(PREF_STATUS_BAR_WEATHER_FONT_STYLE);
+        mStatusBarTemperatureFontStyle.setOnPreferenceChangeListener(this);
+        mStatusBarTemperatureFontStyle.setValue(Integer.toString(Settings.System.getInt(getActivity()
+                .getContentResolver(), Settings.System.STATUS_BAR_WEATHER_FONT_STYLE, 0)));
+        mStatusBarTemperatureFontStyle.setSummary(mStatusBarTemperatureFontStyle.getEntry());
     }
 
     @Override
@@ -67,8 +75,14 @@ public class StatusBarWeatherIcon extends SettingsPreferenceFragment
             mStatusBarTemperature.setSummary(
                     mStatusBarTemperature.getEntries()[index]);
             return true;
+        } else if (preference == mStatusBarTemperatureFontStyle) {
+            int val = Integer.parseInt((String) newValue);
+            int index = mStatusBarTemperatureFontStyle.findIndexOfValue((String) newValue);
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.STATUS_BAR_WEATHER_FONT_STYLE, val);
+            mStatusBarTemperatureFontStyle.setSummary(mStatusBarTemperatureFontStyle.getEntries()[index]);
+            return true;
         }
         return false;
     }
-
 }
