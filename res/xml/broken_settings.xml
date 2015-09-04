@@ -32,8 +32,8 @@
                 android:summary="@string/brokenwalls_summary" >
                 <intent
                     android:action="android.intent.action.SET_WALLPAPER"
-                    android:targetPackage="com.brokenos.wallpapers"
-                    android:targetClass="com.brokenos.wallpapers.WallpaperChooser" />
+                    android:targetPackage="com.broken.BrokenWalls"
+                    android:targetClass="com.broken.BrokenWalls.brokenwalls" />
         </PreferenceScreen>
 
         <!-- Button Settings -->
