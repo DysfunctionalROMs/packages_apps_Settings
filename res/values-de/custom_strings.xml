@@ -814,7 +814,7 @@
     <string name="network_speed_hide_indicator_summary">Verstecke die Anzeige wenn kein Datenverkehr da ist</string>
 
     <!-- Status bar notifications and system icons -->
-    <string name="notif_system_icons_colorize_notif_icons_title"Färbe die Benachrichtigngsicons</string>
+    <string name="notif_system_icons_colorize_notif_icons_title">Färbe die Benachrichtigngsicons</string>
     <string name="notif_system_icons_colorize_notif_icons_title_phone">Färbe Benachr. Icons</string>
     <string name="notif_system_icons_colorize_notif_icons_summary">Aktiviere zum färben der Benachrichtigungs Icons</string>
     <string name="notif_system_icons_show_ticker_title">Zeige Ticker</string>
