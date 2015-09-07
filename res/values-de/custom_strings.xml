@@ -533,7 +533,7 @@
     <string name="show_clear_all_recents_button_summary">Zeige schließe alle Apps button</string>
     <string name="recents_clear_all_location_title">Schließe alle Standort</string>
     <string name="recents_clear_all_location_top_right">Oben rechts</string>
-    <string name="recents_clear_all_location_top_left">Oben links/string>
+    <string name="recents_clear_all_location_top_left">Oben links</string>
     <string name="recents_clear_all_location_top_center">Oben mitte</string>
     <string name="recents_clear_all_location_bottom_right">Unten rechts</string>
     <string name="recents_clear_all_location_bottom_left">Unten links</string>
@@ -1836,8 +1836,8 @@
     <string name="shortcuts_colorize_custom_icons_title">Colorize all icons</string>
     <string name="shortcuts_colorize_custom_icons_summary">Enable to colorize all icons, disable to colorize only default icons</string>
 
-   <!-- Targets settings -->
-    <string name="shortcuts_hint_message">Tap an icon on the left or right to reassign a target.</string>
+    <!-- Targets settings -->
+    <string name="shortcuts_hint_message">Tap an icon on the left or right to reassign a target</string>
     <string name="shortcuts_reassign_shortcut_title">Reassign target</string>
     <string name="shortcuts_default_target">Default</string>
     <string name="shortcuts_none_target">None</string>
