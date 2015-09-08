@@ -68,5 +68,4 @@ public class StatusBarWeather extends SettingsPreferenceFragment implements OnPr
     public void onResume() {
         super.onResume();
     }
-
 }
