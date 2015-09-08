@@ -87,6 +87,8 @@ public class StatusBarWeatherIcon extends SettingsPreferenceFragment
         mStatusBarTemperatureStyle.setValue(String.valueOf(temperatureStyle));
         mStatusBarTemperatureStyle.setSummary(mStatusBarTemperatureStyle.getEntry());
         mStatusBarTemperatureStyle.setOnPreferenceChangeListener(this);
+
+        updateWeatherOptions();
     }
 
     @Override
@@ -100,6 +102,7 @@ public class StatusBarWeatherIcon extends SettingsPreferenceFragment
                     UserHandle.USER_CURRENT);
             mStatusBarTemperature.setSummary(
                     mStatusBarTemperature.getEntries()[index]);
+            updateWeatherOptions();
             return true;
         } else if (preference == mStatusBarTemperatureFontStyle) {
             int val = Integer.parseInt((String) newValue);
@@ -127,5 +130,18 @@ public class StatusBarWeatherIcon extends SettingsPreferenceFragment
             return true;
         }
         return false;
+    }
+
+    private void updateWeatherOptions() {
+        if (Settings.System.getInt(getActivity().getContentResolver(),
+            Settings.System.STATUS_BAR_SHOW_WEATHER_TEMP, 0) == 0) {
+            mStatusBarTemperatureStyle.setEnabled(false);
+            mStatusBarTemperatureColor.setEnabled(false);
+            mStatusBarTemperatureFontStyle.setEnabled(false);
+        } else {
+            mStatusBarTemperatureStyle.setEnabled(true);
+            mStatusBarTemperatureColor.setEnabled(true);
+            mStatusBarTemperatureFontStyle.setEnabled(true);
+        }
     }
 }
