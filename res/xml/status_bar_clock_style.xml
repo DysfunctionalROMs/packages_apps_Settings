@@ -23,12 +23,6 @@
             android:title="@string/status_bar_show_clock_title"
             android:defaultValue="true" />
 
-        <net.margaritov.preference.colorpicker.ColorPickerPreference
-            android:key="clock_color"
-            android:title="@string/clock_color_title"
-            android:defaultValue="0xffffff"
-            android:dependency="status_bar_show_clock" />
-
         <ListPreference
             android:key="clock_style"
             android:entries="@array/clock_style_entries"
@@ -42,6 +36,12 @@
             android:title="@string/status_bar_am_pm_title"
             android:entries="@array/entries_status_bar_am_pm"
             android:entryValues="@array/values_status_bar_am_pm"
+            android:dependency="status_bar_show_clock" />
+
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="clock_color"
+            android:title="@string/clock_color_title"
+            android:defaultValue="0xffffff"
             android:dependency="status_bar_show_clock" />
 
         <ListPreference

@@ -1884,7 +1884,7 @@
     <string name="status_bar_weather_color_title">Temperature color</string>
 
     <!-- StatusBar Clock style -->
-    <string name="clock_font_style_title">Clock font style</string>
+    <string name="clock_font_style_title">Font style</string>
     <string name="clock_font_normal">Normal</string>
     <string name="clock_font_italic">Italic</string>
     <string name="clock_font_bold">Bold</string>
