@@ -88,11 +88,16 @@ public class SystemappRemover extends Fragment {
         // create arraylist of apps not to be removed
         final ArrayList<String> safetyList = new ArrayList<String>();
         // app
+        safetyList.add("Amaze.apk");
         safetyList.add("CertInstaller.apk");
         safetyList.add("DrmProvider.apk");
+        safetyList.add("KernelAdiutor.apk");
+        safetyList.add("NovaLauncher.apk");
         safetyList.add("PackageInstaller.apk");
-        safetyList.add("Superuser.apk");
+        safetyList.add("SlimOTA.apk");
+        safetyList.add("SuperSU.apk");
         safetyList.add("TelephonyProvider.apk");
+        safetyList.add("webview.apk");
         // priv-app
         safetyList.add("ContactsProvider.apk");
         safetyList.add("DefaultContainerService.apk");
@@ -101,6 +106,7 @@ public class SystemappRemover extends Fragment {
         safetyList.add("FusedLocation.apk");
         safetyList.add("Keyguard.apk");
         safetyList.add("MediaProvider.apk");
+        safetyList.add("OmniSwitch.apk");
         safetyList.add("ProxyHandler.apk");
         safetyList.add("Settings.apk");
         safetyList.add("SettingsProvider.apk");
