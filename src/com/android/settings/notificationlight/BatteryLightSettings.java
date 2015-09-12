@@ -44,7 +44,7 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
     private ApplicationLightPreference mMediumColorPref;
     private ApplicationLightPreference mFullColorPref;
     private static final int MENU_RESET = Menu.FIRST;
-    
+
     @Override
     protected int getMetricsCategory() {
         return MetricsLogger.APPLICATION;
@@ -56,6 +56,12 @@ public class BatteryLightSettings extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.battery_light_settings);
 
         PreferenceScreen prefSet = getPreferenceScreen();
+
+        PreferenceGroup mGeneralPrefs = (PreferenceGroup) prefSet.findPreference("general_section");
+
+        if (!getResources().getBoolean(com.android.internal.R.bool.config_ledCanPulse)) {
+            mGeneralPrefs.removePreference(mPulseEnabledPref);
+        }
 
         // Does the Device support changing battery LED colors?
         if (getResources().getBoolean(com.android.internal.R.bool.config_multiColorBatteryLed)) {
