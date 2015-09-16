@@ -1864,9 +1864,6 @@
                        android:resource="@id/display_settings" />
         </activity-alias>
 
-        <!-- Brokenactivities Start -->
-        <activity android:name=".broken.LockScreen" />
-
         <!-- "Blacklist settings" UI, used only on voice-capable phone devices. -->
         <activity android:name="Settings$BlacklistSettingsActivity"
                 android:uiOptions="splitActionBarWhenNarrow"
@@ -2255,12 +2252,14 @@
                 android:value="com.android.settings.broken.SelinuxSettings" />
         </activity>
 
-        <activity android:name=".broken.SelinuxSettings" />
+        <activity android:name="com.android.settings.broken.SelinuxSettings" />
 
         <activity android:name="com.android.settings.broken.fragments.SystemappRemover" />
 
-        <activity
-             android:name=".broken.LockScreen" />
+        <activity android:name="com.android.settings.broken.fragments.LockscreenShortcutFragment" />
+
+        <!-- Brokenactivities Start -->
+        <activity android:name="com.android.settings.broken.LockScreen" />
 
         <activity android:name=".sim.SimDialogActivity"
                 android:theme="@android:style/Theme.Material.Light.Dialog.NoActionBar"
