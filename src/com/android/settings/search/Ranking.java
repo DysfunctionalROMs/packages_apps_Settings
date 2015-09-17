@@ -16,7 +16,6 @@
 
 package com.android.settings.search;
 
-import com.android.settings.broken.SelinuxSettings;
 import com.android.settings.ChooseLockGeneric;
 import com.android.settings.DataUsageSummary;
 import com.android.settings.DateTimeSettings;
@@ -107,9 +106,6 @@ public final class Ranking {
 
         // Other wireless settings
         sRankMap.put(WirelessSettings.class.getName(), RANK_WIRELESS);
-
-        // BrokenOs
-        sRankMap.put(SelinuxSettings.class.getName(), RANK_BROKENOS);
 
         // Home
         sRankMap.put(HomeSettings.class.getName(), RANK_HOME);

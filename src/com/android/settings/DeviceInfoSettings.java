@@ -29,7 +29,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Parcel;
 import android.os.RemoteException;
-// import android.os.SELinux;
+import android.os.SELinux;
 import android.os.SystemClock;
 import android.os.SystemProperties;
 import android.os.UserHandle;
@@ -70,12 +70,12 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
     private static final String KEY_COPYRIGHT = "copyright";
     private static final String KEY_WEBVIEW_LICENSE = "webview_license";
     private static final String PROPERTY_URL_SAFETYLEGAL = "ro.url.safetylegal";
-//    private static final String PROPERTY_SELINUX_STATUS = "ro.build.selinux";
+    private static final String PROPERTY_SELINUX_STATUS = "ro.build.selinux";
     private static final String KEY_KERNEL_VERSION = "kernel_version";
     private static final String KEY_BUILD_NUMBER = "build_number";
     private static final String KEY_DEVICE_MODEL = "device_model";
     private static final String KEY_DEVICE_PROCESSOR = "device_processor";
-//    private static final String KEY_SELINUX_STATUS = "selinux_status";
+    private static final String KEY_SELINUX_STATUS = "selinux_status";
     private static final String KEY_BASEBAND_VERSION = "baseband_version";
     private static final String KEY_FIRMWARE_VERSION = "firmware_version";
     private static final String KEY_BROKEN_VERSION = "broken_version";
@@ -109,17 +109,17 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
         findPreference(KEY_KERNEL_VERSION).setSummary(getFormattedKernelVersion());
         setValueSummary(KEY_MOD_BUILD_DATE, "ro.build.date");
 
-//        if (!SELinux.isSELinuxEnabled()) {
-//            String status = getResources().getString(R.string.selinux_status_disabled);
-//           setStringSummary(KEY_SELINUX_STATUS, status);
-//      } else if (!SELinux.isSELinuxEnforced()) {
-//          String status = getResources().getString(R.string.selinux_status_permissive);
-//          setStringSummary(KEY_SELINUX_STATUS, status);
-//      }
+        if (!SELinux.isSELinuxEnabled()) {
+            String status = getResources().getString(R.string.selinux_status_disabled);
+           setStringSummary(KEY_SELINUX_STATUS, status);
+      } else if (!SELinux.isSELinuxEnforced()) {
+          String status = getResources().getString(R.string.selinux_status_permissive);
+          setStringSummary(KEY_SELINUX_STATUS, status);
+      }
 
         // Remove selinux information if property is not present
-//      removePreferenceIfPropertyMissing(getPreferenceScreen(), KEY_SELINUX_STATUS,
-//              PROPERTY_SELINUX_STATUS);
+        removePreferenceIfPropertyMissing(getPreferenceScreen(), KEY_SELINUX_STATUS,
+              PROPERTY_SELINUX_STATUS);
 
         // Only the owner should see the Updater settings, if it exists
         if (UserHandle.myUserId() == UserHandle.USER_OWNER) {
@@ -374,9 +374,9 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
             @Override
             public List<String> getNonIndexableKeys(Context context) {
                 final List<String> keys = new ArrayList<String>();
-//              if (isPropertyMissing(PROPERTY_SELINUX_STATUS)) {
-//                  keys.add(KEY_SELINUX_STATUS);
-//              }
+                if (isPropertyMissing(PROPERTY_SELINUX_STATUS)) {
+                  keys.add(KEY_SELINUX_STATUS);
+                }
                 if (isPropertyMissing(PROPERTY_URL_SAFETYLEGAL)) {
                     keys.add(KEY_SAFETY_LEGAL);
                 }

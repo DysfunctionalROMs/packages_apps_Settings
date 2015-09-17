@@ -2239,20 +2239,6 @@
             <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
                 android:resource="@id/sim_settings" />
         </activity>
-        
-        <!-- BrokenOs Selinux Settings -->
-        <activity android:name="Settings$SelinuxSettingsActivity"
-            android:label="@string/broken_settings_title"
-            android:taskAffinity="">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="com.android.settings.broken.SelinuxSettings" />
-        </activity>
-
-        <activity android:name="com.android.settings.broken.SelinuxSettings" />
 
         <activity android:name="com.android.settings.broken.fragments.SystemappRemover" />
 
@@ -2284,12 +2270,6 @@
                 <action android:name="android.content.action.SEARCH_INDEXABLES_PROVIDER" />
             </intent-filter>
         </provider>
-
-        <receiver android:name="com.android.settings.broken.OnBoot">
-            <intent-filter>
-                <action android:name="android.intent.action.BOOT_COMPLETED"/>
-            </intent-filter>
-        </receiver>
 
         <!-- Anti-piracy support -->
         <service android:name="org.antipiracy.support.AntiPiracyNotifyService"
