@@ -19,6 +19,8 @@ package com.android.settings.broken;
 import android.content.ContentResolver;
 import android.os.Bundle;
 import android.preference.Preference;
+import android.preference.Preference.OnPreferenceChangeListener;
+import android.preference.SlimSeekBarPreference;
 import android.preference.SwitchPreference;
 import android.provider.Settings;
 
@@ -29,10 +31,12 @@ import com.android.settings.SettingsPreferenceFragment;
 public class PowerMenuSettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
+    private static final String PREF_ON_THE_GO_ALPHA = "on_the_go_alpha";
     private static final String PREF_SHOW_ADVANCED_REBOOT =
             "power_menu_show_advanced_reboot";
 
     private SwitchPreference mShowAdvancedReboot;
+    private SlimSeekBarPreference mOnTheGoAlphaPref;
 
     private ContentResolver mResolver;
 
@@ -49,6 +53,11 @@ public class PowerMenuSettings extends SettingsPreferenceFragment implements
         mShowAdvancedReboot.setChecked((Settings.System.getInt(mResolver,
                 Settings.System.POWER_MENU_SHOW_ADVANCED_REBOOT, 0) == 1));
         mShowAdvancedReboot.setOnPreferenceChangeListener(this);
+        
+        mOnTheGoAlphaPref = (SlimSeekBarPreference) findPreference(PREF_ON_THE_GO_ALPHA);
+        mOnTheGoAlphaPref.setDefault(50);
+        mOnTheGoAlphaPref.setInterval(1);
+        mOnTheGoAlphaPref.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -58,6 +67,11 @@ public class PowerMenuSettings extends SettingsPreferenceFragment implements
             boolean value = (Boolean) objValue;
             Settings.System.putInt(mResolver,
                     Settings.System.POWER_MENU_SHOW_ADVANCED_REBOOT, value ? 1 : 0);
+            return true;
+        } else if (preference == mOnTheGoAlphaPref) {
+            float val = Float.parseFloat((String) objValue);
+            Settings.System.putFloat(mResolver, Settings.System.ON_THE_GO_ALPHA,
+                    val / 100);
             return true;
         }
         return false;
