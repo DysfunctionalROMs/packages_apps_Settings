@@ -25,7 +25,9 @@ import android.os.UserHandle;
 import android.os.UserManager;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
+import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceScreen;
+import android.preference.SlimSeekBarPreference;
 import android.preference.SwitchPreference;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
@@ -41,7 +43,8 @@ import java.util.List;
 
 public class PowerMenuActions extends PreferenceFragment implements
         Preference.OnPreferenceChangeListener {
-			
+	
+	private static final String PREF_ON_THE_GO_ALPHA = "on_the_go_alpha";		
     private static final String PREF_SHOW_ADVANCED_REBOOT =
             "power_menu_show_advanced_reboot";
 
@@ -58,6 +61,7 @@ public class PowerMenuActions extends PreferenceFragment implements
 //    private SwitchPreference mBugReportPref;
     private SwitchPreference mSilentPref;
     private SwitchPreference mShowAdvancedReboot;
+    private SlimSeekBarPreference mOnTheGoAlphaPref;
     
     private ContentResolver mResolver;
 
@@ -80,6 +84,11 @@ public class PowerMenuActions extends PreferenceFragment implements
         mShowAdvancedReboot.setChecked((Settings.System.getInt(mResolver,
                 Settings.System.POWER_MENU_SHOW_ADVANCED_REBOOT, 0) == 1));
         mShowAdvancedReboot.setOnPreferenceChangeListener(this);
+        
+        mOnTheGoAlphaPref = (SlimSeekBarPreference) findPreference(PREF_ON_THE_GO_ALPHA);
+        mOnTheGoAlphaPref.setDefault(50);
+        mOnTheGoAlphaPref.setInterval(1);
+        mOnTheGoAlphaPref.setOnPreferenceChangeListener(this);
 
         mAvailableActions = getActivity().getResources().getStringArray(
                 R.array.power_menu_actions_array);
@@ -268,6 +277,11 @@ public class PowerMenuActions extends PreferenceFragment implements
             boolean value = (Boolean) objValue;
             Settings.System.putInt(mResolver,
                     Settings.System.POWER_MENU_SHOW_ADVANCED_REBOOT, value ? 1 : 0);
+            return true;
+        } else if (preference == mOnTheGoAlphaPref) {
+            float val = Float.parseFloat((String) objValue);
+            Settings.System.putFloat(mResolver, Settings.System.ON_THE_GO_ALPHA,
+                    val / 100);
             return true;
         }
         return false;
