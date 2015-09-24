@@ -34,13 +34,17 @@ import android.util.Log;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
+import com.android.settings.widget.SeekBarPreferenceCham;
 
-public class LockScreen extends SettingsPreferenceFragment {
+public class LockScreen extends SettingsPreferenceFragment implements
+        OnPreferenceChangeListener {
 
 	private static final String KEY_LONGPRESS_LOCK_FOR_TORCH = "long_press_lock_icon_torch";
+	private static final String KEY_LOCKSCREEN_BLUR_RADIUS = "lockscreen_blur_radius";
 
 	private SwitchPreference mLongPressForTorch;
 	private SwitchPreference mToggleAppInstallation;
+	private SeekBarPreferenceCham mBlurRadius;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -48,6 +52,12 @@ public class LockScreen extends SettingsPreferenceFragment {
 
     addPreferencesFromResource(R.xml.lock_screen);
     PreferenceScreen prefSet = getPreferenceScreen();
+    ContentResolver resolver = getActivity().getContentResolver();
+
+    mBlurRadius = (SeekBarPreferenceCham) findPreference(KEY_LOCKSCREEN_BLUR_RADIUS);
+        mBlurRadius.setValue(Settings.System.getInt(resolver,
+                Settings.System.LOCKSCREEN_BLUR_RADIUS, 14));
+        mBlurRadius.setOnPreferenceChangeListener(this);
 
     if(!QSUtils.deviceSupportsFlashLight(getActivity())) {
 	    mLongPressForTorch = (SwitchPreference)
@@ -59,16 +69,23 @@ public class LockScreen extends SettingsPreferenceFragment {
     }
 
     public boolean onPreferenceChange(Preference preference, Object newValue) {
+		ContentResolver resolver = getActivity().getContentResolver();
+		if (preference == mBlurRadius) {
+            int width = ((Integer)newValue).intValue();
+            Settings.System.putInt(resolver,
+                    Settings.System.LOCKSCREEN_BLUR_RADIUS, width);
+            return true;
+		}
         return false;
-    }
-
-    @Override
-    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
-    return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 
     @Override
     public void onResume() {
         super.onResume();
+    }
+
+    @Override
+    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+    return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
 }

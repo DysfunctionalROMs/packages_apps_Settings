@@ -13,8 +13,24 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-    android:title="@string/lock_screen_title" >
+<PreferenceScreen
+        android:title="@string/lock_screen_title"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
+
+    <com.android.settings.broken.SystemSettingSwitchPreference
+        android:key="lockscreen_see_through"
+        android:title="@string/lockscreen_see_through_title"
+        android:summary="@string/lockscreen_see_through_summary"
+        android:defaultValue="false" />
+
+    <com.android.settings.widget.SeekBarPreferenceCham
+        android:key="lockscreen_blur_radius"
+        android:title="@string/lockscreen_blur_radius"
+        android:max="25"
+        settings:min="0"
+        android:defaultValue="14"
+        android:dependency="lockscreen_see_through" />
 
     <PreferenceScreen
         android:key="lock_screen_color_settings"
