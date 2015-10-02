@@ -1918,7 +1918,7 @@
     <string name="clock_font_condensed_bold_italic">Condensé Gras Italic</string>
     <string name="clock_font_medium">Moyen</string>
     <string name="clock_font_medium_italic">Moyen Italic</string>
-    <string name="clock_font_size_title">Taille de la police>
+    <string name="clock_font_size_title">Taille de la police</string>
 
     <!-- Long press on lock screen lock icon to launch torch-->
     <string name="longpress_lock_icon_torch_title">Appui long sur icône de vérouillage pour allumer la lampe</string>
@@ -1953,8 +1953,6 @@
     <string name="lockpattern_settings_enable_error_path_title">Afficher l\'erreur de schéma</string>
     <!-- Whether the dots will be drawn when using the lockscreen pattern -->
     <string name="lockpattern_settings_enable_dots_title">Afficher les points du schéma</string>
-
-	
 	
     <!-- Lockscreen see through -->
     <string name="lockscreen_see_through_title">Floutage</string>
