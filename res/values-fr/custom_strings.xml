@@ -1633,7 +1633,7 @@
 
     <string name="category_calibration">Calibration</string>
     <!-- Display settings.  Screen color. -->
-    <string name="screencolor">Couleur de l\'écran<</string>
+    <string name="screencolor">Couleur de l\'écran</string>
     <string name="screencolor_summary">Régler la teinte, la saturation, le contraste ou l\'intensité de l\'écran</string>
     <string name="custom_screencolor">Couleur d\'écran personnalisée</string>
     <string name="screencolor_save">Enregistrer</string>
