@@ -1706,7 +1706,7 @@
     <string name="blacklist_regex_summary">Utiliser . comme caractère générique et * pour répétition. Ex: 123.* bloque les numéros commençant par 123 and .*123.* bloque les numéros contenant 123</string>
     <string name="blacklist_policy_block_calls">Bloquer les appels entrants</string>
     <string name="blacklist_policy_block_messages">Bloquer les messages entrants</string>
-    <string name="blacklist_bad_number_add">Impossible d\'ajouter un numéro non-valide à la liste noire</>
+    <string name="blacklist_bad_number_add">Impossible d\'ajouter un numéro non-valide à la liste noire</string>
 	
     <!-- Blacklist management -->
     <string name="add_blacklist_number">Ajouter un numéro</string>
