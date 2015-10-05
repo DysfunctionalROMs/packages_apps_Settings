@@ -1633,7 +1633,7 @@
 
     <string name="category_calibration">Calibration</string>
     <!-- Display settings.  Screen color. -->
-    <string name="screencolor">Couleur de l\'écran<</string>
+    <string name="screencolor">Couleur de l\'écran</string>
     <string name="screencolor_summary">Régler la teinte, la saturation, le contraste ou l\'intensité de l\'écran</string>
     <string name="custom_screencolor">Couleur d\'écran personnalisée</string>
     <string name="screencolor_save">Enregistrer</string>
@@ -1706,7 +1706,7 @@
     <string name="blacklist_regex_summary">Utiliser . comme caractère générique et * pour répétition. Ex: 123.* bloque les numéros commençant par 123 and .*123.* bloque les numéros contenant 123</string>
     <string name="blacklist_policy_block_calls">Bloquer les appels entrants</string>
     <string name="blacklist_policy_block_messages">Bloquer les messages entrants</string>
-    <string name="blacklist_bad_number_add">Impossible d\'ajouter un numéro non-valide à la liste noire</
+    <string name="blacklist_bad_number_add">Impossible d\'ajouter un numéro non-valide à la liste noire</string>
 	
     <!-- Blacklist management -->
     <string name="add_blacklist_number">Ajouter un numéro</string>
