@@ -305,7 +305,7 @@
     <string name="left_clock">Heure à gauche</string>
     <string name="dont_show">Cacher</string>
     <string name="clock_date_display">Date</string>
-    <string name="clock_date_display_summary">Afficher date custom avant l\'heure</string>
+    <string name="clock_date_display_summary">Afficher date personnalisée avant l\'heure</string>
     <string name="clock_date_style">Style date</string>
     <string name="clock_date_format">Format date</string>
     <string name="clock_date_string_edittext_title">Doit être au format date eg. MM/dd/yy</string>
@@ -319,8 +319,8 @@
     <string name="clock_date_style_normal">Normal</string>
     <string name="clock_date_style_lowercase">Minuscule</string>
     <string name="clock_date_style_uppercase">Majuscule</string>
-    <string name="clock_date_format_custom">Format java custom  </string>
-    <string name="status_bar_clock_style_reset_message">Reset couleur heure?</string>
+    <string name="clock_date_format_custom">Format java personnalisé</string>
+    <string name="status_bar_clock_style_reset_message">Résinitialiser couleur heure?</string>
 
     <!-- Volume Keys settings -->
     <string name="volume_keys_title">Volume keys</string>
@@ -390,10 +390,10 @@
     <string name="pt_clear_data_cache">Effacer cache</string>
     <string name="ps_clear_data_cache">Effacer le cache des applications à chaque démarrage</string>
     <string name="pt_enable_cron">Activer les tâches périodique</string>
-    <string name="ps_enable_cron">Activer les tâches périodiquecron jobs</string>
+    <string name="ps_enable_cron">Activer les tâches périodique cron jobs</string>
     <string name="pt_sd_boost">Activer carte SD boost</string>
     <string name="ps_sd_boost">Activer/désactiver boost vitesse carte SD</string>
-    <string name="pt_file_system_speedups">Accélération fichier système</string>
+    <string name="pt_file_system_speedups">Accélérer fichier système</string>
     <string name="ps_file_system_speedups">Accélérer fichier système à chaque démarrage</string>
     <string name="pt_foreground_app_mem">Foreground app mem</string>
     <string name="pt_visible_app_mem">Visible app mem</string>
@@ -406,37 +406,37 @@
     <string name="pt_empty_app_mem">Empty app mem</string>
     <string name="pt_read_ahead_kb">Read ahead value</string>
     <string name="pt_minfree_values">Minfree values</string>
-    <string name="pt_battery">Enable battery tweaks</string>
-    <string name="ps_battery">Enable/disable battery saving tweaks</string>
-    <string name="pt_touch">Enable touch tweaks</string>
-    <string name="ps_touch">Enable/disable touchscreen tweaks</string>
-    <string name="pt_minfree">Enable minfree values</string>
-    <string name="ps_minfree">Enable/disable minfree tweaks</string>
-    <string name="pt_gpurender">Enable gpu render</string>
-    <string name="ps_gpurender">Enable/disable gpu rendering tweaks</string>
-    <string name="pt_sleepers">Enable sleeping</string>
-    <string name="ps_sleepers">Enable/disable sleeping tweaks</string>
-    <string name="pt_journalism">Enable journalism</string>
-    <string name="ps_journalism">Enable/disable journalism tweaks</string>
-    <string name="pt_sqlite3">Enable sqlite3</string>
-    <string name="ps_sqlite3">Enable/disable sqlite3 tweaks</string>
-    <string name="pt_wifisleep">Enable wifi sleep</string>
-    <string name="ps_wifisleep">Enable/disable wifi sleep tweaks</string>
-    <string name="pt_iostats">Enable iostats</string>
-    <string name="ps_iostats">Enable/disable iostats</string>
-    <string name="pt_setrenice">Enable setrenice</string>
-    <string name="ps_setrenice">Enable/disable setrenice</string>
-    <string name="pt_tweaks">Enable super tweaks</string>
-    <string name="ps_tweaks">Enable/disable super tweaks</string>
-    <string name="pt_speedy_modified">Enable speedy modified</string>
-    <string name="ps_speedy_modified">Enable/disable Speedy modified tweaks</string>
-    <string name="pt_loopy_smoothness_tweak">Enable loopy smoothness</string>
-    <string name="ps_loopy_smoothness_tweak">Enable/disable loopy smoothness tweaks</string>
-    <string name="pt_init_d_credits">Developed by:</string>
+    <string name="pt_battery">Activer battery tweaks</string>
+    <string name="ps_battery">Activer/désactiver battery saving tweaks</string>
+    <string name="pt_touch">Activer touch tweaks</string>
+    <string name="ps_touch">Activer/désactiver touchscreen tweaks</string>
+    <string name="pt_minfree">Activer minfree values</string>
+    <string name="ps_minfree">Activer/désactiver minfree tweaks</string>
+    <string name="pt_gpurender">Activer gpu render</string>
+    <string name="ps_gpurender">Activer/désactiver gpu rendering tweaks</string>
+    <string name="pt_sleepers">Activer sleeping</string>
+    <string name="ps_sleepers">Activer/désactiver sleeping tweaks</string>
+    <string name="pt_journalism">Activer journalism</string>
+    <string name="ps_journalism">Activer/désactivere journalism tweaks</string>
+    <string name="pt_sqlite3">Activer sqlite3</string>
+    <string name="ps_sqlite3">Activer/désactiver sqlite3 tweaks</string>
+    <string name="pt_wifisleep">Activer wifi sleep</string>
+    <string name="ps_wifisleep">Activer/désactiver wifi sleep tweaks</string>
+    <string name="pt_iostats">Activer iostats</string>
+    <string name="ps_iostats">Activer/désactiver iostats</string>
+    <string name="pt_setrenice">Activer setrenice</string>
+    <string name="ps_setrenice">Activer/désactiver setrenice</string>
+    <string name="pt_tweaks">Activer super tweaks</string>
+    <string name="ps_tweaks">Activer/désactiver super tweaks</string>
+    <string name="pt_speedy_modified">Activer speedy modified</string>
+    <string name="ps_speedy_modified">Activer/désactiver Speedy modified tweaks</string>
+    <string name="pt_loopy_smoothness_tweak">Activer loopy smoothness</string>
+    <string name="ps_loopy_smoothness_tweak">Activer/désactiver loopy smoothness tweaks</string>
+    <string name="pt_init_d_credits">Développer par:</string>
     <string name="ps_init_d_credits">Jared Rummler (JRummy16)</string>
     <string name="dt_init_d_error">Init.d error</string>
     <string name="dm_init_d_error">It looks like init.d isn\'t setup properly. Please contact your ROM developer.</string>
-    <string name="db_exit">Exit</string>
+    <string name="db_exit">Sortir</string>
 
     <!-- Power menu settings -->
     <string name="button_power_menu_settings_title">Menu marche/arrêt</string>
@@ -478,27 +478,27 @@
     <string name="status_bar_title">Barre d\'état</string>
 
     <!-- Double tap-to-sleep -->
-    <string name="double_tap_to_sleep_title">Double-tap to sleep</string>
-    <string name="double_tap_to_sleep_summary">Double tap status bar to put the device to sleep</string>
-
+	<string name="double_tap_to_sleep_title">Double appui pour mettre en veille</string>
+    <string name="double_tap_to_sleep_summary">Appuyer deux fois sur la barre d\'état pour mettre l\'appareil en veille</string>
+	
     <!-- Show/Hide Search Bar -->
-    <string name="recents_show_searchbar">Disable Search Bar in Recents Menu</string>
-    <string name="recents_show_searchbar_summary">Disable or enable the Google search bar in the recents menu</string>
+    <string name="recents_show_searchbar">Désactiver barre recherche dans le menu des applications récentes</string>
+    <string name="recents_show_searchbar_summary">Active/désactive la barre de recherche Goocle dans le menu des applications récentes</string>
     <string name="keywords_recents_show_searchbar">recent recents disable search bar searchbar hide</string>
 
     <!-- Show/Hide Weather in expanded statusbar -->
-    <string name="status_bar_show_weather_title">Show weather</string>
-    <string name="status_bar_show_weather_summary">Show the weather in the status bar header</string>
+    <string name="status_bar_show_weather_title">Afficher météo</string>
+    <string name="status_bar_show_weather_summary">Affiche la météo dans l\'en-tête de la barre d\'état</string>
 
     <!-- LockClock and Weather -->
-    <string name="lock_clock_title">cLock settings</string>
-    <string name="lock_clock_summary">View or change how the \'cLock\' widget will be displayed.</string>
-    <string name="weather_clock_title">Status bar header weather</string>
-    <string name="weather_clock_summary">View or change status bar header weather settings</string>
+    <string name="lock_clock_title">Parametrage cLock </string>
+    <string name="lock_clock_summary">Personnaliser l\'affichage du  wigdet \'cLock\'.</string>
+    <string name="weather_clock_title">Météo dans la barre d\'état</string>
+    <string name="weather_clock_summary">Personnaliser l\'affichage météo dans la barre d\'état</string>
 
     <!--Quick unlock -->
-    <string name="unlock_quick_unlock_control_title">Quick unlock</string>
-    <string name="unlock_quick_unlock_control_summary">Unlock automatically when the correct PIN/password is entered</string>
+    <string name="unlock_quick_unlock_control_title">Déverrouillage rapide</string>
+    <string name="unlock_quick_unlock_control_summary">Déverouiller automatiquement lorsque le code PIN/mot de passe est saisi correctemement</string>
 
     <!-- Host File Manager -->
     <string name="hfm_disable_ads_title">Disable Ads</string>
@@ -522,47 +522,47 @@
     <string name="navbar_button_tint_title">Navigation button tint</string>
 
     <!-- Display settings screen, setting options for LCD density -->
-    <string name="lcd_density">LCD density</string>
-    <string name="lcd_density_unsupported">Unsupported</string>
-    <string name="restarting_ui">Restarting</string>
-    <string name="lcd_density_value_format">%1$d DPI (default: %2$d DPI)</string>
-    <string name="lcd_density_default_value_format">%1$d DPI (default)</string>
-    <string name="lcd_density_error_msg">The value must be between %1$d and %2$d DPI</string>
-    <string name="lcd_density_dialog_title">Enter value between %1$d and %2$d DPI</string>
+    <string name="lcd_density">Densité LCD</string>
+    <string name="lcd_density_unsupported">Non supporté</string>
+    <string name="restarting_ui">Redemarrage</string>
+    <string name="lcd_density_value_format">%1$d DPI (Par défaut: %2$d DPI)</string>
+    <string name="lcd_density_default_value_format">%1$d DPI (Par défaut)</string>
+    <string name="lcd_density_error_msg">La valeur doit être entre  %1$d et %2$d DPI</string>
+    <string name="lcd_density_dialog_title">Saisir une valeur entre  %1$d et %2$d DPI</string>
 
     <!-- Recents panel -->
-    <string name="recents_options_title">Recents Mods</string>
-    <string name="recents_panel_category">Recents panel</string>
-    <string name="show_clear_all_recents_button_title">Clear all button</string>
-    <string name="show_clear_all_recents_button_summary">Show clear all button</string>
-    <string name="recents_clear_all_location_title">Clear all location</string>
-    <string name="recents_clear_all_location_top_right">Top right</string>
-    <string name="recents_clear_all_location_top_left">Top left</string>
-    <string name="recents_clear_all_location_top_center">Top center</string>
-    <string name="recents_clear_all_location_bottom_right">Bottom right</string>
-    <string name="recents_clear_all_location_bottom_left">Bottom left</string>
-    <string name="recents_clear_all_location_bottom_center">Bottom center</string>
-    <string name="recents_clear_all_dismiss_all_title">Clear all tasks</string>
-    <string name="recents_clear_all_dismiss_all_summary">Include foreground task when clearing all</string>
+    <string name="recents_options_title">Personnalisation du panneau des applications récentes</string>
+    <string name="recents_panel_category">Panneau des applications récentes</string>
+    <string name="show_clear_all_recents_button_title">Bouton \'effacer tout\'</string>
+    <string name="show_clear_all_recents_button_summary">Afficher le bouton \'effacer tout\'</string>
+    <string name="recents_clear_all_location_title">Emplacement du bouton \'effacer tout\'</string>
+    <string name="recents_clear_all_location_top_right">Haut droite</string>
+    <string name="recents_clear_all_location_top_left">Haut gauche</string>
+    <string name="recents_clear_all_location_top_center">Haut centré</string>
+    <string name="recents_clear_all_location_bottom_right">Bas droite</string>
+    <string name="recents_clear_all_location_bottom_left">Bas gauche</string>
+    <string name="recents_clear_all_location_bottom_center">Bas centré</string>
+    <string name="recents_clear_all_dismiss_all_title">Effacer toutes les tâches</string>
+    <string name="recents_clear_all_dismiss_all_summary">Inclure l\'application en arriere plan dans effacer toutes les tâches</string>
 
     <!-- Double Tap Navbar to Sleep -->
-    <string name="double_tap_sleep_nav_bar_title">Double-tap to sleep</string>
-    <string name="double_tap_sleep_nav_bar_summary">Double tap navigation bar to put the device to sleep</string>
-
+    <string name="double_tap_sleep_nav_bar_title">Double appui pour mettre en veille</string>
+    <string name="double_tap_sleep_nav_bar_summary">Appuyer deux fois sur la barre navigation pour mettre l\'appareil en veille</string>
+	
     <!-- Wakelock blocker -->
-    <string name="wakelock_blocker_title">Wakelock blocker</string>
-    <string name="wakelock_blocker_summary">Block system wakelocks</string>
-    <string name="wakelock_blocker_save">Save</string>
-    <string name="wakelock_list_header">Available wakelocks</string>
-    <string name="wakelock_blocker_reload">Reload</string>
-    <string name="wakelock_blocker_warning_title">Proceed with caution</string>
-    <string name="wakelock_blocker_warning">Blocking wakelocks have the potential to cause instability, crashes or data loss</string>
+    <string name="wakelock_blocker_title">Bloqueur de Wakelock</string>
+    <string name="wakelock_blocker_summary">Bloquer les wakelocks système</string>
+    <string name="wakelock_blocker_save">Enregistrer</string>
+    <string name="wakelock_list_header">Wakelocks disponible</string>
+    <string name="wakelock_blocker_reload">Recharger</string>
+    <string name="wakelock_blocker_warning_title">Procéder avec prudence</string>
+    <string name="wakelock_blocker_warning">Bloquer des Wakelocks peut causer instabilité, crashs ou perte de données</string>
 
     <!-- Linked / unlinked notification volume -->
-    <string name="link_volume_option_title">Link ring and notification volumes</string>
-    <string name="notification_volume_option_title">Notification volume</string>
-    <string name="ring_notification_volume_option_tile">Ring and notification volume</string>
-
+    <string name="link_volume_option_title">Lier le volume de sonnerie et de notif.</string>
+    <string name="notification_volume_option_title">Volume des notifications</string>
+    <string name="ring_notification_volume_option_tile">Volume de la sonnerie et des notifications</string>
+	
     <!-- Viper -->
     <string name="viper_settings_title">Viper4Android Audio</string>
 
@@ -631,14 +631,14 @@
     <string name="db_exit">Exit</string>
 
     <!-- Kernel Adiutor -->
-    <string name="performance_settings">Performance</string>
+    <string name="performance_settings">Kernel Adiutor</string>
 
     <!--- Advanced Settings -->
     <string name="advanced_settings">Options avancées</string>
     <string name="advanced_settings_summary">Activer plus d\'options avancées</string>
 
     <!--- Tap To Wake -->
-  <string name="double_tap_to_wake_title">Double appui pour réveiller</string>
+    <string name="double_tap_to_wake_title">Double appui pour réveiller</string>
 
     <!-- QS Tiles -->
     <string name="notification_drawer_title">Notification et paramètres rapides</string>
@@ -1025,21 +1025,21 @@
     <string name="volume_steps_5">5</string>
 
     <!-- Volume step options. -->
-    <string name="volume_steps_title">Volume steps</string>
+    <string name="volume_steps_title">Personnalisation du pas du Volume</string>
     <!-- Sound settings screen, setting option name -->
-    <string name="volume_steps_alarm_title">Volume steps: Alarme</string>
+    <string name="volume_steps_alarm_title">Pas du Volume: Alarme</string>
     <!-- Sound settings screen, setting option name -->
-    <string name="volume_steps_dtmf_title">Volume steps: DTMF</string>
+    <string name="volume_steps_dtmf_title">Pas du Volume: DTMF</string>
     <!-- Sound settings screen, setting option name -->
-    <string name="volume_steps_music_title">Volume steps: Music</string>
+    <string name="volume_steps_music_title">Pas du Volume: Music</string>
     <!-- Sound settings screen, setting option name -->
-    <string name="volume_steps_notification_title">Volume steps: Notification</string>
+    <string name="volume_steps_notification_title">Pas du Volume: Notification</string>
     <!-- Sound settings screen, setting option name -->
-    <string name="volume_steps_ring_title">Volume steps: Sonnerie</string>
+    <string name="volume_steps_ring_title">Pas du Volume: Sonnerie</string>
     <!-- Sound settings screen, setting option name -->
-    <string name="volume_steps_system_title">Volume steps: Système</string>
+    <string name="volume_steps_system_title">Pas du Volume: Système</string>
     <!-- Sound settings screen, setting option name -->
-    <string name="volume_steps_voice_call_title">Volume steps: Appel Vocal</string>
+    <string name="volume_steps_voice_call_title">Pas du Volume: Appel Vocal</string>
 
     <!-- MediaScanner behavior on boot -->
     <string name="options_settings_title">Options</string>
@@ -1127,11 +1127,11 @@
     <string name="cat_network_activity_icons_title">Icônes activité réseau</string>
     <string name="cat_airplane_mode_icon_title">Icône mode avion</string>
     <string name="status_bar_signal_wifi_settings_title">Icônes réseau</string>
-    <string name="status_bar_signal_wifi_settings_summary">Personnalisation de l\'apparence des icônes réseau et wifi</string>
+    <string name="status_bar_signal_wifi_settings_summary">Personnalisation de l\'apparence des icônes réseau et Wi\u2011Fi</string>
     <string name="signal_wifi_show_activity_title">Afficher l\'activité réseau</string>
     <string name="signal_wifi_show_activity_summary">Activer pour afficher l\'activité réseau</string>
     <string name="color_normal_title">Icône réseau</string>
-    <string name="color_fully_title">Icônes Wifi</string>
+    <string name="color_fully_title">Icônes Wi\u2011Fi</string>
 
     <!-- Show carrier label and custom -->
     <string name="carrier_options">Nom réseau mobile</string>
@@ -1148,103 +1148,103 @@
 
     <!-- Slim lockscreen shortcuts -->
     <string name="shortcut_action_none">Rien</string>
-    <string name="shortcut_action_longpress">Appui long:</string>
-    <string name="shortcut_action_select_action_longpress">Choose longpress action:</string>
-    <string name="shortcut_action_select_action">Choose action:</string>
-    <string name="shortcut_action_select_action_newaction">Choose new action:</string>
-    <string name="shortcut_action_reset">Reset</string>
-    <string name="shortcut_action_add">Add</string>
-    <string name="shortcut_action_reset_message">Reset all entries to default?</string>
-    <string name="shortcut_action_max">Maximum entries size has been reached</string>
-    <string name="shortcut_action_warning">Warning</string>
-    <string name="shortcut_action_warning_message">It is not possible to delete last entry</string>
-    <string name="shortcut_action_disable_message">Disabled\nAdd an entry to enable this feature</string>
-    <string name="shortcut_image_not_valid">The chosen app did not return a valid icon or does not support image cropping. Use another app.</string>
-    <string name="shortcut_duplicate_entry">The chosen action cannot be added twice</string>
-    <string name="shortcut_action_help_shortcut">shortcut</string>
-    <string name="shortcut_action_help_button">button</string>
-    <string name="shortcut_action_help_app">app</string>
-    <string name="shortcut_action_help_icon">, while selecting the icon will bring up customization options</string>
-    <string name="shortcut_action_help_main">To add a %1$s, select the Add icon. Once a %1$s is added, selecting the row will change the target%2$s\n\nTo remove a %1$s, swipe the row horizontally left or right. Re-order a %1$s in the list by vertically dragging the anchor on the left.\n\nTo clear or reset to defaults, select the Reset icon.</string>
-    <string name="shortcut_action_help_delete_last_entry">Removing every %1$s in the list will disable the feature entirely.</string>
-    <string name="shortcut_action_help_pie_second_layer_delete_last_entry">Removing every %1$s in the list will disable the second pie layer entirely.</string>
-    <string name="shortcuts_applications">Applications</string>
-    <string name="shortcuts_select_custom_app_title">Select custom application</string>
-    <string name="shortcuts_icon_picker_type">Select icon type:</string>
-    <string name="shortcuts_icon_default">Default</string>
-    <string name="shortcuts_icon_presets">System icons</string>
-    <string name="shortcuts_icon_custom">Gallery</string>
-    <string name="shortcuts_icon_picker_choose_icon_title">Choose icon</string>
-    <string name="shortcuts_icon_picker_alarm">Alarm</string>
+	<string name="shortcut_action_longpress">Appui long:</string>
+    <string name="shortcut_action_select_action_longpress">Choisir l\'action d\'appui long:</string>
+    <string name="shortcut_action_select_action">Choisir l\'action:</string>
+    <string name="shortcut_action_select_action_newaction">Choisir une nouvelle action:</string>
+    <string name="shortcut_action_reset">Réinitialiser</string>
+    <string name="shortcut_action_add">Ajouter</string>
+    <string name="shortcut_action_reset_message">Rétablir les valeurs par défaut ?</string>
+    <string name="shortcut_action_max">Nombre maximum d\'entrées atteint</string>
+    <string name="shortcut_action_warning">Attention</string>
+    <string name="shortcut_action_warning_message">Il n\'est pas possible de supprimer la dernière entrée</string>
+    <string name="shortcut_action_disable_message">Désactivé.\nAjouter une entrée pour activer cette fonction</string>
+    <string name="shortcut_image_not_valid">L\'application choisie n\'a pas une icône valide ou ne supporte pas le recadrage d\'image. Utiliser une autre application.</string>
+    <string name="shortcut_duplicate_entry">L\'action sélectionnée ne peut pas être ajoutée deux fois</string>
+    <string name="shortcut_action_help_shortcut">raccourci</string>
+    <string name="shortcut_action_help_button">bouton</string>
+    <string name="shortcut_action_help_app">application</string>
+    <string name="shortcut_action_help_icon">, tandis que sélectionner l\'icône va afficher les options de personnalisation</string>
+    <string name="shortcut_action_help_main">Pour ajouter un %1$s, sélectionner l\'icône \"ajouter\". Une fois le %1$s ajouté, sélectionner la ligne changera la cible%2$s\n\nPour supprimer un %1$s, glisser le doigt sur la ligne vers la gauche ou la droite. Déplacer un %1$s dans la liste en déplaçant verticalement l\'ancre à gauche.\n\nPour tout effacer ou revenir aux valeurs par défaut, utiliser l\'option \"réinitialiser\".</string>
+    <string name="shortcut_action_help_delete_last_entry">Supprimer tous les %1$s de la liste désactivera complètement la fonctionnalité.</string>
+    <string name="shortcut_action_help_pie_second_layer_delete_last_entry">Supprimer tous les %1$s de la liste désactivera entièrement la deuxième couche du Pie.</string>
+	<string name="shortcuts_applications">Applications</string>
+    <string name="shortcuts_select_custom_app_title">Sélectionner une application perso</string>
+    <string name="shortcuts_icon_picker_type">Sélectionner le type d\'icône:</string>
+    <string name="shortcuts_icon_default">Par défaut</string>
+    <string name="shortcuts_icon_presets">Icônes système</string>
+    <string name="shortcuts_icon_custom">Galerie</string>
+    <string name="shortcuts_icon_picker_choose_icon_title">Choisir une icône</string>
+    <string name="shortcuts_icon_picker_alarm">Alarme</string>
     <string name="shortcuts_icon_picker_andy">Andy</string>
-    <string name="shortcuts_icon_picker_battery">Battery</string>
-    <string name="shortcuts_icon_picker_browser">Browser</string>
-    <string name="shortcuts_icon_picker_calendar">Calendar</string>
-    <string name="shortcuts_icon_picker_camera">Camera</string>
+    <string name="shortcuts_icon_picker_battery">Batterie</string>
+    <string name="shortcuts_icon_picker_browser">Navigateur</string>
+    <string name="shortcuts_icon_picker_calendar">Calendrier</string>
+    <string name="shortcuts_icon_picker_camera">Appareil photo</string>
     <string name="shortcuts_icon_picker_cloud">Cloud</string>
     <string name="shortcuts_icon_picker_contact">Contact</string>
-    <string name="shortcuts_icon_picker_directdial">Direct Dial</string>
-    <string name="shortcuts_icon_picker_directmessage">Direct Message</string>
+    <string name="shortcuts_icon_picker_directdial">Appel direct</string>
+    <string name="shortcuts_icon_picker_directmessage">Message direct</string>
     <string name="shortcuts_icon_picker_drive">Drive</string>
     <string name="shortcuts_icon_picker_dropbox">Dropbox</string>
     <string name="shortcuts_icon_picker_email">Email</string>
-    <string name="shortcuts_icon_picker_email2">Email Alternate</string>
+    <string name="shortcuts_icon_picker_email2">Email alternatif</string>
     <string name="shortcuts_icon_picker_evernote">Evernote</string>
     <string name="shortcuts_icon_picker_facebook">Facebook</string>
-    <string name="shortcuts_icon_picker_favorite">Favorite</string>
-    <string name="shortcuts_icon_picker_file_browser">File Browser</string>
-    <string name="shortcuts_icon_picker_file_browser2">File Browser Alternate</string>
+    <string name="shortcuts_icon_picker_favorite">Favori</string>
+    <string name="shortcuts_icon_picker_file_browser">Explorateur de fichiers</string>
+    <string name="shortcuts_icon_picker_file_browser2">Explorateur de fichiers alternatif</string>
     <string name="shortcuts_icon_picker_fitness">Fitness</string>
-    <string name="shortcuts_icon_picker_gallery">Gallery</string>
-    <string name="shortcuts_icon_picker_gears">Gears</string>
+    <string name="shortcuts_icon_picker_gallery">Galerie</string>
+    <string name="shortcuts_icon_picker_gears">Engrenages</string>
     <string name="shortcuts_icon_picker_google_small">Google</string>
     <string name="shortcuts_icon_picker_gplus">Google Plus</string>
     <string name="shortcuts_icon_picker_gtalk">Hangouts</string>
-    <string name="shortcuts_icon_picker_help">Help</string>
+    <string name="shortcuts_icon_picker_help">Aide</string>
     <string name="shortcuts_icon_picker_joystick">Joystick</string>
-    <string name="shortcuts_icon_picker_key">Keys/Accounts</string>
-    <string name="shortcuts_icon_picker_laptop">Laptop</string>
+    <string name="shortcuts_icon_picker_key">Clés/Comptes</string>
+    <string name="shortcuts_icon_picker_laptop">PC Portable</string>
     <string name="shortcuts_icon_picker_notes">Notes</string>
-    <string name="shortcuts_icon_picker_luggage">Travel</string>
+    <string name="shortcuts_icon_picker_luggage">Voyage</string>
     <string name="shortcuts_icon_picker_maps">Maps</string>
-    <string name="shortcuts_icon_picker_market">Market</string>
-    <string name="shortcuts_icon_picker_movie">Movies</string>
-    <string name="shortcuts_icon_picker_music">Music</string>
+    <string name="shortcuts_icon_picker_market">Play Store</string>
+    <string name="shortcuts_icon_picker_movie">Films</string>
+    <string name="shortcuts_icon_picker_music">Musique</string>
     <string name="shortcuts_icon_picker_nav">Navigation</string>
-    <string name="shortcuts_icon_picker_phone">Phone</string>
-    <string name="shortcuts_icon_picker_package">Package</string>
+    <string name="shortcuts_icon_picker_phone">Téléphone</string>
+    <string name="shortcuts_icon_picker_package">Paquet</string>
     <string name="shortcuts_icon_picker_pinterest">Pinterest</string>
-    <string name="shortcuts_icon_picker_play">Play</string>
+    <string name="shortcuts_icon_picker_play">Lecture</string>
     <string name="shortcuts_icon_picker_pocket">Pocket</string>
-    <string name="shortcuts_icon_picker_quicksettings">Quick Settings</string>
-    <string name="shortcuts_icon_picker_rss">RSS Feed</string>
-    <string name="shortcuts_icon_picker_sdcard">SDCard</string>
-    <string name="shortcuts_icon_picker_search">Search</string>
-    <string name="shortcuts_icon_picker_sms">Messaging</string>
-    <string name="shortcuts_icon_picker_tasks">Tasks</string>
+    <string name="shortcuts_icon_picker_quicksettings">Paramètres rapides</string>
+    <string name="shortcuts_icon_picker_rss">Flux RSS</string>
+    <string name="shortcuts_icon_picker_sdcard">Carte SD</string>
+    <string name="shortcuts_icon_picker_search">Recherche</string>
+    <string name="shortcuts_icon_picker_sms">Messages</string>
+    <string name="shortcuts_icon_picker_tasks">Tâches</string>
     <string name="shortcuts_icon_picker_terminal">Terminal</string>
-    <string name="shortcuts_icon_picker_transit">Transit</string>
+    <string name="shortcuts_icon_picker_transit">Transports</string>
     <string name="shortcuts_icon_picker_tv">TV</string>
     <string name="shortcuts_icon_picker_twitter">Twitter</string>
-    <string name="shortcuts_icon_picker_unlock">Unlock</string>
-    <string name="reset_message">Reset all entries to default?</string>
-    <string name="lockscreen_shortcuts_title">Shortcuts</string>
-    <string name="lockscreen_shortcuts_summary">View or change custom lock screen shortcuts</string>
-    <string name="lockscreen_shorcuts_launch_type_title">Shortcut click type</string>
-    <string name="lockscreen_shortcuts_single_tap">Click</string>
-    <string name="lockscreen_shortcuts_double_tap">Double tap</string>
-    <string name="lockscreen_shortcuts_longpress">Longpress</string>
-    <string name="help">Help</string>
-    <string name="shortcut_action_app">Custom app</string>
-    <string name="shortcut_action_home">Home</string>
-    <string name="shortcut_action_back">Back</string>
+    <string name="shortcuts_icon_picker_unlock">Déverrouiller</string>
+    <string name="navbar_dimensions_reset_message">Réinitialiser toutes les dimensions ?</string>
+    <string name="lockscreen_shortcuts_title">Raccourcis</string>
+    <string name="lockscreen_shortcuts_summary">Voir ou modifier les raccourcis</string>
+    <string name="lockscreen_shorcuts_launch_type_title">Type d\'appui du raccourci</string>
+    <string name="lockscreen_shortcuts_single_tap">Appui simple</string>
+    <string name="lockscreen_shortcuts_double_tap">Appui double</string>
+    <string name="lockscreen_shortcuts_longpress">Appui long</string>		
+    <string name="help">Aide</string>
+    <string name="shortcut_action_app">Application perso.</string>
+    <string name="shortcut_action_home">Accueil</string>
+    <string name="shortcut_action_back">Retour</string>
     <string name="shortcut_action_menu">Menu</string>
-    <string name="shortcut_action_ime">Open IME Switcher</string>
-    <string name="shortcut_action_power_menu">Power menu</string>
-    <string name="shortcut_action_recent">Recents</string>
-    <string name="shortcut_action_power">Screen Off</string>
-    <string name="shortcut_action_search">Search in app</string>
-    <string name="shortcut_action_torch">Torch</string>
+    <string name="shortcut_action_ime">Ouvrir le sélecteur d\'IME</string>
+    <string name="shortcut_action_power_menu">Menu marche/arrêt</string>
+    <string name="shortcut_action_recent">Récents</string>
+    <string name="shortcut_action_power">Éteindre l\'écran</string>
+    <string name="shortcut_action_search">Rechercher dans l\'application</string>
+    <string name="shortcut_action_torch">Lampe de poche</string>
 
     <!-- QuickSettings: Quick Pulldown -->
 	<string name="qs_title">Paramètres rapides</string>
@@ -1407,61 +1407,61 @@
     <string name="edge_gesture_service_summary">Don\'t send touch events for navigation and status bar gestures to apps</string>
 
     <!-- Gesture Anywhere -->
-    <string name="gesture_anywhere_title">Gesture Anywhere</string>
-    <string name="ga_summary">Open apps from any screen with gestures</string>
-    <string name="gesture_anywhere_enabled_title">Gesture Anywhere</string>
-    <string name="gesture_anywhere_enabled_summary">Enable the Gesture Anywhere feature</string>
-    <string name="gesture_anywhere_position_title">Location</string>
-    <string name="gesture_anywhere_position_left">Left edge</string>
-    <string name="gesture_anywhere_position_right">Right edge</string>
-    <string name="gesture_anywhere_gestures_title">Gestures</string>
-    <string name="gesture_anywhere_gestures_summary">Add, remove, and edit gestures</string>
+    <string name="gesture_anywhere_title">Geste personnalisé</string>
+    <string name="ga_summary">Ouvrir des applications avec geste personnalisé depuis n\'importe quel écran</string>
+    <string name="gesture_anywhere_enabled_title">Geste personnalisé</string>
+    <string name="gesture_anywhere_enabled_summary">Activer les gestes personnalisés</string>
+    <string name="gesture_anywhere_position_title">Emplacement</string>
+    <string name="gesture_anywhere_position_left">Côté gauche</string>
+    <string name="gesture_anywhere_position_right">Côté droit</string>
+    <string name="gesture_anywhere_gestures_title">Personnalisation des gestes</string>
+    <string name="gesture_anywhere_gestures_summary">Ajouter, enlever et modifier gestes personnalisés</string>
     <!-- Label, button used to add a gesture -->
-    <string name="ga_button_add">Add gesture</string>
+    <string name="ga_button_add">Ajouter geste personnalisé</string>
     <!-- Label, button used to reload all gestures -->
-    <string name="ga_button_reload">Reload</string>
+    <string name="ga_button_reload">Recharger</string>
     <!-- Label, button used to cancel the operation of adding a gesture -->
-    <string name="ga_button_discard">Discard</string>
+    <string name="ga_button_discard">Ignorer</string>
     <!-- Label, button used to save a gesture newly created -->
-    <string name="ga_button_done">Done</string>
+    <string name="ga_button_done">Effectué</string>
     <!-- Label, prompt asking the user to enter the name of the gesture -->
-    <string name="ga_prompt_gesture_name">Name</string>
+    <string name="ga_prompt_gesture_name">Nom</string>
     <!-- Error message, informs the user he needs to enter a name before saving a gesture -->
-    <string name="ga_error_missing_name">You must enter a name</string>
+    <string name="ga_error_missing_name">Saisi du nom obligatoire</string>
     <!-- success message, tells the user where the gesture was saved -->
-    <string name="ga_save_success">Gesture saved in %s</string>
+    <string name="ga_save_success">Geste personnalisé enregistré en %s</string>
     <!-- Buttons in Rename gesture dialog box -->
     <string name="ga_rename_action">OK</string>
     <!-- Buttons in Rename gesture dialog box -->
-    <string name="ga_cancel_action">Cancel</string>
+    <string name="ga_cancel_action">Annuler</string>
     <!-- Message displayed when the user opens the gestures settings screen -->
-    <string name="ga_gestures_loading">Loading gestures...</string>
+    <string name="ga_gestures_loading">Chargement des gestes personnalisés...</string>
     <!-- Message displayed when the user has no gestures -->
-    <string name="ga_gestures_empty">No gestures</string>
+    <string name="ga_gestures_empty">Pas de gestes personnalisés</string>
     <!-- Title of the screen used to view/manage gestures -->
-    <string name="ga_gestures_activity">Gestures</string>
+    <string name="ga_gestures_activity">Gestion des gestes personnalisés</string>
     <!-- Noun, menu item used to edit a gesture -->
-    <string name="ga_gestures_edit">Edit</string>
+    <string name="ga_gestures_edit">Modifier</string>
     <!-- Noun, menu item used to remove a gesture -->
-    <string name="ga_gestures_delete">Delete</string>
+    <string name="ga_gestures_delete">Effacer</string>
     <!-- Message displayed when a gesture is successfully deleted -->
-    <string name="ga_gestures_delete_success">Gesture deleted</string>
+    <string name="ga_gestures_delete_success">Geste personnalisé effacé</string>
     <!-- Title of dialog box -->
-    <string name="ga_gestures_rename_title">Rename gesture</string>
+    <string name="ga_gestures_rename_title">Renommer geste personnalisé</string>
     <!-- Label of gesture name field in Rename gesture dialog box -->
-    <string name="ga_gestures_rename_label">Gesture name</string>
+    <string name="ga_gestures_rename_label">Nom du geste personnalisé</string>
     <!-- Message, displayed when the sdcard cannot be found, 1st parameter is the name of the file that stores the gestures.  CHAR LIMIT=80 -->
-    <string name="ga_gestures_error_loading">Could not load %s. Make sure you have storage available.</string>
-    <string name="trigger_category">Trigger region</string>
-    <string name="trigger_width_title">Trigger width</string>
-    <string name="trigger_width_summary">Adjust the width of the trigger area</string>
-    <string name="trigger_top_title">Trigger position</string>
-    <string name="trigger_top_summary">Adjust the vertical postion of the trigger area</string>
-    <string name="trigger_bottom_title">Trigger height</string>
-    <string name="trigger_bottom_summary">Adjust the height of the trigger area</string>
-    <string name="picker_activities">Activities</string>
-    <string name="select_custom_app_title">Select custom app</string>
-    <string name="select_custom_activity_title">Select custom activity</string>
+    <string name="ga_gestures_error_loading">Ne peut pas charger %s. Vérifier capacité de stockage.</string>
+    <string name="trigger_category">Personnalisation de la région de déclenchement</string>
+    <string name="trigger_width_title">Largeur</string>
+    <string name="trigger_width_summary">Ajuster la largeur de la région de déclenchement</string>
+    <string name="trigger_top_title">Position</string>
+    <string name="trigger_top_summary">Ajuster la position de la région de déclenchement</string>
+    <string name="trigger_bottom_title">Hauteur</string>
+    <string name="trigger_bottom_summary">Ajuster la hauteur de la région de déclenchement</string>
+    <string name="picker_activities">Activités</string>
+    <string name="select_custom_app_title">Selectionner une application perso.</string>
+    <string name="select_custom_activity_title">Selectionner une application personnalisée</string>
     <string name="profile_applist_title">Applications</string>
 
     <!-- Lock Gesture settings -->
@@ -1715,7 +1715,7 @@
     <string name="select_contact">Sélectionner un contact</string>
 
     <!-- Wifi Calling -->
-    <string name="wifi_calling_settings_title">Paramètres Appel Wifi</string>
+    <string name="wifi_calling_settings_title">Paramètres Appel Wi\u2011Fi</string>
 
     <!-- Broken Walls -->
     <string name="brokenwalls_title">BrokenWalls</string>
@@ -1879,8 +1879,8 @@
     <string name="status_bar_temperature_title">Icône Température dans la barre d\'état</string>
     <string name="status_bar_temperature_summary">Afficher l\'icône Température dans la barre d\'état</string>
     <string name="status_bar_temperature_hidden">Ne pas afficher</string>
-    <string name="status_bar_temperature_show_scale">Afficher mis à l\'échelle</string>
-    <string name="status_bar_temperature_hide_scale">Afficher non mis à l\'échelle</string>
+    <string name="status_bar_temperature_show_scale">Afficher avec l\'unité de mesure</string>
+    <string name="status_bar_temperature_hide_scale">Afficher sans l\'unité de mesure</string>
     <string name="status_bar_temperature_location_title">Emplacement dans la barre d\'état</string>
     <string name="status_bar_temperature_location_summary">Sélection de l\'emplacement</string>
     <string name="status_bar_temperature_location_right">A droite</string>
@@ -1921,7 +1921,7 @@
     <string name="clock_font_size_title">Taille de la police</string>
 
     <!-- Long press on lock screen lock icon to launch torch-->
-    <string name="longpress_lock_icon_torch_title">Appui long sur icône de vérouillage pour allumer la lampe</string>
+    <string name="longpress_lock_icon_torch_title">Appui long sur icône de verrouillage pour allumer la lampe</string>
     <string name="longpress_lock_icon_torch_summary">Ne fonctionnera pas si smart lock et accessibility touch exploration sont activées simultanément</string>
 
     <!-- Interruptions and alarms -->
