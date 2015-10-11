@@ -25,4 +25,7 @@
     <!-- Power menu settings -->
     <string name="power_menu_show_advanced_reboot_title">Erweitertes Neustart Menu</string>
     <string name="power_menu_show_advanced_reboot_summary">Aktivieren um erweiterte Optionen im Neustart Menü anzuzeigen</string>
+
+    <!-- SuperSU -->
+    <string name="supersu_title">SuperSU</string>
 </resources>

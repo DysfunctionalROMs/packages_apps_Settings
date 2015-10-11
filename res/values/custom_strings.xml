@@ -25,4 +25,8 @@
     <!-- Power menu settings -->
     <string name="power_menu_show_advanced_reboot_title">Advanced reboot menu</string>
     <string name="power_menu_show_advanced_reboot_summary">Enable to show advanced options in the reboot menu</string>
+    
+    <!-- SuperSU -->
+    <string name="supersu_title">SuperSU</string>
+    
 </resources>
