@@ -95,4 +95,7 @@
     <string name="broken_version_title">Broken Version</string>
     <string name="broken_version_default">Unknown</string>
     
+    <!-- SuperSU -->
+    <string name="supersu_title">SuperSU</string>
+    
 </resources>
