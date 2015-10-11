@@ -25,4 +25,10 @@
 
     <!-- SuperSU -->
     <string name="supersu_title">SuperSU</string>
+
+    <!-- Device info settings -->
+    <string name="cpu_info">CPU</string>
+    <string name="mem_info">Arbeitsspeicher</string>
+    <string name="build_id">Android-Build-ID</string>
+    <string name="build_date">Build-Datum</string>
 </resources>

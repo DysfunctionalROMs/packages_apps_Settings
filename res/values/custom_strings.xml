@@ -443,4 +443,10 @@
     <string name="led_notification_title">Light settings</string>
     <string name="led_notification_text">LED light enabled by settings</string>
     
+    <!-- About phone screen -->
+    <string name="cpu_info">CPU</string>
+    <string name="mem_info">Memory</string>
+    <string name="build_id">Android-Build-ID</string>
+    <string name="build_date">Build Date</string>
+    
 </resources>
