@@ -94,6 +94,10 @@
     <!-- About phone screen, Broken version -->
     <string name="broken_version_title">Broken Version</string>
     <string name="broken_version_default">Unknown</string>
+    <string name="cpu_info">CPU</string>
+    <string name="mem_info">Memory</string>
+    <string name="build_id">Android-Build-ID</string>
+    <string name="build_date">Build Date</string>
     
     <!-- SuperSU -->
     <string name="supersu_title">SuperSU</string>
