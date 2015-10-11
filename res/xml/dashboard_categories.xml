@@ -94,6 +94,14 @@
                 android:icon="@drawable/ic_settings_display"
                 />
 
+        <!-- Buttons -->
+        <dashboard-tile
+            android:id="@+id/button_settings"
+            android:title="@string/button_settings_title"
+            android:fragment="com.android.settings.broken.ButtonSettings"
+            android:icon="@drawable/ic_settings_buttons"
+            />
+
         <!-- Notifications -->
         <dashboard-tile
                 android:id="@+id/notification_settings"
