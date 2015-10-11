@@ -57,4 +57,12 @@
     <string name="power_menu_title">Power menu</string>
     <string name="volume_rocker_screen_title">Volume rocker</string>
 
+    <!-- Button settings -->
+    <string name="power_menu_title">Power menu</string>
+    <string name="power_menu_summary">Customize power menu</string>
+
+    <!-- Power menu settings -->
+    <string name="power_menu_show_advanced_reboot_title">Advanced reboot menu</string>
+    <string name="power_menu_show_advanced_reboot_summary">Enable to show advanced options in the reboot menu</string>
+
 </resources>

@@ -22,7 +22,9 @@
 
     <PreferenceScreen
         android:key="power_menu_general_category"
-        android:title="@string/power_menu_title" />
+        android:fragment="com.android.settings.broken.PowerMenuActions"
+        android:title="@string/power_menu_title"
+        android:summary="@string/power_menu_summary" /> />
 
     <PreferenceScreen
         android:key="volume_rocker_general_category"
