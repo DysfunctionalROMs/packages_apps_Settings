@@ -131,5 +131,11 @@
     <!-- Double Tap Navbar to Sleep -->
     <string name="double_tap_sleep_nav_bar_title">Navigation bar</string>
     <string name="double_tap_sleep_nav_bar_summary">Double tap navigation bar to put the device to sleep</string>
+    
+    <!-- Nav Bar Options -->
+    <string name="display_category_navbar_options_title">Navigation bar options</string>
+    <!-- kill app long press back -->
+    <string name="kill_app_longpress_back">Kill app back button</string>
+    <string name="kill_app_longpress_back_summary">Kill the foreground app by long-pressing the back key</string>
 
 </resources>
