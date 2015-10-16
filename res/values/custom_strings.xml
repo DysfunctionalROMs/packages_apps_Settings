@@ -69,6 +69,8 @@
     <string name="notification_light_default_value">Default</string>
     <string name="notification_light_missed_call_title">Missed call</string>
     <string name="notification_light_voicemail_title">Voicemail</string>
+    <string name="led_notification_title">Light settings</string>
+    <string name="led_notification_text">LED light enabled by settings</string>
     
     <string name="button_pref_title">Buttons</string>
     <string name="hardware_keys_home_key_title">Home button</string>
