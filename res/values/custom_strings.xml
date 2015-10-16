@@ -58,6 +58,7 @@
     <!-- Dev Options Enabled by Default -->
     <string name="show_dev_already_enabled">No need, development settings are enabled by default.</string>
 
+<<<<<<< HEAD
     <!-- Color Picker -->
     <string name="dialog_color_picker">Color Picker</string>
     <string name="press_color_to_apply">Press on color below to apply</string>
@@ -92,5 +93,10 @@
 
     <!-- Gestures -->
     <string name="gesture_settings_title">S-O-G</string>
-
+    
+    <!-- Wakeup options -->
+    <string name="display_category_wakeup_options_title">Wakeup options</string>
+    <string name="wakeup_when_plugged_unplugged_title">Wake up on charge</string>
+    <string name="wakeup_when_plugged_unplugged_summary">Wake up device if charger is plugged/unplugged.</string>
+    
 </resources>
