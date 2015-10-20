@@ -505,7 +505,7 @@ public class InstalledAppDetails extends AppInfoBase
     private void setAppLabelAndIcon(PackageInfo pkgInfo) {
         final View appSnippet = mHeader.findViewById(R.id.app_snippet);
         mState.ensureIcon(mAppEntry);
-        setupAppSnippet(appSnippet, mAppEntry.label, mAppEntry.icon,
+        setupAppSnippet(appSnippet, mAppEntry.label, mAppEntry.icon, pkgInfo.packageName,
                 pkgInfo != null ? pkgInfo.versionName : null);
     }
 
@@ -994,7 +994,7 @@ public class InstalledAppDetails extends AppInfoBase
         }
     }
 
-    public static void setupAppSnippet(View appSnippet, CharSequence label, Drawable icon,
+    public static void setupAppSnippet(View appSnippet, CharSequence label, Drawable icon, CharSequence packageName,
             CharSequence versionName) {
         LayoutInflater.from(appSnippet.getContext()).inflate(R.layout.widget_text_views,
                 (ViewGroup) appSnippet.findViewById(android.R.id.widget_frame));
@@ -1003,7 +1003,7 @@ public class InstalledAppDetails extends AppInfoBase
         iconView.setImageDrawable(icon);
 
         // Clicking on application icon opens application.
-        final String finalPackageName = pkgInfo.packageName;
+        final String finalPackageName = String.valueOf(packageName);
         iconView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -1019,6 +1019,16 @@ public class InstalledAppDetails extends AppInfoBase
         // Set application name.
         TextView labelView = (TextView) appSnippet.findViewById(android.R.id.title);
         labelView.setText(label);
+
+        // Set application package name.
+        TextView packageNameView = (TextView) appSnippet.findViewById(R.id.pkgname);
+        if (!TextUtils.isEmpty(packageName)) {
+            packageNameView.setSelected(true);
+            packageNameView.setVisibility(View.VISIBLE);
+            packageNameView.setText(packageName);
+        } else {
+            packageNameView.setVisibility(View.INVISIBLE);
+        }
         // Version number of application
         TextView appVersion = (TextView) appSnippet.findViewById(R.id.widget_text1);
 
@@ -1031,7 +1041,6 @@ public class InstalledAppDetails extends AppInfoBase
             appVersion.setVisibility(View.INVISIBLE);
         }
     }
-
     public static NetworkTemplate getTemplate(Context context) {
         if (DataUsageList.hasReadyMobileRadio(context)) {
             return NetworkTemplate.buildTemplateMobileWildcard();
