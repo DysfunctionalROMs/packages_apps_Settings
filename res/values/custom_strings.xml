@@ -19,6 +19,15 @@
 	<string name="reset_title">Reset</string>
 	<string name="string_add">Add</string>
 	<string name="choose_app">Choose app</string>
+	<string name="ok_string">OK</string>
+    <string name="default_string">Default</string>
+    <string name="enabled_string">Enabled</string>
+    <string name="disabled_string">Disabled</string>
+    <string name="general_string">General</string>
+    <string name="reset_string">Reset</string>
+    <string name="empty_string">Empty</string>
+    <string name="font_size_sample">Sample</string>
+    <string name="attention">Attention</string>
 
     <!-- dashboard tiles-->
     <string name="button_settings_title">Buttons</string>
@@ -231,4 +240,5 @@
     <string name="lockscreen_wallpaper_set_title">Set lock screen wallpaper</string>
     <string name="lockscreen_wallpaper_clear_title">Clear lock screen wallpaper</string>
     <string name="reset_lockscreen_wallpaper">Lockscreen cleared</string>
+
 </resources>
