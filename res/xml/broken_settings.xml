@@ -26,6 +26,7 @@
 
     <PreferenceScreen
         android:key="power_menu_general_category"
+        android:fragment="com.android.settings.broken.PowerMenuActions"
         android:title="@string/power_menu_title" />
 
     <PreferenceScreen
