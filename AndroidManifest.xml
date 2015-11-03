@@ -1123,7 +1123,6 @@
             </intent-filter>
         </activity>
 
-        <!--
         <activity android:name="Settings$AppOpsSummaryActivity"
                 android:label="@string/app_ops_settings"
                 android:taskAffinity=""
@@ -1140,7 +1139,6 @@
             <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
                 android:resource="@id/application_settings" />
         </activity>
-        -->
 
         <activity android:name="Settings$LocationSettingsActivity"
                 android:label="@string/location_settings_title"
