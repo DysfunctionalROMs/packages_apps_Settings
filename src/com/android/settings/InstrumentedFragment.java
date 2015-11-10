@@ -28,6 +28,11 @@ public abstract class InstrumentedFragment extends PreferenceFragment {
     public static final int BUTTONS = 100001;
     public static final int BROKENSETTINGS = 100002;
     public static final int BROKENABOUT = 100003;
+    public static final int BROKENGESTURES = 100004;
+    public static final int BROKENNAVBAR = 100005;
+    public static final int BROKENPOWER = 100006;
+    public static final int BROKENSTATUSBAR = 100007;
+    public static final int BROKENVOLUME = 100008;
 
     /**
      * Declare the view of this category.

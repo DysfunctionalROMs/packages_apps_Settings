@@ -10,6 +10,8 @@ import android.provider.Settings;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
+import com.android.internal.logging.MetricsLogger;
+
 public class PowerMenuActions extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener {
 
@@ -25,5 +27,10 @@ public class PowerMenuActions extends SettingsPreferenceFragment implements
     public boolean onPreferenceChange(Preference preference, Object objValue) {
     // preference changes here
         return false;
+    }
+    
+    @Override
+    protected int getMetricsCategory() {
+        return MetricsLogger.BROKENPOWER;
     }
 }
