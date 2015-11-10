@@ -128,24 +128,6 @@
     <string name="lockscreen_title">Lock screen</string>
     <string name="power_menu_title">Power menu</string>
     <string name="volume_rocker_screen_title">Volume rocker</string>
-<<<<<<< HEAD:res/values/custom_strings.xml
-=======
-    <string name="volume_rocker_other_title">Miscellaneous</string>
-    <string name="battery_title">Battery</string>
-    <string name="battery2_summary">Customize battery icons and percentage</string>
-    <string name="recents_panel_settings">Recent apps settings</string>
-
-    <!-- Chroma categories -->
-    <string name="display_category_batteryclock_options_title">Battery and clock options</string>
-    <string name="display_category_qs">Quick Settings</string>
-    <string name="display_category_dtts_title">Double tap to sleep</string>
-    <string name="display_category_navbar_options_title">Navigation bar options</string>
-    <string name="display_category_statusbar_options_title">Status bar options</string>
-    <string name="display_category_wakeup_options_title">Wakeup options</string>
-
-    <!-- SuperSU header name - the app hides itself from launcher based on this resource name being present in com.android.settings -->
-    <string name="supersu_title">SuperSU</string>
->>>>>>> a72c105... Quick settings: Option to disable brightness slider (2/2):res/values/chroma_strings.xml
 
     <!-- BitSyko Layers -->
     <string name="bitsyko_layers">Layers</string>

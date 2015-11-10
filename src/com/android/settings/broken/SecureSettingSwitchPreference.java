@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.chroma;
+package com.android.settings.broken;
 
 import android.content.Context;
 import android.preference.SwitchPreference;
