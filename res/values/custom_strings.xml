@@ -35,5 +35,8 @@
     <!-- Broken TWEAKS -->
     <string name="header_category_broken">Customizations</string>
     <string name="broken_settings_title">Broken Pieces</string>
+    
+    <!-- About Broken -->
+    <string name="broken_menu_about">About Broken</string>
 
 </resources>

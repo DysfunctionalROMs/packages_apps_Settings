@@ -32,16 +32,11 @@
                     android:targetPackage="@string/additional_system_update"
                     android:targetClass="@string/additional_system_update_menu" />
         </PreferenceScreen>
-
-        <!-- Broken OTA -->
+        
         <PreferenceScreen
-               android:key="slimota"
-               android:title="@string/slimota_title" >
-               <intent
-                       android:action="android.intent.action.MAIN"
-                       android:targetPackage="com.fusionjack.slimota"
-                       android:targetClass="com.fusionjack.slimota.MainActivity" />
-        </PreferenceScreen>
+               android:key="about_broken"
+               android:fragment="com.android.settings.broken.BrokenAbout"
+               android:title="@string/broken_menu_about" />
 
         <!-- Device status - launches activity -->
         <PreferenceScreen android:key="status_info"
