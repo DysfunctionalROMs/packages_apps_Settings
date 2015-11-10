@@ -17,5 +17,8 @@
 
     <!-- BrokenOTA -->
     <string name="slimota_title">Broken Updates</string>
+    
+    <!-- About Broken -->
+    <string name="broken_menu_about">About Broken</string>
 
 </resources>

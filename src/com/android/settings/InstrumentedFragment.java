@@ -27,6 +27,7 @@ import com.android.internal.logging.MetricsLogger;
 public abstract class InstrumentedFragment extends PreferenceFragment {
     // Declare new temporary categories here, starting after this value.
     public static final int UNDECLARED = 100000;
+    public static final int BROKENABOUT = 100001;
 
     // Used by PreferenceActivity for the dummy fragment it adds, no useful data here.
     public static final int PREFERENCE_ACTIVITY_FRAGMENT = UNDECLARED + 1;
