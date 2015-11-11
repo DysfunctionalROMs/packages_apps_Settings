@@ -1,11 +1,11 @@
 package com.android.settings.broken;
 
+import com.android.internal.logging.MetricsLogger;
+
 import android.os.Bundle;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
-
-import com.android.internal.logging.MetricsLogger;
 
 public class GestureSettings extends SettingsPreferenceFragment {
 
@@ -18,6 +18,6 @@ public class GestureSettings extends SettingsPreferenceFragment {
     
     @Override
     protected int getMetricsCategory() {
-        return MetricsLogger.BROKENGESTURES;
+        return MetricsLogger.GESTURE_SETTINGS;
     }
 }

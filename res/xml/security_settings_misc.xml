@@ -37,7 +37,7 @@
         android:key="power_key"
         android:title="@string/power_category" >
 
-        <com.android.settings.chroma.SystemSettingSwitchPreference
+        <com.android.settings.broken.SystemSettingSwitchPreference
             android:key="lockscreen_enable_power_menu"
             android:title="@string/lockscreen_enable_power_menu_title"
             android:summary="@string/lockscreen_enable_power_menu_summary"

@@ -411,7 +411,7 @@ public class NotificationLightSettings extends SettingsPreferenceFragment implem
     
     @Override
     protected int getMetricsCategory() {
-        return MetricsLogger.DONT_TRACK_ME_BRO;
+        return MetricsLogger.NOTIFICATION_LIGHT_SETTINGS;
     }
 
     public boolean onPreferenceChange(Preference preference, Object objValue) {

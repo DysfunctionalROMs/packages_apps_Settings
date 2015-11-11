@@ -395,5 +395,11 @@
     <!-- Navbar cursor buttons -->
     <string name="show_ime_arrows_title">Show arrow keys while typing</string>
     <string name="show_ime_arrows_summary">Display left and right cursor buttons for IME.</string>
+    
+    <!-- OnScreen buttons -->
+    <string name="display_category_onscreen">On-screen buttons</string>
+    
+    <!-- QS section -->
+    <string name="display_category_qs">Quick Settings</string>
 
 </resources>

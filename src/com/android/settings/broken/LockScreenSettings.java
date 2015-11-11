@@ -51,7 +51,7 @@ public class LockScreenSettings extends SettingsPreferenceFragment {
 
     @Override
     protected int getMetricsCategory() {
-        return MetricsLogger.APPLICATION;
+        return MetricsLogger.BROKEN_LOCKSCREEN;
     }
 
     @Override

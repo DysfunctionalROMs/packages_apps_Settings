@@ -3,6 +3,7 @@ package com.android.settings.broken;
 
 import android.os.Bundle;
 
+import com.android.internal.logging.MetricsLogger;
 import com.android.settings.InstrumentedFragment;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
@@ -18,6 +19,6 @@ public class BrokenSettings extends SettingsPreferenceFragment {
     
     @Override
     protected int getMetricsCategory() {
-        return InstrumentedFragment.BROKENSETTINGS;
+        return MetricsLogger.BROKEN_SETTINGS;
     }
  }

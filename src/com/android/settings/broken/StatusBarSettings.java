@@ -73,7 +73,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
     
     @Override
     protected int getMetricsCategory() {
-        return MetricsLogger.BROKENSTATUSBAR;
+        return MetricsLogger.BROKEN_STATUSBAR;
     }
 
     private void updateQuickPulldownSummary(int value) {

@@ -8,7 +8,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.chroma;
+package com.android.settings.broken;
 
 import android.content.ContentResolver;
 import android.content.res.Resources;
