@@ -18,6 +18,10 @@
     android:title="@string/power_menu_title"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
+ <PreferenceCategory
+        android:key="power_options"
+        android:title="@string/power_options_switches" >
+        
     <SwitchPreference
         android:key="reboot"
         android:title="@string/power_menu_reboot_title"
@@ -67,5 +71,18 @@
         android:key="silent"
         android:title="@string/power_menu_sound_title"
         android:defaultValue="true" />
+        
+    </PreferenceCategory>
+
+<PreferenceCategory
+        android:key="advanced_reboot_options"
+        android:title="@string/advanced_reboot_toggle" >
+                
+    <PreferenceScreen
+        android:key="button_power_menu_settings"
+        android:title="@string/button_power_menu_settings_title"
+        android:fragment="com.android.settings.broken.PowerMenuSettings" />
+        
+    </PreferenceCategory>
 
 </PreferenceScreen>

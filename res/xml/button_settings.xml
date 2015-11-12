@@ -67,11 +67,5 @@ limitations under the License.
             android:persistent="false" />
 
     </PreferenceCategory>
-
-    <PreferenceScreen
-        android:key="button_power_menu_settings"
-        android:title="@string/button_power_menu_settings_title"
-        android:summary="@string/button_power_menu_settings_summary"
-        android:fragment="com.android.settings.broken.PowerMenuSettings" />
         
 </PreferenceScreen>
