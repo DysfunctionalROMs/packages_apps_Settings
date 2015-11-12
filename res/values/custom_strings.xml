@@ -30,7 +30,7 @@
     <string name="attention">Attention</string>
 
     <!-- dashboard tiles-->
-    <string name="button_settings_title">Buttons</string>
+    <string name="button_settings_title">Hardware Keys</string>
 
     <!-- Button settings -->
     <string name="button_power_menu_settings_title">Power menu</string>
