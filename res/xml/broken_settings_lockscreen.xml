@@ -28,6 +28,12 @@
             android:key="lockscreen_wallpaper_clear"
             android:title="@string/lockscreen_wallpaper_clear_title"
             android:persistent="false"/>
+            
+        <com.android.settings.broken.SystemSettingSwitchPreference
+            android:key="lockscreen_quick_unlock_control"
+            android:title="@string/unlock_quick_unlock_control_title"
+            android:summary="@string/unlock_quick_unlock_control_summary"
+            android:defaultValue="false" />
 
     </PreferenceCategory>
 
