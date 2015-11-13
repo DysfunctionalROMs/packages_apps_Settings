@@ -35,6 +35,12 @@
             android:summary="@string/keyguard_torch_summary"
             android:defaultValue="false" />
 
+        <com.android.settings.broken.SystemSettingSwitchPreference
+            android:key="lockscreen_quick_unlock_control"
+            android:title="@string/unlock_quick_unlock_control_title"
+            android:summary="@string/unlock_quick_unlock_control_summary"
+            android:defaultValue="false" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>
