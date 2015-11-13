@@ -97,16 +97,6 @@
             android:key="tweaks"
             android:summary="@string/ps_tweaks"
             android:title="@string/pt_tweaks" />
-        <SwitchPreference
-            android:defaultValue="false"
-            android:key="speedy_modified"
-            android:summary="@string/ps_speedy_modified"
-            android:title="@string/pt_speedy_modified" />
-        <SwitchPreference
-            android:defaultValue="false"
-            android:key="loopy_smoothness_tweak"
-            android:summary="@string/ps_loopy_smoothness_tweak"
-            android:title="@string/pt_loopy_smoothness_tweak" />
     </PreferenceCategory>
 
 </PreferenceScreen>

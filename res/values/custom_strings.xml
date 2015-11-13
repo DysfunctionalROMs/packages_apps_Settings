@@ -459,10 +459,6 @@
     <string name="ps_setrenice">Enable/disable setrenice</string>
     <string name="pt_tweaks">Enable super tweaks</string>
     <string name="ps_tweaks">Enable/disable super tweaks</string>
-    <string name="pt_speedy_modified">Enable speedy modified</string>
-    <string name="ps_speedy_modified">Enable/disable Speedy modified tweaks</string>
-    <string name="pt_loopy_smoothness_tweak">Enable loopy smoothness</string>
-    <string name="ps_loopy_smoothness_tweak">Enable/disable loopy smoothness tweaks</string>
     <string name="pt_init_d_credits">Developed by:</string>
     <string name="ps_init_d_credits">Jared Rummler (JRummy16)</string>
     <string name="dt_init_d_error">Init.d error</string>
