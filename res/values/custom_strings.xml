@@ -517,6 +517,7 @@
     <string name="notification_light_voicemail_title">Voicemail</string>
     <string name="led_notification_title">Light settings</string>
     <string name="led_notification_text">LED light enabled by settings</string>
+    <string name="allow_lights_title">Lights in do not disturb mode</string>
     
     <!-- About phone screen -->
     <string name="cpu_info">CPU</string>
