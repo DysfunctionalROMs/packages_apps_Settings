@@ -12,6 +12,11 @@
         android:key="battery_style_pref"
         android:title="@string/battery_title"
     	android:summary="@string/battery2_summary" />
+    	
+    <PreferenceScreen
+        android:key="carrierlabel"
+        android:fragment="com.android.settings.broken.CarrierLabel"
+        android:title="@string/carrier_options" />
 
     <PreferenceScreen
         android:fragment="com.android.settings.broken.StatusBarClockStyle"
