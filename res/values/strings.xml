@@ -7033,6 +7033,7 @@
 
     <string name="primary_sub_select_title">Default 4G/3G Subscription</string>
     <string name="select_sim_card">Select SIM card</string>
+
     <!-- Title of setting that controls gesture to open camera [CHAR LIMIT=40] -->
     <string name="camera_gesture_title">Double twist for camera</string>
 
@@ -7064,4 +7065,5 @@
 
     <!-- Description of feature to change color setting for the display [CHAR LIMIT=NONE] -->
     <string name="picture_color_mode_desc">Use sRGB</string>
+
 </resources>
