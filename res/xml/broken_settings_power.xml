@@ -62,10 +62,10 @@
         android:title="@string/power_menu_voice_title"
         android:defaultValue="false" />
 
-    <SwitchPreference
+    <!-- <SwitchPreference
         android:key="bugreport"
         android:title="@string/power_menu_bug_report_title"
-        android:defaultValue="false" />
+        android:defaultValue="false" /> -->
 
     <SwitchPreference
         android:key="silent"
