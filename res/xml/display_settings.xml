@@ -14,10 +14,11 @@
      limitations under the License.
 -->
 
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
-                  xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
-        android:title="@string/display_settings"
-        settings:keywords="@string/keywords_display">
+<PreferenceScreen 
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:settings="http://schemas.android.com/apk/res/com.android.settings" 
+        settings:keywords="@string/keywords_display" >
+        <PreferenceScreen android:layout="@layout/brokendisplay" android:key="od_brokendisplay" /> 
 
         <PreferenceScreen
                 android:key="brightness"

@@ -16,9 +16,9 @@
 
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
                   xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
-        android:title="@string/notification_settings"
         android:key="notification_settings"
         settings:keywords="@string/keywords_sounds_and_notifications">
+        <PreferenceScreen android:layout="@layout/brokensound" android:key="od_brokensound" />
 
     <PreferenceCategory
         android:key="sound"
