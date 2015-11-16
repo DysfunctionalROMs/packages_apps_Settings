@@ -1401,5 +1401,8 @@
     <string name="selinux_permissive_title">Permissive</string>
     <string name="selinux_enforcing_title">Enforcing</string>
     <string name="selinux_permissive_toast_title">Selinux set to permissive</string>
+    
+    <!-- NFC PreferenceCategory title -->
+    <string name="nfc_title_category">NFC</string>
 
 </resources>

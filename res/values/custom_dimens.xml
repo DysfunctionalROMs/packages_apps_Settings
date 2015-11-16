@@ -30,4 +30,6 @@
     <dimen name="qs_tile_dragged_z">10dp</dimen>
     
     <dimen name="fab_line_width">2dp</dimen>
+    
+    <dimen name="oval_notification_size">26dp</dimen>
 </resources>
