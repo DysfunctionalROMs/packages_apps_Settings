@@ -16,7 +16,7 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
     <!-- BrokenOTA -->
-    <string name="slimota_title">Broken Updates</string>
+    <string name="brokenota_title">Broken Updates</string>
     
     <!-- About Broken -->
     <string name="broken_menu_about">About Broken</string>

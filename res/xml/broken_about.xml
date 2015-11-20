@@ -18,12 +18,12 @@
 
 <!-- Broken OTA -->
 <PreferenceScreen
-       android:key="slimota"
-       android:title="@string/slimota_title" >
+       android:key="brokenota"
+       android:title="@string/brokenota_title" >
        <intent
            android:action="android.intent.action.MAIN"
-           android:targetPackage="com.fusionjack.slimota"
-           android:targetClass="com.fusionjack.slimota.MainActivity" />
+           android:targetPackage="com.fusionjack.brokenota"
+           android:targetClass="com.fusionjack.brokenota.MainActivity" />
 </PreferenceScreen>
 
 <PreferenceScreen android:title="Google+">
