@@ -30,7 +30,7 @@
     <string name="supersu_title">SuperSU</string>
 
     <!-- BrokenOTA -->
-    <string name="slimota_title">Broken Updates</string>
+    <string name="brokenota_title">Broken Updates</string>
 
     <!-- Broken TWEAKS -->
     <string name="header_category_broken">Customizations</string>

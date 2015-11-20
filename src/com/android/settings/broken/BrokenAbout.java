@@ -30,8 +30,9 @@ import com.android.settings.Utils;
 
 public class BrokenAbout extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener {
-		
-	private static final String KEY_SLIM_OTA = "slimota";
+			
+	private static final String LOG_TAG = "BrokenAbout";	
+	private static final String KEY_SLIM_OTA = "brokenota";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
