@@ -38,8 +38,8 @@
     <color name="theme_accent">#ff009688</color>
     
     <!-- Expanded desktop -->
-    <drawable name="expanded_item_bg_activated">#ffEEEEEE</drawable>
-    <drawable name="expanded_item_bg">@android:color/background_light</drawable>
+    <drawable name="expanded_item_bg_activated">@color/card_background</drawable>
+    <drawable name="expanded_item_bg">@color/card_background</drawable>
     <color name="expanded_button_color_normal">#4CAF50</color>
     <color name="expanded_button_color_close">#F44336</color>
     
