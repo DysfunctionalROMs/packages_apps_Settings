@@ -61,6 +61,12 @@
         android:title="@string/recents_show_searchbar"
         android:summary="@string/recents_show_searchbar_summary"
         android:defaultValue="false" />
+        
+    <com.android.settings.broken.SystemSettingSwitchPreference
+        android:key="recents_full_screen"
+        android:title="@string/recents_show_fullscreen"
+        android:summary="@string/recents_fullscreen_summary"
+        android:defaultValue="false" />
 
     </PreferenceCategory>
 

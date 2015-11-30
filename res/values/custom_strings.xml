@@ -122,7 +122,7 @@
     
     <!-- Broken Pieces -->
     <string name="status_bar_screen_title">Status bar</string>
-    <string name="navigation_bar_screen_title">Navigation bar</string>
+    <string name="navigation_bar_screen_title">Navigation</string>
     <string name="gestures_title">Gestures</string>
     <string name="lockscreen_title">Lock screen</string>
     <string name="power_menu_title">Power menu</string>
@@ -499,5 +499,9 @@
     <!-- Quick Unlock -->
     <string name="unlock_quick_unlock_control_title">Quick unlock</string>
     <string name="unlock_quick_unlock_control_summary">Unlock automatically when the correct PIN/password is entered</string>
+    
+    <!-- Full screen recents -->
+    <string name="recents_show_fullscreen">Fullscreen Recents</string>
+    <string name="recents_fullscreen_summary">Enable immersive mode for recents screen</string>
 
 </resources>
