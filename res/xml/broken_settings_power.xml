@@ -27,6 +27,11 @@
         android:key="reboot"
         android:title="@string/power_menu_reboot_title"
         android:defaultValue="true" />
+        
+    <SwitchPreference
+        android:key="screenrecord"
+        android:title="@string/power_menu_screenrecord_title"
+        android:defaultValue="false" />
 
     <SwitchPreference
         android:key="screenshot"
