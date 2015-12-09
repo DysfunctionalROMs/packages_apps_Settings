@@ -84,6 +84,17 @@
                 android:fragment="com.android.settings.broken.BrokenSettings" 
                 android:icon="@drawable/ic_broken_settings"
                 />
+                
+        <!-- Kernel Auditor App -->
+        <dashboard-tile
+                android:id="@+id/kernel_auditor"
+                android:icon="@drawable/ic_settings_performance"
+                android:title="@string/performance_settings">
+                <intent
+                    android:action="android.intent.action.MAIN"
+                    android:targetPackage="com.grarak.kerneladiutor"
+                    android:targetClass="com.grarak.kerneladiutor.MainActivity" />
+        </dashboard-tile>
 
         <dashboard-tile
                 android:id="@+id/bitsyko_layers"
