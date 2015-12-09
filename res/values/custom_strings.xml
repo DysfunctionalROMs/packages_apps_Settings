@@ -74,5 +74,8 @@
     
     <!-- Broken Walls -->
     <string name="brokenwalls_title">BrokenWalls</string>
+    
+    <!-- Kernel Adiutor -->
+    <string name="performance_settings">Performance</string>
 
 </resources>
