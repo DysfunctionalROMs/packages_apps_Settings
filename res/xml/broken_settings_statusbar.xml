@@ -46,6 +46,14 @@
         android:title="@string/status_bar_notif_count_title"
         android:summary="@string/status_bar_notif_count_summary"
         android:defaultValue="false" />
+        
+    <PreferenceScreen
+            android:title="@string/status_bar_icon_blacklist_title"
+            android:summary="@string/status_bar_icon_blacklist_summary" >
+        <intent android:action="android.intent.action.MAIN"
+                android:targetPackage="com.android.systemui"
+                android:targetClass="com.android.systemui.tuner.TunerActivity" />
+    </PreferenceScreen>
 
     <PreferenceScreen
 	    android:key="network_traffic_state"
@@ -88,6 +96,14 @@
         android:title="@string/status_bar_custom_header_title"
         android:summary="@string/status_bar_custom_header_summary"
         android:defaultValue="false"/>
+        
+    <PreferenceScreen
+                android:title="@string/quick_settings_title"
+                android:summary="@string/quick_settings_summary" >
+            <intent android:action="android.intent.action.MAIN"
+                    android:targetPackage="com.android.systemui"
+                    android:targetClass="com.android.systemui.tuner.QsActivity" />
+    </PreferenceScreen>
 
     </PreferenceCategory>
 
