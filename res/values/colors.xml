@@ -108,6 +108,8 @@
     <color name="ga_gesture_color">@android:color/holo_blue_light</color>
     
     <!-- Qs tiles -->
-    <color name="qs_tile_tint_color">#FF009587</color>
+    <color name="qs_tile_tint_color">@color/col_accnt</color>
+    <color name="qs_text_color">@color/list_item_title</color>
+    <color name="qs_tile_default_background_color">@color/cardlayout_bg</color>
 
 </resources>
