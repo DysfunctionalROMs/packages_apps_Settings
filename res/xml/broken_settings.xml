@@ -15,6 +15,12 @@
                android:targetPackage="com.broken.BrokenWalls"
                android:targetClass="com.broken.BrokenWalls.brokenwalls" />
     </PreferenceScreen>
+    
+    <PreferenceScreen
+        android:key="expanded_desktop"
+        android:title="@string/expanded_desktop_title"
+        android:summary="@string/expanded_desktop_summary"
+        android:fragment="com.android.settings.applications.ExpandedDesktopPreferenceFragment" />
 
     <PreferenceScreen
         android:key="gestures_general_category"
