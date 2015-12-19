@@ -33,12 +33,15 @@ public class BrokenAbout extends SettingsPreferenceFragment implements
 			
 	private static final String LOG_TAG = "BrokenAbout";	
 	private static final String KEY_SLIM_OTA = "brokenota";
+    private static final String KEY_DEVICE_MAINTAINER = "device_maintainer";
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         addPreferencesFromResource(R.xml.broken_about);
+
+        setMaintainerSummary(KEY_DEVICE_MAINTAINER, "ro.broken.maintainer");
         
         // Only the owner should see the Updater settings, if it exists
         if (UserHandle.myUserId() == UserHandle.USER_OWNER) {
@@ -86,6 +89,28 @@ public class BrokenAbout extends SettingsPreferenceFragment implements
         return false;
     }
     
+    private void setMaintainerSummary(String preference, String property) {
+        try {
+            String maintainers = SystemProperties.get(property,
+                    getResources().getString(R.string.device_info_default));
+            findPreference(preference).setTitle(maintainers);
+            if (maintainers.contains(",")) {
+                findPreference(preference).setTitle(
+                        getResources().getString(R.string.device_maintainers));
+            }
+        } catch (RuntimeException e) {
+            // No recovery
+        }
+    }
+
+    private void setExplicitValueSummary(String preference, String value) {
+        try {
+            findPreference(preference).setSummary(value);
+        } catch (RuntimeException e) {
+            // No recovery
+        }
+    }
+
     @Override
     protected int getMetricsCategory() {
         return InstrumentedFragment.BROKENABOUT;
