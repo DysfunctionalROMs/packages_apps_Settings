@@ -48,4 +48,14 @@
 	    android:summary="Lead Developer for Broken"/>
     </PreferenceCategory>
 
+    <!-- Device Maintainers -->
+    <PreferenceCategory
+        android:key="category_broken_maintainers"
+        android:title="Maintainers">
+    <Preference 
+        android:key="device_maintainer"
+                style="?android:preferenceInformationStyle"
+        android:title="@string/device_maintainer"
+        android:summary="@string/broken_device_maintainer" />
+    </PreferenceCategory>
 </PreferenceScreen>

@@ -121,7 +121,12 @@
     
     <!-- About Broken -->
     <string name="broken_menu_about">About Broken</string>
-    
+   
+    <!-- About Broken screen, device maintainer name -->
+    <string name="device_maintainer">Device maintainer</string>
+    <string name="device_maintainers">Device maintainers</string>
+    <string name="broken_device_maintainer">Device maintainer</string>
+ 
     <!-- Broken Pieces -->
     <string name="status_bar_screen_title">Status bar</string>
     <string name="navigation_bar_screen_title">Navigation</string>
