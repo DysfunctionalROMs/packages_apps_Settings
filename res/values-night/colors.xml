@@ -3,5 +3,11 @@
     <color name="card_background">#000000</color>
     <color name="lock_pattern_view_regular_color">@*android:color/secondary_text_default_material_dark</color>
     <color name="switchbar_background_color">#ff2c3235</color>
+    
+    <!-- QS -->
+    <color name="col_accnt">#ffffff</color>
+    <color name="list_item_title">#ffeeeeee</color>
+    <color name="cardlayout_bg">#ff424242</color>
+    <color name="qs_settings_background">#000000</color>
 
 </resources>
