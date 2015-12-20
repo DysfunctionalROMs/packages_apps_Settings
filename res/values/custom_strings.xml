@@ -847,6 +847,7 @@
     <string name="qs_advanced_location_title">Advanced location settings</string>
     <string name="qs_advanced_location_summary">Enable advanced settings for location in quick settings</string>
     <string name="quick_settings_reset_message">Reset quick settings tiles?</string>
+    <string name="qs_tile_screenrecord">Screenrecord</string>
     
     <!-- ADB debugging notifications -->
     <string name="enable_adb_custom">Android debugging</string>
