@@ -28,15 +28,15 @@ ifneq ($(INCREMENTAL_BUILDS),)
     LOCAL_JACK_ENABLED := incremental
 endif
 
-include frameworks/opt/setupwizard/navigationbar/common.mk
-include frameworks/opt/setupwizard/library/common.mk
-include frameworks/base/packages/SettingsLib/common.mk
-
 LOCAL_AAPT_FLAGS := \
     --auto-add-overlay \
     --extra-packages android.support.v7.cardview
 
 LOCAL_JAVA_LIBRARIES += org.cyanogenmod.hardware
+
+include frameworks/opt/setupwizard/navigationbar/common.mk
+include frameworks/opt/setupwizard/library/common.mk
+include frameworks/base/packages/SettingsLib/common.mk
 
 include $(BUILD_PACKAGE)
 
