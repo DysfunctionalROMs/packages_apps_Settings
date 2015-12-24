@@ -1334,6 +1334,7 @@ public final class Utils {
             default:
                 return res.getString(R.string.radioInfo_unknown);
         }
+    }
 
     public static Context createPackageContext(Context context, String packageName) {
         try {
