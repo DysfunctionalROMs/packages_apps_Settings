@@ -1744,4 +1744,10 @@
     <!-- App details: open play store link if app is user installed -->
     <string name="app_play_store">Google Play</string>
 
+    <!-- Battery notifications -->
+    <string name="battery_saver_notif_title">Battery saver notification</string>
+    <string name="battery_saver_notif_summary">Show battery saver notification when enabled</string>
+    <string name="battery_low_notif_title">Low battery notification</string>
+    <string name="battery_low_notif_summary">Show low battery notification when enabled</string>
+
 </resources>
