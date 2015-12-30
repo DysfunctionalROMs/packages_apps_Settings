@@ -38,7 +38,7 @@
     <string name="button_settings_title">Hardware Keys</string>
 
     <!-- Button settings -->
-    <string name="button_power_menu_settings_title">Toggle Advanced Reboot </string>
+    <string name="button_power_menu_settings_title">Advanced reboot and various others </string>
 
     <!-- Power menu settings -->
     <string name="power_menu_show_advanced_reboot_title">Advanced reboot menu</string>
@@ -361,7 +361,7 @@
     <string name="lockscreen_enable_power_menu_title">Show power menu lock screen</string>
     <string name="lockscreen_enable_power_menu_summary">This option will only disable the power menu on secure lock screens</string>
     <string name="power_options_switches">Power Options</string>
-    <string name="advanced_reboot_toggle">Advanced Reboot</string>
+    <string name="advanced_reboot_toggle">Other Options</string>
     
     <!-- Expanded desktop -->
     <string name="power_menu_expanded_desktop">Expanded desktop</string>

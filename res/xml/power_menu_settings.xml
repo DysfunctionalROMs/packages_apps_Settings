@@ -22,4 +22,10 @@ limitations under the License.
         android:key="power_menu_show_advanced_reboot"
         android:title="@string/power_menu_show_advanced_reboot_title"
         android:summary="@string/power_menu_show_advanced_reboot_summary" />
+        
+    <SlimSeekBarPreference
+        android:key="on_the_go_alpha"
+        android:title="@string/onthego_alpha_title"
+        android:summary="@string/onthego_alpha_summary" />
+        
 </PreferenceScreen>
