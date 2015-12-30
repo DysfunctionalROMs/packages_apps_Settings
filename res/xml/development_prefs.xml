@@ -55,6 +55,10 @@
         android:title="@string/runningservices_settings_title"
         android:summary="@string/runningservices_settings_summary"
         android:fragment="com.android.settings.applications.RunningServices" />
+        
+    <Preference 
+        android:key="restart_systemui"
+        android:title="@string/restart_systemui" />
 
     <PreferenceCategory android:key="debug_debugging_category"
             android:title="@string/debug_debugging_category">
