@@ -1185,6 +1185,9 @@
     <string name="status_bar_custom_header_shadow_summary">For better text/icon visibility on bright images</string>
     <string name="unit_percent">\u0025</string>
     
+    <!-- Memory -->
+    <string name="memory_startup_apps_title">Apps started on boot</string>
+    
     <!-- Names of categories of app ops tabs - extension of AOSP -->
     <string name="app_ops_categories_location">Location</string>
     <string name="app_ops_categories_personal">Personal</string>
