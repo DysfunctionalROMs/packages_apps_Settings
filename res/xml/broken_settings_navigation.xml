@@ -54,6 +54,12 @@
 	    android:summary="@string/custom_recents_settings_screen_summary" >
 
     <com.android.settings.broken.SystemSettingSwitchPreference
+        android:key="systemui_recents_mem_display"
+        android:title="@string/recents_show_membar_title"
+        android:summary="@string/recents_show_membar_summary"
+        android:defaultValue="false" />
+
+    <com.android.settings.broken.SystemSettingSwitchPreference
         android:key="only_show_running_tasks"
         android:title="@string/show_running_tasks_title"
         android:summary="@string/show_running_tasks_summary"

@@ -1447,4 +1447,8 @@
     <!-- Power menu and dialogs transparency -->
     <string name="power_menu_transparency">Power/reboot menu transparency</string>
 
+    <!-- Membar recents -->
+    <string name="recents_show_membar_title">Memory bar</string>
+    <string name="recents_show_membar_summary">Show a bar with the device\'s available memory</string>
+
 </resources>
