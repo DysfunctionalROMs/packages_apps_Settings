@@ -27,14 +27,14 @@
         android:title="@string/gestures_title" />
         
     <PreferenceScreen
-        android:id="@+id/button_settings"
-        android:title="@string/button_settings_title"
-        android:fragment="com.android.settings.broken.ButtonSettings" />
-        
-    <PreferenceScreen
         android:key="gesture_anywhere"
         android:fragment="com.android.settings.broken.fragments.GestureAnywhereSettings"
         android:title="@string/gesture_anywhere_title" />
+        
+    <PreferenceScreen
+        android:id="@+id/button_settings"
+        android:title="@string/button_settings_title"
+        android:fragment="com.android.settings.broken.ButtonSettings" />
         
     <PreferenceScreen
         android:id="@+id/initD"
