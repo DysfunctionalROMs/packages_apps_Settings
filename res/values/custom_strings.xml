@@ -91,6 +91,6 @@
     <string name="edge_gesture_service_summary">Don\'t send touch events for navigation and status bar gestures to apps</string>
 
     <!-- Gestures -->
-    <string name="gesture_settings_title">Gestures</string>
+    <string name="gesture_settings_title">S-O-G</string>
 
 </resources>
