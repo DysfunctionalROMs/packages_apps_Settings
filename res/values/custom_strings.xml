@@ -802,7 +802,7 @@
     <string name="navigation_bar_reset_message">Delete current settings and restore the default layout?</string>
 
     <!-- Gestures -->
-    <string name="gesture_settings_title">Gestures</string>
+    <string name="gesture_settings_title">S-O-G</string>
     
     <!-- Navigation bar button color -->
     <string name="navbar_button_tint_title">Button color</string>
