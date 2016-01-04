@@ -103,9 +103,6 @@
     <color name="icon_accent">#ffabffec</color>
 
     <color name="storage_summary_title_color">#ff607d8b</color>
-
-    <!-- Gesture Anywhere -->
-    <color name="ga_gesture_color">@android:color/holo_blue_light</color>
     
     <!-- Qs tiles -->
     <color name="qs_tile_tint_color">@color/col_accnt</color>
