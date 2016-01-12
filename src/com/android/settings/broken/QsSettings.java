@@ -15,23 +15,57 @@
  */
 package com.android.settings.broken;
 
+import android.content.Context;
+import android.content.ContentResolver;
+import android.content.res.Resources;
 import android.os.Bundle;
+import android.os.UserHandle;
+import android.preference.SwitchPreference;
+import android.preference.ListPreference;
 import android.preference.Preference;
+import android.preference.PreferenceCategory;
+import android.preference.PreferenceScreen;
+import android.preference.Preference.OnPreferenceChangeListener;
+import android.provider.Settings;
+
+import java.util.Locale;
+import android.text.TextUtils;
+import android.view.View;
 
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.broken.qs.QSTiles;
 import com.android.internal.logging.MetricsLogger;
+import com.android.internal.widget.LockPatternUtils;
 
-public class QsSettings extends SettingsPreferenceFragment {
+public class QsSettings extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
+	
+	private static final String PREF_BLOCK_ON_SECURE_KEYGUARD = "block_on_secure_keyguard";
+	
     private Preference mQSTiles;
+    private SwitchPreference mBlockOnSecureKeyguard;
+
+    private static final int MY_USER_ID = UserHandle.myUserId();
 
     @Override
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
+        
         addPreferencesFromResource(R.xml.qs_settings);
-
+        final ContentResolver resolver = getActivity().getContentResolver();
+        final LockPatternUtils lockPatternUtils = new LockPatternUtils(getActivity());
+        
+        PreferenceScreen prefSet = getPreferenceScreen();
         mQSTiles = findPreference("qs_order");
+
+        mBlockOnSecureKeyguard = (SwitchPreference) findPreference(PREF_BLOCK_ON_SECURE_KEYGUARD);
+        if (lockPatternUtils.isSecure(MY_USER_ID)) {
+            mBlockOnSecureKeyguard.setChecked(Settings.Secure.getInt(getContentResolver(),
+                    Settings.Secure.STATUS_BAR_LOCKED_ON_SECURE_KEYGUARD, 1) == 1);
+            mBlockOnSecureKeyguard.setOnPreferenceChangeListener(this);
+        } else if (mBlockOnSecureKeyguard != null) {
+            prefSet.removePreference(mBlockOnSecureKeyguard);
+        }
     }
 
     @Override
@@ -42,6 +76,23 @@ public class QsSettings extends SettingsPreferenceFragment {
         mQSTiles.setSummary(getResources().getQuantityString(R.plurals.qs_tiles_summary,
                     qsTileCount, qsTileCount));
     }
+    
+    @Override
+    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+        return super.onPreferenceTreeClick(preferenceScreen, preference);
+    }
+
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object objValue) {
+        if (preference == mBlockOnSecureKeyguard) {
+            Settings.Secure.putInt(getContentResolver(),
+                    Settings.Secure.STATUS_BAR_LOCKED_ON_SECURE_KEYGUARD,
+                    (Boolean) objValue ? 1 : 0);
+            return true;
+        }
+        return false;
+    }
+
     
     @Override
     protected int getMetricsCategory() {

@@ -798,8 +798,8 @@
     <string name="less_notification_sounds_5m">5 minutes</string>
 
     <!-- QS -->
-    <string name="qs_settings_title">Tiles</string>
-    <string name="qs_category_title">Quick Settings</string>
+    <string name="qs_settings_title">Quick Settings</string>
+    <string name="qs_category_title">Quick Settings Options</string>
     <string name="qs_order_title">Select and order tiles</string>
     <string name="add_qs">Add new tile</string>
     <string name="cast_screen">Cast screen</string>
@@ -1008,5 +1008,9 @@
     <string name="network_traffic_color_reset">Reset color</string>
     <string name="network_traffic_color_reset_message">Reset network traffic color to default?</string>
     <string name="ok">OK</string>
+    
+    <!-- Quick settings disable on lockscreen -->
+    <string name="block_on_secure_keyguard_title">Disable quick settings</string>
+    <string name="block_on_secure_keyguard_summary">Disables quick settings in the keyguard for a secure lock only</string>
     
 </resources>

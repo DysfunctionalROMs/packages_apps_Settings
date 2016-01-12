@@ -42,6 +42,12 @@
             android:key="qs_use_four_columns"
             android:title="@string/qs_four_columns_title"
             android:defaultValue="false" />
+            
+        <SwitchPreference
+            android:key="block_on_secure_keyguard"
+            android:title="@string/block_on_secure_keyguard_title"
+            android:summary="@string/block_on_secure_keyguard_summary"
+            android:persistent="false" />
 
     </PreferenceCategory>
 
