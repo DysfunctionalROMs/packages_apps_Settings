@@ -82,5 +82,8 @@
     
     <!-- Kernel Adiutor -->
     <string name="performance_settings">Performance</string>
+    
+    <!-- Display : Rotation -->
+    <string name="display_rotation_title">Rotation</string>
 
 </resources>
