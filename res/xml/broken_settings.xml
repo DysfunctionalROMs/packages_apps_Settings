@@ -5,6 +5,16 @@
         xmlns:settings="http://schemas.android.com/apk/res/com.android.settings" >
         <PreferenceScreen android:layout="@layout/brokenpieces" android:key="od_brokenpieces" />
         
+    <!-- Broken Walls -->
+    <PreferenceScreen
+           android:id="@+id/brokenwalls"
+           android:title="@string/brokenwalls_title" >
+           <intent
+               android:action="android.intent.action.SET_WALLPAPER"
+               android:targetPackage="com.broken.BrokenWalls"
+               android:targetClass="com.broken.BrokenWalls.brokenwalls" />
+    </PreferenceScreen>
+    
     <PreferenceScreen
         android:key="status_bar_general_category"
         android:title="@string/status_bar_screen_title" />
@@ -28,15 +38,5 @@
     <PreferenceScreen
         android:key="volume_rocker_general_category"
         android:title="@string/volume_rocker_screen_title" />
-        
-    <!-- Broken Walls -->
-    <PreferenceScreen
-           android:id="@+id/brokenwalls"
-           android:title="@string/brokenwalls_title" >
-           <intent
-               android:action="android.intent.action.SET_WALLPAPER"
-               android:targetPackage="com.broken.BrokenWalls"
-               android:targetClass="com.broken.BrokenWalls.brokenwalls" />
-    </PreferenceScreen>
 
 </PreferenceScreen>

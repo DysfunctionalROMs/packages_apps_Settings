@@ -26,7 +26,6 @@ import com.android.settings.HomeSettings;
 import com.android.settings.PrivacySettings;
 import com.android.settings.ScreenPinningSettings;
 import com.android.settings.SecuritySettings;
-import com.android.settings.WallpaperTypeSettings;
 import com.android.settings.WifiCallingSettings;
 import com.android.settings.WirelessSettings;
 import com.android.settings.accessibility.AccessibilitySettings;
@@ -116,9 +115,6 @@ public final class Ranking {
 
         // Display
         sRankMap.put(DisplaySettings.class.getName(), RANK_DISPLAY);
-
-        // Wallpapers
-        sRankMap.put(WallpaperTypeSettings.class.getName(), RANK_WALLPAPER);
 
         // Notifications
         sRankMap.put(NotificationSettings.class.getName(), RANK_NOTIFICATIONS);

@@ -31,6 +31,6 @@ public class PowerMenuActions extends SettingsPreferenceFragment implements
     
     @Override
     protected int getMetricsCategory() {
-        return MetricsLogger.BROKENPOWER;
+        return MetricsLogger.APPLICATION;
     }
 }
