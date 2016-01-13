@@ -289,10 +289,18 @@ public class SimStatus extends SettingsPreferenceFragment {
             networktype = "4G";
         }
 
+//#TODO
         if (QtiImsExtUtils.isCarrierOneSupported()) {
             if (TelephonyManager.NETWORK_TYPE_LTE == actualDataNetworkType ||
                     TelephonyManager.NETWORK_TYPE_LTE == actualVoiceNetworkType) {
                 if (mTelephonyManager.isImsRegisteredForSubscriber(subId)) {
+//TODO end
+        PersistableBundle carrierConfig = mCarrierConfigManager.getConfigForSubId(subId);
+        if (carrierConfig != null && carrierConfig.getBoolean(
+            "config_carrier_specific_network_type_display", false)) {
+            if (TelephonyManager.NETWORK_TYPE_LTE == actualDataNetworkType ||
+                    TelephonyManager.NETWORK_TYPE_LTE == actualVoiceNetworkType) {
+                if (mTelephonyManager.isImsRegistered()) {
                     networktype = getResources().
                             getString(R.string.lte_data_and_voice_calling_enabled);
                 } else {
