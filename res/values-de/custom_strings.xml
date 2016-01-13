@@ -15,9 +15,6 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <!-- dashboard tiles-->
-    <string name="button_settings_title">Tasten</string>
-
     <!-- Button settings -->
     <string name="button_power_menu_settings_title">Ein&#47;Aus Menü</string>
     <string name="button_power_menu_settings_summary">Ein&#47;Aus Menü anpassen</string>
