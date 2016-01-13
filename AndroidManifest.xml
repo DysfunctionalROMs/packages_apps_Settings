@@ -1816,7 +1816,7 @@
                   android:excludeFromRecents="true"
                   android:exported="true"
                   android:permission="android.permission.MANAGE_USB"
-                  android:theme="@android:style/Theme.Material.Light.Dialog.NoActionBar">
+                  android:theme="@android:style/Theme.Material.Dialog.Alert">
         </activity>
 
         <activity android:name=".bluetooth.RequestPermissionHelperActivity"
