@@ -711,5 +711,9 @@
     <string name="recents_panel_settings">Recent apps settings</string>
     <string name="recents_show_searchbar">Enable search bar in recents menu</string>
     <string name="recents_show_searchbar_summary">Enable/disable the search bar in the recents menu</string>
+    
+    <!-- Lockscreen Torch -->
+    <string name="keyguard_torch_title">Lockscreen torch</string>
+    <string name="keyguard_torch_summary">Longpress power button with screen off turns on torch</string>
 
 </resources>

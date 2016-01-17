@@ -28,6 +28,12 @@
             android:key="lockscreen_wallpaper_clear"
             android:title="@string/lockscreen_wallpaper_clear_title"
             android:persistent="false"/>
+            
+        <com.android.settings.broken.SystemSettingSwitchPreference
+            android:key="keyguard_toggle_torch"
+            android:title="@string/keyguard_torch_title"
+            android:summary="@string/keyguard_torch_summary"
+            android:defaultValue="false" />
 
     </PreferenceCategory>
 

@@ -25,10 +25,13 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.Preference;
+import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
 
 import com.android.settings.R;
+import com.android.settings.broken.SystemSettingSwitchPreference;
 import com.android.settings.SettingsPreferenceFragment;
+import com.android.settings.Utils;
 
 public class LockScreenSettings extends SettingsPreferenceFragment {
     public static final int IMAGE_PICK = 1;
@@ -38,6 +41,7 @@ public class LockScreenSettings extends SettingsPreferenceFragment {
 
     private Preference mSetWallpaper;
     private Preference mClearWallpaper;
+    private SystemSettingSwitchPreference mLsTorch;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -46,6 +50,14 @@ public class LockScreenSettings extends SettingsPreferenceFragment {
 
         mSetWallpaper = (Preference) findPreference(KEY_WALLPAPER_SET);
         mClearWallpaper = (Preference) findPreference(KEY_WALLPAPER_CLEAR);
+        
+        PreferenceCategory generalCategory = (PreferenceCategory) findPreference("lockscreen_gen");
+        PreferenceScreen prefScreen = getPreferenceScreen();
+        
+        mLsTorch = (SystemSettingSwitchPreference) prefScreen.findPreference("keyguard_toggle_torch");
+        if (!Utils.deviceSupportsFlashLight(getActivity())) {
+            generalCategory.removePreference(mLsTorch);
+        }
     }
 
     @Override
