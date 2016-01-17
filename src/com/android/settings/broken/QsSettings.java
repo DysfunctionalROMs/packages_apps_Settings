@@ -37,13 +37,16 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.broken.qs.QSTiles;
 import com.android.internal.logging.MetricsLogger;
 import com.android.internal.widget.LockPatternUtils;
+import com.android.settings.broken.widget.SeekBarPreferenceCham;
 
 public class QsSettings extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
 	
 	private static final String PREF_BLOCK_ON_SECURE_KEYGUARD = "block_on_secure_keyguard";
+    private static final String PREF_QS_TRANSPARENT_SHADE = "qs_transparent_shade";
 	
     private Preference mQSTiles;
     private SwitchPreference mBlockOnSecureKeyguard;
+    private SeekBarPreferenceCham mQSShadeAlpha;
 
     private static final int MY_USER_ID = UserHandle.myUserId();
 
@@ -66,6 +69,14 @@ public class QsSettings extends SettingsPreferenceFragment implements OnPreferen
         } else if (mBlockOnSecureKeyguard != null) {
             prefSet.removePreference(mBlockOnSecureKeyguard);
         }
+
+        // QS shade alpha
+        mQSShadeAlpha =
+                (SeekBarPreferenceCham) prefSet.findPreference(PREF_QS_TRANSPARENT_SHADE);
+        int qSShadeAlpha = Settings.System.getInt(getContentResolver(),
+                Settings.System.QS_TRANSPARENT_SHADE, 255);
+        mQSShadeAlpha.setValue(qSShadeAlpha / 1);
+        mQSShadeAlpha.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -88,6 +99,11 @@ public class QsSettings extends SettingsPreferenceFragment implements OnPreferen
             Settings.Secure.putInt(getContentResolver(),
                     Settings.Secure.STATUS_BAR_LOCKED_ON_SECURE_KEYGUARD,
                     (Boolean) objValue ? 1 : 0);
+            return true;
+        } else if (preference == mQSShadeAlpha) {
+            int alpha = (Integer) objValue;
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.QS_TRANSPARENT_SHADE, alpha * 1);
             return true;
         }
         return false;
