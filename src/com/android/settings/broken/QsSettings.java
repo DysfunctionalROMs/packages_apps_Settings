@@ -43,10 +43,12 @@ public class QsSettings extends SettingsPreferenceFragment implements OnPreferen
 	
 	private static final String PREF_BLOCK_ON_SECURE_KEYGUARD = "block_on_secure_keyguard";
     private static final String PREF_QS_TRANSPARENT_SHADE = "qs_transparent_shade";
+    private static final String PREF_QS_TRANSPARENT_HEADER = "qs_transparent_header";
 	
     private Preference mQSTiles;
     private SwitchPreference mBlockOnSecureKeyguard;
     private SeekBarPreferenceCham mQSShadeAlpha;
+    private SeekBarPreferenceCham mQSHeaderAlpha;
 
     private static final int MY_USER_ID = UserHandle.myUserId();
 
@@ -77,6 +79,14 @@ public class QsSettings extends SettingsPreferenceFragment implements OnPreferen
                 Settings.System.QS_TRANSPARENT_SHADE, 255);
         mQSShadeAlpha.setValue(qSShadeAlpha / 1);
         mQSShadeAlpha.setOnPreferenceChangeListener(this);
+
+        // QS header alpha
+        mQSHeaderAlpha =
+                (SeekBarPreferenceCham) prefSet.findPreference(PREF_QS_TRANSPARENT_HEADER);
+        int qSHeaderAlpha = Settings.System.getInt(getContentResolver(),
+                Settings.System.QS_TRANSPARENT_HEADER, 255);
+        mQSHeaderAlpha.setValue(qSHeaderAlpha / 1);
+        mQSHeaderAlpha.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -104,6 +114,11 @@ public class QsSettings extends SettingsPreferenceFragment implements OnPreferen
             int alpha = (Integer) objValue;
             Settings.System.putInt(getContentResolver(),
                     Settings.System.QS_TRANSPARENT_SHADE, alpha * 1);
+            return true;
+        } else if (preference == mQSHeaderAlpha) {
+            int alpha = (Integer) objValue;
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.QS_TRANSPARENT_HEADER, alpha * 1);
             return true;
         }
         return false;

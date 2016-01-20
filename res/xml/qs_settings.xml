@@ -53,6 +53,15 @@
             settings:unitsLeft=""
             settings:unitsRight="@string/unit_percent"
             android:persistent="false" />
+
+        <com.android.settings.broken.widget.SeekBarPreferenceCham
+            android:key="qs_transparent_header"
+            android:title="@string/qs_transparent_header"
+            android:max="255"
+            settings:minimum="0"
+            settings:unitsLeft=""
+            settings:unitsRight="@string/unit_percent"
+            android:persistent="false" />
             
         <SwitchPreference
             android:key="block_on_secure_keyguard"
