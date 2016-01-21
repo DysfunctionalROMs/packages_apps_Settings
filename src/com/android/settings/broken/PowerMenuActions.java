@@ -30,7 +30,6 @@ import android.preference.SwitchPreference;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
 
-import com.android.internal.logging.MetricsLogger;
 import com.android.settings.R;
 import com.android.internal.util.cm.PowerMenuConstants;
 import static com.android.internal.util.cm.PowerMenuConstants.*;
@@ -339,10 +338,5 @@ public class PowerMenuActions extends PreferenceFragment implements
         Intent u = new Intent();
         u.setAction(Intent.UPDATE_POWER_MENU);
         mContext.sendBroadcastAsUser(u, UserHandle.ALL);
-    }
-    
-    @Override
-    protected int getMetricsCategory() {
-        return MetricsLogger.APPLICATION;
     }
 }
