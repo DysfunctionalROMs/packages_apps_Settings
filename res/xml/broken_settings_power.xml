@@ -89,4 +89,13 @@
         android:title="@string/power_menu_show_advanced_reboot_title"
         android:summary="@string/power_menu_show_advanced_reboot_summary" />
 
+    <com.android.settings.broken.widget.SeekBarPreferenceCham
+        android:key="transparent_power_menu"
+        android:title="@string/power_menu_transparency"
+        android:max="100"
+        settings:minimum="0"
+        settings:unitsLeft=""
+        settings:unitsRight="@string/unit_percent"
+        android:persistent="false" />
+
 </PreferenceScreen>

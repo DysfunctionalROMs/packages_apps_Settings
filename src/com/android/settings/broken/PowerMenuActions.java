@@ -31,6 +31,7 @@ import android.preference.SlimSeekBarPreference;
 import android.preference.SwitchPreference;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
+import com.android.settings.broken.widget.SeekBarPreferenceCham;
 
 import com.android.settings.R;
 import com.android.internal.util.cm.PowerMenuConstants;
@@ -47,6 +48,7 @@ public class PowerMenuActions extends PreferenceFragment implements
 	private static final String PREF_ON_THE_GO_ALPHA = "on_the_go_alpha";		
     private static final String PREF_SHOW_ADVANCED_REBOOT =
             "power_menu_show_advanced_reboot";
+    private static final String PREF_TRANSPARENT_POWER_MENU = "transparent_power_menu";
 
     private SwitchPreference mPowerPref;
     private SwitchPreference mRebootPref;
@@ -61,6 +63,7 @@ public class PowerMenuActions extends PreferenceFragment implements
     private SwitchPreference mSilentPref;
     private SwitchPreference mShowAdvancedReboot;
     private SlimSeekBarPreference mOnTheGoAlphaPref;
+    private SeekBarPreferenceCham mPowerMenuAlpha;
     
     private ContentResolver mResolver;
 
@@ -88,6 +91,14 @@ public class PowerMenuActions extends PreferenceFragment implements
         mOnTheGoAlphaPref.setDefault(50);
         mOnTheGoAlphaPref.setInterval(1);
         mOnTheGoAlphaPref.setOnPreferenceChangeListener(this);
+
+        // Power menu alpha
+        mPowerMenuAlpha =
+                (SeekBarPreferenceCham) findPreference(PREF_TRANSPARENT_POWER_MENU);
+        int powerMenuAlpha = Settings.System.getInt(mResolver,
+                Settings.System.TRANSPARENT_POWER_MENU, 100);
+        mPowerMenuAlpha.setValue(powerMenuAlpha / 1);
+        mPowerMenuAlpha.setOnPreferenceChangeListener(this);
 
         mAvailableActions = getActivity().getResources().getStringArray(
                 R.array.power_menu_actions_array);
@@ -262,7 +273,7 @@ public class PowerMenuActions extends PreferenceFragment implements
     
     @Override
     public boolean onPreferenceChange(Preference preference, Object objValue) {
-
+         
         if (preference == mShowAdvancedReboot) {
             boolean value = (Boolean) objValue;
             Settings.System.putInt(mResolver,
@@ -272,6 +283,11 @@ public class PowerMenuActions extends PreferenceFragment implements
             float val = Float.parseFloat((String) objValue);
             Settings.System.putFloat(mResolver, Settings.System.ON_THE_GO_ALPHA,
                     val / 100);
+            return true;
+        } else if (preference == mPowerMenuAlpha) {
+            int alpha = (Integer) objValue;
+            Settings.System.putInt(mResolver,
+                    Settings.System.TRANSPARENT_POWER_MENU, alpha * 1);
             return true;
         }
         return false;
