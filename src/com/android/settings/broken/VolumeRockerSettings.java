@@ -16,9 +16,11 @@ public class VolumeRockerSettings extends SettingsPreferenceFragment implements
         OnPreferenceChangeListener {
 
     private static final String VOLUME_ROCKER_WAKE = "volume_rocker_wake";
+    private static final String PREF_VOLBTN_SWAP = "button_swap_volume_buttons";
 		
     private SwitchPreference mVolumeRockerWake;
-
+    private SwitchPreference mVolBtnSwap;
+    
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +33,12 @@ public class VolumeRockerSettings extends SettingsPreferenceFragment implements
         int volumeRockerWake = Settings.System.getInt(getContentResolver(),
                 VOLUME_ROCKER_WAKE, 0);
         mVolumeRockerWake.setChecked(volumeRockerWake != 0);
+        
+        // volume swap
+        mVolBtnSwap = (SwitchPreference) findPreference(PREF_VOLBTN_SWAP);
+        mVolBtnSwap.setChecked(Settings.System.getInt(getContentResolver(),
+                Settings.System.SWAP_VOLUME_BUTTONS, 0) == 1);
+        mVolBtnSwap.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -40,8 +48,15 @@ public class VolumeRockerSettings extends SettingsPreferenceFragment implements
             boolean value = (Boolean) objValue;
             Settings.System.putInt(getContentResolver(), VOLUME_ROCKER_WAKE,
                     value ? 1 : 0);
-       }
-        return true;
+            return true;
+        } else if (preference == mVolBtnSwap) {
+            boolean value = (Boolean) objValue;
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.SWAP_VOLUME_BUTTONS,
+                    value ? 1 : 0);
+            return true;
+         }
+         return false;
     }
     
     @Override

@@ -11,6 +11,12 @@
         android:key="volume_rocker_wake"
         android:summary="@string/volume_rocker_wake_summary"
         android:title="@string/volume_rocker_wake_title" />
+        
+    <SwitchPreference
+        android:key="button_swap_volume_buttons"
+        android:title="@string/button_swap_volume_buttons_title"
+        android:summary="@string/button_swap_volume_buttons_summary" 
+        android:defaultValue="false" />
 
     </PreferenceCategory>
 
