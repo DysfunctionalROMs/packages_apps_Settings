@@ -24,6 +24,7 @@
         android:key="clock_style_pref"
         android:title="@string/status_bar_clock"
 	    android:summary="@string/status_bar_clock_summary" />
+	    
     </PreferenceCategory>
     
     <com.android.settings.broken.SystemSettingSwitchPreference
@@ -35,7 +36,8 @@
     <com.android.settings.broken.SystemSettingSwitchPreference
         android:key="status_bar_broken_logo"
         android:title="@string/status_bar_broken_logo_title"
-        android:summary="@string/status_bar_broken_logo_summary" />
+        android:summary="@string/status_bar_broken_logo_summary"
+        android:defaultValue="false"/>
         
     <PreferenceScreen
             android:title="@string/status_bar_icon_blacklist_title"
