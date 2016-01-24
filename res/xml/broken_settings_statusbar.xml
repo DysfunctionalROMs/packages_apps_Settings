@@ -63,6 +63,11 @@
                 android:targetPackage="com.android.systemui"
                 android:targetClass="com.android.systemui.tuner.TunerActivity" />
     </PreferenceScreen>
+    
+    <PreferenceScreen
+        android:id="@+id/qs_settings"
+        android:title="@string/qs_settings_title"
+        android:fragment="com.android.settings.broken.QsSettings" />
 
     <PreferenceCategory
         android:key="weather_clock_category"
@@ -82,11 +87,6 @@
         android:targetPackage="com.cyanogenmod.lockclock"
         android:targetClass="com.cyanogenmod.lockclock.preference.Preferences" />
     </PreferenceScreen>
-
-    <PreferenceScreen
-        android:id="@+id/qs_settings"
-        android:title="@string/qs_settings_title"
-        android:fragment="com.android.settings.broken.QsSettings" />
         
     </PreferenceCategory>
 
