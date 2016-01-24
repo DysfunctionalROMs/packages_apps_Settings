@@ -45,6 +45,6 @@ public class QsSettings extends SettingsPreferenceFragment {
     
     @Override
     protected int getMetricsCategory() {
-        return MetricsLogger.BROKEN_SETTINGS;
+        return MetricsLogger.APPLICATION;
     }
 }
