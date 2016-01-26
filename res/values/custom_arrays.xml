@@ -313,6 +313,7 @@
         <item>@string/shortcut_action_ring_vib_silent</item>
         <item>@string/shortcut_action_power</item>
         <item>@string/shortcut_action_screenshot</item>
+        <item>@string/shortcut_action_now_on_tap</item>
         <item>@string/shortcut_action_assist</item>
         <item>@string/shortcut_action_voice_search</item>
         <item>@string/shortcut_action_none</item>
@@ -333,6 +334,7 @@
         <item>**ring_vib_silent**</item>
         <item>**power**</item>
         <item>**screenshot**</item>
+        <item>**now_on_tap**</item>
         <item>**assist**</item>
         <item>**voice_search**</item>
         <item>**null**</item>
