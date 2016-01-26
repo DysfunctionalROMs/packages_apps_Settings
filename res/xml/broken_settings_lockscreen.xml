@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright (C) 2012 The CyanogenMod Project
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -29,6 +28,8 @@
             android:title="@string/lockscreen_wallpaper_clear_title"
             android:persistent="false"/>
             
+    </PreferenceCategory>
+            
         <com.android.settings.broken.SystemSettingSwitchPreference
             android:key="keyguard_toggle_torch"
             android:title="@string/keyguard_torch_title"
@@ -47,11 +48,10 @@
             android:summary="@string/lockscreen_enable_power_menu_summary"
             android:defaultValue="true" />
             
-        <Preference
+        <PreferenceScreen
             android:key="ls_weather"
             android:title="@string/lockscreen_weather_fragment_title"
-            android:summary="@string/lockscreen_weather_summary" />
-
-    </PreferenceCategory>
+            android:summary="@string/lockscreen_weather_summary" 
+            android:fragment="com.android.settings.broken.LockscreenWeather" />
 
 </PreferenceScreen>

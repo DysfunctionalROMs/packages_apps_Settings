@@ -43,7 +43,7 @@ public class LockScreenSettings extends SettingsPreferenceFragment {
     private Preference mSetWallpaper;
     private Preference mClearWallpaper;
     private SystemSettingSwitchPreference mLsTorch;
-    private Preference mLsWeather;
+    private PreferenceScreen mLsWeather;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -52,7 +52,7 @@ public class LockScreenSettings extends SettingsPreferenceFragment {
 
         mSetWallpaper = (Preference) findPreference(KEY_WALLPAPER_SET);
         mClearWallpaper = (Preference) findPreference(KEY_WALLPAPER_CLEAR);
-        mLsWeather = (Preference)findPreference(LSWEATHER);
+        mLsWeather = (PreferenceScreen)findPreference(LSWEATHER);
         
         PreferenceCategory generalCategory = (PreferenceCategory) findPreference("lockscreen_gen");
         PreferenceScreen prefScreen = getPreferenceScreen();

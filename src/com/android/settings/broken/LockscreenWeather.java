@@ -25,10 +25,12 @@ import android.preference.PreferenceFragment;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
 
-public class LockscreenWeatherFragment extends PreferenceFragment implements
+import com.android.settings.R;
+
+public class LockscreenWeather extends PreferenceFragment implements
         Preference.OnPreferenceChangeListener {
 
-    public LockscreenWeatherFragment(){}
+    public LockscreenWeather(){}
 
     private static final String PREF_CONDITION_ICON =
             "weather_condition_icon";
