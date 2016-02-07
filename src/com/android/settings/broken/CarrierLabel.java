@@ -75,13 +75,9 @@ public class CarrierLabel extends SettingsPreferenceFragment implements OnPrefer
         mShowCarrierLabel.setOnPreferenceChangeListener(this);
         mCustomCarrierLabel = (PreferenceScreen) prefSet.findPreference(CUSTOM_CARRIER_LABEL);
 
-        if (TelephonyManager.getDefault().isMultiSimEnabled()) {
-            prefSet.removePreference(mCustomCarrierLabel);
-        } else {
             updateCustomLabelTextSummary();
-        }
     }
-    
+
     @Override
     protected int getMetricsCategory() {
         return MetricsLogger.APPLICATION;
