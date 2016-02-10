@@ -1023,12 +1023,14 @@
     <string name="lockscreen_shorcuts_longpress_title">Shortcuts longpress</string>
     <string name="lockscreen_shorcuts_longpress_summary">Open custom lock screen shortcuts on longpress</string>
     
-    <!-- Hide Lockscreen clock & date -->
+    <!-- Hide Lockscreen clock, date & alarm -->
     <string name="hide_lockscreen_items_title">Lockscreen items</string>
     <string name="hide_lockscreen_clock_title">Show lockscreen clock</string>
     <string name="hide_lockscreen_clock_summary">Enable/Disable clock on lockscreen</string>
     <string name="hide_lockscreen_date_title">Show lockscreen date</string>
     <string name="hide_lockscreen_date_summary">Enable/Disable date on lockscreen</string>
+    <string name="hide_lockscreen_alarm_title">Show lockscreen alarm</string>
+    <string name="hide_lockscreen_alarm_summary">Enable/Disable alarm text on lockscreen</string>
     
     <!-- Media art -->
     <string name="media_art_title">Show media cover art</string>
