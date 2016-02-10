@@ -70,6 +70,13 @@
                 android:targetClass="com.android.systemui.tuner.TunerActivity" />
     </PreferenceScreen>
     
+    <ListPreference
+        android:key="quick_pulldown"
+        android:title="@string/title_quick_pulldown"
+        android:entries="@array/quick_pulldown_entries"
+        android:entryValues="@array/quick_pulldown_values"
+        android:persistent="false" />
+    
     <PreferenceScreen
         android:id="@+id/qs_settings"
         android:title="@string/qs_settings_title"
