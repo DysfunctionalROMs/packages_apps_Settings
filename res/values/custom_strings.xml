@@ -966,5 +966,21 @@
     <!-- ATTENTION: RTL languages need to replace left with right -->
     <string name="recent_panel_lefty_mode_title">Show on the left edge</string>
     <string name="recent_panel_lefty_mode_summary">Show recent apps panel on the left edge</string>
-
+    
+    <!-- Broken Settings Summaries -->
+    <string name="brokenwalls_summary">Sift through a few custom BrokenOs wallpapers</string>
+    <string name="status_bar_screen_summary">Customize your status bar</string>
+    <string name="navigation_bar_screen_summary">Navigation bar/PIE/Hardware keys and recents tweaks</string>
+    <string name="gestures_screen_summary">Double tap to sleep and screenshot options</string>
+    <string name="init_d_screen_summary">Inject some scripts to possibly improve performance</string>
+    <string name="lockscreen_screen_summary">Change your lockscreen appearance</string>
+    <string name="power_menu_screen_summary">Add or remove items in your power menu</string>
+    <string name="volume_rocker_screen_summary">Options for your volume buttons</string>
+       
+    <!--Missing summaries for subsections -->
+    <string name="quick_settings_tiles_summary">Customize your quick settings tiles</string>
+    <string name="hwkeys_settings_screen">Enable/disable and set functions for hardware keys </string>
+    <string name="navbar_settings_screen_summary">Enable/disable and set functions for navigation bar</string>
+    <string name="pie_settings_screen_summary">Enable/disable and set functions for off-screen PIE controls</string>
+    <string name="custom_recents_settings_screen_summary">Engage BrokenRecents and set options when using it</string>
 </resources>

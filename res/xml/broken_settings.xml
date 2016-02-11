@@ -8,7 +8,8 @@
     <!-- Broken Walls -->
     <PreferenceScreen
            android:id="@+id/brokenwalls"
-           android:title="@string/brokenwalls_title" >
+           android:title="@string/brokenwalls_title" 
+           android:summary="@string/brokenwalls_summary" >
            <intent
                android:action="android.intent.action.SET_WALLPAPER"
                android:targetPackage="com.broken.BrokenWalls"
@@ -18,36 +19,43 @@
     <PreferenceScreen
         android:key="status_bar_general_category"
         android:fragment="com.android.settings.broken.StatusBarSettings"
-        android:title="@string/status_bar_screen_title"/>
+        android:title="@string/status_bar_screen_title"
+        android:summary="@string/status_bar_screen_summary" />
 
     <PreferenceScreen
         android:key="navigation_bar_general_category"
         android:fragment="com.android.settings.broken.NavigationSettings"
-        android:title="@string/navigation_bar_screen_title" />
+        android:title="@string/navigation_bar_screen_title"
+        android:summary="@string/navigation_bar_screen_summary" />
 
     <PreferenceScreen
         android:key="gestures_general_category"
         android:fragment="com.android.settings.broken.GestureSettings"
-        android:title="@string/gestures_title" />
+        android:title="@string/gestures_title" 
+        android:summary="@string/gestures_screen_summary" />
         
     <PreferenceScreen
         android:id="@+id/initD"
 		android:fragment="com.android.settings.broken.InitD"
-		android:title="@string/init_d_title" />
+		android:title="@string/init_d_title" 
+		android:summary="@string/init_d_screen_summary" />
 
     <PreferenceScreen
         android:key="lock_screen_general_category"
         android:fragment="com.android.settings.broken.LockScreenSettings"
-        android:title="@string/lockscreen_title" />
+        android:title="@string/lockscreen_title"
+        android:summary="@string/lockscreen_screen_summary" />
 
     <PreferenceScreen
         android:key="button_power_menu_settings"
         android:fragment="com.android.settings.broken.PowerMenuActions"
-        android:title="@string/button_power_menu_settings_title" />     
+        android:title="@string/button_power_menu_settings_title"
+        android:summary="@string/power_menu_screen_summary" />     
 
     <PreferenceScreen
         android:key="volume_rocker_general_category"
         android:fragment="com.android.settings.broken.VolumeRockerSettings"
-        android:title="@string/volume_rocker_screen_title" />
+        android:title="@string/volume_rocker_screen_title"
+        android:summary="@string/volume_rocker_screen_summary" />
 
 </PreferenceScreen>
