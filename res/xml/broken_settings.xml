@@ -15,18 +15,6 @@
                android:targetPackage="com.broken.BrokenWalls"
                android:targetClass="com.broken.BrokenWalls.brokenwalls" />
     </PreferenceScreen>
-    
-    <PreferenceScreen
-        android:key="status_bar_general_category"
-        android:fragment="com.android.settings.broken.StatusBarSettings"
-        android:title="@string/status_bar_screen_title"
-        android:summary="@string/status_bar_screen_summary" />
-
-    <PreferenceScreen
-        android:key="navigation_bar_general_category"
-        android:fragment="com.android.settings.broken.NavigationSettings"
-        android:title="@string/navigation_bar_screen_title"
-        android:summary="@string/navigation_bar_screen_summary" />
 
     <PreferenceScreen
         android:key="gestures_general_category"
@@ -45,13 +33,25 @@
         android:fragment="com.android.settings.broken.LockScreenSettings"
         android:title="@string/lockscreen_title"
         android:summary="@string/lockscreen_screen_summary" />
+        
+    <PreferenceScreen
+        android:key="navigation_bar_general_category"
+        android:fragment="com.android.settings.broken.NavigationSettings"
+        android:title="@string/navigation_bar_screen_title"
+        android:summary="@string/navigation_bar_screen_summary" />
 
     <PreferenceScreen
         android:key="button_power_menu_settings"
         android:fragment="com.android.settings.broken.PowerMenuActions"
         android:title="@string/button_power_menu_settings_title"
-        android:summary="@string/power_menu_screen_summary" />     
-
+        android:summary="@string/power_menu_screen_summary" />
+        
+    <PreferenceScreen
+        android:key="status_bar_general_category"
+        android:fragment="com.android.settings.broken.StatusBarSettings"
+        android:title="@string/status_bar_screen_title"
+        android:summary="@string/status_bar_screen_summary" />
+    
     <PreferenceScreen
         android:key="volume_rocker_general_category"
         android:fragment="com.android.settings.broken.VolumeRockerSettings"
