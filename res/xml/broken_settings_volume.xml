@@ -6,17 +6,17 @@
     <PreferenceCategory
         android:key="category_wakeup_options"
         android:title="@string/display_category_wakeup_options_title" >
-
-    <SwitchPreference
-        android:key="volume_rocker_wake"
-        android:summary="@string/volume_rocker_wake_summary"
-        android:title="@string/volume_rocker_wake_title" />
         
-    <SwitchPreference
+     <SwitchPreference
         android:key="button_swap_volume_buttons"
         android:title="@string/button_swap_volume_buttons_title"
         android:summary="@string/button_swap_volume_buttons_summary" 
         android:defaultValue="false" /> 
+
+     <SwitchPreference
+        android:key="volume_rocker_wake"
+        android:summary="@string/volume_rocker_wake_summary"
+        android:title="@string/volume_rocker_wake_title" />
         
      <com.android.settings.broken.SystemSettingSwitchPreference
         android:key="volume_down_zen"
