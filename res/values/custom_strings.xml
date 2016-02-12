@@ -722,7 +722,7 @@
     <string name="keyguard_torch_summary">Longpress power button with screen off turns on torch</string>
 
     <!-- Custom Header Image -->
-    <string name="status_bar_custom_header_title">Custom header image</string>
+    <string name="status_bar_custom_header_title">Contextual header image</string>
     <string name="status_bar_custom_header_summary">Enable notification panel header image</string>
     
     <!-- Quick Unlock -->
