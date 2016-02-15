@@ -1013,4 +1013,7 @@
     <string name="block_on_secure_keyguard_title">Disable quick settings</string>
     <string name="block_on_secure_keyguard_summary">Disables quick settings in the keyguard for a secure lock only</string>
     
+    <!-- BROKENCENTER -->
+    <string name="broken_center_title">Broken Center</string>
+    
 </resources>
