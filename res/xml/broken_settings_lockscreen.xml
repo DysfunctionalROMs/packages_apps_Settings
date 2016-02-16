@@ -47,12 +47,6 @@
             android:title="@string/keyguard_torch_title"
             android:summary="@string/keyguard_torch_summary"
             android:defaultValue="false" />
-            
-        <PreferenceScreen
-            android:key="ls_weather"
-            android:title="@string/lockscreen_weather_fragment_title"
-            android:summary="@string/lockscreen_weather_summary" 
-            android:fragment="com.android.settings.broken.LockscreenWeather" />
 
         <com.android.settings.broken.SystemSettingSwitchPreference
             android:key="lockscreen_quick_unlock_control"
@@ -76,6 +70,12 @@
             android:title="@string/hide_lockscreen_date_title"
             android:summary="@string/hide_lockscreen_date_summary"
             android:defaultValue="true" />
+            
+        <PreferenceScreen
+            android:key="ls_weather"
+            android:title="@string/lockscreen_weather_fragment_title"
+            android:summary="@string/lockscreen_weather_summary" 
+            android:fragment="com.android.settings.broken.LockscreenWeather" />
             
         <com.android.settings.broken.SystemSettingSwitchPreference
             android:key="lockscreen_media_metadata"

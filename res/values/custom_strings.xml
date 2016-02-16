@@ -898,7 +898,7 @@
     <string name="dashboard_tileview_double_lines_summary_off">Show dashboard tile titles in 2 lines</string>
 
     <!-- Lockscreen weather fragment -->
-    <string name="lockscreen_weather_fragment_title">Lockscreen weather</string>
+    <string name="lockscreen_weather_fragment_title">Show lockscreen weather</string>
     <string name="lockscreen_weather_summary">Customize lockscreen weather elements</string>
     <string name="weather_show_weather_title">Show weather</string>
     <string name="weather_show_weather_summary">Display weather on lockscreen</string>
