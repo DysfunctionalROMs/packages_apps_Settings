@@ -1016,4 +1016,10 @@
     <!-- BROKENCENTER -->
     <string name="broken_center_title">Broken Center</string>
     
+    <!-- Lockscreen Shortcuts -->
+    <string name="lockscreen_shortcuts_title">Lockscreen Shortcuts</string>
+    <string name="lockscreen_shortcuts_summary">View or change custom lock screen shortcuts</string>
+    <string name="lockscreen_shorcuts_longpress_title">Shortcuts longpress</string>
+    <string name="lockscreen_shorcuts_longpress_summary">Open custom lock screen shortcuts on longpress</string>
+    
 </resources>
