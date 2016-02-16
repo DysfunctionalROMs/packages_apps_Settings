@@ -60,6 +60,23 @@
             android:summary="@string/unlock_quick_unlock_control_summary"
             android:defaultValue="false" />
             
+        <!-- Hide Lockscreen clock & date -->
+        <PreferenceCategory
+            android:key="hide_lockscreen_items_category"
+            android:title="@string/hide_lockscreen_items_title" />
+
+        <com.android.settings.broken.SystemSettingSwitchPreference
+            android:key="hide_lockscreen_clock"
+            android:title="@string/hide_lockscreen_clock_title"
+            android:summary="@string/hide_lockscreen_clock_summary"
+            android:defaultValue="true" />
+
+        <com.android.settings.broken.SystemSettingSwitchPreference
+            android:key="hide_lockscreen_date"
+            android:title="@string/hide_lockscreen_date_title"
+            android:summary="@string/hide_lockscreen_date_summary"
+            android:defaultValue="true" />
+            
         <com.android.settings.broken.SystemSettingSwitchPreference
             android:key="lockscreen_enable_power_menu"
             android:title="@string/lockscreen_enable_power_menu_title"
