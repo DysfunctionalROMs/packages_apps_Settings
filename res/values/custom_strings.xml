@@ -1044,4 +1044,7 @@
     <string name="recent_app_sidebar_bg_color_title">Background color</string>
     <string name="recent_app_sidebar_scale_title">Size</string>
     
+    <!--Embedded Viper4Android-->
+    <string name="viper_settings_title">Equalizer</string>
+    
 </resources>

@@ -133,6 +133,17 @@
                 android:targetClass="com.lovejoy777.rroandlayersmanager.menu" />
         </dashboard-tile>
         
+        <!-- Viper4Android -->
+        <dashboard-tile
+            android:id="@+id/viper_settings"
+            android:title="@string/viper_settings_title"
+            android:icon="@drawable/ic_broken_equalizer" >
+            <intent
+               android:action="android.intent.action.MAIN"
+               android:targetClass="com.vipercn.viper4android_v2.activity.ViPER4Android"
+               android:targetPackage="com.vipercn.viper4android_v2" />
+        </dashboard-tile>
+        
         <!-- BrokenCenter -->
         <dashboard-tile
                 android:id="@+id/broken_center"
