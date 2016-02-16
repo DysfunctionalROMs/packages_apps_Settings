@@ -833,6 +833,7 @@
     <string name="qs_tile_hotspot">Hotspot</string>
     <string name="qs_tile_volume_panel">Volume panel</string>
     <string name="qs_tile_reboot">Reboot</string>
+    <string name="qs_tile_usb_tether">USB tethering</string>
     <string name="qs_four_columns_title">Show four tiles per row</string>
     <string name="qs_advanced_location_title">Advanced location settings</string>
     <string name="qs_advanced_location_summary">Enable advanced settings for location in quick settings</string>
