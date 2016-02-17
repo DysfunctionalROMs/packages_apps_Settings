@@ -124,6 +124,12 @@
                 android:summaryOff="@string/dashboard_tileview_double_lines_summary_off"
                 android:defaultValue="false" />
 
+        <com.android.settings.broken.SystemSettingSwitchPreference
+                android:key="dashboard_tileview_dividers"
+                android:title="@string/dashboard_tileview_dividers_title"
+                android:summary="@string/dashboard_tileview_dividers_summary"
+                android:defaultValue="false" />
+
     </PreferenceCategory>
         
     <PreferenceCategory
