@@ -26,6 +26,12 @@
            android:targetClass="com.fusionjack.brokenota.MainActivity" />
 </PreferenceScreen>
 
+        <!-- Change Log -->
+<PreferenceScreen android:key="changelog"
+        android:title="@string/changelog_title"
+        android:summary="@string/changelog_title_summary"
+        android:fragment="com.android.settings.broken.ChangeLog" />
+
 <PreferenceScreen android:title="Google+">
     <intent
         android:action="android.intent.action.VIEW"
