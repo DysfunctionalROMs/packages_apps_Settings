@@ -32,18 +32,6 @@
         android:summary="@string/changelog_title_summary"
         android:fragment="com.android.settings.broken.ChangeLog" />
 
-<PreferenceScreen android:title="Google+">
-    <intent
-        android:action="android.intent.action.VIEW"
-        android:data="https://plus.google.com/u/0/communities/116521990967962635243" />
-</PreferenceScreen>
-
-<PreferenceScreen android:title="Website">
-    <intent
-        android:action="android.intent.action.VIEW"
-        android:data="http://dysfunctionalroms.net/" />
-</PreferenceScreen>
-
 	<!-- Developers -->
     <PreferenceCategory
         android:key="category_broken_developers"
