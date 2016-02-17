@@ -79,6 +79,12 @@
                 android:title="@string/firmware_version"
                 android:summary="@string/device_info_default"/>
 
+        <!-- Changelog -->
+        <PreferenceScreen android:key="changelog"
+                android:title="@string/changelog_title"
+                android:summary="@string/changelog_title_summary"
+                android:fragment="com.android.settings.broken.ChangeLog" />
+
         <!-- Security patch level -->
         <Preference android:key="security_patch"
                 android:enabled="false"
