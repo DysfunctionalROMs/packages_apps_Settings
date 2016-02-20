@@ -32,20 +32,10 @@
         android:summary="@string/changelog_title_summary"
         android:fragment="com.android.settings.broken.ChangeLog" />
 
-	<!-- Developers -->
-    <PreferenceCategory
-        android:key="category_broken_developers"
-        android:title="Developers">
-
-    <Preference
-        android:title="Ken -Broken- Greenwood"
-	    android:summary="Lead Developer for Broken"/>
-    </PreferenceCategory>
-
     <!-- Device Maintainers -->
     <PreferenceCategory
         android:key="category_broken_maintainers"
-        android:title="Maintainers">
+        android:title="Device Maintainers">
     <Preference 
         android:key="device_maintainer"
                 style="?android:preferenceInformationStyle"
