@@ -21,29 +21,38 @@ import com.android.internal.logging.MetricsLogger;
 
 import android.app.Activity;
 import android.app.WallpaperManager;
+import android.content.ContentResolver;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceCategory;
+import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceScreen;
+import android.provider.Settings;
 
 import com.android.settings.R;
 import com.android.settings.broken.SystemSettingSwitchPreference;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.Utils;
 
-public class LockScreenSettings extends SettingsPreferenceFragment {
+import com.android.settings.broken.widget.SeekBarPreferenceCham;
+
+public class LockScreenSettings extends SettingsPreferenceFragment implements
+        OnPreferenceChangeListener {
+			
     public static final int IMAGE_PICK = 1;
 
     private static final String KEY_WALLPAPER_SET = "lockscreen_wallpaper_set";
     private static final String KEY_WALLPAPER_CLEAR = "lockscreen_wallpaper_clear";
     private static final String LSWEATHER = "ls_weather";
+    private static final String KEY_LOCKSCREEN_BLUR_RADIUS = "lockscreen_blur_radius";
 
     private Preference mSetWallpaper;
     private Preference mClearWallpaper;
     private SystemSettingSwitchPreference mLsTorch;
     private PreferenceScreen mLsWeather;
+    private SeekBarPreferenceCham mBlurRadius;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -61,6 +70,11 @@ public class LockScreenSettings extends SettingsPreferenceFragment {
         if (!Utils.deviceSupportsFlashLight(getActivity())) {
             generalCategory.removePreference(mLsTorch);
         }
+        
+        mBlurRadius = (SeekBarPreferenceCham) findPreference(KEY_LOCKSCREEN_BLUR_RADIUS);
+        mBlurRadius.setValue(Settings.System.getInt(getContentResolver(),
+               Settings.System.LOCKSCREEN_BLUR_RADIUS, 14));
+        mBlurRadius.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -78,6 +92,17 @@ public class LockScreenSettings extends SettingsPreferenceFragment {
             return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
+    }
+    
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object objValue) {
+		if (preference == mBlurRadius) {
+             int width = ((Integer)objValue).intValue();
+             Settings.System.putInt(getContentResolver(),
+                 Settings.System.LOCKSCREEN_BLUR_RADIUS, width);
+            return true;
+            }
+        return false;
     }
 
     @Override

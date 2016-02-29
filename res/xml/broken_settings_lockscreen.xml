@@ -15,6 +15,26 @@
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings">
 
     <PreferenceCategory
+        android:key="lockscreen_blur"
+        android:title="@string/lockscreen_blur_title" >
+        
+    <com.android.settings.broken.SystemSettingSwitchPreference
+        android:key="lockscreen_see_through"
+        android:title="@string/lockscreen_see_through_title"
+        android:summary="@string/lockscreen_see_through_summary"
+        android:defaultValue="false" />
+
+    <com.android.settings.broken.widget.SeekBarPreferenceCham
+        android:key="lockscreen_blur_radius"
+        android:title="@string/lockscreen_blur_radius"
+        android:max="25"
+        settings:min="0"
+        android:defaultValue="14"
+        android:dependency="lockscreen_see_through" />
+        
+    </PreferenceCategory>
+        
+    <PreferenceCategory
         android:key="lockscreen_wallpaper"
         android:title="@string/lockscreen_wallpaper_title" >
 
