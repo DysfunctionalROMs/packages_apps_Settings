@@ -70,6 +70,10 @@
             
     </PreferenceCategory>
     
+    <PreferenceCategory
+        android:key="lockscreen_shortcuts_options"
+        android:title="@string/lockscreen_shortcuts_options_title" >
+    
         <PreferenceScreen
             android:title="@string/lockscreen_targets_message"
             android:summary="@string/lockscreen_targets_summary" >
@@ -102,10 +106,12 @@
             android:summary="@string/unlock_quick_unlock_control_summary"
             android:defaultValue="false" />
             
-        <!-- Hide Lockscreen clock, date & alarm -->
-        <PreferenceCategory
-            android:key="hide_lockscreen_items_category"
-            android:title="@string/hide_lockscreen_items_title" />
+    </PreferenceCategory>
+            
+    <!-- Hide Lockscreen clock, date & alarm -->
+    <PreferenceCategory
+        android:key="hide_lockscreen_items_category"
+        android:title="@string/hide_lockscreen_items_title" />
             
         <com.android.settings.broken.SystemSettingSwitchPreference
             android:key="hide_lockscreen_alarm"

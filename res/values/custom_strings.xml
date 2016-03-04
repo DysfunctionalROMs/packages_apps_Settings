@@ -1127,5 +1127,8 @@
     <!-- Lockscreen Alpha -->
     <string name="lockscreen_alpha">Lockscreen alpha</string>
     <string name="lockscreen_security_alpha">Lockscreen bouncer alpha</string>
+   
+    <!-- Another lockscreen section --> 
+    <string name="lockscreen_shortcuts_options_title">Shortcuts and other options</string>
     
 </resources>
