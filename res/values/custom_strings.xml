@@ -1138,4 +1138,9 @@
     <!-- Another lockscreen section --> 
     <string name="lockscreen_shortcuts_options_title">Shortcuts and other options</string>
     
+    <!-- Title of setting that controls gesture to open camera by double tapping the power button [CHAR LIMIT=40] -->
+    <string name="camera_double_tap_power_gesture_title">Lockscreen camera</string>
+    <!-- Description of setting that controls gesture to open camera by double tapping the power button [CHAR LIMIT=NONE] -->
+    <string name="camera_double_tap_power_gesture_desc">Open camera by tapping power button twice with screen off</string>
+ 
 </resources>

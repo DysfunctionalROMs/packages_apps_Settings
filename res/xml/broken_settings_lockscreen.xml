@@ -73,6 +73,18 @@
     <PreferenceCategory
         android:key="lockscreen_shortcuts_options"
         android:title="@string/lockscreen_shortcuts_options_title" >
+        
+        <SwitchPreference
+            android:key="camera_double_tap_power_gesture"
+            android:title="@string/camera_double_tap_power_gesture_title"
+            android:summary="@string/camera_double_tap_power_gesture_desc"
+            android:persistent="false" />
+            
+        <com.android.settings.broken.SystemSettingSwitchPreference
+            android:key="keyguard_toggle_torch"
+            android:title="@string/keyguard_torch_title"
+            android:summary="@string/keyguard_torch_summary"
+            android:defaultValue="false" />
     
         <PreferenceScreen
             android:title="@string/lockscreen_targets_message"
@@ -93,12 +105,6 @@
              <extra android:name="useAppPickerOnly" android:value="true" />
              <extra android:name="fragment" android:value="com.android.settings.broken.LockscreenShortcut" />
         </PreferenceScreen>
-            
-        <com.android.settings.broken.SystemSettingSwitchPreference
-            android:key="keyguard_toggle_torch"
-            android:title="@string/keyguard_torch_title"
-            android:summary="@string/keyguard_torch_summary"
-            android:defaultValue="false" />
 
         <com.android.settings.broken.SystemSettingSwitchPreference
             android:key="lockscreen_quick_unlock_control"
