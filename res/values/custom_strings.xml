@@ -1170,5 +1170,10 @@
     <string name="recents_clear_all_location_bottom_right">Bottom right</string>
     <string name="recents_clear_all_location_bottom_left">Bottom left</string>
     <string name="recents_clear_all_location_bottom_center">Bottom center</string>
+
+    <!-- Statusbar IME switcher -->
+    <string name="ime_switcher_notify">Selector notification</string>
+    <string name="ime_switcher_notify_summary_on">Enabled input method selector notification</string>
+    <string name="ime_switcher_notify_summary_off">Disabled input method selector notification</string>
  
 </resources>

@@ -44,6 +44,13 @@
             android:key="keyboard_settings_category"
             android:title="@string/keyboard_settings_category">
 
+    <com.android.settings.broken.SystemSettingSwitchPreference
+            android:key="status_bar_ime_switcher"
+            android:title="@string/ime_switcher_notify"
+            android:summaryOn="@string/ime_switcher_notify_summary_on"
+            android:summaryOff="@string/ime_switcher_notify_summary_off"
+            android:defaultValue="true" />
+
         <PreferenceScreen
                 android:key="current_input_method"
                 android:title="@string/current_input_method"
