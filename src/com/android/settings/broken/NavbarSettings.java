@@ -67,25 +67,10 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
     SlimSeekBarPreference mDimNavButtonsAlpha;
     SwitchPreference mDimNavButtonsAnimate;
     SlimSeekBarPreference mDimNavButtonsAnimateDuration;
-
-private SettingsObserver mSettingsObserver = new SettingsObserver(new Handler());
-    private final class SettingsObserver extends ContentObserver {
-        SettingsObserver(Handler handler) {
-            super(handler);
-        }
-
-        void observe() {
-            ContentResolver resolver = getActivity().getContentResolver();
-            resolver.registerContentObserver(Settings.System.getUriFor(
-                    Settings.System.NAVIGATION_BAR_SHOW), false, this,
-                    UserHandle.USER_ALL);
-        }
-
-        @Override
-        public void onChange(boolean selfChange) {
-            super.onChange(selfChange);
-            updateSettings();
-        }
+    
+    @Override
+    protected int getMetricsCategory() {
+        return -1;
     }
     
     @Override
@@ -113,17 +98,12 @@ private SettingsObserver mSettingsObserver = new SettingsObserver(new Handler())
         mButtonPreference = (PreferenceScreen) findPreference(PREF_BUTTON);
         mStyleDimenPreference = (PreferenceScreen) findPreference(PREF_STYLE_DIMEN);
 
-        boolean hasNavBarByDefault = getResources().getBoolean(
-                com.android.internal.R.bool.config_showNavigationBar);
+        // A Nexus will always have a NavBar by default
         boolean enableNavigationBar = Settings.System.getInt(getContentResolver(),
-                Settings.System.NAVIGATION_BAR_SHOW, hasNavBarByDefault ? 1 : 0) == 1;
+                Settings.System.NAVIGATION_BAR_SHOW, 1) == 1;
         mEnableNavigationBar = (SwitchPreference) findPreference(ENABLE_NAVIGATION_BAR);
-        if (hasNavBarByDefault) {
-            getPreferenceScreen().removePreference(mEnableNavigationBar);
-        } else {
-            mEnableNavigationBar.setChecked(enableNavigationBar);
-            mEnableNavigationBar.setOnPreferenceChangeListener(this);
-        }
+        mEnableNavigationBar.setOnPreferenceChangeListener(this);
+        
         mNavigationBarCanMove = (SwitchPreference) findPreference(PREF_NAVIGATION_BAR_CAN_MOVE);
         mNavigationBarCanMove.setChecked(Settings.System.getInt(getContentResolver(),
                 Settings.System.NAVIGATION_BAR_CAN_MOVE,
@@ -161,32 +141,7 @@ private SettingsObserver mSettingsObserver = new SettingsObserver(new Handler())
         mDimNavButtonsAnimateDuration.minimumValue(100);
         mDimNavButtonsAnimateDuration.multiplyValue(100);
         mDimNavButtonsAnimateDuration.setOnPreferenceChangeListener(this);
-
-        updateSettings();
-    }
-    
-    private void updateSettings() {
-        mMenuDisplayLocation.setValue(Settings.System.getInt(getActivity()
-                .getContentResolver(), Settings.System.MENU_LOCATION,
-                0) + "");
-        mNavBarMenuDisplayValue = Settings.System.getInt(getActivity()
-                .getContentResolver(), Settings.System.MENU_VISIBILITY,
-                2);
-        mNavBarMenuDisplay.setValue(mNavBarMenuDisplayValue + "");
-
-        boolean enableNavigationBar = Settings.System.getInt(getContentResolver(),
-                Settings.System.NAVIGATION_BAR_SHOW,
-                Action.isNavBarDefault(getActivity()) ? 1 : 0) == 1;
-        mEnableNavigationBar.setChecked(enableNavigationBar);
-
-        if (mNavigationBarCanMove != null) {
-            mNavigationBarCanMove.setChecked(Settings.System.getInt(getContentResolver(),
-                    Settings.System.NAVIGATION_BAR_CAN_MOVE, 1) == 0);
-        }
-
-        mStatusBarImeArrows.setChecked(Settings.System.getInt(getContentResolver(),
-                Settings.System.STATUS_BAR_IME_ARROWS, 0) == 1);
-
+        
         if (mDimNavButtons != null) {
             mDimNavButtons.setChecked(Settings.System.getInt(getContentResolver(),
                     Settings.System.DIM_NAV_BUTTONS, 0) == 1);
@@ -216,13 +171,8 @@ private SettingsObserver mSettingsObserver = new SettingsObserver(new Handler())
             // minimum 100 is 1 interval of the 100 multiplier
             mDimNavButtonsAnimateDuration.setInitValue((animateDuration / 100) - 1);
         }
-        
-        updateNavbarPreferences(enableNavigationBar);
-    }
 
-    @Override
-    protected int getMetricsCategory() {
-        return -1;
+        updateNavbarPreferences(enableNavigationBar);
     }
 
     private void updateNavbarPreferences(boolean show) {
@@ -298,13 +248,6 @@ private SettingsObserver mSettingsObserver = new SettingsObserver(new Handler())
     @Override
     public void onResume() {
         super.onResume();
-        updateSettings();
-        mSettingsObserver.observe();
     }
 
-    @Override
-    public void onPause() {
-        super.onPause();
-        getActivity().getContentResolver().unregisterContentObserver(mSettingsObserver);
-    }
 }
