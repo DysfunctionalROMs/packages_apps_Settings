@@ -1174,5 +1174,10 @@
     <!-- Text for forcing expanded notifications -->
     <string name="disable_fc_notifications_title">Disable FC notifications</string>
     <string name="disable_fc_notifications_summary">This will hide all force close notifications</string>
+
+    <!-- Statusbar IME switcher -->
+    <string name="ime_switcher_notify">Selector notification</string>
+    <string name="ime_switcher_notify_summary_on">Enabled input method selector notification</string>
+    <string name="ime_switcher_notify_summary_off">Disabled input method selector notification</string>
  
 </resources>
