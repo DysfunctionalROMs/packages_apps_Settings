@@ -1179,5 +1179,10 @@
     <string name="ime_switcher_notify">Selector notification</string>
     <string name="ime_switcher_notify_summary_on">Enabled input method selector notification</string>
     <string name="ime_switcher_notify_summary_off">Disabled input method selector notification</string>
+    
+    <!-- Header image shadow -->
+    <string name="status_bar_custom_header_shadow_title">Contextual header shadow</string>
+    <string name="status_bar_custom_header_shadow_summary">For better text/icon visibility on bright images</string>
+    <string name="unit_percent">\u0025</string>
  
 </resources>

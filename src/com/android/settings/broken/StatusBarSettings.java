@@ -22,6 +22,8 @@ import java.util.Locale;
 import android.text.TextUtils;
 import android.view.View;
 
+import com.android.settings.broken.widget.SeekBarPreferenceCham;
+
 import com.android.internal.logging.MetricsLogger;
 
 public class StatusBarSettings extends SettingsPreferenceFragment implements
@@ -32,11 +34,13 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
     private static final String PRE_QUICK_PULLDOWN = "quick_pulldown";
     private static final String STATUS_BAR_TEMPERATURE_STYLE = "status_bar_temperature_style";
     private static final String STATUS_BAR_TEMPERATURE = "status_bar_temperature";
+    private static final String CUSTOM_HEADER_IMAGE_SHADOW = "status_bar_custom_header_shadow";
 
     private PreferenceScreen mLockClock;
     private ListPreference mQuickPulldown;
     private ListPreference mStatusBarTemperature;
     private ListPreference mStatusBarTemperatureStyle;
+    private SeekBarPreferenceCham mHeaderShadow;
      
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -63,6 +67,12 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
         if (!Utils.isPackageInstalled(getActivity(), KEY_LOCK_CLOCK_PACKAGE_NAME)) {
             prefSet.removePreference(mLockClock);
         }
+        
+        mHeaderShadow = (SeekBarPreferenceCham) findPreference(CUSTOM_HEADER_IMAGE_SHADOW);
+        final int headerShadow = Settings.System.getInt(getContentResolver(),
+                Settings.System.STATUS_BAR_CUSTOM_HEADER_SHADOW, 0);
+        mHeaderShadow.setValue((int)((headerShadow / 255) * 100));
+        mHeaderShadow.setOnPreferenceChangeListener(this);
         
         // tempature
         mStatusBarTemperature = (ListPreference) findPreference(STATUS_BAR_TEMPERATURE);
@@ -124,6 +134,12 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
                     temperatureStyle);
             mStatusBarTemperatureStyle.setSummary(
                     mStatusBarTemperatureStyle.getEntries()[index]);
+            return true;
+        } else if (preference == mHeaderShadow) {
+         Integer headerShadow = (Integer) objValue;
+         int realHeaderValue = (int) (((double) headerShadow / 100) * 255);
+         Settings.System.putInt(getContentResolver(),
+                 Settings.System.STATUS_BAR_CUSTOM_HEADER_SHADOW, realHeaderValue);
             return true;
         }
         return false;
