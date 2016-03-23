@@ -24,7 +24,6 @@ import android.app.WallpaperManager;
 import android.content.Context;
 import android.content.ContentResolver;
 import android.content.Intent;
-import android.content.res.Resources;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.UserHandle;
@@ -35,7 +34,6 @@ import android.preference.PreferenceCategory;
 import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
-import static android.provider.Settings.Secure.CAMERA_DOUBLE_TAP_POWER_GESTURE_DISABLED;
 
 import com.android.internal.widget.LockPatternUtils;
 import com.android.settings.R;
@@ -54,8 +52,6 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements On
     private static final String LOCKSCREEN_ALPHA = "lockscreen_alpha";
     private static final String LOCKSCREEN_SECURITY_ALPHA = "lockscreen_security_alpha";
     private static final String KEY_LOCKSCREEN_BLUR_RADIUS = "lockscreen_blur_radius";
-    private static final String KEY_CAMERA_DOUBLE_TAP_POWER_GESTURE
-            = "camera_double_tap_power_gesture";
 
     private Preference mSetWallpaper;
     private Preference mClearWallpaper;
@@ -64,7 +60,6 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements On
     private SeekBarPreferenceCham mLsAlpha;
     private SeekBarPreferenceCham mLsSecurityAlpha;
     private SeekBarPreferenceCham mBlurRadius;
-    private SwitchPreference mCameraDoubleTapPowerGesturePreference;
     
     private static final int MY_USER_ID = UserHandle.myUserId();
 
@@ -108,25 +103,6 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements On
         mBlurRadius.setValue(Settings.System.getInt(getContentResolver(),
                Settings.System.LOCKSCREEN_BLUR_RADIUS, 14));
         mBlurRadius.setOnPreferenceChangeListener(this);
-        
-        if (isCameraDoubleTapPowerGestureAvailable(getResources())) {
-            mCameraDoubleTapPowerGesturePreference
-                    = (SwitchPreference) findPreference(KEY_CAMERA_DOUBLE_TAP_POWER_GESTURE);
-            mCameraDoubleTapPowerGesturePreference.setOnPreferenceChangeListener(this);
-        } else {
-            removePreference(KEY_CAMERA_DOUBLE_TAP_POWER_GESTURE);
-        }
-        
-        if (mCameraDoubleTapPowerGesturePreference != null) {
-            int value = Settings.Secure.getInt(
-                    getContentResolver(), CAMERA_DOUBLE_TAP_POWER_GESTURE_DISABLED, 0);
-            mCameraDoubleTapPowerGesturePreference.setChecked(value == 0);
-        }
-    }
-    
-    private static boolean isCameraDoubleTapPowerGestureAvailable(Resources res) {
-        return res.getBoolean(
-                com.android.internal.R.bool.config_cameraDoubleTapPowerGestureEnabled);
     }
     
     @Override
@@ -146,11 +122,6 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements On
             int width = ((Integer)objValue).intValue();
             Settings.System.putInt(getContentResolver(),
                 Settings.System.LOCKSCREEN_BLUR_RADIUS, width);
-            return true;
-        } else if (preference == mCameraDoubleTapPowerGesturePreference) {
-            boolean value = (Boolean) objValue;
-            Settings.Secure.putInt(getContentResolver(), CAMERA_DOUBLE_TAP_POWER_GESTURE_DISABLED,
-                    value ? 0 : 1 /* Backwards because setting is for disabling */);
             return true;
         }
         return false;
