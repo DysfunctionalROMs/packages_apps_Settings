@@ -35,11 +35,11 @@ import android.preference.Preference.OnPreferenceChangeListener;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
 
+import com.android.internal.util.broken.BrokenUtils;
 import com.android.internal.widget.LockPatternUtils;
 import com.android.settings.R;
 import com.android.settings.broken.SystemSettingSwitchPreference;
 import com.android.settings.SettingsPreferenceFragment;
-import com.android.settings.Utils;
 import com.android.settings.broken.widget.SeekBarPreferenceCham;
 
 public class LockScreenSettings extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
@@ -52,6 +52,7 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements On
     private static final String LOCKSCREEN_ALPHA = "lockscreen_alpha";
     private static final String LOCKSCREEN_SECURITY_ALPHA = "lockscreen_security_alpha";
     private static final String KEY_LOCKSCREEN_BLUR_RADIUS = "lockscreen_blur_radius";
+    private static final String KEYGUARD_TOGGLE_TORCH = "keyguard_toggle_torch";
 
     private Preference mSetWallpaper;
     private Preference mClearWallpaper;
@@ -68,7 +69,6 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements On
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.broken_settings_lockscreen);
         
-        PreferenceCategory generalCategory = (PreferenceCategory) findPreference("lockscreen_gen");
         PreferenceScreen prefScreen = getPreferenceScreen();
         
         ContentResolver resolver = getActivity().getContentResolver();
@@ -94,9 +94,13 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements On
             prefScreen.removePreference(mLsSecurityAlpha);
         }
         
-        mLsTorch = (SystemSettingSwitchPreference) prefScreen.findPreference("keyguard_toggle_torch");
-        if (!Utils.deviceSupportsFlashLight(getActivity())) {
-            generalCategory.removePreference(mLsTorch);
+        mLsTorch = (SystemSettingSwitchPreference) findPreference(KEYGUARD_TOGGLE_TORCH);
+        mLsTorch.setOnPreferenceChangeListener(this);
+        if (!BrokenUtils.deviceSupportsFlashLight(getActivity())) {
+            prefScreen.removePreference(mLsTorch);
+        } else {
+        mLsTorch.setChecked((Settings.System.getInt(resolver,
+               Settings.System.KEYGUARD_TOGGLE_TORCH, 0) == 1));
         }
         
         mBlurRadius = (SeekBarPreferenceCham) findPreference(KEY_LOCKSCREEN_BLUR_RADIUS);
@@ -122,6 +126,11 @@ public class LockScreenSettings extends SettingsPreferenceFragment implements On
             int width = ((Integer)objValue).intValue();
             Settings.System.putInt(getContentResolver(),
                 Settings.System.LOCKSCREEN_BLUR_RADIUS, width);
+            return true;
+        } else if  (preference == mLsTorch) {
+            boolean checked = ((SystemSettingSwitchPreference)preference).isChecked();
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.KEYGUARD_TOGGLE_TORCH, checked ? 1:0);
             return true;
         }
         return false;
