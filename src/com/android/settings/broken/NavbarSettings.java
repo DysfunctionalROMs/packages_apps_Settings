@@ -30,7 +30,7 @@ import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
 
-import com.android.internal.util.slim.Action;
+import com.android.internal.logging.MetricsLogger;
 import com.android.internal.util.slim.DeviceUtils;
 
 import com.android.settings.SettingsPreferenceFragment;
@@ -70,7 +70,8 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
     
     @Override
     protected int getMetricsCategory() {
-        return -1;
+        // todo add a constant in MetricsLogger.java
+        return MetricsLogger.INPUTMETHOD_LANGUAGE;
     }
     
     @Override
