@@ -42,4 +42,18 @@
         android:title="@string/device_maintainer"
         android:summary="@string/broken_device_maintainer" />
     </PreferenceCategory>
+
+    <!-- The Team behind the madness -->
+    <PreferenceCategory
+        android:key="the_broken_team"
+        android:title="The Broken Team">
+    <Preference
+        android:title="Buncha Dysfunctional Bastards"
+        android:summary="The people behind the madness">
+        <intent
+           android:action="android.intent.action.VIEW"
+           android:data="http://dysfunctionalroms.net/the-team/" />
+    </Preference>
+    </PreferenceCategory>
+
 </PreferenceScreen>
