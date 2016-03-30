@@ -17,6 +17,8 @@
 
     <!-- Dashboard -->
     <string name="header_category_custom">Broken Customizations</string>
+    <string name="broken_settings_title">Broken Pieces</string>
+    <string name="broken_settings_summary">ROM features &amp; customization</string>
 
     <!-- Dev Options Enabled by Default -->
     <string name="show_dev_already_enabled">No Need, Development settings are enabled by default.</string>

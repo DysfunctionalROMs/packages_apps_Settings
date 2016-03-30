@@ -2714,6 +2714,27 @@
                 android:value="com.android.settings.notification.AppNotificationSettings" />
         </activity>
 
+        <activity android:name="Settings$BrokenSettingsActivity"
+            android:label="@string/broken_settings_title"
+            android:icon="@drawable/ic_broken_settings"
+            android:taskAffinity="">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.VOICE_LAUNCH" />
+                <category android:name="com.android.settings.SHORTCUT" />
+            </intent-filter>
+            <intent-filter android:priority="4">
+                <action android:name="com.android.settings.action.SETTINGS" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.category"
+                android:value="com.android.settings.category.custom" />
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.broken.settings.BrokenSettings" />
+            <meta-data android:name="com.android.settings.summary"
+                android:resource="@string/broken_settings_summary" />
+        </activity>
+
         <receiver android:name=".widget.SettingsAppWidgetProvider"
                 android:label="@string/gadget_title"
                 android:exported="false"

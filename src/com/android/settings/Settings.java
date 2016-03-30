@@ -161,4 +161,7 @@ public class Settings extends SettingsActivity {
     public static class DeviceSettings extends SettingsActivity { /* empty */ }
     public static class PersonalSettings extends SettingsActivity { /* empty */ }
     public static class SystemSettings extends SettingsActivity { /* empty */ }
+
+    // Broken Additions.
+    public static class BrokenSettingsActivity extends SettingsActivity { /* empty */ }
 }
