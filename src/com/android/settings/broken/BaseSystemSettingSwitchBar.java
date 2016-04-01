@@ -14,7 +14,7 @@
 * limitations under the License.
 */
 
-package com.android.settings.nexus;
+package com.android.settings.broken;
 
 import android.content.ContentResolver;
 import android.content.Context;
