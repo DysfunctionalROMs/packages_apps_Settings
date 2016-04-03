@@ -30,7 +30,11 @@ import java.io.File;
 import java.io.IOException;
 import java.io.DataOutputStream;
 
-public class BrokenSettings extends SettingsPreferenceFragment {
+public class BrokenSettings extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
+	
+	private static final String SELINUX = "selinux";
+	
+	private SwitchPreference mSelinux;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -56,7 +60,7 @@ public class BrokenSettings extends SettingsPreferenceFragment {
     
     @Override
     protected int getMetricsCategory() {
-        return InstrumentedFragment.BROKENSETTINGS;
+        return MetricsLogger.APPLICATION;
     }
 
     @Override

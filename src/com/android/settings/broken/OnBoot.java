@@ -9,6 +9,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.android.internal.logging.MetricsLogger;
+import com.android.settings.R;
 import com.android.internal.util.broken.CMDProcessor;
 
 import java.io.IOException;
@@ -26,6 +27,7 @@ public class OnBoot extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
+        Boolean mSelinuxCmdline = false;
         ActivityManager activityManager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
         List<ActivityManager.RunningAppProcessInfo> procInfos = activityManager.getRunningAppProcesses();
         for(int i = 0; i < procInfos.size(); i++)
@@ -35,17 +37,37 @@ public class OnBoot extends BroadcastReceiver {
             }
         }
         if(!mSetupRunning) {
-             try {
-                 settingsContext = context.createPackageContext("com.android.settings", 0);
-             } catch (Exception e) {
-                 Log.e(TAG, "Package not found", e);
-             }
-             SharedPreferences sharedpreferences = settingsContext.getSharedPreferences("com.android.settings_preferences", Context.MODE_PRIVATE);
-             if(sharedpreferences.getBoolean("selinux", true)) {
-                 CMDProcessor.runSuCommand("setenforce 1");
-             } else if (!sharedpreferences.getBoolean("selinux", true)) {
-                 CMDProcessor.runSuCommand("setenforce 0");
-             }
+            try {
+                settingsContext = context.createPackageContext("com.android.settings", 0);
+            } catch (Exception e) {
+                Log.e(TAG, "Package not found", e);
+            }
+            SharedPreferences sharedpreferences = settingsContext.getSharedPreferences("com.android.settings_preferences",
+                    Context.MODE_PRIVATE);
+
+            if (CMDProcessor.runShellCommand("getenforce").getStdout().contains("Enforcing")) {
+                mSelinuxCmdline = true;
+                Log.d(TAG, "cmdline: selinux:Enforcing");
+            } else {
+                mSelinuxCmdline = false;
+                Log.d(TAG, "cmdline: selinux:Permissive");
+            }
+
+            if(sharedpreferences.getBoolean("selinux", true)) {
+                if (mSelinuxCmdline == false) {
+                    CMDProcessor.runSuCommand("setenforce 1");
+                }
+            } else if (!sharedpreferences.getBoolean("selinux", true)) {
+                if (mSelinuxCmdline == true) {
+                    CMDProcessor.runSuCommand("setenforce 0");
+                    showToast(context.getString(R.string.selinux_permissive_toast_title), context);
+                }
+            }
         }
+    }
+
+    private void showToast(String toastString, Context context) {
+        Toast.makeText(context, toastString, Toast.LENGTH_SHORT)
+                .show();
     }
 }
