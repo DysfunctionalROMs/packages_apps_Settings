@@ -132,6 +132,12 @@
             android:defaultValue="true" />
             
         <PreferenceScreen
+            android:fragment="com.android.settings.broken.KeyguardStatusBarClockStyle"
+            android:key="keyguard_clock_style_pref"
+            android:title="@string/keyguard_status_bar_clock"
+	        android:summary="@string/keyguard_status_bar_clock_summary" />
+            
+        <PreferenceScreen
             android:key="ls_weather"
             android:title="@string/lockscreen_weather_fragment_title"
             android:summary="@string/lockscreen_weather_summary" 

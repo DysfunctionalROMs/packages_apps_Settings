@@ -565,10 +565,13 @@
     <string name="display_rotation_180_title">180 degrees</string>
     <string name="display_rotation_270_title">270 degrees</string>
 
-    <!-- Clock and date -->
+    <!-- Clock and date for statusbar and keyguard statusbar -->
     <string name="status_bar_clock">Clock &amp; date</string>
     <string name="status_bar_clock_title">Clock &amp; date style</string>
     <string name="status_bar_clock_summary">Change various clock &amp; date options</string> 
+    <string name="keyguard_status_bar_clock">Keyguard statusbar clock &amp; date</string>
+    <string name="keyguard_status_bar_clock_title">Keyguard clock &amp; date style</string>
+    <string name="keyguard_status_bar_clock_summary">Change various keyguard statusbar clock &amp; date options</string> 
     <string name="clock_styles_summary">Customize clock styles and date format</string>
     <string name="clock_title_enable">Alignment</string>
     <string name="clock_enabled">Enabled</string>
