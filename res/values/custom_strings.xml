@@ -967,6 +967,7 @@
     <string name="stock_recents_panel_settings">Stock Recents Options</string>
     <string name="use_slim_recents_title">BrokenRecents</string>
     <string name="show_running_tasks_title">Only show running apps</string>
+    <string name="show_running_tasks_summary">Shows just the running apps</string>
     <string name="recents_max_apps_title">Max allowed apps</string>
     <string name="recent_panel_scale_title">Size</string>
     <string name="recent_panel_expanded_mode_title">Expanded mode</string>

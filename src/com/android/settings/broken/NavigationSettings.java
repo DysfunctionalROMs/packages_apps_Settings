@@ -39,9 +39,11 @@ public class NavigationSettings extends SettingsPreferenceFragment  implements
     private static final String KEY_PIE_SETTINGS = "pie_settings";
     private static final String SHOW_CLEAR_ALL_RECENTS = "show_clear_all_recents";
     private static final String RECENTS_CLEAR_ALL_LOCATION = "recents_clear_all_location";
+    private static final String ONLY_SHOW_RUNNING_TASKS = "only_show_running_tasks";
 
     private ListPreference mRecentsClearAllLocation;
     private SwitchPreference mRecentsClearAll;
+    private SwitchPreference mShowRunningTasks;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -67,6 +69,8 @@ public class NavigationSettings extends SettingsPreferenceFragment  implements
         mRecentsClearAllLocation.setValue(String.valueOf(location));
         mRecentsClearAllLocation.setSummary(mRecentsClearAllLocation.getEntry());
         mRecentsClearAllLocation.setOnPreferenceChangeListener(this);
+        mShowRunningTasks = (SwitchPreference) findPreference(ONLY_SHOW_RUNNING_TASKS);
+        mShowRunningTasks.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -81,6 +85,10 @@ public class NavigationSettings extends SettingsPreferenceFragment  implements
             Settings.System.putIntForUser(getActivity().getContentResolver(),
                     Settings.System.RECENTS_CLEAR_ALL_LOCATION, location, UserHandle.USER_CURRENT);
             mRecentsClearAllLocation.setSummary(mRecentsClearAllLocation.getEntries()[index]);
+            return true;
+        } else if (preference == mShowRunningTasks) {
+            Settings.System.putInt(getContentResolver(), Settings.System.RECENT_SHOW_RUNNING_TASKS, 
+                    ((Boolean) objValue) ? 1 : 0);
             return true;
          }
             return false;

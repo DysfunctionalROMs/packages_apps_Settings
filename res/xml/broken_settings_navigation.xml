@@ -53,6 +53,12 @@
 	    android:title="@string/stock_recents_panel_settings"
 	    android:summary="@string/custom_recents_settings_screen_summary" >
 
+    <com.android.settings.broken.SystemSettingSwitchPreference
+        android:key="only_show_running_tasks"
+        android:title="@string/show_running_tasks_title"
+        android:summary="@string/show_running_tasks_summary"
+        android:defaultValue="false" />
+
 	<com.android.settings.broken.SystemSettingSwitchPreference
         android:key="recents_show_search_bar"
         android:title="@string/recents_show_searchbar"
