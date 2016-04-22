@@ -108,7 +108,7 @@
             
     </PreferenceCategory>
             
-    <!-- Hide Lockscreen clock, date & alarm -->
+    <!-- Hide Lockscreen clock, date, alarm & charging current -->
     <PreferenceCategory
         android:key="hide_lockscreen_items_category"
         android:title="@string/hide_lockscreen_items_title" />
@@ -130,6 +130,12 @@
             android:title="@string/hide_lockscreen_date_title"
             android:summary="@string/hide_lockscreen_date_summary"
             android:defaultValue="true" />
+
+        <com.android.settings.broken.SystemSettingSwitchPreference
+            android:key="lock_screen_show_current"
+            android:title="@string/lock_screen_show_current"
+            android:summary="@string/lock_screen_show_current_summary"
+            android:defaultValue="false" />
             
         <PreferenceScreen
             android:fragment="com.android.settings.broken.KeyguardStatusBarClockStyle"
