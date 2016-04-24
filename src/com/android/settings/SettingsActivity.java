@@ -118,6 +118,7 @@ import com.android.settings.search.DynamicIndexableContentMonitor;
 import com.android.settings.search.Index;
 import com.android.settings.privacyguard.PrivacyGuardPrefs;
 import com.android.settings.sim.SimSettings;
+import com.android.settings.broken.BrokenSettings;
 import com.android.settings.broken.NavigationSettings;
 import com.android.settings.tts.TextToSpeechSettings;
 import com.android.settings.users.UserSettings;
@@ -283,6 +284,7 @@ public class SettingsActivity extends Activity
             R.id.nfc_payment_settings,
             R.id.home_settings,
             R.id.dashboard,
+            R.id.broken_settings
     };
 
     private static final String[] ENTRY_FRAGMENTS = {
@@ -360,7 +362,8 @@ public class SettingsActivity extends Activity
             WriteSettingsDetails.class.getName(),
             NavigationSettings.class.getName(),
             DisplayRotation.class.getName(),
-            BlacklistSettings.class.getName()
+            BlacklistSettings.class.getName(),
+            BrokenSettings.class.getName()
     };
 
 

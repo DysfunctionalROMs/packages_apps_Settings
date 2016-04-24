@@ -2176,7 +2176,17 @@
         />
 
         <!-- Broken activities Start -->
-        <activity android:name=".broken.BrokenSettings" />
+        <activity android:name="Settings$BrokenPiecesActivity"
+                android:label="@string/broken_settings_title" 
+                android:taskAffinity="">
+            <intent-filter>
+                    <action android:name="android.intent.action.MAIN" />
+                    <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.broken.BrokenSettings" />
+        </activity>
+        
         <activity android:name="com.android.settings.broken.Traffic" />
         <!-- Broken activities end -->
 
