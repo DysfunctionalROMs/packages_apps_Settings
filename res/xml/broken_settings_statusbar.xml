@@ -64,7 +64,7 @@
          android:max="100"
          settings:minimum="0"
          settings:unitsLeft=""
-         settings:unitsRight="@string/unit_percent"
+         settings:unitsRight=""
          android:persistent="false"
          android:dependency="status_bar_custom_header" />
         
