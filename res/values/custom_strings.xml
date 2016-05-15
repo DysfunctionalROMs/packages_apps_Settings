@@ -18,6 +18,9 @@
     <!-- Dev Options Enabled by Default -->
     <string name="show_dev_already_enabled">No Need, Development settings are enabled by default.</string>
 
+    <!-- Local (desktop) backup password menu title [CHAR LIMIT=25] -->
+    <string name="local_backup_password_title">Desktop backup password</string>
+
     <!-- Phone info shortcut -->
     <string name="device_info_title">Phone info</string>
 
