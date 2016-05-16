@@ -328,7 +328,7 @@
     <string name="gesture_settings_title">S-O-G</string>
     
     <!-- Wakeup options -->
-    <string name="display_category_wakeup_options_title">Volume Rocker options</string>
+    <string name="display_category_wakeup_options_title">Display wake options</string>
     <string name="wakeup_when_plugged_unplugged_title">Wake up on charge</string>
     <string name="wakeup_when_plugged_unplugged_summary">Wake up device if charger is plugged/unplugged.</string>
     <!-- Volume rocker wake -->
