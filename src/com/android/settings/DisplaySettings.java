@@ -299,8 +299,10 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
         boolean proximityCheckOnWait = getResources().getBoolean(
                 com.android.internal.R.bool.config_proximityCheckOnWake);
-        if (!proximityCheckOnWait) {
-            mWakeUpOptions.removePreference(findPreference(KEY_PROXIMITY_WAKE));
+            if (!proximityCheckOnWait) {
+                if (mWakeUpOptions != null) {
+                    mWakeUpOptions.removePreference(findPreference(KEY_PROXIMITY_WAKE));
+				}
             Settings.System.putInt(getContentResolver(), Settings.System.PROXIMITY_ON_WAKE, 1);
         }
     }
@@ -773,6 +775,10 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                     }
                     if (!isTapToWakeAvailable(context.getResources())) {
                         result.add(KEY_TAP_TO_WAKE);
+                    }
+                    if (!context.getResources().getBoolean(
+                            com.android.internal.R.bool.config_proximityCheckOnWake)) {
+                        result.add(KEY_PROXIMITY_WAKE);
                     }
                     if (!isCameraGestureAvailable(context.getResources())) {
                         result.add(KEY_CAMERA_GESTURE);
