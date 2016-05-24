@@ -25,6 +25,7 @@
     <string name="reset_android">Android</string>
     <string name="reset_string">Reset</string>
     <string name="help">Help</string>
+    <string name="icon_title">Icon</string>
     <string name="add">Add</string>
     <string name="string_add">Add</string>
     <string name="help">Help</string>
@@ -1618,5 +1619,15 @@
 	<!-- Battery fully charged notification -->
     <string name="battery_fully_charged_notif_title">Battery fully charged notification</string>
     <string name="battery_fully_charged_notif_summary">Show a notification when the battery is fully charged</string>
+    
+    <!-- Keyguard Logo -->
+    <string name="keyguard_logo_title">Logo</string>
+    <string name="keyguard_logo_summary">Customize showing, color &amp; custom image for the ROM logo</string>
+    <string name="keyguard_logo_show_title">Show</string>
+    <string name="keyguard_logo_show_summary">Enable to show the ROM logo on the lock screen</string>
+    <string name="keyguard_logo_custom_reset">Logo Reset</string>
+    <string name="keyguard_logo_custom_reset_summary">Reset the logo to the default image</string>
+    <string name="keyguard_logo_custom_title">Custom Logo</string>
+    <string name="keyguard_logo_custom_summary">Select a custom image for the logo view</string>
     
 </resources>

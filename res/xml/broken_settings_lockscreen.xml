@@ -70,6 +70,12 @@
             
     </PreferenceCategory>
     
+    <PreferenceScreen
+         android:key="keyguard_logo"
+         android:title="@string/keyguard_logo_title"
+         android:summary="@string/keyguard_logo_summary"
+         android:fragment="com.android.settings.broken.KeyguardLogo" />
+    
     <PreferenceCategory
         android:key="lockscreen_shortcuts_options"
         android:title="@string/lockscreen_shortcuts_options_title" >
