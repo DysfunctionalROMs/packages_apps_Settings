@@ -138,6 +138,12 @@
                 android:key="battery_light"
                 android:title="@string/battery_light_title"
                 android:fragment="com.android.settings.notificationlight.BatteryLightSettings" />
+                
+        <!-- Battery fully charged notification -->
+		<com.android.settings.broken.SystemSettingSwitchPreference
+				android:key="battery_fully_charged_notification"
+				android:title="@string/battery_fully_charged_notif_title"
+				android:summary="@string/battery_fully_charged_notif_summary" />
 
          <!-- When device is locked -->
         <com.android.settings.DropDownPreference
