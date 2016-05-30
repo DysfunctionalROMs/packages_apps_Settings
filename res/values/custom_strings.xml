@@ -850,6 +850,8 @@
     <string name="qs_advanced_location_summary">Enable advanced settings for location in quick settings</string>
     <string name="quick_settings_reset_message">Reset quick settings tiles?</string>
     <string name="qs_tile_screenrecord">Screenrecord</string>
+    <string name="qs_wifi_detail_title">Advanced wifi details</string>
+    <string name="qs_wifi_detail_summary">Enable detailed view for wifi in quick settings</string>
     
     <!-- ADB debugging notifications -->
     <string name="enable_adb_custom">Android debugging</string>
