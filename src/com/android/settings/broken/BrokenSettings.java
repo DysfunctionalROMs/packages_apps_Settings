@@ -78,7 +78,6 @@ public class BrokenSettings extends SettingsPreferenceFragment implements OnPref
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-		String value = (String) newValue;
 		if (preference == mSelinux) {
             if (newValue.toString().equals("true")) {
                 CMDProcessor.runSuCommand("setenforce 1");
@@ -89,6 +88,7 @@ public class BrokenSettings extends SettingsPreferenceFragment implements OnPref
             }
             return true;
         } else if (preference == mMsob) {
+			String value = (String) newValue;
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.MEDIA_SCANNER_ON_BOOT,
                     Integer.valueOf(value));
