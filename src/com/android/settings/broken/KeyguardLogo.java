@@ -89,7 +89,7 @@ public class KeyguardLogo extends SettingsPreferenceFragment implements OnPrefer
         mResolver = getActivity().getContentResolver();
 
         boolean showLogo = Settings.System.getInt(mResolver,
-                Settings.System.KEYGUARD_LOGO_SHOW, 1) == 1;
+                Settings.System.KEYGUARD_LOGO_SHOW, 0) == 1;
 
         mShowLogo =
                 (SwitchPreference) findPreference(KEYGUARD_LOGO_SHOW);
