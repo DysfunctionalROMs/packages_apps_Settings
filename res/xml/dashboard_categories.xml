@@ -143,18 +143,6 @@
                android:targetClass="com.vipercn.viper4android_v2.activity.ViPER4Android"
                android:targetPackage="com.vipercn.viper4android_v2" />
         </dashboard-tile>
-
-        <!-- BrokenSwitcher -->
-        <dashboard-tile
-            android:id="@+id/switcher_settings"
-            android:title="@string/switcher_settings_title"
-            android:icon="@drawable/ic_broken_settings" >
-            <intent
-               android:action="android.intent.action.MAIN"
-               android:targetClass="com.dfuse.brokenswitcher.MainActivity"
-               android:targetPackage="com.dfuse.brokenswitcher" />
-        </dashboard-tile>
-        
         
         <!-- BrokenCenter -->
         <dashboard-tile
