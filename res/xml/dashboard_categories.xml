@@ -97,10 +97,10 @@
         <dashboard-tile
                 android:id="@+id/broken_settings"
                 android:title="@string/broken_settings_title"
-                android:fragment="com.android.settings.broken.BrokenSettings" 
+                android:fragment="com.android.settings.broken.BrokenSettings"
                 android:icon="@drawable/ic_broken_settings"
                 />
-                
+
         <!-- Gestures -->
         <dashboard-tile
                 android:id="@+id/device_specific_gesture_settings"
@@ -123,16 +123,17 @@
                     android:targetClass="com.grarak.kerneladiutor.MainActivity" />
         </dashboard-tile>
 
+        <!-- Substratum -->
         <dashboard-tile
-                android:id="@+id/bitsyko_layers"
-                android:icon="@drawable/ic_bitsyko_layers"
-                android:title="@string/bitsyko_layers">     
-		    <intent
-                android:action="android.intent.action.MAIN"
-                android:targetPackage="com.lovejoy777.rroandlayersmanager"
-                android:targetClass="com.lovejoy777.rroandlayersmanager.menu" />
+                android:id="@+id/substratum"
+                android:icon="@drawable/ic_settings_substratum"
+                android:title="@string/substratum_title">
+                <intent
+                    android:action="android.intent.action.MAIN"
+                    android:targetPackage="projekt.substratum"
+                    android:targetClass="projekt.substratum.LaunchActivity" />
         </dashboard-tile>
-        
+
         <!-- Viper4Android -->
         <dashboard-tile
             android:id="@+id/viper_settings"
@@ -143,7 +144,7 @@
                android:targetClass="com.vipercn.viper4android_v2.activity.ViPER4Android"
                android:targetPackage="com.vipercn.viper4android_v2" />
         </dashboard-tile>
-        
+
         <!-- BrokenCenter -->
         <dashboard-tile
                 android:id="@+id/broken_center"
@@ -153,7 +154,7 @@
                     android:action="android.intent.action.MAIN"
                     android:targetPackage="com.broken.ota"
                     android:targetClass="com.broken.center.BrokenCenter" />
-	    </dashboard-tile>  
+	    </dashboard-tile>
 
     </dashboard-category>
 

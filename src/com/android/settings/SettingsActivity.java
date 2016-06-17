@@ -556,7 +556,7 @@ public class SettingsActivity extends Activity
         if (intent.hasExtra(EXTRA_UI_OPTIONS)) {
             getWindow().setUiOptions(intent.getIntExtra(EXTRA_UI_OPTIONS, 0));
         }
-        
+
         mUm = (UserManager) getSystemService(Context.USER_SERVICE);
 
         mDevelopmentPreferences = getSharedPreferences(DevelopmentSettings.PREF_FILE,
@@ -1239,7 +1239,7 @@ public class SettingsActivity extends Activity
         final boolean showDev = mDevelopmentPreferences.getBoolean(
                 DevelopmentSettings.PREF_SHOW,
                 android.os.Build.TYPE.equals("eng") || android.os.Build.TYPE.equals("userdebug") || android.os.Build.TYPE.equals("user"));
-        final boolean isSecondaryUser =  UserHandle.myUserId() != UserHandle.USER_OWNER;    
+        final boolean isSecondaryUser =  UserHandle.myUserId() != UserHandle.USER_OWNER;
 
         final UserManager um = (UserManager) getSystemService(Context.USER_SERVICE);
 
@@ -1344,10 +1344,10 @@ public class SettingsActivity extends Activity
                     if (!supported) {
                         removeTile = true;
                     }
-                } else if (id == R.id.bitsyko_layers) {
+                } else if (id == R.id.substratum) {
                     boolean supported = false;
                     try {
-                        supported = (getPackageManager().getPackageInfo("com.lovejoy777.rroandlayersmanager", 0).versionCode > 0);
+                        supported = (getPackageManager().getPackageInfo("projekt.substratum", 0).versionCode > 0);
                     } catch (PackageManager.NameNotFoundException e) {
                     }
                     if (!supported) {

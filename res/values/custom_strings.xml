@@ -292,11 +292,11 @@
     <string name="statusbar_options_title">Other statusbar icons and mods</string>
     <string name="qs_panel_options_title">QS panel/header modifications</string>
 
-    <!-- BitSyko Layers -->
-    <string name="bitsyko_layers">Layers</string>
-
     <!-- Dev Options Enabled by Default -->
     <string name="show_dev_already_enabled">No need, development settings are enabled by default.</string>
+
+    <!--Substratum dashboard strings-->
+    <string name="substratum_title">Substratum</string>
 
     <!-- Color Picker -->
     <string name="dialog_color_picker">Color Picker</string>
