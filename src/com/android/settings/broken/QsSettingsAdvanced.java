@@ -30,6 +30,10 @@ public class QsSettingsAdvanced extends SettingsPreferenceFragment implements On
     private static final String CUSTOM_HEADER_TEXT_SHADOW = "status_bar_custom_header_text_shadow";
     private static final String CUSTOM_HEADER_TEXT_SHADOW_COLOR = "status_bar_custom_header_text_shadow_color";
     private static final String PREF_NOTIFICATION_ALPHA = "notification_alpha";
+    private static final String PREF_QS_STROKE = "qs_stroke";
+    private static final String PREF_QS_STROKE_COLOR = "qs_stroke_color";
+    private static final String PREF_QS_STROKE_THICKNESS = "qs_stroke_thickness";
+    private static final String PREF_QS_CORNER_RADIUS = "qs_corner_radius";
 
     private SeekBarPreferenceCham mQSShadeAlpha;
     private SeekBarPreferenceCham mQSHeaderAlpha;
@@ -40,9 +44,14 @@ public class QsSettingsAdvanced extends SettingsPreferenceFragment implements On
     private SeekBarPreferenceCham mTextShadow;
     private ColorPickerPreference mTShadowColor;
     private SeekBarPreferenceCham mNotificationsAlpha;
+    private ListPreference mQSStroke;
+    private ColorPickerPreference mQSStrokeColor;
+    private SeekBarPreferenceCham mQSStrokeThickness;
+    private SeekBarPreferenceCham mQSCornerRadius;
 
     static final int DEFAULT_QS_PANEL_LOGO_COLOR = 0x09FF00;
     static final int DEFAULT_HEADER_SHADOW_COLOR = 0xFF000000;
+    static final int DEFAULT_QS_STROKE_COLOR = 0xFF202020;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -72,7 +81,7 @@ public class QsSettingsAdvanced extends SettingsPreferenceFragment implements On
         // QS panel Broken logo
         mQSPanelLogo =
                  (ListPreference) findPreference(PREF_QS_PANEL_LOGO);
-        int qSPanelLogo = Settings.System.getIntForUser(resolver,
+        int qSPanelLogo = Settings.System.getIntForUser(getContentResolver(),
                         Settings.System.QS_PANEL_LOGO, 0,
                         UserHandle.USER_CURRENT);
         mQSPanelLogo.setValue(String.valueOf(qSPanelLogo));
@@ -83,7 +92,7 @@ public class QsSettingsAdvanced extends SettingsPreferenceFragment implements On
         mQSPanelLogoColor =
                 (ColorPickerPreference) findPreference(PREF_QS_PANEL_LOGO_COLOR);
         mQSPanelLogoColor.setOnPreferenceChangeListener(this);
-        int qSPanelLogoColor = Settings.System.getInt(resolver,
+        int qSPanelLogoColor = Settings.System.getInt(getContentResolver(),
                 Settings.System.QS_PANEL_LOGO_COLOR, DEFAULT_QS_PANEL_LOGO_COLOR);
         String qSHexLogoColor = String.format("#%08x", (0x09FF00 & qSPanelLogoColor));
         mQSPanelLogoColor.setSummary(qSHexLogoColor);
@@ -92,7 +101,7 @@ public class QsSettingsAdvanced extends SettingsPreferenceFragment implements On
         // QS panel Broken logo alpha
         mQSPanelLogoAlpha =
                 (SeekBarPreferenceCham) findPreference(PREF_QS_PANEL_LOGO_ALPHA);
-        int qSPanelLogoAlpha = Settings.System.getInt(resolver,
+        int qSPanelLogoAlpha = Settings.System.getInt(getContentResolver(),
                 Settings.System.QS_PANEL_LOGO_ALPHA, 51);
         mQSPanelLogoAlpha.setValue(qSPanelLogoAlpha / 1);
         mQSPanelLogoAlpha.setOnPreferenceChangeListener(this);
@@ -127,6 +136,44 @@ public class QsSettingsAdvanced extends SettingsPreferenceFragment implements On
                 Settings.System.NOTIFICATION_ALPHA, 255);
         mNotificationsAlpha.setValue(notificationsAlpha / 1);
         mNotificationsAlpha.setOnPreferenceChangeListener(this);
+
+        // QS stroke
+        mQSStroke =
+                (ListPreference) findPreference(PREF_QS_STROKE);
+        int qSStroke = Settings.System.getIntForUser(getContentResolver(),
+                       Settings.System.QS_STROKE, 1,
+                       UserHandle.USER_CURRENT);
+        mQSStroke.setValue(String.valueOf(qSStroke));
+        mQSStroke.setSummary(mQSStroke.getEntry());
+        mQSStroke.setOnPreferenceChangeListener(this);
+
+        // QS stroke color
+        mQSStrokeColor =
+                (ColorPickerPreference) findPreference(PREF_QS_STROKE_COLOR);
+        mQSStrokeColor.setOnPreferenceChangeListener(this);
+        int qSIntColor = Settings.System.getInt(getContentResolver(),
+                Settings.System.QS_STROKE_COLOR, DEFAULT_QS_STROKE_COLOR);
+        String qSHexColor = String.format("#%08x", (0xFF202020 & qSIntColor));
+        mQSStrokeColor.setSummary(qSHexColor);
+        mQSStrokeColor.setNewPreviewColor(qSIntColor);
+
+        // QS stroke thickness
+        mQSStrokeThickness =
+                (SeekBarPreferenceCham) findPreference(PREF_QS_STROKE_THICKNESS);
+        int qSStrokeThickness = Settings.System.getInt(getContentResolver(),
+                Settings.System.QS_STROKE_THICKNESS, 4);
+        mQSStrokeThickness.setValue(qSStrokeThickness / 1);
+        mQSStrokeThickness.setOnPreferenceChangeListener(this);
+
+        // QS corner radius
+        mQSCornerRadius =
+                (SeekBarPreferenceCham) findPreference(PREF_QS_CORNER_RADIUS);
+        int qSCornerRadius = Settings.System.getInt(getContentResolver(),
+                Settings.System.QS_CORNER_RADIUS, 0);
+        mQSCornerRadius.setValue(qSCornerRadius / 1);
+        mQSCornerRadius.setOnPreferenceChangeListener(this);
+
+        QSSettingsDisabler(qSStroke);
     }
 
     @Override
@@ -192,6 +239,32 @@ public class QsSettingsAdvanced extends SettingsPreferenceFragment implements On
             Settings.System.putInt(getContentResolver(),
                     Settings.System.NOTIFICATION_ALPHA, alpha * 1);
             return true;
+        } else if (preference == mQSStroke) {
+            int qSStroke = Integer.parseInt((String) objValue);
+            int index = mQSStroke.findIndexOfValue((String) objValue);
+            Settings.System.putIntForUser(getContentResolver(), Settings.System.
+                    QS_STROKE, qSStroke, UserHandle.USER_CURRENT);
+            mQSStroke.setSummary(mQSStroke.getEntries()[index]);
+            QSSettingsDisabler(qSStroke);
+            return true;
+        } else if (preference == mQSStrokeColor) {
+            String hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(objValue)));
+            preference.setSummary(hex);
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.QS_STROKE_COLOR, intHex);
+            return true;
+        } else if (preference == mQSStrokeThickness) {
+            int val = (Integer) objValue;
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.QS_STROKE_THICKNESS, val * 1);
+            return true;
+        } else if (preference == mQSCornerRadius) {
+            int val = (Integer) objValue;
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.QS_CORNER_RADIUS, val * 1);
+            return true;
         }
         return false;
     }
@@ -206,6 +279,19 @@ public class QsSettingsAdvanced extends SettingsPreferenceFragment implements On
         } else {
             mQSPanelLogoColor.setEnabled(true);
             mQSPanelLogoAlpha.setEnabled(true);
+        }
+    }
+
+    private void QSSettingsDisabler(int qSStroke) {
+        if (qSStroke == 0) {
+            mQSStrokeColor.setEnabled(false);
+            mQSStrokeThickness.setEnabled(false);
+        } else if (qSStroke == 1) {
+            mQSStrokeColor.setEnabled(false);
+            mQSStrokeThickness.setEnabled(true);
+        } else {
+            mQSStrokeColor.setEnabled(true);
+            mQSStrokeThickness.setEnabled(true);
         }
     }
 
