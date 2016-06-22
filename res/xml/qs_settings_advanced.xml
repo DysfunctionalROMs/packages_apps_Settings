@@ -9,6 +9,15 @@
         android:title="@string/transparency_options_title" >
 
         <com.android.settings.broken.widget.SeekBarPreferenceCham
+            android:key="qs_transparent_header"
+            android:title="@string/qs_transparent_header"
+            android:max="255"
+            settings:minimum="0"
+            settings:unitsLeft=""
+            settings:unitsRight=""
+            android:persistent="false" />
+
+        <com.android.settings.broken.widget.SeekBarPreferenceCham
             android:key="qs_transparent_shade"
             android:title="@string/qs_transparent_shade"
             android:max="255"
@@ -17,13 +26,34 @@
             settings:unitsRight=""
             android:persistent="false" />
 
+        <ListPreference
+            android:key="qs_stroke"
+            android:title="@string/qs_stroke_title"
+            android:dialogTitle="@string/qs_stroke_title"
+            android:entries="@array/qs_stroke_entries"
+            android:entryValues="@array/qs_stroke_values"
+            android:defaultValue="1" />
+
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="qs_stroke_color"
+            android:title="@string/qs_stroke_color_title" />
+
         <com.android.settings.broken.widget.SeekBarPreferenceCham
-            android:key="qs_transparent_header"
-            android:title="@string/qs_transparent_header"
-            android:max="255"
-            settings:minimum="0"
+            android:key="qs_stroke_thickness"
+            android:title="@string/qs_stroke_thickness_title"
+            android:max="25"
+            settings:min="1"
             settings:unitsLeft=""
-            settings:unitsRight=""
+            settings:unitsRight="px"
+            android:persistent="false" />
+
+        <com.android.settings.broken.widget.SeekBarPreferenceCham
+            android:key="qs_corner_radius"
+            android:title="@string/qs_corner_radius_title"
+            android:max="50"
+            settings:min="0"
+            settings:unitsLeft=""
+            settings:unitsRight="px"
             android:persistent="false" />
 
         <com.android.settings.broken.widget.SeekBarPreferenceCham
