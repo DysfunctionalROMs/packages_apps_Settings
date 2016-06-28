@@ -14,7 +14,7 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<PreferenceScreen 
+<PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
     android:title="@string/qs_settings_title">
@@ -26,7 +26,7 @@
             android:key="qs_order"
             android:title="@string/qs_order_title"
             android:fragment="com.android.settings.broken.qs.QSTiles" />
-            
+
         <ListPreference
 			android:key="qs_tile_animation_style"
 			android:title="@string/qs_tile_animation_style_title"
@@ -47,19 +47,19 @@
             android:summaryOn="@string/qs_main_tiles_summary_on"
             android:summaryOff="@string/qs_main_tiles_summary_off"
             android:defaultValue="true" />
-            
+
         <com.android.settings.broken.SecureSettingSwitchPreference
             android:key="qs_location_advanced"
             android:title="@string/qs_advanced_location_title"
             android:summary="@string/qs_advanced_location_summary"
             android:defaultValue="false" />
-            
+
         <com.android.settings.broken.SecureSettingSwitchPreference
             android:key="qs_wifi_detail"
             android:title="@string/qs_wifi_detail_title"
             android:summary="@string/qs_wifi_detail_summary"
             android:defaultValue="false" />
-            
+
         <com.android.settings.broken.SecureSettingSwitchPreference
             android:key="qs_use_four_columns"
             android:title="@string/qs_four_columns_title"
@@ -82,12 +82,39 @@
             settings:unitsLeft=""
             settings:unitsRight=""
             android:persistent="false" />
-            
+
         <SwitchPreference
             android:key="block_on_secure_keyguard"
             android:title="@string/block_on_secure_keyguard_title"
             android:summary="@string/block_on_secure_keyguard_summary"
             android:persistent="false" />
+
+        </PreferenceCategory>
+
+        <PreferenceCategory
+            android:key="qs_panel_logo_category"
+            android:title="@string/qs_panel_logo_category">
+
+        <ListPreference
+            android:key="qs_panel_logo"
+            android:title="@string/qs_panel_logo_title"
+            android:dialogTitle="@string/qs_panel_logo_title"
+            android:entries="@array/qs_panel_logo_entries"
+            android:entryValues="@array/qs_panel_logo_values"
+            android:defaultValue="0" />
+
+        <com.android.settings.broken.widget.SeekBarPreferenceCham
+            android:key="qs_panel_logo_alpha"
+            android:title="@string/qs_panel_logo_alpha_title"
+            android:max="255"
+            settings:minimum="0"
+            settings:unitsLeft=""
+            settings:unitsRight="%"
+            android:persistent="false" />
+
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="qs_panel_logo_color"
+            android:title="@string/qs_panel_logo_color_title" />
 
     </PreferenceCategory>
 
