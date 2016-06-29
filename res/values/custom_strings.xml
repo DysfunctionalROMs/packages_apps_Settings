@@ -1652,4 +1652,8 @@
     <string name="qs_panel_logo_color_title">QS panel image color</string>
     <string name="qs_panel_logo_alpha_title">QS panel image transparency</string>
 
+    <!-- Header text shadow and color -->
+    <string name="status_bar_custom_header_text_shadow_title">Header text shadow</string>
+    <string name="status_bar_custom_header_text_shadow_summary">For better visibility on themed headers</string>
+    <string name="status_bar_custom_header_text_shadow_color_title">Header text shadow color</string>
 </resources>

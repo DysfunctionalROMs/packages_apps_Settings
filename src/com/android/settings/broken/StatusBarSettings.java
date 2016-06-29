@@ -23,6 +23,7 @@ import android.text.TextUtils;
 import android.view.View;
 
 import com.android.settings.broken.widget.SeekBarPreferenceCham;
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 import com.android.internal.logging.MetricsLogger;
 
@@ -35,12 +36,18 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
     private static final String STATUS_BAR_TEMPERATURE_STYLE = "status_bar_temperature_style";
     private static final String STATUS_BAR_TEMPERATURE = "status_bar_temperature";
     private static final String CUSTOM_HEADER_IMAGE_SHADOW = "status_bar_custom_header_shadow";
+    private static final String CUSTOM_HEADER_TEXT_SHADOW = "status_bar_custom_header_text_shadow";
+    private static final String CUSTOM_HEADER_TEXT_SHADOW_COLOR = "status_bar_custom_header_text_shadow_color";
 
     private PreferenceScreen mLockClock;
     private ListPreference mQuickPulldown;
     private ListPreference mStatusBarTemperature;
     private ListPreference mStatusBarTemperatureStyle;
     private SeekBarPreferenceCham mHeaderShadow;
+    private SeekBarPreferenceCham mTextShadow;
+    private ColorPickerPreference mTShadowColor;
+    
+    static final int DEFAULT_HEADER_SHADOW_COLOR = 0xFF000000;
      
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -67,7 +74,25 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
         if (!Utils.isPackageInstalled(getActivity(), KEY_LOCK_CLOCK_PACKAGE_NAME)) {
             prefSet.removePreference(mLockClock);
         }
-        
+
+        // Status Bar header text shadow
+        mTextShadow = (SeekBarPreferenceCham) findPreference(CUSTOM_HEADER_TEXT_SHADOW);
+        final float textShadow = Settings.System.getFloat(getContentResolver(),
+                Settings.System.STATUS_BAR_CUSTOM_HEADER_TEXT_SHADOW, 0);
+        mTextShadow.setValue((int)(textShadow));
+        mTextShadow.setOnPreferenceChangeListener(this);
+ 
+        //Status Bar header text shadow color
+        mTShadowColor =
+                (ColorPickerPreference) findPreference(CUSTOM_HEADER_TEXT_SHADOW_COLOR);
+        mTShadowColor.setOnPreferenceChangeListener(this);
+        int shadowColor = Settings.System.getInt(getContentResolver(),
+                Settings.System.STATUS_BAR_CUSTOM_HEADER_TEXT_SHADOW_COLOR, DEFAULT_HEADER_SHADOW_COLOR);
+        String HexColor = String.format("#%08x", (0x000000 & shadowColor));
+        mTShadowColor.setSummary(HexColor);
+        mTShadowColor.setNewPreviewColor(shadowColor);
+
+        // Status Bar header shadow on custom header images        
         mHeaderShadow = (SeekBarPreferenceCham) findPreference(CUSTOM_HEADER_IMAGE_SHADOW);
         final int headerShadow = Settings.System.getInt(getContentResolver(),
                 Settings.System.STATUS_BAR_CUSTOM_HEADER_SHADOW, 0);
@@ -134,6 +159,20 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
                     temperatureStyle);
             mStatusBarTemperatureStyle.setSummary(
                     mStatusBarTemperatureStyle.getEntries()[index]);
+            return true;
+         } else if (preference == mTextShadow) {
+            float textShadow = (Integer) objValue;
+            float realHeaderValue = (float) ((double) textShadow);
+            Settings.System.putFloat(getContentResolver(),
+                    Settings.System.STATUS_BAR_CUSTOM_HEADER_TEXT_SHADOW, realHeaderValue);
+            return true;
+         } else if (preference == mTShadowColor) {
+            String hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(objValue)));
+            preference.setSummary(hex);
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.STATUS_BAR_CUSTOM_HEADER_TEXT_SHADOW_COLOR, intHex);
             return true;
         } else if (preference == mHeaderShadow) {
          Integer headerShadow = (Integer) objValue;
