@@ -46,6 +46,7 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
     private static final String PREF_BUTTON = "navbar_button_settings";
     private static final String PREF_STYLE_DIMEN = "navbar_style_dimen_settings";
     private static final String PREF_NAVIGATION_BAR_CAN_MOVE = "navbar_can_move";
+    private static final String PREF_NAVIGATION_BAR_LEFT = "navigation_bar_left";
     private static final String STATUS_BAR_IME_ARROWS = "status_bar_ime_arrows";
     private static final String DIM_NAV_BUTTONS = "dim_nav_buttons";
     private static final String DIM_NAV_BUTTONS_TIMEOUT = "dim_nav_buttons_timeout";
@@ -59,6 +60,7 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
     ListPreference mNavBarMenuDisplay;
     SwitchPreference mEnableNavigationBar;
     SwitchPreference mNavigationBarCanMove;
+    SwitchPreference mNavigationBarLeftPref;
     PreferenceScreen mButtonPreference;
     PreferenceScreen mStyleDimenPreference;
     SwitchPreference mStatusBarImeArrows;
@@ -110,6 +112,9 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
                 Settings.System.NAVIGATION_BAR_CAN_MOVE,
                 DeviceUtils.isPhone(getActivity()) ? 1 : 0) == 0);
         mNavigationBarCanMove.setOnPreferenceChangeListener(this);
+        
+        // Navigation bar left
+        mNavigationBarLeftPref = (SwitchPreference) findPreference(PREF_NAVIGATION_BAR_LEFT);
 
         mStatusBarImeArrows = (SwitchPreference) findPreference(STATUS_BAR_IME_ARROWS);
         mStatusBarImeArrows.setChecked(Settings.System.getInt(getContentResolver(),
@@ -212,6 +217,11 @@ public class NavbarSettings extends SettingsPreferenceFragment implements
         } else if (preference == mNavigationBarCanMove) {
             Settings.System.putInt(getActivity().getContentResolver(),
                     Settings.System.NAVIGATION_BAR_CAN_MOVE,
+                    ((Boolean) newValue) ? 0 : 1);
+            return true;
+        } else if (preference == mNavigationBarLeftPref) {
+            Settings.System.putInt(getActivity().getContentResolver(),
+                    Settings.System.NAVBAR_LEFT_IN_LANDSCAPE,
                     ((Boolean) newValue) ? 0 : 1);
             return true;
         } else if (preference == mStatusBarImeArrows) {
