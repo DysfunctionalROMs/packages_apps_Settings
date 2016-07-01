@@ -791,6 +791,9 @@
     <!-- LTE tile -->
     <string name="qs_tile_lte">LTE</string>
 
+    <!-- KA Tile -->
+    <string name="qs_tile_kernel_adiutor">Kernel Adiutor</string>
+
     <!-- Sound settings -->
     <string name="advanced_sound_title">Advanced options</string>
     <string name="sound_title">Sound</string>
