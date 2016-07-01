@@ -238,6 +238,8 @@
     <string name="navbar_cat">Navigation bar</string>
     <string name="navbar_dimensions_reset_message">Reset all dimensions entries to default?</string>
     <string name="navbar_button_style_reset_message">Reset all style entries to default?</string>
+    <string name="navigation_bar_left_title">Left-handed mode</string>
+    <string name="navigation_bar_left_summary">Shows the navigation bar in landscape on the left</string>
 
     <!-- Navigation bar button style -->
     <string name="nav_bar_button_style">Button style</string>
