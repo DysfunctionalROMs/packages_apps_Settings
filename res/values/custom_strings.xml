@@ -288,6 +288,9 @@
     <string name="lockscreen_title">Lock screen</string>
     <string name="power_menu_title">Power menu</string>
     <string name="volume_rocker_screen_title">Volume rocker</string>
+    
+    <string name="statusbar_options_title">Other statusbar icons and mods</string>
+    <string name="qs_panel_options_title">QS panel/header modifications</string>
 
     <!-- BitSyko Layers -->
     <string name="bitsyko_layers">Layers</string>
@@ -1459,6 +1462,8 @@
 
     <!-- QS header transparency -->
     <string name="qs_transparent_header">QS header transparency</string>
+    
+    <string name="transparency_options_title">Panel transparency options</string>
 
     <!-- Power menu and dialogs transparency -->
     <string name="power_menu_transparency">Power/reboot menu transparency</string>

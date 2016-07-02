@@ -64,6 +64,24 @@
             android:key="qs_use_four_columns"
             android:title="@string/qs_four_columns_title"
             android:defaultValue="false" />
+        
+        <com.android.settings.broken.SecureSettingSwitchPreference
+            android:key="qs_show_brightness_slider"
+            android:title="@string/qs_brightness_slider_title"
+            android:summary="@string/qs_brightness_slider_summary"
+            android:defaultValue="true"/>
+
+        <SwitchPreference
+            android:key="block_on_secure_keyguard"
+            android:title="@string/block_on_secure_keyguard_title"
+            android:summary="@string/block_on_secure_keyguard_summary"
+            android:persistent="false" />
+
+        </PreferenceCategory>
+        
+        <PreferenceCategory
+            android:key="transparency_category"
+            android:title="@string/transparency_options_title" >
 
         <com.android.settings.broken.widget.SeekBarPreferenceCham
             android:key="qs_transparent_shade"
@@ -81,12 +99,6 @@
             settings:minimum="0"
             settings:unitsLeft=""
             settings:unitsRight=""
-            android:persistent="false" />
-
-        <SwitchPreference
-            android:key="block_on_secure_keyguard"
-            android:title="@string/block_on_secure_keyguard_title"
-            android:summary="@string/block_on_secure_keyguard_summary"
             android:persistent="false" />
 
         </PreferenceCategory>
