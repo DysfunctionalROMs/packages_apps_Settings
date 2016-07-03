@@ -1670,4 +1670,7 @@
    <string name="menu_show_substratum">Show overlays</string>
    <string name="menu_hide_substratum">Hide overlays</string>
 
+   <!-- Volume dialog timeout -->
+   <string name="volume_dialog_timeout_title">Volume dialog timeout</string>
+
 </resources>
