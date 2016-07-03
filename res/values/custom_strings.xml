@@ -15,13 +15,13 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-	<!-- General strings -->
+    <!-- General strings -->
     <string name="ok">OK</string>
     <string name="ok_string">OK</string>
     <string name="reset">Reset</string>
     <string name="reset_title">Reset</string>
-	<string name="reset_message">Reset values</string>
-	<string name="reset_paranoid">Broken</string>
+    <string name="reset_message">Reset values</string>
+    <string name="reset_paranoid">Broken</string>
     <string name="reset_android">Android</string>
     <string name="reset_string">Reset</string>
     <string name="help">Help</string>
@@ -288,7 +288,7 @@
     <string name="lockscreen_title">Lock screen</string>
     <string name="power_menu_title">Power menu</string>
     <string name="volume_rocker_screen_title">Volume rocker</string>
-    
+
     <string name="statusbar_options_title">Other statusbar icons and mods</string>
     <string name="qs_panel_options_title">QS panel/header modifications</string>
 
@@ -917,10 +917,10 @@
     <!-- Dashboard tileview double lines -->
     <string name="dashboard_category">Dashboard settings</string>
     <string name="dashboard_tileview_double_lines_title">Dashboard tile view title</string>
-    <string name="dashboard_tileview_double_lines_summary_on">Show dashboard tile titles in 1 line</string>
-    <string name="dashboard_tileview_double_lines_summary_off">Show dashboard tile titles in 2 lines</string>
+    <string name="dashboard_tileview_double_lines_summary_on">Disable for dashboard tile titles in 1 line</string>
+    <string name="dashboard_tileview_double_lines_summary_off">Enable for dashboard tile titles in 2 lines</string>
 
-	<!-- Dashboard tileview dividers -->
+    <!-- Dashboard tileview dividers -->
     <string name="dashboard_tileview_dividers_title">Dashboard dividers</string>
     <string name="dashboard_tileview_dividers_summary">Hide dashboard tile dividers</string>
 
@@ -1367,7 +1367,7 @@
     <string name="app_ops_allowed_count">Allowed <xliff:g id="count" example="2 times">%s</xliff:g></string>
     <string name="app_ops_ignored_count">Denied <xliff:g id="count" example="2 times">%s</xliff:g></string>
     <string name="app_ops_both_count">Allowed <xliff:g id="count">%1$s</xliff:g>, denied <xliff:g id="count">%2$s</xliff:g></string>
-	<string name="app_ops_disabled_by_optimization">Disabled by battery optimization</string>
+    <string name="app_ops_disabled_by_optimization">Disabled by battery optimization</string>
 
     <!-- App ops menu options -->
     <string name="app_ops_show_user_apps">Show user apps</string>
@@ -1462,7 +1462,7 @@
 
     <!-- QS header transparency -->
     <string name="qs_transparent_header">QS header transparency</string>
-    
+
     <string name="transparency_options_title">Panel transparency options</string>
 
     <!-- Power menu and dialogs transparency -->
@@ -1623,7 +1623,7 @@
     <string name="qs_set_animation_style">Animation is set to %1$s</string>
     <string name="qs_set_animation_duration">Animation duration is set to %1$s</string>
 
-	<!-- Battery fully charged notification -->
+    <!-- Battery fully charged notification -->
     <string name="battery_fully_charged_notif_title">Battery fully charged notification</string>
     <string name="battery_fully_charged_notif_summary">Show a notification when the battery is fully charged</string>
 
