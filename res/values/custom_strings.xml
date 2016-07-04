@@ -1661,4 +1661,10 @@
     <string name="status_bar_custom_header_text_shadow_title">Header text shadow</string>
     <string name="status_bar_custom_header_text_shadow_summary">For better visibility on themed headers</string>
     <string name="status_bar_custom_header_text_shadow_color_title">Header text shadow color</string>
+
+    <!-- Manage applications: show substratum overlays -->
+   <string name="filter_substratum_apps">Substratum overlays</string>
+   <string name="menu_show_substratum">Show overlays</string>
+   <string name="menu_hide_substratum">Hide overlays</string>
+
 </resources>
