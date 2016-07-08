@@ -797,6 +797,9 @@
     <!-- KA Tile -->
     <string name="qs_tile_kernel_adiutor">Kernel Adiutor</string>
 
+    <!-- Viper tile -->
+    <string name="qs_tile_viper4android">Viper4Android</string>
+
     <!-- Sound settings -->
     <string name="advanced_sound_title">Advanced options</string>
     <string name="sound_title">Sound</string>

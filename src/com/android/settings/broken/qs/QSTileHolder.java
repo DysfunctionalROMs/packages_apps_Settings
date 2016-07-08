@@ -162,6 +162,10 @@ public class QSTileHolder {
                 resourceName = "ic_qs_screenrecord";
                 stringId = R.string.qs_tile_screenrecord;
                 break;
+            case QSConstants.TILE_VIPER4ANDROID:
+                resourceName = "ic_qs_viper_4_android";
+                stringId = R.string.qs_tile_viper4android;
+                break;
             default:
                 return null;
         }
