@@ -34,6 +34,8 @@
 
             <ImageView
                     android:id="@+id/icon"
+                    android:theme="@style/DashboardIcon"
+                    android:padding="@dimen/dashboard_icon_bg_padding"
                     android:layout_width="@dimen/dashboard_tile_image_size"
                     android:layout_height="@dimen/dashboard_tile_image_size"
                     android:scaleType="centerInside"
