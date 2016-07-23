@@ -84,6 +84,7 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
     private static final String KEY_EQUIPMENT_ID = "fcc_equipment_id";
     private static final String PROPERTY_EQUIPMENT_ID = "ro.ril.fccid";
     private static final String KEY_DEVICE_FEEDBACK = "device_feedback";
+    private static final String KEY_VENDOR_VERSION = "vendor_version";
 
     static final int TAPS_TO_BE_A_DEVELOPER = 7;
 
@@ -122,7 +123,14 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
             setStringSummary(KEY_SECURITY_PATCH, patch);
         } else {
             getPreferenceScreen().removePreference(findPreference(KEY_SECURITY_PATCH));
-
+        }
+        String vendorfingerprint = SystemProperties.get("ro.vendor.build.fingerprint");
+        if (vendorfingerprint != null && !TextUtils.isEmpty(vendorfingerprint)) {
+            String[] splitfingerprint = vendorfingerprint.split("/");
+            String vendorid = splitfingerprint[3];
+            setStringSummary(KEY_VENDOR_VERSION, vendorid);
+        } else {
+            getPreferenceScreen().removePreference(findPreference(KEY_VENDOR_VERSION));
         }
         setValueSummary(KEY_BASEBAND_VERSION, "gsm.version.baseband");
         setStringSummary(KEY_DEVICE_MODEL, Build.MODEL + getMsvSuffix());
@@ -481,7 +489,7 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
             private boolean isPropertyMissing(String property) {
                 return SystemProperties.get(property).equals("");
         }
-	};
+    };
 
     private String getMemInfo() {
         String result = null;
@@ -512,9 +520,9 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
 
         try {
             /* The expected /proc/cpuinfo output is as follows:
-             * Processor	: ARMv7 Processor rev 2 (v7l)
-             * BogoMIPS	: 272.62
-             * BogoMIPS	: 272.62
+             * Processor    : ARMv7 Processor rev 2 (v7l)
+             * BogoMIPS : 272.62
+             * BogoMIPS : 272.62
              *
              * On kernel 3.10 this changed, it is now the last
              * line. So let's read the whole thing, search

@@ -1737,4 +1737,8 @@
     <string name="qs_stroke_thickness_title">QS shade stroke thickness</string>
     <string name="qs_corner_radius_title">QS shade corner radius</string>
 
+    <!-- Vendor version -->
+    <string name="vendor_version">Vendor version</string>
+    <string name="vendor_version_default">Unknown</string>
+
 </resources>
