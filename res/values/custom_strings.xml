@@ -1723,4 +1723,7 @@
    <string name="qs_settings_advanced_title">Header and Shade Tweaks</string>
    <string name="qs_settings_advanced_summary">Various mods for the QS shade and header</string>
 
+    <!-- Notifications transparency -->
+    <string name="notifications_transparency">Notifications transparency</string>
+
 </resources>
