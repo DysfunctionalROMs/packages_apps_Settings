@@ -29,6 +29,7 @@ public class QsSettingsAdvanced extends SettingsPreferenceFragment implements On
     private static final String CUSTOM_HEADER_IMAGE_SHADOW = "status_bar_custom_header_shadow";
     private static final String CUSTOM_HEADER_TEXT_SHADOW = "status_bar_custom_header_text_shadow";
     private static final String CUSTOM_HEADER_TEXT_SHADOW_COLOR = "status_bar_custom_header_text_shadow_color";
+    private static final String PREF_NOTIFICATION_ALPHA = "notification_alpha";
 
     private SeekBarPreferenceCham mQSShadeAlpha;
     private SeekBarPreferenceCham mQSHeaderAlpha;
@@ -38,6 +39,7 @@ public class QsSettingsAdvanced extends SettingsPreferenceFragment implements On
     private SeekBarPreferenceCham mHeaderShadow;
     private SeekBarPreferenceCham mTextShadow;
     private ColorPickerPreference mTShadowColor;
+    private SeekBarPreferenceCham mNotificationsAlpha;
 
     static final int DEFAULT_QS_PANEL_LOGO_COLOR = 0x09FF00;
     static final int DEFAULT_HEADER_SHADOW_COLOR = 0xFF000000;
@@ -118,6 +120,13 @@ public class QsSettingsAdvanced extends SettingsPreferenceFragment implements On
                 Settings.System.STATUS_BAR_CUSTOM_HEADER_SHADOW, 0);
         mHeaderShadow.setValue((int)((headerShadow / 255) * 100));
         mHeaderShadow.setOnPreferenceChangeListener(this);
+
+        // Notifications alpha
+        mNotificationsAlpha = (SeekBarPreferenceCham) findPreference(PREF_NOTIFICATION_ALPHA);
+        int notificationsAlpha = Settings.System.getInt(getContentResolver(),
+                Settings.System.NOTIFICATION_ALPHA, 255);
+        mNotificationsAlpha.setValue(notificationsAlpha / 1);
+        mNotificationsAlpha.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -177,6 +186,11 @@ public class QsSettingsAdvanced extends SettingsPreferenceFragment implements On
             int realHeaderValue = (int) (((double) headerShadow / 100) * 255);
             Settings.System.putInt(getContentResolver(),
                     Settings.System.STATUS_BAR_CUSTOM_HEADER_SHADOW, realHeaderValue);
+            return true;
+        } else if (preference == mNotificationsAlpha) {
+            int alpha = (Integer) objValue;
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.NOTIFICATION_ALPHA, alpha * 1);
             return true;
         }
         return false;
