@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/qs_settings_advanced_title">
+
+    <PreferenceCategory
+        android:key="transparency_category"
+        android:title="@string/transparency_options_title" >
+
+        <com.android.settings.broken.widget.SeekBarPreferenceCham
+            android:key="qs_transparent_shade"
+            android:title="@string/qs_transparent_shade"
+            android:max="255"
+            settings:minimum="0"
+            settings:unitsLeft=""
+            settings:unitsRight=""
+            android:persistent="false" />
+
+        <com.android.settings.broken.widget.SeekBarPreferenceCham
+            android:key="qs_transparent_header"
+            android:title="@string/qs_transparent_header"
+            android:max="255"
+            settings:minimum="0"
+            settings:unitsLeft=""
+            settings:unitsRight=""
+            android:persistent="false" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="qs_panel_logo_category"
+        android:title="@string/qs_panel_logo_category">
+
+        <ListPreference
+            android:key="qs_panel_logo"
+            android:title="@string/qs_panel_logo_title"
+            android:dialogTitle="@string/qs_panel_logo_title"
+            android:entries="@array/qs_panel_logo_entries"
+            android:entryValues="@array/qs_panel_logo_values"
+            android:defaultValue="0" />
+
+        <com.android.settings.broken.widget.SeekBarPreferenceCham
+            android:key="qs_panel_logo_alpha"
+            android:title="@string/qs_panel_logo_alpha_title"
+            android:max="255"
+            settings:minimum="0"
+            settings:unitsLeft=""
+            settings:unitsRight="%"
+            android:persistent="false" />
+
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="qs_panel_logo_color"
+            android:title="@string/qs_panel_logo_color_title" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="panel_options_category"
+        android:title="@string/qs_panel_options_title" >
+
+        <com.android.settings.broken.widget.SeekBarPreferenceCham
+            android:key="status_bar_custom_header_text_shadow"
+            android:title="@string/status_bar_custom_header_text_shadow_title"
+            android:summary="@string/status_bar_custom_header_text_shadow_summary"
+            android:defaultValue="0"
+            android:max="25"
+            settings:min="0"
+            settings:unitsLeft=""
+            settings:unitsRight=""
+            android:persistent="false" />
+
+        <net.margaritov.preference.colorpicker.ColorPickerPreference
+            android:key="status_bar_custom_header_text_shadow_color"
+            android:title="@string/status_bar_custom_header_text_shadow_color_title" />
+
+        <com.android.settings.broken.SystemSettingSwitchPreference
+            android:key="status_bar_custom_header"
+            android:title="@string/status_bar_custom_header_title"
+            android:summary="@string/status_bar_custom_header_summary"
+            android:defaultValue="false"/>
+
+        <com.android.settings.broken.widget.SeekBarPreferenceCham
+            android:key="status_bar_custom_header_shadow"
+            android:title="@string/status_bar_custom_header_shadow_title"
+            android:summary="@string/status_bar_custom_header_shadow_summary"
+            android:defaultValue="0"
+            android:max="100"
+            settings:minimum="0"
+            settings:unitsLeft=""
+            settings:unitsRight=""
+            android:persistent="false"
+            android:dependency="status_bar_custom_header" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

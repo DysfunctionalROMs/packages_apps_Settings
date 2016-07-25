@@ -22,9 +22,6 @@ import java.util.Locale;
 import android.text.TextUtils;
 import android.view.View;
 
-import com.android.settings.broken.widget.SeekBarPreferenceCham;
-import net.margaritov.preference.colorpicker.ColorPickerPreference;
-
 import com.android.internal.logging.MetricsLogger;
 
 public class StatusBarSettings extends SettingsPreferenceFragment implements
@@ -35,20 +32,12 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
     private static final String PRE_QUICK_PULLDOWN = "quick_pulldown";
     private static final String STATUS_BAR_TEMPERATURE_STYLE = "status_bar_temperature_style";
     private static final String STATUS_BAR_TEMPERATURE = "status_bar_temperature";
-    private static final String CUSTOM_HEADER_IMAGE_SHADOW = "status_bar_custom_header_shadow";
-    private static final String CUSTOM_HEADER_TEXT_SHADOW = "status_bar_custom_header_text_shadow";
-    private static final String CUSTOM_HEADER_TEXT_SHADOW_COLOR = "status_bar_custom_header_text_shadow_color";
 
     private PreferenceScreen mLockClock;
     private ListPreference mQuickPulldown;
     private ListPreference mStatusBarTemperature;
     private ListPreference mStatusBarTemperatureStyle;
-    private SeekBarPreferenceCham mHeaderShadow;
-    private SeekBarPreferenceCham mTextShadow;
-    private ColorPickerPreference mTShadowColor;
-    
-    static final int DEFAULT_HEADER_SHADOW_COLOR = 0xFF000000;
-     
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,7 +45,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
         addPreferencesFromResource(R.xml.broken_settings_statusbar);
 
         PreferenceScreen prefSet = getPreferenceScreen();
-        
+
         mQuickPulldown = (ListPreference) findPreference(PRE_QUICK_PULLDOWN);
         if (!Utils.isPhone(getActivity())) {
             prefSet.removePreference(mQuickPulldown);
@@ -69,36 +58,12 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
             updateQuickPulldownSummary(statusQuickPulldown);
         }
 
-        // mLockClock 
-    	mLockClock = (PreferenceScreen) findPreference(KEY_LOCK_CLOCK);
+        // mLockClock
+        mLockClock = (PreferenceScreen) findPreference(KEY_LOCK_CLOCK);
         if (!Utils.isPackageInstalled(getActivity(), KEY_LOCK_CLOCK_PACKAGE_NAME)) {
             prefSet.removePreference(mLockClock);
         }
 
-        // Status Bar header text shadow
-        mTextShadow = (SeekBarPreferenceCham) findPreference(CUSTOM_HEADER_TEXT_SHADOW);
-        final float textShadow = Settings.System.getFloat(getContentResolver(),
-                Settings.System.STATUS_BAR_CUSTOM_HEADER_TEXT_SHADOW, 0);
-        mTextShadow.setValue((int)(textShadow));
-        mTextShadow.setOnPreferenceChangeListener(this);
- 
-        //Status Bar header text shadow color
-        mTShadowColor =
-                (ColorPickerPreference) findPreference(CUSTOM_HEADER_TEXT_SHADOW_COLOR);
-        mTShadowColor.setOnPreferenceChangeListener(this);
-        int shadowColor = Settings.System.getInt(getContentResolver(),
-                Settings.System.STATUS_BAR_CUSTOM_HEADER_TEXT_SHADOW_COLOR, DEFAULT_HEADER_SHADOW_COLOR);
-        String HexColor = String.format("#%08x", (0x000000 & shadowColor));
-        mTShadowColor.setSummary(HexColor);
-        mTShadowColor.setNewPreviewColor(shadowColor);
-
-        // Status Bar header shadow on custom header images        
-        mHeaderShadow = (SeekBarPreferenceCham) findPreference(CUSTOM_HEADER_IMAGE_SHADOW);
-        final int headerShadow = Settings.System.getInt(getContentResolver(),
-                Settings.System.STATUS_BAR_CUSTOM_HEADER_SHADOW, 0);
-        mHeaderShadow.setValue((int)((headerShadow / 255) * 100));
-        mHeaderShadow.setOnPreferenceChangeListener(this);
-        
         // tempature
         mStatusBarTemperature = (ListPreference) findPreference(STATUS_BAR_TEMPERATURE);
         int temperatureShow = Settings.System.getInt(getContentResolver(),
@@ -106,7 +71,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
         mStatusBarTemperature.setValue(String.valueOf(temperatureShow));
         mStatusBarTemperature.setSummary(mStatusBarTemperature.getEntry());
         mStatusBarTemperature.setOnPreferenceChangeListener(this);
-        
+
         mStatusBarTemperatureStyle = (ListPreference) findPreference(STATUS_BAR_TEMPERATURE_STYLE);
         int temperatureStyle = Settings.System.getInt(getContentResolver(),
                 Settings.System.STATUS_BAR_WEATHER_TEMP_STYLE, 0);
@@ -116,7 +81,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
 
         enableStatusBarTemperatureDependents();
     }
-    
+
     @Override
     protected int getMetricsCategory() {
         return MetricsLogger.APPLICATION;
@@ -126,7 +91,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
     public void onResume() {
         super.onResume();
     }
-    
+
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
         return super.onPreferenceTreeClick(preferenceScreen, preference);
@@ -134,7 +99,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object objValue) {
-		if (preference == mQuickPulldown) {
+        if (preference == mQuickPulldown) {
             int statusQuickPulldown = Integer.valueOf((String) objValue);
             Settings.System.putInt(getContentResolver(),
                     Settings.System.STATUS_BAR_QUICK_QS_PULLDOWN,
@@ -145,7 +110,7 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
             int temperatureShow = Integer.valueOf((String) objValue);
             int index = mStatusBarTemperature.findIndexOfValue((String) objValue);
             Settings.System.putInt(getContentResolver(),
-                    Settings.System.STATUS_BAR_SHOW_WEATHER_TEMP, 
+                    Settings.System.STATUS_BAR_SHOW_WEATHER_TEMP,
                     temperatureShow);
             mStatusBarTemperature.setSummary(
                     mStatusBarTemperature.getEntries()[index]);
@@ -160,30 +125,10 @@ public class StatusBarSettings extends SettingsPreferenceFragment implements
             mStatusBarTemperatureStyle.setSummary(
                     mStatusBarTemperatureStyle.getEntries()[index]);
             return true;
-         } else if (preference == mTextShadow) {
-            float textShadow = (Integer) objValue;
-            float realHeaderValue = (float) ((double) textShadow);
-            Settings.System.putFloat(getContentResolver(),
-                    Settings.System.STATUS_BAR_CUSTOM_HEADER_TEXT_SHADOW, realHeaderValue);
-            return true;
-         } else if (preference == mTShadowColor) {
-            String hex = ColorPickerPreference.convertToARGB(
-                    Integer.valueOf(String.valueOf(objValue)));
-            preference.setSummary(hex);
-            int intHex = ColorPickerPreference.convertToColorInt(hex);
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.STATUS_BAR_CUSTOM_HEADER_TEXT_SHADOW_COLOR, intHex);
-            return true;
-        } else if (preference == mHeaderShadow) {
-         Integer headerShadow = (Integer) objValue;
-         int realHeaderValue = (int) (((double) headerShadow / 100) * 255);
-         Settings.System.putInt(getContentResolver(),
-                 Settings.System.STATUS_BAR_CUSTOM_HEADER_SHADOW, realHeaderValue);
-            return true;
         }
         return false;
     }
-    
+
     private void enableStatusBarTemperatureDependents() {
         int temperatureShow = Settings.System.getInt(getActivity()
                 .getContentResolver(), Settings.System.STATUS_BAR_SHOW_WEATHER_TEMP,0);

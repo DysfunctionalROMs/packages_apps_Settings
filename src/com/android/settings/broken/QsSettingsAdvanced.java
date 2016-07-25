@@ -1,0 +1,202 @@
+package com.android.settings.broken;
+
+import android.content.Context;
+import android.content.ContentResolver;
+import android.content.res.Resources;
+import android.os.Bundle;
+import android.os.UserHandle;
+import android.preference.ListPreference;
+import android.preference.Preference;
+import android.preference.PreferenceCategory;
+import android.preference.PreferenceScreen;
+import android.preference.Preference.OnPreferenceChangeListener;
+import android.provider.Settings;
+
+import com.android.settings.R;
+import com.android.settings.SettingsPreferenceFragment;
+import com.android.internal.logging.MetricsLogger;
+
+import com.android.settings.broken.widget.SeekBarPreferenceCham;
+import net.margaritov.preference.colorpicker.ColorPickerPreference;
+
+public class QsSettingsAdvanced extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
+
+    private static final String PREF_QS_TRANSPARENT_SHADE = "qs_transparent_shade";
+    private static final String PREF_QS_TRANSPARENT_HEADER = "qs_transparent_header";
+    private static final String PREF_QS_PANEL_LOGO = "qs_panel_logo";
+    private static final String PREF_QS_PANEL_LOGO_COLOR = "qs_panel_logo_color";
+    private static final String PREF_QS_PANEL_LOGO_ALPHA = "qs_panel_logo_alpha";
+    private static final String CUSTOM_HEADER_IMAGE_SHADOW = "status_bar_custom_header_shadow";
+    private static final String CUSTOM_HEADER_TEXT_SHADOW = "status_bar_custom_header_text_shadow";
+    private static final String CUSTOM_HEADER_TEXT_SHADOW_COLOR = "status_bar_custom_header_text_shadow_color";
+
+    private SeekBarPreferenceCham mQSShadeAlpha;
+    private SeekBarPreferenceCham mQSHeaderAlpha;
+    private ListPreference mQSPanelLogo;
+    private ColorPickerPreference mQSPanelLogoColor;
+    private SeekBarPreferenceCham mQSPanelLogoAlpha;
+    private SeekBarPreferenceCham mHeaderShadow;
+    private SeekBarPreferenceCham mTextShadow;
+    private ColorPickerPreference mTShadowColor;
+
+    static final int DEFAULT_QS_PANEL_LOGO_COLOR = 0x09FF00;
+    static final int DEFAULT_HEADER_SHADOW_COLOR = 0xFF000000;
+
+    @Override
+    public void onCreate(Bundle icicle) {
+        super.onCreate(icicle);
+
+        addPreferencesFromResource(R.xml.qs_settings_advanced);
+        final ContentResolver resolver = getActivity().getContentResolver();
+
+        PreferenceScreen prefSet = getPreferenceScreen();
+
+        // QS shade alpha
+        mQSShadeAlpha =
+                (SeekBarPreferenceCham) prefSet.findPreference(PREF_QS_TRANSPARENT_SHADE);
+        int qSShadeAlpha = Settings.System.getInt(getContentResolver(),
+                Settings.System.QS_TRANSPARENT_SHADE, 255);
+        mQSShadeAlpha.setValue(qSShadeAlpha / 1);
+        mQSShadeAlpha.setOnPreferenceChangeListener(this);
+
+        // QS header alpha
+        mQSHeaderAlpha =
+                (SeekBarPreferenceCham) prefSet.findPreference(PREF_QS_TRANSPARENT_HEADER);
+        int qSHeaderAlpha = Settings.System.getInt(getContentResolver(),
+                Settings.System.QS_TRANSPARENT_HEADER, 255);
+        mQSHeaderAlpha.setValue(qSHeaderAlpha / 1);
+        mQSHeaderAlpha.setOnPreferenceChangeListener(this);
+
+        // QS panel Broken logo
+        mQSPanelLogo =
+                 (ListPreference) findPreference(PREF_QS_PANEL_LOGO);
+        int qSPanelLogo = Settings.System.getIntForUser(resolver,
+                        Settings.System.QS_PANEL_LOGO, 0,
+                        UserHandle.USER_CURRENT);
+        mQSPanelLogo.setValue(String.valueOf(qSPanelLogo));
+        mQSPanelLogo.setSummary(mQSPanelLogo.getEntry());
+        mQSPanelLogo.setOnPreferenceChangeListener(this);
+
+        // QS panel Broken logo color
+        mQSPanelLogoColor =
+                (ColorPickerPreference) findPreference(PREF_QS_PANEL_LOGO_COLOR);
+        mQSPanelLogoColor.setOnPreferenceChangeListener(this);
+        int qSPanelLogoColor = Settings.System.getInt(resolver,
+                Settings.System.QS_PANEL_LOGO_COLOR, DEFAULT_QS_PANEL_LOGO_COLOR);
+        String qSHexLogoColor = String.format("#%08x", (0x09FF00 & qSPanelLogoColor));
+        mQSPanelLogoColor.setSummary(qSHexLogoColor);
+        mQSPanelLogoColor.setNewPreviewColor(qSPanelLogoColor);
+
+        // QS panel Broken logo alpha
+        mQSPanelLogoAlpha =
+                (SeekBarPreferenceCham) findPreference(PREF_QS_PANEL_LOGO_ALPHA);
+        int qSPanelLogoAlpha = Settings.System.getInt(resolver,
+                Settings.System.QS_PANEL_LOGO_ALPHA, 51);
+        mQSPanelLogoAlpha.setValue(qSPanelLogoAlpha / 1);
+        mQSPanelLogoAlpha.setOnPreferenceChangeListener(this);
+
+        // Status Bar header text shadow
+        mTextShadow = (SeekBarPreferenceCham) findPreference(CUSTOM_HEADER_TEXT_SHADOW);
+        final float textShadow = Settings.System.getFloat(getContentResolver(),
+                Settings.System.STATUS_BAR_CUSTOM_HEADER_TEXT_SHADOW, 0);
+        mTextShadow.setValue((int)(textShadow));
+        mTextShadow.setOnPreferenceChangeListener(this);
+
+        //Status Bar header text shadow color
+        mTShadowColor =
+                (ColorPickerPreference) findPreference(CUSTOM_HEADER_TEXT_SHADOW_COLOR);
+        mTShadowColor.setOnPreferenceChangeListener(this);
+        int shadowColor = Settings.System.getInt(getContentResolver(),
+                Settings.System.STATUS_BAR_CUSTOM_HEADER_TEXT_SHADOW_COLOR, DEFAULT_HEADER_SHADOW_COLOR);
+        String HexColor = String.format("#%08x", (0x000000 & shadowColor));
+        mTShadowColor.setSummary(HexColor);
+        mTShadowColor.setNewPreviewColor(shadowColor);
+
+        // Status Bar header shadow on custom header images
+        mHeaderShadow = (SeekBarPreferenceCham) findPreference(CUSTOM_HEADER_IMAGE_SHADOW);
+        final int headerShadow = Settings.System.getInt(getContentResolver(),
+                Settings.System.STATUS_BAR_CUSTOM_HEADER_SHADOW, 0);
+        mHeaderShadow.setValue((int)((headerShadow / 255) * 100));
+        mHeaderShadow.setOnPreferenceChangeListener(this);
+    }
+
+    @Override
+    public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+        return super.onPreferenceTreeClick(preferenceScreen, preference);
+    }
+
+    @Override
+    public boolean onPreferenceChange(Preference preference, Object objValue) {
+        if (preference == mQSShadeAlpha) {
+            int alpha = (Integer) objValue;
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.QS_TRANSPARENT_SHADE, alpha * 1);
+            return true;
+        } else if (preference == mQSHeaderAlpha) {
+            int alpha = (Integer) objValue;
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.QS_TRANSPARENT_HEADER, alpha * 1);
+            return true;
+        } else if (preference == mQSPanelLogo) {
+            int qSPanelLogo = Integer.parseInt((String) objValue);
+            int index = mQSPanelLogo.findIndexOfValue((String) objValue);
+            Settings.System.putIntForUser(getContentResolver(), Settings.System.
+                    QS_PANEL_LOGO, qSPanelLogo, UserHandle.USER_CURRENT);
+            mQSPanelLogo.setSummary(mQSPanelLogo.getEntries()[index]);
+            QSPanelLogoSettingsDisabler(qSPanelLogo);
+            return true;
+        } else if (preference == mQSPanelLogoColor) {
+            String hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(objValue)));
+            preference.setSummary(hex);
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.QS_PANEL_LOGO_COLOR, intHex);
+            return true;
+        } else if (preference == mQSPanelLogoAlpha) {
+            int val = (Integer) objValue;
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.QS_PANEL_LOGO_ALPHA, val * 1);
+            return true;
+        } else if (preference == mTextShadow) {
+            float textShadow = (Integer) objValue;
+            float realHeaderValue = (float) ((double) textShadow);
+            Settings.System.putFloat(getContentResolver(),
+                    Settings.System.STATUS_BAR_CUSTOM_HEADER_TEXT_SHADOW, realHeaderValue);
+            return true;
+        } else if (preference == mTShadowColor) {
+            String hex = ColorPickerPreference.convertToARGB(
+                    Integer.valueOf(String.valueOf(objValue)));
+            preference.setSummary(hex);
+            int intHex = ColorPickerPreference.convertToColorInt(hex);
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.STATUS_BAR_CUSTOM_HEADER_TEXT_SHADOW_COLOR, intHex);
+            return true;
+        } else if (preference == mHeaderShadow) {
+            Integer headerShadow = (Integer) objValue;
+            int realHeaderValue = (int) (((double) headerShadow / 100) * 255);
+            Settings.System.putInt(getContentResolver(),
+                    Settings.System.STATUS_BAR_CUSTOM_HEADER_SHADOW, realHeaderValue);
+            return true;
+        }
+        return false;
+    }
+
+    private void QSPanelLogoSettingsDisabler(int qSPanelLogo) {
+        if (qSPanelLogo == 0) {
+            mQSPanelLogoColor.setEnabled(false);
+            mQSPanelLogoAlpha.setEnabled(false);
+        } else if (qSPanelLogo == 1) {
+            mQSPanelLogoColor.setEnabled(false);
+            mQSPanelLogoAlpha.setEnabled(true);
+        } else {
+            mQSPanelLogoColor.setEnabled(true);
+            mQSPanelLogoAlpha.setEnabled(true);
+        }
+    }
+
+    @Override
+    protected int getMetricsCategory() {
+        return MetricsLogger.APPLICATION;
+    }
+}
