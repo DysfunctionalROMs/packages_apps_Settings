@@ -1719,4 +1719,8 @@
    <string name="greeting_preview_title">Preview</string>
    <string name="greeting_preview_summary">Click to show a preview</string>
 
+   <!-- QS Advanced Mods -->
+   <string name="qs_settings_advanced_title">Header and Shade Tweaks</string>
+   <string name="qs_settings_advanced_summary">Various mods for the QS shade and header</string>
+
 </resources>

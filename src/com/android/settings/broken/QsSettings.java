@@ -37,32 +37,17 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.broken.qs.QSTiles;
 import com.android.internal.logging.MetricsLogger;
 import com.android.internal.widget.LockPatternUtils;
-import com.android.settings.broken.widget.SeekBarPreferenceCham;
-
-import net.margaritov.preference.colorpicker.ColorPickerPreference;
 
 public class QsSettings extends SettingsPreferenceFragment implements OnPreferenceChangeListener {
 
-	private static final String PREF_BLOCK_ON_SECURE_KEYGUARD = "block_on_secure_keyguard";
-    private static final String PREF_QS_TRANSPARENT_SHADE = "qs_transparent_shade";
-    private static final String PREF_QS_TRANSPARENT_HEADER = "qs_transparent_header";
+    private static final String PREF_BLOCK_ON_SECURE_KEYGUARD = "block_on_secure_keyguard";
     private static final String PREF_TILE_ANIM_STYLE = "qs_tile_animation_style";
     private static final String PREF_TILE_ANIM_DURATION = "qs_tile_animation_duration";
-    private static final String PREF_QS_PANEL_LOGO = "qs_panel_logo";
-    private static final String PREF_QS_PANEL_LOGO_COLOR = "qs_panel_logo_color";
-    private static final String PREF_QS_PANEL_LOGO_ALPHA = "qs_panel_logo_alpha";
 
     private Preference mQSTiles;
     private SwitchPreference mBlockOnSecureKeyguard;
-    private SeekBarPreferenceCham mQSShadeAlpha;
-    private SeekBarPreferenceCham mQSHeaderAlpha;
     private ListPreference mTileAnimationStyle;
     private ListPreference mTileAnimationDuration;
-    private ListPreference mQSPanelLogo;
-    private ColorPickerPreference mQSPanelLogoColor;
-    private SeekBarPreferenceCham mQSPanelLogoAlpha;
-
-    static final int DEFAULT_QS_PANEL_LOGO_COLOR = 0x09FF00;
 
     private static final int MY_USER_ID = UserHandle.myUserId();
 
@@ -86,22 +71,6 @@ public class QsSettings extends SettingsPreferenceFragment implements OnPreferen
             prefSet.removePreference(mBlockOnSecureKeyguard);
         }
 
-        // QS shade alpha
-        mQSShadeAlpha =
-                (SeekBarPreferenceCham) prefSet.findPreference(PREF_QS_TRANSPARENT_SHADE);
-        int qSShadeAlpha = Settings.System.getInt(getContentResolver(),
-                Settings.System.QS_TRANSPARENT_SHADE, 255);
-        mQSShadeAlpha.setValue(qSShadeAlpha / 1);
-        mQSShadeAlpha.setOnPreferenceChangeListener(this);
-
-        // QS header alpha
-        mQSHeaderAlpha =
-                (SeekBarPreferenceCham) prefSet.findPreference(PREF_QS_TRANSPARENT_HEADER);
-        int qSHeaderAlpha = Settings.System.getInt(getContentResolver(),
-                Settings.System.QS_TRANSPARENT_HEADER, 255);
-        mQSHeaderAlpha.setValue(qSHeaderAlpha / 1);
-        mQSHeaderAlpha.setOnPreferenceChangeListener(this);
-
         mTileAnimationStyle = (ListPreference) findPreference(PREF_TILE_ANIM_STYLE);
         int tileAnimationStyle = Settings.System.getIntForUser(getContentResolver(),
                 Settings.System.ANIM_TILE_STYLE, 0,
@@ -118,34 +87,6 @@ public class QsSettings extends SettingsPreferenceFragment implements OnPreferen
         mTileAnimationDuration.setValue(String.valueOf(tileAnimationDuration));
         updateTileAnimationDurationSummary(tileAnimationDuration);
         mTileAnimationDuration.setOnPreferenceChangeListener(this);
-
-        // QS panel Broken logo
-        mQSPanelLogo =
-                 (ListPreference) findPreference(PREF_QS_PANEL_LOGO);
-        int qSPanelLogo = Settings.System.getIntForUser(resolver,
-                        Settings.System.QS_PANEL_LOGO, 0,
-                        UserHandle.USER_CURRENT);
-        mQSPanelLogo.setValue(String.valueOf(qSPanelLogo));
-        mQSPanelLogo.setSummary(mQSPanelLogo.getEntry());
-        mQSPanelLogo.setOnPreferenceChangeListener(this);
-
-        // QS panel Broken logo color
-        mQSPanelLogoColor =
-                (ColorPickerPreference) findPreference(PREF_QS_PANEL_LOGO_COLOR);
-        mQSPanelLogoColor.setOnPreferenceChangeListener(this);
-        int qSPanelLogoColor = Settings.System.getInt(resolver,
-                Settings.System.QS_PANEL_LOGO_COLOR, DEFAULT_QS_PANEL_LOGO_COLOR);
-        String qSHexLogoColor = String.format("#%08x", (0x09FF00 & qSPanelLogoColor));
-        mQSPanelLogoColor.setSummary(qSHexLogoColor);
-        mQSPanelLogoColor.setNewPreviewColor(qSPanelLogoColor);
-
-        // QS panel Broken logo alpha
-        mQSPanelLogoAlpha =
-                (SeekBarPreferenceCham) findPreference(PREF_QS_PANEL_LOGO_ALPHA);
-        int qSPanelLogoAlpha = Settings.System.getInt(resolver,
-                Settings.System.QS_PANEL_LOGO_ALPHA, 51);
-        mQSPanelLogoAlpha.setValue(qSPanelLogoAlpha / 1);
-        mQSPanelLogoAlpha.setOnPreferenceChangeListener(this);
     }
 
     @Override
@@ -169,16 +110,6 @@ public class QsSettings extends SettingsPreferenceFragment implements OnPreferen
                     Settings.Secure.STATUS_BAR_LOCKED_ON_SECURE_KEYGUARD,
                     (Boolean) objValue ? 1 : 0);
             return true;
-        } else if (preference == mQSShadeAlpha) {
-            int alpha = (Integer) objValue;
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.QS_TRANSPARENT_SHADE, alpha * 1);
-            return true;
-        } else if (preference == mQSHeaderAlpha) {
-            int alpha = (Integer) objValue;
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.QS_TRANSPARENT_HEADER, alpha * 1);
-            return true;
         } else if (preference == mTileAnimationStyle) {
             int tileAnimationStyle = Integer.valueOf((String) objValue);
             Settings.System.putIntForUser(getContentResolver(), Settings.System.ANIM_TILE_STYLE,
@@ -191,27 +122,6 @@ public class QsSettings extends SettingsPreferenceFragment implements OnPreferen
             Settings.System.putIntForUser(getContentResolver(), Settings.System.ANIM_TILE_DURATION,
                     tileAnimationDuration, UserHandle.USER_CURRENT);
             updateTileAnimationDurationSummary(tileAnimationDuration);
-            return true;
-        } else if (preference == mQSPanelLogo) {
-            int qSPanelLogo = Integer.parseInt((String) objValue);
-            int index = mQSPanelLogo.findIndexOfValue((String) objValue);
-            Settings.System.putIntForUser(getContentResolver(), Settings.System.
-                    QS_PANEL_LOGO, qSPanelLogo, UserHandle.USER_CURRENT);
-            mQSPanelLogo.setSummary(mQSPanelLogo.getEntries()[index]);
-            QSPanelLogoSettingsDisabler(qSPanelLogo);
-            return true;
-        } else if (preference == mQSPanelLogoColor) {
-            String hex = ColorPickerPreference.convertToARGB(
-                    Integer.valueOf(String.valueOf(objValue)));
-            preference.setSummary(hex);
-            int intHex = ColorPickerPreference.convertToColorInt(hex);
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.QS_PANEL_LOGO_COLOR, intHex);
-            return true;
-        } else if (preference == mQSPanelLogoAlpha) {
-            int val = (Integer) objValue;
-            Settings.System.putInt(getContentResolver(),
-                    Settings.System.QS_PANEL_LOGO_ALPHA, val * 1);
             return true;
         }
         return false;
@@ -236,19 +146,6 @@ public class QsSettings extends SettingsPreferenceFragment implements OnPreferen
             } else {
                 mTileAnimationDuration.setSelectable(true);
             }
-        }
-    }
-
-    private void QSPanelLogoSettingsDisabler(int qSPanelLogo) {
-        if (qSPanelLogo == 0) {
-            mQSPanelLogoColor.setEnabled(false);
-            mQSPanelLogoAlpha.setEnabled(false);
-        } else if (qSPanelLogo == 1) {
-            mQSPanelLogoColor.setEnabled(false);
-            mQSPanelLogoAlpha.setEnabled(true);
-        } else {
-            mQSPanelLogoColor.setEnabled(true);
-            mQSPanelLogoAlpha.setEnabled(true);
         }
     }
 
