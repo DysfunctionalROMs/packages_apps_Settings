@@ -26,6 +26,8 @@
     <string name="reset_string">Reset</string>
     <string name="help">Help</string>
     <string name="icon_title">Icon</string>
+    <string name="always_title">Always</string>
+    <string name="never_title">Never</string>
     <string name="add">Add</string>
     <string name="string_add">Add</string>
     <string name="help">Help</string>
@@ -36,9 +38,11 @@
     <string name="general_string">General</string>
     <string name="default_string">Default</string>
     <string name="empty_string">Empty</string>
+    <string name="show_title">Show</string>
     <string name="font_size_sample">Sample</string>
     <string name="choose_app">Choose application</string>
     <string name="reset_message">Reset all entries to default?</string>
+    <string name="color_dark_mode_title">Color (light status bar)</string>
 
     <!-- Broken settings screens -->
     <string name="header_category_personalization">Personalization</string>
@@ -1701,5 +1705,18 @@
    <!-- Stylus Icon -->
    <string name="stylus_icon_enabled_title">Show icon when using stylus</string>
    <string name="stylus_icon_enabled_summary">Show the pointer icon when hovering or drawing with the stylus</string>
+
+   <!-- Greeting -->
+   <string name="status_bar_greeting_settings_title">Greeting</string>
+   <string name="status_bar_greeting_settings_summary">Customize greeting</string>
+   <string name="greeting_show_greeting_always_summary">The greeting will be shown after the device gets unlocked</string>
+   <string name="greeting_show_greeting_once_summary">The greeting will be shown only the first time the device gets unlocked after the boot</string>
+   <string name="greeting_show_greeting_never_summary">The greeting will never be shown</string>
+   <string name="greeting_show_greeting_once_title">Once after boot</string>
+   <string name="greeting_custom_text_title">Custom text</string>
+   <string name="greeting_custom_text_dlg_message">Enter a new text, which will be shown as greeting. An empty field will revert the text to:\n\'%s\'</string>
+   <string name="greeting_timeout_title">Time out</string>
+   <string name="greeting_preview_title">Preview</string>
+   <string name="greeting_preview_summary">Click to show a preview</string>
 
 </resources>

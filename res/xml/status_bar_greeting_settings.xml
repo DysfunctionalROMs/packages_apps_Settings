@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (C) 2014 Darkkat
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
+    android:title="@string/status_bar_greeting_settings_title">
+
+    <ListPreference
+        android:key="greeting_show_greeting"
+        android:title="@string/show_title"
+        android:entries="@array/greeting_show_greeting_entries"
+        android:entryValues="@array/greeting_show_greeting_values" />
+
+    <EditTextPreference
+        android:key="greeting_custom_text"
+        android:title="@string/greeting_custom_text_title"
+        android:dialogMessage="@string/greeting_custom_text_dlg_message" />
+
+    <com.android.settings.widget.SeekBarPreferenceCham
+        android:key="greeting_timeout"
+        android:title="@string/greeting_timeout_title"
+        android:max="10000"
+        settings:min="100"
+        settings:unitsLeft=""
+        settings:unitsRight="s"
+        settings:interval="500"
+        android:persistent="false" />
+
+    <Preference
+        android:key="greeting_preview"
+        android:title="@string/greeting_preview_title"
+        android:summary="@string/greeting_preview_summary" />
+
+     <net.margaritov.preference.colorpicker.ColorPickerPreference
+        android:key="greeting_color"
+        android:title="@string/color_title"
+        android:defaultValue="0xffffffff" />
+
+     <net.margaritov.preference.colorpicker.ColorPickerPreference
+        android:key="greeting_color_dark_mode"
+        android:title="@string/color_dark_mode_title"
+        android:defaultValue="0x99000000" />
+
+</PreferenceScreen>

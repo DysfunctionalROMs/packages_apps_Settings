@@ -1325,4 +1325,17 @@
         <item>1005</item>
     </string-array>
 
+    <!-- Greeting -->
+    <string-array name="greeting_show_greeting_entries">
+        <item>@string/always_title</item>
+        <item>@string/greeting_show_greeting_once_title</item>
+        <item>@string/never_title</item>
+    </string-array>
+
+    <string-array name="greeting_show_greeting_values" translatable="false">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+
 </resources>
