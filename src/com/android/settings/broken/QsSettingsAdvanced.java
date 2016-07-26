@@ -161,7 +161,7 @@ public class QsSettingsAdvanced extends SettingsPreferenceFragment implements On
         mQSStrokeThickness =
                 (SeekBarPreferenceCham) findPreference(PREF_QS_STROKE_THICKNESS);
         int qSStrokeThickness = Settings.System.getInt(getContentResolver(),
-                Settings.System.QS_STROKE_THICKNESS, 4);
+                Settings.System.QS_STROKE_THICKNESS, 10);
         mQSStrokeThickness.setValue(qSStrokeThickness / 1);
         mQSStrokeThickness.setOnPreferenceChangeListener(this);
 
