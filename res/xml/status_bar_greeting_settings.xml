@@ -36,7 +36,7 @@
         android:max="10000"
         settings:min="100"
         settings:unitsLeft=""
-        settings:unitsRight="s"
+        settings:unitsRight="ms"
         settings:interval="500"
         android:persistent="false" />
 
