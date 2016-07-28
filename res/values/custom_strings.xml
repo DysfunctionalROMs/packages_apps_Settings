@@ -868,6 +868,8 @@
     <string name="qs_tile_screenrecord">Screenrecord</string>
     <string name="qs_wifi_detail_title">Advanced wifi details</string>
     <string name="qs_wifi_detail_summary">Enable detailed view for wifi in quick settings</string>
+    <string name="qs_bt_detail_title">Advanced bluetooth details</string>
+    <string name="qs_bt_detail_summary">Enable detailed view for bluetooth in quick settings</string>
 
     <!-- ADB debugging notifications -->
     <string name="enable_adb_custom">Android debugging</string>
