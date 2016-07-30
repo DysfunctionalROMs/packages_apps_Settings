@@ -49,9 +49,9 @@ public class QsSettingsAdvanced extends SettingsPreferenceFragment implements On
     private SeekBarPreferenceCham mQSStrokeThickness;
     private SeekBarPreferenceCham mQSCornerRadius;
 
-    static final int DEFAULT_QS_PANEL_LOGO_COLOR = 0x09FF00;
+    static final int DEFAULT_QS_PANEL_LOGO_COLOR = 0xFF09FF00;
     static final int DEFAULT_HEADER_SHADOW_COLOR = 0xFF000000;
-    static final int DEFAULT_QS_STROKE_COLOR = 0xFF202020;
+    static final int DEFAULT_QS_STROKE_COLOR = 0xFF606060;
 
     @Override
     public void onCreate(Bundle icicle) {
@@ -65,7 +65,7 @@ public class QsSettingsAdvanced extends SettingsPreferenceFragment implements On
         // QS shade alpha
         mQSShadeAlpha =
                 (SeekBarPreferenceCham) prefSet.findPreference(PREF_QS_TRANSPARENT_SHADE);
-        int qSShadeAlpha = Settings.System.getInt(getContentResolver(),
+        int qSShadeAlpha = Settings.System.getInt(resolver,
                 Settings.System.QS_TRANSPARENT_SHADE, 255);
         mQSShadeAlpha.setValue(qSShadeAlpha / 1);
         mQSShadeAlpha.setOnPreferenceChangeListener(this);
@@ -73,7 +73,7 @@ public class QsSettingsAdvanced extends SettingsPreferenceFragment implements On
         // QS header alpha
         mQSHeaderAlpha =
                 (SeekBarPreferenceCham) prefSet.findPreference(PREF_QS_TRANSPARENT_HEADER);
-        int qSHeaderAlpha = Settings.System.getInt(getContentResolver(),
+        int qSHeaderAlpha = Settings.System.getInt(resolver,
                 Settings.System.QS_TRANSPARENT_HEADER, 255);
         mQSHeaderAlpha.setValue(qSHeaderAlpha / 1);
         mQSHeaderAlpha.setOnPreferenceChangeListener(this);
@@ -81,7 +81,7 @@ public class QsSettingsAdvanced extends SettingsPreferenceFragment implements On
         // QS panel Broken logo
         mQSPanelLogo =
                  (ListPreference) findPreference(PREF_QS_PANEL_LOGO);
-        int qSPanelLogo = Settings.System.getIntForUser(getContentResolver(),
+        int qSPanelLogo = Settings.System.getIntForUser(resolver,
                         Settings.System.QS_PANEL_LOGO, 0,
                         UserHandle.USER_CURRENT);
         mQSPanelLogo.setValue(String.valueOf(qSPanelLogo));
@@ -92,23 +92,23 @@ public class QsSettingsAdvanced extends SettingsPreferenceFragment implements On
         mQSPanelLogoColor =
                 (ColorPickerPreference) findPreference(PREF_QS_PANEL_LOGO_COLOR);
         mQSPanelLogoColor.setOnPreferenceChangeListener(this);
-        int qSPanelLogoColor = Settings.System.getInt(getContentResolver(),
+        int qSPanelLogoColor = Settings.System.getInt(resolver,
                 Settings.System.QS_PANEL_LOGO_COLOR, DEFAULT_QS_PANEL_LOGO_COLOR);
-        String qSHexLogoColor = String.format("#%08x", (0x09FF00 & qSPanelLogoColor));
+        String qSHexLogoColor = String.format("#%08x", (0xFF09FF00 & qSPanelLogoColor));
         mQSPanelLogoColor.setSummary(qSHexLogoColor);
         mQSPanelLogoColor.setNewPreviewColor(qSPanelLogoColor);
 
         // QS panel Broken logo alpha
         mQSPanelLogoAlpha =
                 (SeekBarPreferenceCham) findPreference(PREF_QS_PANEL_LOGO_ALPHA);
-        int qSPanelLogoAlpha = Settings.System.getInt(getContentResolver(),
+        int qSPanelLogoAlpha = Settings.System.getInt(resolver,
                 Settings.System.QS_PANEL_LOGO_ALPHA, 51);
         mQSPanelLogoAlpha.setValue(qSPanelLogoAlpha / 1);
         mQSPanelLogoAlpha.setOnPreferenceChangeListener(this);
 
         // Status Bar header text shadow
         mTextShadow = (SeekBarPreferenceCham) findPreference(CUSTOM_HEADER_TEXT_SHADOW);
-        final float textShadow = Settings.System.getFloat(getContentResolver(),
+        final float textShadow = Settings.System.getFloat(resolver,
                 Settings.System.STATUS_BAR_CUSTOM_HEADER_TEXT_SHADOW, 0);
         mTextShadow.setValue((int)(textShadow));
         mTextShadow.setOnPreferenceChangeListener(this);
@@ -117,22 +117,22 @@ public class QsSettingsAdvanced extends SettingsPreferenceFragment implements On
         mTShadowColor =
                 (ColorPickerPreference) findPreference(CUSTOM_HEADER_TEXT_SHADOW_COLOR);
         mTShadowColor.setOnPreferenceChangeListener(this);
-        int shadowColor = Settings.System.getInt(getContentResolver(),
+        int shadowColor = Settings.System.getInt(resolver,
                 Settings.System.STATUS_BAR_CUSTOM_HEADER_TEXT_SHADOW_COLOR, DEFAULT_HEADER_SHADOW_COLOR);
-        String HexColor = String.format("#%08x", (0x000000 & shadowColor));
+        String HexColor = String.format("#%08x", (0xFF000000 & shadowColor));
         mTShadowColor.setSummary(HexColor);
         mTShadowColor.setNewPreviewColor(shadowColor);
 
         // Status Bar header shadow on custom header images
         mHeaderShadow = (SeekBarPreferenceCham) findPreference(CUSTOM_HEADER_IMAGE_SHADOW);
-        final int headerShadow = Settings.System.getInt(getContentResolver(),
+        final int headerShadow = Settings.System.getInt(resolver,
                 Settings.System.STATUS_BAR_CUSTOM_HEADER_SHADOW, 0);
         mHeaderShadow.setValue((int)((headerShadow / 255) * 100));
         mHeaderShadow.setOnPreferenceChangeListener(this);
 
         // Notifications alpha
         mNotificationsAlpha = (SeekBarPreferenceCham) findPreference(PREF_NOTIFICATION_ALPHA);
-        int notificationsAlpha = Settings.System.getInt(getContentResolver(),
+        int notificationsAlpha = Settings.System.getInt(resolver,
                 Settings.System.NOTIFICATION_ALPHA, 255);
         mNotificationsAlpha.setValue(notificationsAlpha / 1);
         mNotificationsAlpha.setOnPreferenceChangeListener(this);
@@ -140,7 +140,7 @@ public class QsSettingsAdvanced extends SettingsPreferenceFragment implements On
         // QS stroke
         mQSStroke =
                 (ListPreference) findPreference(PREF_QS_STROKE);
-        int qSStroke = Settings.System.getIntForUser(getContentResolver(),
+        int qSStroke = Settings.System.getIntForUser(resolver,
                        Settings.System.QS_STROKE, 1,
                        UserHandle.USER_CURRENT);
         mQSStroke.setValue(String.valueOf(qSStroke));
@@ -151,16 +151,16 @@ public class QsSettingsAdvanced extends SettingsPreferenceFragment implements On
         mQSStrokeColor =
                 (ColorPickerPreference) findPreference(PREF_QS_STROKE_COLOR);
         mQSStrokeColor.setOnPreferenceChangeListener(this);
-        int qSIntColor = Settings.System.getInt(getContentResolver(),
+        int qSIntColor = Settings.System.getInt(resolver,
                 Settings.System.QS_STROKE_COLOR, DEFAULT_QS_STROKE_COLOR);
-        String qSHexColor = String.format("#%08x", (0xFF202020 & qSIntColor));
+        String qSHexColor = String.format("#%08x", (0xFF606060 & qSIntColor));
         mQSStrokeColor.setSummary(qSHexColor);
         mQSStrokeColor.setNewPreviewColor(qSIntColor);
 
         // QS stroke thickness
         mQSStrokeThickness =
                 (SeekBarPreferenceCham) findPreference(PREF_QS_STROKE_THICKNESS);
-        int qSStrokeThickness = Settings.System.getInt(getContentResolver(),
+        int qSStrokeThickness = Settings.System.getInt(resolver,
                 Settings.System.QS_STROKE_THICKNESS, 10);
         mQSStrokeThickness.setValue(qSStrokeThickness / 1);
         mQSStrokeThickness.setOnPreferenceChangeListener(this);
@@ -168,7 +168,7 @@ public class QsSettingsAdvanced extends SettingsPreferenceFragment implements On
         // QS corner radius
         mQSCornerRadius =
                 (SeekBarPreferenceCham) findPreference(PREF_QS_CORNER_RADIUS);
-        int qSCornerRadius = Settings.System.getInt(getContentResolver(),
+        int qSCornerRadius = Settings.System.getInt(resolver,
                 Settings.System.QS_CORNER_RADIUS, 0);
         mQSCornerRadius.setValue(qSCornerRadius / 1);
         mQSCornerRadius.setOnPreferenceChangeListener(this);
