@@ -20,7 +20,8 @@
         <SwitchPreference
                 android:key="enable_nav_bar"
                 android:title="@string/navbar_enable_bar"
-                android:summary="@string/navbar_enable_bar_summary" />
+                android:summary="@string/navbar_enable_bar_summary"
+                android:defaultValue="true" />
 
         <PreferenceCategory
                 android:key="navbar_cat"
