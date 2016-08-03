@@ -11,11 +11,11 @@
      limitations under the License.
 -->
 
-<PreferenceScreen 
+<PreferenceScreen
         xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:settings="http://schemas.android.com/apk/res/com.android.settings" 
+        xmlns:settings="http://schemas.android.com/apk/res/com.android.settings"
         settings:keywords="@string/keywords_display" >
-        <PreferenceScreen android:layout="@layout/brokendisplay" android:key="od_brokendisplay" /> 
+        <PreferenceScreen android:layout="@layout/brokendisplay" android:key="od_brokendisplay" />
 
         <PreferenceScreen
                 android:key="brightness"
@@ -52,12 +52,14 @@
                 android:key="camera_gesture"
                 android:title="@string/camera_gesture_title"
                 android:summary="@string/camera_gesture_desc"
+                android:defaultValue="false"
                 android:persistent="false" />
 
         <SwitchPreference
                 android:key="camera_double_tap_power_gesture"
                 android:title="@string/camera_double_tap_power_gesture_title"
                 android:summary="@string/camera_double_tap_power_gesture_desc"
+                android:defaultValue="false"
                 android:persistent="false" />
 
         <PreferenceScreen
@@ -73,12 +75,14 @@
         <SwitchPreference
                 android:key="lift_to_wake"
                 android:title="@string/lift_to_wake_title"
+                android:defaultValue="false"
                 android:persistent="false" />
-                
+
         <SwitchPreference
                 android:key="tap_to_wake"
                 android:title="@string/tap_to_wake"
                 android:summary="@string/tap_to_wake_summary"
+                android:defaultValue="true"
                 android:persistent="false" />
 
         <com.android.settings.FontDialogPreference
@@ -135,7 +139,7 @@
                 android:persistent="false" />
 
     </PreferenceCategory>
-        
+
     <PreferenceCategory
              android:key="category_wakeup_options"
              android:title="@string/display_category_wakeup_options_title" >
@@ -144,15 +148,15 @@
                 android:key="wakeup_when_plugged_unplugged"
                 android:title="@string/wakeup_when_plugged_unplugged_title"
                 android:summary="@string/wakeup_when_plugged_unplugged_summary"
-                android:defaultValue="true"
+                android:defaultValue="false"
                 android:persistent="false" />
-                
+
              <com.android.settings.broken.SystemSettingSwitchPreference
                     android:key="proximity_on_wake"
                     android:title="@string/proximity_wake_title"
                     android:summary="@string/proximity_wake_summary"
                     android:defaultValue="true" />
-                    
+
         </PreferenceCategory>
 
         <PreferenceCategory
@@ -163,6 +167,7 @@
                     android:key="doze"
                     android:title="@string/doze_title"
                     android:summary="@string/doze_summary"
+                    android:defaultValue="false"
                     android:persistent="false" />
 
             <PreferenceScreen
@@ -172,5 +177,5 @@
                 android:dependency="doze" />
 
         </PreferenceCategory>
-         
+
 </PreferenceScreen>
