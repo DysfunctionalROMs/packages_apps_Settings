@@ -82,9 +82,10 @@ public class ActionListViewSettings extends ListFragment implements
 
     private static final int DLG_SHOW_ACTION_DIALOG   = 0;
     private static final int DLG_SHOW_ICON_PICKER     = 1;
-    private static final int DLG_DELETION_NOT_ALLOWED = 2;
-    private static final int DLG_SHOW_HELP_SCREEN     = 3;
-    private static final int DLG_RESET_TO_DEFAULT     = 4;
+    private static final int DLG_SHOW_WARNING_DIALOG = 2;
+    private static final int DLG_DELETION_NOT_ALLOWED = 3;
+    private static final int DLG_SHOW_HELP_SCREEN     = 4;
+    private static final int DLG_RESET_TO_DEFAULT     = 5;
 
     private static final int MENU_HELP = Menu.FIRST;
     private static final int MENU_ADD = MENU_HELP + 1;
@@ -162,7 +163,7 @@ public class ActionListViewSettings extends ListFragment implements
                     showDialogInner(DLG_DELETION_NOT_ALLOWED, 0, false, false);
                 } else if (mDisableDeleteLastEntry && mActionConfigs.size() == 0) {
                     mActionConfigsAdapter.add(item);
-                    showDialogInner(DLG_DELETION_NOT_ALLOWED, 0, false, false);
+                    showDialogInner(DLG_SHOW_WARNING_DIALOG, 0, false, false);
                 } else {
                     setConfig(mActionConfigs, false);
                     deleteIconFileIfPresent(item, true);
@@ -214,7 +215,7 @@ public class ActionListViewSettings extends ListFragment implements
         mActionDialogEntries = finalActionDialogArray.entries;
 
         mPicker = new ShortcutPickerHelper(mActivity, this);
-        
+
         File folder = new File(Environment.getExternalStorageDirectory() + File.separator +
                 ".broken" + File.separator + "icons");
 
@@ -411,10 +412,6 @@ public class ActionListViewSettings extends ListFragment implements
     private void updateAction(String action, String description, String icon,
                 int which, boolean longpress) {
 
-        if (!longpress && checkForDuplicateMainNavActions(action)) {
-            return;
-        }
-
         ActionConfig actionConfig = mActionConfigsAdapter.getItem(which);
         mActionConfigsAdapter.remove(actionConfig);
 
@@ -439,20 +436,6 @@ public class ActionListViewSettings extends ListFragment implements
         mActionConfigsAdapter.insert(actionConfig, which);
         showDisableMessage(false);
         setConfig(mActionConfigs, false);
-    }
-
-    private boolean checkForDuplicateMainNavActions(String action) {
-        ActionConfig actionConfig;
-        for (int i = 0; i < mActionConfigs.size(); i++) {
-            actionConfig = mActionConfigsAdapter.getItem(i);
-            if (actionConfig.getClickAction().equals(action)) {
-                Toast.makeText(mActivity,
-                        getResources().getString(R.string.shortcut_duplicate_entry),
-                        Toast.LENGTH_LONG).show();
-                return true;
-            }
-        }
-        return false;
     }
 
     private void deleteIconFileIfPresent(ActionConfig action, boolean deleteShortCutIcon) {
@@ -528,9 +511,6 @@ public class ActionListViewSettings extends ListFragment implements
     }
 
     private void addNewAction(String action, String description) {
-        if (checkForDuplicateMainNavActions(action)) {
-            return;
-        }
         ActionConfig actionConfig = new ActionConfig(
             action, description,
             ActionConstants.ACTION_NULL, getResources().getString(R.string.shortcut_action_none),
@@ -798,6 +778,12 @@ public class ActionListViewSettings extends ListFragment implements
                         }
                     })
                     .create();
+                case DLG_SHOW_WARNING_DIALOG:
+                    return new AlertDialog.Builder(getActivity())
+                    .setTitle(R.string.attention)
+                    .setMessage(R.string.no_standard_key)
+                    .setPositiveButton(R.string.dlg_ok, null)
+                    .create();
                 case DLG_DELETION_NOT_ALLOWED:
                     int message;
                     if (getOwner().mActionConfigs.size() > 1) {
@@ -830,7 +816,7 @@ public class ActionListViewSettings extends ListFragment implements
                     // on normal press action
                     String[] values = null;
                     String[] entries = null;
-                    if (!longpress) {
+                    if (!longpress && !newAction) {
                         List<String> finalEntriesList = new ArrayList<String>();
                         List<String> finalValuesList = new ArrayList<String>();
 
@@ -847,9 +833,9 @@ public class ActionListViewSettings extends ListFragment implements
                     }
 
                     final String[] finalDialogValues =
-                        longpress ? getOwner().mActionDialogValues : values;
+                        (longpress || newAction) ? getOwner().mActionDialogValues : values;
                     final String[] finalDialogEntries =
-                        longpress ? getOwner().mActionDialogEntries : entries;
+                        (longpress || newAction) ? getOwner().mActionDialogEntries : entries;
 
                     return new AlertDialog.Builder(getActivity())
                     .setTitle(title)
