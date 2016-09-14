@@ -19,6 +19,8 @@
     <string name="header_category_custom">Broken Customizations</string>
     <string name="broken_settings_title">Broken Pieces</string>
     <string name="broken_settings_summary">ROM features &amp; customization</string>
+    <string name="substratum_title">Substratum</string>
+    <string name="substratum_summary">Customize device theme</string>
     <string name="supersu_title">SuperSU</string>
     <string name="supersu_summary">Manage root permissions</string>
 

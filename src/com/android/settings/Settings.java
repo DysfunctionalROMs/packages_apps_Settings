@@ -164,5 +164,6 @@ public class Settings extends SettingsActivity {
 
     // Broken Additions.
     public static class BrokenSettingsActivity extends SettingsActivity { /* empty */ }
+    public static class SubstratumActivity extends SettingsActivity { /* empty */ }
     public static class SuperSUActivity extends SettingsActivity { /* empty */ }
 }
