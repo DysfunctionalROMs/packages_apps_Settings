@@ -26,5 +26,10 @@
     <!-- About phone screen, Broken version -->
     <string name="broken_version_title">Broken Version</string>
     <string name="broken_version_default">Unknown</string>
-    
+
+    <!-- About Broken screen, device maintainer name -->
+    <string name="device_maintainer">Device maintainer</string>
+    <string name="device_maintainers">Device maintainers</string>
+    <string name="broken_device_maintainer">Device maintainer</string>
+
 </resources>
