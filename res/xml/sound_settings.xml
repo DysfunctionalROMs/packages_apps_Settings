@@ -97,6 +97,16 @@
                 android:persistent="false"
                 android:fragment="com.android.settings.notification.OtherSoundSettings" />
 
+        <!-- Viper4Android -->
+        <PreferenceScreen
+                android:id="@+id/viper_settings"
+                android:title="@string/viper_settings_title" >
+                <intent
+                   android:action="android.intent.action.MAIN"
+                   android:targetClass="com.vipercn.viper4android_v2.activity.ViPER4Android"
+                   android:targetPackage="com.vipercn.viper4android_v2" />
+        </PreferenceScreen>
+
         <!-- Cast -->
         <PreferenceScreen
                 android:key="wifi_display"
