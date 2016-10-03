@@ -96,7 +96,8 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
     private static final String KEY_DEVICE_MEMORY = "device_memory";
     private static final String KEY_BUILD_ID = "build_id";
     private static final String KEY_MOD_BUILD_DATE = "build_date";
-    private static final String KEY_SLIM_OTA = "slimota";
+    private static final String KEY_SLIM_OTA = "brokenota";
+    private static final String KEY_BROKEN_CENTER = "brokencenter";
 
     static final int TAPS_TO_BE_A_DEVELOPER = 7;
 
@@ -177,13 +178,6 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
         // Remove selinux information if property is not present
         removePreferenceIfPropertyMissing(getPreferenceScreen(), KEY_SELINUX_STATUS,
                 PROPERTY_SELINUX_STATUS);
-
-        // Only the owner should see the Updater settings, if it exists
-        if (UserHandle.myUserId() == UserHandle.USER_OWNER) {
-            removePreferenceIfPackageNotInstalled(findPreference(KEY_SLIM_OTA));
-        } else {
-            getPreferenceScreen().removePreference(findPreference(KEY_SLIM_OTA));
-        }
 
         // Remove Safety information preference if PROPERTY_URL_SAFETYLEGAL is not set
         removePreferenceIfPropertyMissing(getPreferenceScreen(), KEY_SAFETY_LEGAL,
@@ -542,8 +536,7 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
         }
 	};
 
-<<<<<<< HEAD
-        private String getMemInfo() {
+    private String getMemInfo() {
         String result = null;
         BufferedReader reader = null;
 
@@ -606,29 +599,5 @@ public class DeviceInfoSettings extends SettingsPreferenceFragment implements In
         } catch (IOException e) {}
 
         return result;
-	}
-
-    private boolean removePreferenceIfPackageNotInstalled(Preference preference) {
-        String intentUri=((PreferenceScreen) preference).getIntent().toUri(1);
-        Pattern pattern = Pattern.compile("component=([^/]+)/");
-        Matcher matcher = pattern.matcher(intentUri);
-
-        String packageName=matcher.find()?matcher.group(1):null;
-        if(packageName != null) {
-            try {
-                PackageInfo pi = getPackageManager().getPackageInfo(packageName,
-                        PackageManager.GET_ACTIVITIES);
-                if (!pi.applicationInfo.enabled) {
-                    Log.e(LOG_TAG,"package "+packageName+" is disabled, hiding preference.");
-                    getPreferenceScreen().removePreference(preference);
-                    return true;
-                }
-            } catch (NameNotFoundException e) {
-                Log.e(LOG_TAG,"package "+packageName+" not installed, hiding preference.");
-                getPreferenceScreen().removePreference(preference);
-                return true;
-            }
-        }
-        return false;
     }
 }
