@@ -42,6 +42,9 @@
     <string name="show_dev_already_enabled">No need, development settings are enabled by default.</string>
 
     <!-- BrokenOTA -->
-    <string name="slimota_title">Broken Updates</string>
+    <string name="brokenota_title">Broken Updates</string>
+
+    <!-- BrokenCenter -->
+    <string name="broken_center_title">BrokenCenter</string>
 
 </resources>
