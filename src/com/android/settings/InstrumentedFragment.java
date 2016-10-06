@@ -27,6 +27,12 @@ import android.support.v14.preference.PreferenceFragment;
 public abstract class InstrumentedFragment extends PreferenceFragment {
     // Declare new temporary categories here, starting after this value.
     public static final int UNDECLARED = 100000;
+    public static final int BROKENSETTINGS = 100001;
+    public static final int BROKENGESTURES = 100002;
+    public static final int BROKENNAVBAR = 100003;
+    public static final int BROKENPOWER = 100004;
+    public static final int BROKENSTATUSBAR = 100005;
+    public static final int BROKENVOLUME = 100006;
 
     // Used by PreferenceActivity for the dummy fragment it adds, no useful data here.
     public static final int PREFERENCE_ACTIVITY_FRAGMENT = UNDECLARED + 1;
