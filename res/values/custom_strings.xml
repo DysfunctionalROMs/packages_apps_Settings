@@ -47,4 +47,14 @@
     <!-- BrokenCenter -->
     <string name="broken_center_title">BrokenCenter</string>
 
+    <!-- Broken pieces -->
+    <string name="header_category_brokensettings">Customizations</string>
+    <string name="broken_settings_title">Broken Pieces</string>
+    <string name="status_bar_screen_title">Status bar</string>
+    <string name="navigation_bar_screen_title">Navigation bar</string>
+    <string name="gestures_title">Gestures</string>
+    <string name="lockscreen_title">Lock screen</string>
+    <string name="power_menu_title">Power menu</string>
+    <string name="volume_rocker_screen_title">Volume rocker</string>
+
 </resources>

@@ -1,3 +1,4 @@
+
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:androidprv="http://schemas.android.com/apk/prv/res/android"
         package="com.android.settings"
@@ -126,8 +127,16 @@
 
         <activity android:name=".Settings$WirelessSettings"
             android:label="@string/header_category_wireless_networks">
-            <intent-filter android:priority="4">
+            <intent-filter android:priority="5">
                 <action android:name="com.android.settings.category.wireless" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".Settings$BrokenSettings"
+            android:label="@string/header_category_brokensettings">
+            <intent-filter android:priority="4">
+                <action android:name="com.android.settings.category.brokensettings" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
@@ -926,6 +935,19 @@
                 android:value="com.android.settings.notification.ZenModeExternalRuleSettings" />
             <meta-data android:name="com.android.settings.PRIMARY_PROFILE_CONTROLLED"
                 android:value="true" />
+        </activity>
+
+        <activity android:name="Settings$BrokenSettingsActivity"
+                android:label="@string/broken_settings_title"
+                android:icon="@drawable/ic_broken_settings">
+            <intent-filter android:priority="1">
+                <action android:name="com.android.settings.action.SETTINGS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.category"
+                android:value="com.android.settings.category.brokensettings" />
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.broken.BrokenSettings" />
         </activity>
 
         <activity android:name="Settings$DisplaySettingsActivity"
