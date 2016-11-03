@@ -105,73 +105,7 @@ public class WirelessSettings extends SettingsPreferenceFragment implements Inde
     private static final String SAVED_MANAGE_MOBILE_PLAN_MSG = "mManageMobilePlanMessage";
 
     private PreferenceScreen mButtonWfc;
-    private boolean mEnhancedWFCSettingsEnabled = false;
 
-    private IWFCService mWFCService;
-    private ServiceConnection mConnection = new ServiceConnection() {
-
-        public void onServiceConnected(ComponentName className, IBinder service) {
-            Log.i(TAG, "AIDLExample connect service");
-            mWFCService = IWFCService.Stub.asInterface(service);
-            try {
-                mWFCService.registerCallback(mCallback);
-            } catch (RemoteException re) {
-            }
-        }
-
-        public void onServiceDisconnected(ComponentName className) {
-            Log.i(TAG, " AIDLExample disconnect service");
-            mWFCService = null;
-        }
-    };
-
-    private IWFCServiceCB mCallback = new IWFCServiceCB.Stub() {
-        public void updateWFCMessage(String s) {
-            if (!mEnhancedWFCSettingsEnabled || (s == null)) {
-                if(DEBUG) Log.e(TAG, "updateWFCMessage fail.");
-                return ;
-            }
-            getActivity().runOnUiThread(new Runnable() {
-                public void run() {
-                    if(DEBUG) Log.d (TAG, "new UI thread.");
-                    mButtonWfc.setSummary(s);
-                }
-            });
-
-        }
-    };
-
-    private void updateCallback() {
-        Log.i(TAG, "call back from settings is called");
-    }
-
-    private void unbindWFCService() {
-        if (!mEnhancedWFCSettingsEnabled) {
-            return;
-        }
-        if (mWFCService != null) {
-            try {
-                Log.d(TAG, "WFCService unbindService");
-                mWFCService.unregisterCallback(mCallback);
-            } catch (RemoteException e) {
-                Log.e(TAG, "WFCService unregister error " + e);
-            }
-        }
-
-        getActivity().unbindService(mConnection);
-        Log.d(TAG, "WFCService unbind error ");
-    }
-
-    @Override
-    public void onDestroy() {
-        unbindWFCService();
-
-        super.onDestroy();
-    }
-
-    private static final String VOICE_OVER_LTE = "voice_over_lte";
-    private SwitchPreference mVoLtePreference;
-    private boolean mLteEnabled = false;
     /**
      * Invoked on each preference click in this hierarchy, overrides
      * PreferenceFragment's implementation.  Used to make sure we track the
@@ -341,14 +275,6 @@ public class WirelessSettings extends SettingsPreferenceFragment implements Inde
             removePreference(KEY_WFC_ENHANCED_SETTINGS);
         }
 
-        if (mEnhancedWFCSettingsEnabled) {
-            //bind WFC service
-            final Intent intentWfc = new Intent();
-            intentWfc.setAction("com.qualcomm.qti.wfcservice.IWFCService");
-            intentWfc.setPackage("com.qualcomm.qti.wfcservice");
-            activity.bindService(intentWfc, mConnection, Context.BIND_AUTO_CREATE);
-        }
-
         String toggleable = Settings.Global.getString(activity.getContentResolver(),
                 Settings.Global.AIRPLANE_MODE_TOGGLEABLE_RADIOS);
 
@@ -452,12 +378,6 @@ public class WirelessSettings extends SettingsPreferenceFragment implements Inde
             Preference p = findPreference(KEY_TETHER_SETTINGS);
             p.setTitle(com.android.settingslib.Utils.getTetheringLabel(cm));
 
-            if (this.getResources().getBoolean(
-                    R.bool.config_tethering_settings_display_summary_Tmobile)){
-                RestrictedPreference rp = (RestrictedPreference) p;
-                rp.useAdminDisabledSummary(false);
-                p.setSummary(R.string.tethering_settings_summary);
-            }
             // Grey out if provisioning is not available.
             p.setEnabled(!TetherSettings
                     .isProvisioningNeededButUnavailable(getActivity()));
@@ -492,16 +412,9 @@ public class WirelessSettings extends SettingsPreferenceFragment implements Inde
         if (ImsManager.isWfcEnabledByPlatform(context) &&
                 ImsManager.isWfcProvisionedOnDevice(context)) {
             getPreferenceScreen().addPreference(mButtonWfc);
-            if (!mEnhancedWFCSettingsEnabled) {
-                mButtonWfc.setSummary(WifiCallingSettings.getWfcModeSummary(
-                        context, ImsManager.getWfcMode(context)));
-            } else {
-                if (!ImsManager.isWfcEnabledByUser(context)) {
-                    mButtonWfc.setSummary(R.string.disabled);
-                } else {
-                    mButtonWfc.setSummary(SystemProperties.get("sys.wificall.status.msg"));
-                }
-            }
+
+            mButtonWfc.setSummary(WifiCallingSettings.getWfcModeSummary(
+                    context, ImsManager.getWfcMode(context)));
         } else {
             log("WFC not supported. Remove WFC menu");
             if (mButtonWfc != null) getPreferenceScreen().removePreference(mButtonWfc);

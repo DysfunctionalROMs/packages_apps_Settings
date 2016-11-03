@@ -147,6 +147,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         } else {
             removePreference(KEY_NETWORK_NAME_DISPLAYED);
         }
+
         if (!NightDisplayController.isAvailable(activity)) {
             removePreference(KEY_NIGHT_DISPLAY);
         }
