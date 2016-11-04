@@ -61,6 +61,7 @@ import java.util.List;
 import static android.content.Context.CARRIER_CONFIG_SERVICE;
 import static android.content.Context.TELEPHONY_SERVICE;
 
+import org.codeaurora.ims.utils.QtiImsExtUtils;
 
 /**
  * Display the following information
@@ -287,6 +288,18 @@ public class SimStatus extends SettingsPreferenceFragment {
         if (networktype != null && networktype.equals("LTE") && show4GForLTE) {
             networktype = "4G";
         }
+
+        if (QtiImsExtUtils.isCarrierOneSupported()) {
+            if (TelephonyManager.NETWORK_TYPE_LTE == actualDataNetworkType ||
+                    TelephonyManager.NETWORK_TYPE_LTE == actualVoiceNetworkType) {
+                if (mTelephonyManager.isImsRegisteredForSubscriber(subId)) {
+                    networktype = getResources().
+                            getString(R.string.lte_data_and_voice_calling_enabled);
+                } else {
+                    networktype = getResources().getString(R.string.lte_data_service_enabled);
+                }
+            }
+         }
         setSummaryText(KEY_NETWORK_TYPE, networktype);
     }
 
