@@ -773,9 +773,13 @@ public final class Utils extends com.android.settingslib.Utils {
      * devices allow users to flash other OSes to them.
      */
     static void setOemUnlockEnabled(Context context, boolean enabled) {
-        PersistentDataBlockManager manager =(PersistentDataBlockManager)
-                context.getSystemService(Context.PERSISTENT_DATA_BLOCK_SERVICE);
-        manager.setOemUnlockEnabled(enabled);
+        try {
+            PersistentDataBlockManager manager = (PersistentDataBlockManager)
+                    context.getSystemService(Context.PERSISTENT_DATA_BLOCK_SERVICE);
+            manager.setOemUnlockEnabled(enabled);
+        } catch (SecurityException e) {
+            Log.e(TAG, "Fail to set oem unlock.", e);
+        }
     }
 
     /**
@@ -1215,3 +1219,13 @@ public final class Utils extends com.android.settingslib.Utils {
     }
 }
 
+    public static boolean isPackageDirectBootAware(Context context, String packageName) {
+        try {
+            final ApplicationInfo ai = context.getPackageManager().getApplicationInfo(
+                    packageName, 0);
+            return ai.isDirectBootAware() || ai.isPartiallyDirectBootAware();
+        } catch (NameNotFoundException ignored) {
+        }
+        return false;
+    }
+}
