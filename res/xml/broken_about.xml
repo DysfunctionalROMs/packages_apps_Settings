@@ -46,6 +46,11 @@
     <Preference
         android:title="Ken -Broken- Greenwood"
 	    android:summary="Lead Developer for Broken"/>
+	    
+	<Preference
+        android:title="Jesse Smith (oraixearl)"
+	    android:summary="Fallen Maintainer for Broken - this release is for you bro."/>
+ 
     </PreferenceCategory>
 
 </PreferenceScreen>
